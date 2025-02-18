@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AutomataX</title>
+  <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
+
+  <!-- Modern Font Combination -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&family=Raleway:wght@400;600&display=swap" rel="stylesheet">
+
+  <!-- Additional Libraries -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Main CSS -->
+  <link rel="stylesheet" href="css/styles.css" />
+  
+  <!-- tsParticles Library -->
+  <script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
+</head>
+
+<body>
+  <!-- Preloader -->
+  <div class="preloader">
+    <div class="loader"></div>
+  </div>
+
+  <!-- HEADER / NAVIGATION -->
+  <header class="header" id="top">
+    <div class="logo">
+      <img src="images/automatax-logo.png" alt="AutomataX Logo" style="height: 40px; margin-right: 8px;">
+    </div>
+    
+    <div class="menu-toggle" id="mobile-menu">
+      <div class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+
+    <nav class="nav">
+      <ul>
+        <li><a href="#services" data-aos="fade-down">Services</a></li>
+        <li><a href="#why-choose-us" data-aos="fade-down" data-aos-delay="50">Why Us</a></li>
+        <li><a href="#contact" data-aos="fade-down" data-aos-delay="100">Contact</a></li>
+      </ul>
+      <button class="btn primary-btn" id="getStartedBtn">
+        <span>Get Started</span>
+        <i class="fas fa-arrow-right"></i>
+      </button>
+    </nav>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="hero-section">
+    <!-- Particles container -->
+    <div id="tsparticles"></div>
+    
+    <div class="hero-content">
+      <div class="hero-text" data-aos="fade-up">
+        <span class="subtitle">Welcome to the Future</span>
+        <h1>Revolutionize Your Business With Smart Automation</h1>
+        <p>Transform manual processes into intelligent workflows. Boost efficiency, reduce costs, and accelerate growth with our cutting‐edge automation solutions.</p>
+        <div class="hero-btns">
+          <button class="btn primary-btn" id="learnMoreBtn" onclick="location.href='solutions.html'">
+            <span>Explore Solutions</span>
+            <i class="fas fa-rocket"></i>
+          </button>
+          <button class="btn outline-btn" id="watchVideoBtn">
+            <i class="fas fa-play"></i>
+            <span>Watch Demo</span>
+          </button>
+        </div>
+      </div>
+      <div class="hero-stats" data-aos="fade-up" data-aos-delay="200">
+        <div class="stat-item">
+          <span class="counter" data-target="95">0</span>
+          <span class="symbol">%</span>
+          <p>Task Automation</p>
+        </div>
+        <div class="stat-item">
+          <span class="counter" data-target="500">0</span>
+          <span class="symbol">+</span>
+          <p>Satisfied Clients</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Hero image container -->
+    <div class="hero-image" data-aos="fade-left">
+      <img src="images/automatax-logo.png" alt="AutomataX Hero" />
+    </div>
+  </section>
+
+  <!-- SERVICES SECTION -->
+  <section class="services-section" id="services">
+    <div class="section-header" data-aos="fade-up">
+      <span class="subtitle">Our Services</span>
+      <h2>Intelligent Solutions for Modern Business</h2>
+      <p>Streamline operations with our comprehensive suite of automation services</p>
+    </div>
+
+    <div class="services-container">
+	  <!-- Service 1: Workflow Automation -->
+	  <div class="service-card" data-aos="flip-left">
+		<div class="service-icon">
+		  <i class="fas fa-code-branch"></i>
+		</div>
+		<h3>Workflow Automation</h3>
+		<p>Transform manual processes into streamlined digital workflows that save time and reduce errors.</p>
+		<ul class="service-features">
+		  <li><i class="fas fa-check"></i> Custom workflow design</li>
+		  <li><i class="fas fa-check"></i> Process optimization</li>
+		  <li><i class="fas fa-check"></i> Real-time monitoring</li>
+		</ul>
+		<a href="#" class="learn-more">
+		  Learn More
+		  <i class="fas fa-arrow-right"></i>
+		</a>
+	  </div>
+
+	  <!-- Service 2: AI-Powered Analytics -->
+	  <div class="service-card" data-aos="flip-left" data-aos-delay="100">
+		<div class="service-icon">
+		  <i class="fas fa-brain"></i>
+		</div>
+		<h3>AI-Powered Analytics</h3>
+		<p>Harness the power of artificial intelligence to gain actionable insights from your data.</p>
+		<ul class="service-features">
+		  <li><i class="fas fa-check"></i> Predictive analytics</li>
+		  <li><i class="fas fa-check"></i> Pattern recognition</li>
+		  <li><i class="fas fa-check"></i> Automated reporting</li>
+		</ul>
+		<a href="#" class="learn-more">
+		  Learn More
+		  <i class="fas fa-arrow-right"></i>
+		</a>
+	  </div>
+
+	  <!-- Service 3: RPA Solutions -->
+	  <div class="service-card" data-aos="flip-left" data-aos-delay="200">
+		<div class="service-icon">
+		  <i class="fas fa-robot"></i>
+		</div>
+		<h3>RPA Solutions</h3>
+		<p>Deploy intelligent bots to handle repetitive tasks and boost operational efficiency.</p>
+		<ul class="service-features">
+		  <li><i class="fas fa-check"></i> Bot automation</li>
+		  <li><i class="fas fa-check"></i> Process scaling</li>
+		  <li><i class="fas fa-check"></i> 24/7 operation</li>
+		</ul>
+		<a href="#" class="learn-more">
+		  Learn More
+		  <i class="fas fa-arrow-right"></i>
+		</a>
+	  </div>
+
+	  <!-- Service 4: Cloud Integration -->
+	  <div class="service-card" data-aos="flip-left" data-aos-delay="300">
+		<div class="service-icon">
+		  <i class="fas fa-cloud"></i>
+		</div>
+		<h3>Cloud Integration</h3>
+		<p>Seamlessly connect your systems and applications in the cloud for enhanced collaboration.</p>
+		<ul class="service-features">
+		  <li><i class="fas fa-check"></i> API management</li>
+		  <li><i class="fas fa-check"></i> Data synchronization</li>
+		  <li><i class="fas fa-check"></i> Secure connectivity</li>
+		</ul>
+		<a href="#" class="learn-more">
+		  Learn More
+		  <i class="fas fa-arrow-right"></i>
+		</a>
+	  </div>
+
+	  <!-- Service 5: Digital Transformation -->
+	  <div class="service-card" data-aos="flip-left" data-aos-delay="400">
+		<div class="service-icon">
+		  <i class="fas fa-digital-tachograph"></i>
+		</div>
+		<h3>Digital Transformation</h3>
+		<p>Modernize your business with end-to-end digital solutions and smart technologies.</p>
+		<ul class="service-features">
+		  <li><i class="fas fa-check"></i> Process digitization</li>
+		  <li><i class="fas fa-check"></i> Technology consulting</li>
+		  <li><i class="fas fa-check"></i> Change management</li>
+		</ul>
+		<a href="#" class="learn-more">
+		  Learn More
+		  <i class="fas fa-arrow-right"></i>
+		</a>
+	  </div>
+
+	  <!-- Service 6: Smart Security -->
+	  <div class="service-card" data-aos="flip-left" data-aos-delay="500">
+		<div class="service-icon">
+		  <i class="fas fa-shield-alt"></i>
+		</div>
+		<h3>Smart Security</h3>
+		<p>Protect your automated processes with advanced security measures and monitoring.</p>
+		<ul class="service-features">
+		  <li><i class="fas fa-check"></i> Threat detection</li>
+		  <li><i class="fas fa-check"></i> Access control</li>
+		  <li><i class="fas fa-check"></i> Compliance management</li>
+		</ul>
+		<a href="#" class="learn-more">
+		  Learn More
+		  <i class="fas fa-arrow-right"></i>
+		</a>
+	  </div>
+	</div>
+  </section>
+
+  <!-- WHY CHOOSE US SECTION -->
+  <section class="why-see-section" id="why-choose-us">
+    <div class="why-see-content" data-aos="fade-right">
+      <h2>Why Choose AutomataX?</h2>
+      <p>
+        We specialize in designing and implementing solutions that empower your team to focus on what really matters. 
+        From process mapping to AI-driven analytics, our holistic approach boosts productivity and ROI.
+      </p>
+      <ul>
+        <li>Cut Operational Costs</li>
+        <li>Improve Productivity</li>
+        <li>Maintain Confidentiality</li>
+        <li>Enhance Employee Satisfaction</li>
+        <li>Accelerate Growth</li>
+        <li>Scalable Solutions to Grow with Your Business</li>
+        <li>Proven Automation Frameworks &amp; Expertise</li>
+      </ul>
+      <!-- Trigger Modal: Request a Demo -->
+      <button class="btn primary-btn" id="demoBtn">Request a Demo</button>
+    </div>
+    <div class="why-see-image" data-aos="fade-left">
+      <img src="images/why-hr.png" alt="Why Choose AutomateX illustration">
+    </div>
+  </section>
+
+  <!-- OUR IMPACT & SUCCESS STORY SECTION -->
+  <section class="impact-section">
+    <h2 data-aos="fade-up">Our Impact &amp; Success Story</h2>
+    <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">
+      How we transformed our own processes—and can do the same for you.
+    </p>
+    <div class="impact-container">
+      <div class="impact-box" data-aos="fade-up" data-aos-delay="150">
+        <h3 class="counter" data-target="10000">0</h3>
+        <p>Hours Saved</p>
+      </div>
+      <div class="impact-box" data-aos="fade-up" data-aos-delay="250">
+        <h3 class="counter" data-target="40">0</h3>
+        <p>% Efficiency Increase</p>
+      </div>
+      <div class="impact-box" data-aos="fade-up" data-aos-delay="350">
+        <h3 class="counter" data-target="50">0</h3>
+        <p>% Error Reduction</p>
+      </div>
+    </div>
+    <div class="impact-text" data-aos="fade-up" data-aos-delay="450">
+      <p>
+        At AutomataX, we redefined our workflow through smart automation. By slashing manual tasks and streamlining processes, we boosted efficiency and freed up our team for higher‐value work. Now, we’re excited to bring these proven results to your business.
+      </p>
+    </div>
+  </section>
+
+	<div style="text-align: center; margin-top: 2rem;">
+	  <button class="btn primary-btn" 
+			  onclick="location.href='examples.html'"
+			  style="opacity: 0.7; transition: opacity 0.3s;">
+		View Our Automation Examples
+	  </button>
+	</div>
+
+  <!-- CONTACT SECTION -->
+  <section class="contact-section" id="contact">
+    <div class="contact-info" data-aos="fade-up">
+      <h2>Get in Touch</h2>
+      <p>Interested in automating your processes for a better ROI? Talk to us!</p>
+      <p><strong>Email:</strong> sales@automatax.com</p>
+      <p><strong>Phone:</strong> 8510881306</p>
+      <p><strong>Address:</strong> New Delhi</p>
+    </div>
+    <div class="contact-form" data-aos="fade-up" data-aos-delay="200">
+      <form action="#" method="POST">
+        <label for="name">Name*</label>
+        <input type="text" id="name" name="name" required />
+
+        <label for="email">Email*</label>
+        <input type="email" id="email" name="email" required />
+
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="5"></textarea>
+
+        <button class="btn primary-btn" type="submit">Send</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <p>© <span id="year"></span> AutomataX. All rights reserved.</p>
+    <div class="social-links">
+      <a href="#"><img src="images/icon-facebook.svg" alt="Facebook" /></a>
+      <a href="#"><img src="images/icon-linkedin.svg" alt="LinkedIn" /></a>
+      <a href="#"><img src="images/icon-twitter.svg" alt="Twitter" /></a>
+    </div>
+  </footer>
+
+  <!-- Scroll to Top Button -->
+  <a href="#top" class="scroll-to-top" data-aos="fade-up">&#8679;</a>
+
+  <!-- MODAL: Get Started -->
+  <div class="modal" id="getStartedModal">
+    <div class="modal-content" data-aos="zoom-in">
+      <span class="close">&times;</span>
+      <h2>Get Started with AutomatedX</h2>
+      <p>Join us today and revolutionize your business processes!</p>
+      <form action="#" method="POST">
+        <input type="text" placeholder="Your Name" required>
+        <input type="email" placeholder="Your Email" required>
+        <button class="btn primary-btn" type="submit">Join Now</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- MODAL: Learn More -->
+  <div class="modal" id="learnMoreModal">
+    <div class="modal-content" data-aos="zoom-in">
+      <span class="close">&times;</span>
+      <h2>Discover Our Automation Solutions</h2>
+      <p>
+        At AutomataX, we blend technology with creativity to streamline your workflows and boost efficiency.
+        Our custom solutions are designed to fit your unique business needs.
+      </p>
+      <button class="btn secondary-btn" onclick="document.getElementById('learnMoreModal').style.display='none'">
+        Close
+      </button>
+    </div>
+  </div>
+
+  <!-- MODAL: Request a Demo -->
+  <div class="modal" id="demoModal">
+    <div class="modal-content" data-aos="zoom-in">
+      <span class="close">&times;</span>
+      <h2>Request a Demo</h2>
+      <p>Fill out the form below, and our team will get in touch with you shortly.</p>
+      <form action="#" method="POST">
+        <input type="text" placeholder="Your Name" required>
+        <input type="email" placeholder="Your Email" required>
+        <textarea placeholder="Your Message" rows="4"></textarea>
+        <button class="btn primary-btn" type="submit">Submit</button>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    tsParticles.load("tsparticles", {
+      fpsLimit: 60,
+      particles: {
+        number: {
+          value: 80,
+          density: { enable: true, area: 800 }
+        },
+        color: {
+          value: ["#6366f1", "#22d3ee", "#4f46e5"]
+        },
+        shape: { type: "circle" },
+        opacity: {
+          value: 0.5,
+          random: false
+        },
+        size: {
+          value: 3,
+          random: { enable: true, minimumValue: 1 }
+        },
+        links: {
+          enable: true,
+          distance: 150,
+          color: "#6366f1",
+          opacity: 0.4,
+          width: 1
+        },
+        move: {
+          enable: true,
+          speed: 2,
+          direction: "none",
+          random: false,
+          straight: false,
+          outModes: "out"
+        }
+      },
+      interactivity: {
+        events: {
+          onHover: {
+            enable: true,
+            mode: "repulse"
+          },
+          onClick: {
+            enable: true,
+            mode: "push"
+          },
+          resize: true
+        },
+        modes: {
+          repulse: {
+            distance: 100,
+            duration: 0.4
+          },
+          push: {
+            quantity: 4
+          }
+        }
+      },
+      detectRetina: true,
+      background: {
+        color: "transparent"
+      }
+    });
+  </script>
+
+  <!-- AOS Animation Library JS -->
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script>
+    // Initialize AOS
+    AOS.init({
+      duration: 800,
+      once: true,
+      offset: 100
+    });
+
+    // Preloader
+    window.addEventListener('load', () => {
+      document.querySelector('.preloader').style.display = 'none';
+    });
+
+    // Enhanced counter animation
+    const counters = document.querySelectorAll('.counter');
+    counters.forEach(counter => {
+      const updateCount = () => {
+        const target = +counter.getAttribute('data-target');
+        const count = +counter.innerText;
+        const increment = target / 100;
+
+        if(count < target) {
+          counter.innerText = Math.ceil(count + increment);
+          setTimeout(updateCount, 30);
+        } else {
+          counter.innerText = target;
+        }
+      };
+      updateCount();
+    });
+
+    // GSAP Animations for floating elements
+    gsap.from(".floating-elements .float-item", {
+      y: 100,
+      opacity: 0,
+      duration: 1,
+      stagger: 0.2
+    });
+
+    // Mobile Navigation Toggle
+    document.getElementById('mobile-menu').addEventListener('click', () => {
+      document.querySelector('.nav').classList.toggle('active');
+    });
+  </script>
+</body>
+</html>

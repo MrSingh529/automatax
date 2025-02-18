@@ -1,0 +1,11 @@
+{
+  "name": "happyrose-tech",
+  "version": "1.0.0",
+  "description": "HappyRose Tech Solutions Website",
+  "scripts": {
+    "start": "serve ."
+  },
+  "dependencies": {
+    "serve": "^14.0.0"
+  }
+}

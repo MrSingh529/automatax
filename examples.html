@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>AutomataX - Examples</title>
+  <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
+
+  <!-- Reuse your site-wide fonts, CSS, and libraries -->
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="css/styles.css" />
+
+  <!-- Page-Specific Styles -->
+  <style>
+    /* Make sure header doesn't overlap content */
+    body {
+      margin: 0;
+      padding-top: 4rem; /* Match your fixed header height */
+      font-family: var(--font-body, 'Inter', sans-serif);
+    }
+    .header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #fff;
+      padding: 0.5rem 5%;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+    }
+
+    /* Hero Section */
+    .examples-hero {
+      padding: 5rem 5% 3rem;
+      text-align: center;
+      background: linear-gradient(135deg, #f8fafc 0%, #ffffff 100%);
+    }
+    .examples-hero h1 {
+      font-family: var(--font-heading, 'Space Grotesk', sans-serif);
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      color: var(--secondary-color, #0f172a);
+    }
+    .examples-hero p {
+      color: var(--text-secondary, #64748b);
+      max-width: 750px;
+      margin: 0.5rem auto 0;
+      font-size: 1.1rem;
+      line-height: 1.5;
+    }
+
+    /* Example Block: Alternating Layout */
+    .example-block {
+      padding: 3rem 5%;
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .example-block:nth-child(even) {
+      background: #f1f5f9; /* Subtle background for variety */
+    }
+    /* Reverse layout for even sections to alternate sides */
+    .example-block.reverse {
+      flex-direction: row-reverse;
+    }
+
+    /* Content & Visual columns */
+    .example-content, .example-visual {
+      flex: 1;
+      min-width: 0; /* helps with flex shrink */
+    }
+
+    /* Headings and subheadings */
+    .example-heading {
+      font-family: var(--font-heading, 'Space Grotesk', sans-serif);
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+      color: var(--secondary-color, #0f172a);
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    .example-heading i {
+      font-size: 1.4rem;
+      color: var(--primary-color, #6366f1);
+    }
+    .subheading {
+      font-weight: 600;
+      margin-top: 1rem;
+      margin-bottom: 0.5rem;
+      color: var(--primary-color, #6366f1);
+    }
+
+    /* Bullet lists for "Before" / "After" */
+    .example-bullets {
+      list-style: none;
+      padding-left: 0;
+      margin: 0 0 1rem;
+    }
+    .example-bullets li {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.5rem;
+      margin-bottom: 0.5rem;
+      color: var(--text-secondary, #64748b);
+    }
+    .example-bullets li i {
+      color: var(--primary-color, #6366f1);
+      margin-top: 3px;
+    }
+
+    /* Code snippet box */
+    .code-snippet {
+      background: #fff;
+      padding: 1rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+      overflow-x: auto;
+      font-family: "Courier New", monospace;
+      font-size: 0.9rem;
+      line-height: 1.4;
+      white-space: pre;
+    }
+
+    /* Footer center */
+    .footer {
+      margin-top: 4rem;
+      text-align: center;
+    }
+
+    /* Responsive Adjustments */
+    @media (max-width: 900px) {
+      .example-block {
+        flex-direction: column;
+      }
+      .example-block.reverse {
+        flex-direction: column; /* neutralize reverse on mobile */
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- HEADER -->
+  <header class="header">
+    <div class="logo">
+      <i class="fas fa-robot"></i>
+      <span>AutomataX</span>
+    </div>
+    <nav class="nav">
+      <a href="index.html" class="btn outline-btn">
+        <i class="fas fa-arrow-left"></i>
+        Back to Home
+      </a>
+    </nav>
+  </header>
+
+  <!-- HERO INTRO -->
+  <section class="examples-hero">
+    <h1 data-aos="fade-up">Automation Showcases</h1>
+    <p data-aos="fade-up" data-aos-delay="100">
+      Real‐world examples demonstrating how AutomataX eliminates repetitive tasks 
+      and simplifies complex workflows, saving time and boosting efficiency.
+    </p>
+  </section>
+
+  <!-- EXAMPLE #1: Invoice Generation -->
+  <section class="example-block reverse" data-aos="fade-up">
+    <!-- TEXT CONTENT -->
+    <div class="example-content">
+      <h2 class="example-heading">
+        <i class="fas fa-file-invoice-dollar"></i>
+        Invoice Generation Automation
+      </h2>
+
+      <!-- BEFORE -->
+      <h3 class="subheading">Before</h3>
+      <ul class="example-bullets">
+        <li><i class="fas fa-times-circle"></i> Each invoice created manually in Excel</li>
+        <li><i class="fas fa-times-circle"></i> ~2 hours spent per invoice to enter line items & taxes</li>
+        <li><i class="fas fa-times-circle"></i> High error rate leading to rework</li>
+        <li><i class="fas fa-times-circle"></i> Delays in sending invoices to clients</li>
+      </ul>
+
+      <!-- AFTER -->
+      <h3 class="subheading">After</h3>
+      <ul class="example-bullets">
+        <li><i class="fas fa-check"></i> Automated reading of Excel line items</li>
+        <li><i class="fas fa-check"></i> Intelligent tax calculations (CGST, SGST, IGST)</li>
+        <li><i class="fas fa-check"></i> Multi‐line PDF invoices generated in seconds</li>
+        <li><i class="fas fa-check"></i> Auto‐emails invoices & raw data to clients</li>
+      </ul>
+
+      <p>
+        By introducing a custom Python script and emailing workflow, 
+        we saved <strong>countless hours</strong> of repetitive invoicing work.
+      </p>
+    </div>
+
+    <!-- CODE SNIPPET OR VISUAL -->
+    <div class="example-visual">
+      <div class="code-snippet">
+<code>// Pseudo-code for invoice generation
+df = pd.read_excel("data.xlsx")
+for sc_name, group in df.groupby("SC Name"):
+    invoice_pdf = create_pdf_invoice(sc_name, group)
+    send_email_with_attachments(sc_name, invoice_pdf)
+</code>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXAMPLE #2: Approval Workflow -->
+  <section class="example-block" data-aos="fade-up">
+    <!-- TEXT CONTENT -->
+    <div class="example-content">
+      <h2 class="example-heading">
+        <i class="fas fa-thumbs-up"></i>
+        Approval Workflow Automation
+      </h2>
+
+      <!-- BEFORE -->
+      <h3 class="subheading">Before</h3>
+      <ul class="example-bullets">
+        <li><i class="fas fa-times-circle"></i> Confusion over who must approve requests</li>
+        <li><i class="fas fa-times-circle"></i> Manual back‐and‐forth emails for every permit</li>
+        <li><i class="fas fa-times-circle"></i> Hard to track approval status, leading to errors</li>
+        <li><i class="fas fa-times-circle"></i> No centralized record of tasks or attachments</li>
+      </ul>
+
+      <!-- AFTER -->
+      <h3 class="subheading">After</h3>
+      <ul class="example-bullets">
+        <li><i class="fas fa-check"></i> Single Google Form collects all details & files</li>
+        <li><i class="fas fa-check"></i> Auto‐generated approval emails with Approve/Reject links</li>
+        <li><i class="fas fa-check"></i> Tracking ID & sheet logs statuses in real time</li>
+        <li><i class="fas fa-check"></i> Eliminated confusion & drastically reduced delays</li>
+      </ul>
+
+      <p>
+        By integrating Google Forms, Sheets, and Apps Script,
+        we built a <strong>seamless approval workflow</strong> 
+        that replaced manual requests with instant, transparent approvals.
+      </p>
+    </div>
+
+    <!-- CODE SNIPPET OR VISUAL -->
+    <div class="example-visual">
+      <div class="code-snippet">
+<code>// Google Apps Script excerpt
+const WEB_APP_URL = 'https://script.google.com/macros/s/.../exec';
+
+function onFormSubmit(e) {
+  // 1) Validate data & create tracking ID
+  // 2) Save as 'pending' in a central sheet
+  // 3) Send Approve/Reject links
+}
+
+function doGet(e) {
+  // If action=approve/reject, handle tokens
+  // If action=track, show current status
+}
+</code>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <p>© <span id="year"></span> AutomataX. All rights reserved.</p>
+  </footer>
+
+  <!-- AOS & Scripts -->
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init({ duration: 800, once: true, offset: 100 });
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
