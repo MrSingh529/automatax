@@ -283,7 +283,8 @@
       <p><strong>Address:</strong> New Delhi</p>
     </div>
     <div class="contact-form" data-aos="fade-up" data-aos-delay="200">
-      <form action="#" method="POST">
+      <!-- Notice: removed 'action' and 'method' -->
+      <form id="contactForm">
         <label for="name">Name*</label>
         <input type="text" id="name" name="name" required />
 
@@ -367,10 +368,7 @@
           value: ["#6366f1", "#22d3ee", "#4f46e5"]
         },
         shape: { type: "circle" },
-        opacity: {
-          value: 0.5,
-          random: false
-        },
+        opacity: { value: 0.5 },
         size: {
           value: 3,
           random: { enable: true, minimumValue: 1 }
@@ -386,31 +384,18 @@
           enable: true,
           speed: 2,
           direction: "none",
-          random: false,
-          straight: false,
           outModes: "out"
         }
       },
       interactivity: {
         events: {
-          onHover: {
-            enable: true,
-            mode: "repulse"
-          },
-          onClick: {
-            enable: true,
-            mode: "push"
-          },
+          onHover: { enable: true, mode: "repulse" },
+          onClick: { enable: true, mode: "push" },
           resize: true
         },
         modes: {
-          repulse: {
-            distance: 100,
-            duration: 0.4
-          },
-          push: {
-            quantity: 4
-          }
+          repulse: { distance: 100, duration: 0.4 },
+          push: { quantity: 4 }
         }
       },
       detectRetina: true,
@@ -422,7 +407,10 @@
 
   <!-- AOS Animation Library JS -->
   <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <!-- GSAP (if needed) -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+
+  <!-- Your Custom Scripts -->
   <script>
     // Initialize AOS
     AOS.init({
@@ -465,6 +453,45 @@
     // Mobile Navigation Toggle
     document.getElementById('mobile-menu').addEventListener('click', () => {
       document.querySelector('.nav').classList.toggle('active');
+    });
+
+    // Update Year in Footer
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    /**
+     * Handle contact form submission with fetch
+     * This calls /api/contact (your serverless function)
+     */
+    const contactForm = document.getElementById('contactForm');
+    contactForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      // Gather form data
+      const formData = {
+        name: e.target.name.value.trim(),
+        email: e.target.email.value.trim(),
+        message: e.target.message.value.trim(),
+      };
+
+      try {
+        // POST to serverless function
+        const response = await fetch('/api/contact', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(formData),
+        });
+        const result = await response.json();
+
+        if (result.success) {
+          alert('Thank you! Your message has been sent.');
+          contactForm.reset(); // Clear the form
+        } else {
+          alert('Oops, something went wrong. Please try again later.');
+        }
+      } catch (error) {
+        console.error('Error submitting form:', error);
+        alert('There was a problem sending your message. Please try again.');
+      }
     });
   </script>
 </body>
