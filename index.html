@@ -6,20 +6,18 @@
   <title>AutomataX</title>
   <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
 
-  <!-- Modern Font Combination -->
+  <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&family=Raleway:wght@400;600&display=swap" rel="stylesheet">
 
-  <!-- Additional Libraries -->
+  <!-- AOS (Animation on Scroll) CSS -->
   <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+  <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  
+
   <!-- Main CSS -->
   <link rel="stylesheet" href="css/styles.css" />
-  
-  <!-- tsParticles Library -->
-  <script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
 </head>
-
 <body>
   <!-- Preloader -->
   <div class="preloader">
@@ -31,7 +29,6 @@
     <div class="logo">
       <img src="images/automatax-logo.png" alt="AutomataX Logo" style="height: 40px; margin-right: 8px;">
     </div>
-    
     <div class="menu-toggle" id="mobile-menu">
       <div class="hamburger">
         <span></span>
@@ -39,17 +36,16 @@
         <span></span>
       </div>
     </div>
-
     <nav class="nav">
       <ul>
         <li><a href="#services" data-aos="fade-down">Services</a></li>
         <li><a href="#why-choose-us" data-aos="fade-down" data-aos-delay="50">Why Us</a></li>
         <li><a href="#contact" data-aos="fade-down" data-aos-delay="100">Contact</a></li>
       </ul>
-      <button class="btn primary-btn" id="getStartedBtn">
-        <span>Get Started</span>
-        <i class="fas fa-arrow-right"></i>
-      </button>
+      <button class="btn primary-btn" id="getStartedBtn" onclick="location.href='#contact'">
+		  <span>Get Started</span>
+		  <i class="fas fa-arrow-right"></i>
+		</button>
     </nav>
   </header>
 
@@ -283,7 +279,6 @@
       <p><strong>Address:</strong> New Delhi</p>
     </div>
     <div class="contact-form" data-aos="fade-up" data-aos-delay="200">
-      <!-- Notice: removed 'action' and 'method' -->
       <form id="contactForm">
         <label for="name">Name*</label>
         <input type="text" id="name" name="name" required />
@@ -360,6 +355,8 @@
     </div>
   </div>
 
+  <!-- tsParticles (particles in the hero) -->
+  <script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
   <script>
     tsParticles.load("tsparticles", {
       fpsLimit: 60,
@@ -409,8 +406,79 @@
     });
   </script>
 
+  <!-- Three.js & Vanta.NET -->
+  <script>
+  // Create and insert a full-screen canvas element
+  const canvas = document.createElement('canvas');
+  canvas.id = 'animatedBg';
+  canvas.style.position = 'fixed';
+  canvas.style.top = '0';
+  canvas.style.left = '0';
+  canvas.style.width = '100%';
+  canvas.style.height = '100%';
+  canvas.style.zIndex = '-2'; // behind your other background layers
+  canvas.style.pointerEvents = 'none'; // so it doesn't block interactions
+  document.body.insertBefore(canvas, document.body.firstChild);
+
+  const ctx = canvas.getContext('2d');
+
+  // Resize canvas to fill the window
+  function resizeCanvas() {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+  }
+  window.addEventListener('resize', resizeCanvas);
+  resizeCanvas();
+
+  // Create bubbles with random properties
+  const bubbles = [];
+  const bubbleCount = 50; // Adjust the number of bubbles as needed
+
+  for (let i = 0; i < bubbleCount; i++) {
+    bubbles.push({
+      x: Math.random() * canvas.width,
+      y: Math.random() * canvas.height,
+      radius: Math.random() * 30 + 10, // radius between 10 and 40
+      speedX: (Math.random() - 0.5) * 0.5, // subtle horizontal drift
+      speedY: (Math.random() - 0.5) * 0.5, // subtle vertical drift
+      alpha: Math.random() * 0.5 + 0.3, // opacity between 0.3 and 0.8
+      // Generate a pastel color using HSL
+      color: `hsl(${Math.random() * 360}, 70%, 85%)`
+    });
+  }
+
+  // Animation loop to update and draw bubbles
+  function animateBubbles() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    
+    for (let bubble of bubbles) {
+      // Update bubble position
+      bubble.x += bubble.speedX;
+      bubble.y += bubble.speedY;
+
+      // Wrap bubbles around the edges of the screen
+      if (bubble.x - bubble.radius > canvas.width) bubble.x = -bubble.radius;
+      if (bubble.x + bubble.radius < 0) bubble.x = canvas.width + bubble.radius;
+      if (bubble.y - bubble.radius > canvas.height) bubble.y = -bubble.radius;
+      if (bubble.y + bubble.radius < 0) bubble.y = canvas.height + bubble.radius;
+
+      // Draw the bubble
+      ctx.beginPath();
+      ctx.arc(bubble.x, bubble.y, bubble.radius, 0, Math.PI * 2);
+      ctx.fillStyle = bubble.color;
+      ctx.globalAlpha = bubble.alpha;
+      ctx.fill();
+    }
+    
+    ctx.globalAlpha = 1; // Reset alpha for other drawings
+    requestAnimationFrame(animateBubbles);
+  }
+  animateBubbles();
+</script>
+
   <!-- AOS Animation Library JS -->
   <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <!-- GSAP (optional) -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 
   <script>
@@ -434,7 +502,7 @@
         const count = +counter.innerText;
         const increment = target / 100;
 
-        if(count < target) {
+        if (count < target) {
           counter.innerText = Math.ceil(count + increment);
           setTimeout(updateCount, 30);
         } else {
@@ -444,13 +512,15 @@
       updateCount();
     });
 
-    // GSAP Animations for floating elements
-    gsap.from(".floating-elements .float-item", {
-      y: 100,
-      opacity: 0,
-      duration: 1,
-      stagger: 0.2
-    });
+    // GSAP Animations for floating elements (if any)
+    if (document.querySelector(".floating-elements")) {
+      gsap.from(".floating-elements .float-item", {
+        y: 100,
+        opacity: 0,
+        duration: 1,
+        stagger: 0.2
+      });
+    }
 
     // Mobile Navigation Toggle
     document.getElementById('mobile-menu').addEventListener('click', () => {
@@ -476,7 +546,7 @@
       };
 
       try {
-        // POST to serverless function
+        // POST to serverless function (or any backend endpoint)
         const response = await fetch('/api/contact', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
