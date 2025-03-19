@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Case Studies | AutomataX</title>
+  <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&family=Raleway:wght@400;600&display=swap" rel="stylesheet">
+
+  <!-- AOS (Animation on Scroll) CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- Main CSS (same as index) -->
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <!-- HEADER / NAVIGATION (reuse the same structure) -->
+  <header class="header" id="top">
+    <div class="logo">
+      <img src="images/automatax-logo.png" alt="AutomataX Logo" style="height: 40px; margin-right: 8px;">
+    </div>
+    <div class="menu-toggle" id="mobile-menu">
+      <div class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+    <nav class="nav">
+      <ul>
+        <li><a href="index.html#services">Services</a></li>
+        <li><a href="index.html#why-choose-us">Why Us</a></li>
+        <!-- Case Studies is current page, can highlight or leave as is -->
+        <li><a href="case-studies.html" style="color: var(--primary-color); font-weight: 600;">Case Studies</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul>
+      <button class="btn primary-btn" onclick="location.href='index.html#contact'">
+        <span>Get Started</span>
+        <i class="fas fa-arrow-right"></i>
+      </button>
+    </nav>
+  </header>
+
+  <!-- CASE STUDIES SECTION -->
+  <section style="padding: 8rem 5% 4rem; min-height: 100vh;">
+    <div data-aos="fade-up" style="text-align: center; margin-bottom: 3rem;">
+      <h1>Our Case Studies</h1>
+      <p style="max-width: 700px; margin: 0 auto;">
+        Discover how AutomataX empowers businesses across various industries to save time, reduce costs, 
+        and unlock new levels of efficiency with smart automation solutions.
+      </p>
+    </div>
+
+    <!-- Example Case Study 1 -->
+    <div class="case-study" data-aos="fade-up" style="margin-bottom: 2rem;">
+      <h2>Case Study 1: Invoice Processing Automation</h2>
+      <p><strong>Client:</strong> FinanceCo</p>
+      <p><strong>Challenge:</strong> Manual invoice data entry led to frequent errors and slow processing times.</p>
+      <p><strong>Solution:</strong> Deployed RPA bots to scan and extract invoice data 24/7, integrate with the ERP system, and flag anomalies automatically.</p>
+      <p><strong>Results:</strong></p>
+      <ul style="list-style: disc; margin-left: 1.5rem;">
+        <li>80% reduction in processing time</li>
+        <li>95% decrease in invoice errors</li>
+        <li>$250K annual cost savings</li>
+      </ul>
+      <blockquote style="margin-top: 1rem; font-style: italic;">
+        “AutomataX revolutionized our finance operations. We now handle triple the volume with fewer errors!”
+        <br><span style="font-weight: 600;">– CFO, FinanceCo</span>
+      </blockquote>
+    </div>
+
+    <!-- Example Case Study 2 -->
+    <div class="case-study" data-aos="fade-up" data-aos-delay="100" style="margin-bottom: 2rem;">
+      <h2>Case Study 2: AI-Powered Analytics for Retail</h2>
+      <p><strong>Client:</strong> RetailCorp</p>
+      <p><strong>Challenge:</strong> Struggling to make sense of large customer data sets, missing critical trends.</p>
+      <p><strong>Solution:</strong> Implemented a custom AI analytics platform to identify buying patterns, forecast demand, and optimize inventory.</p>
+      <p><strong>Results:</strong></p>
+      <ul style="list-style: disc; margin-left: 1.5rem;">
+        <li>30% increase in sales conversions</li>
+        <li>Reduced inventory costs by 20%</li>
+        <li>Real-time insights for better decision-making</li>
+      </ul>
+      <blockquote style="margin-top: 1rem; font-style: italic;">
+        “With AutomataX’s AI analytics, we’ve unlocked growth potential we never knew existed.”
+        <br><span style="font-weight: 600;">– Head of Marketing, RetailCorp</span>
+      </blockquote>
+    </div>
+
+    <!-- Example Case Study 3 -->
+    <div class="case-study" data-aos="fade-up" data-aos-delay="200" style="margin-bottom: 2rem;">
+      <h2>Case Study 3: HR Onboarding Automation</h2>
+      <p><strong>Client:</strong> TechStartup</p>
+      <p><strong>Challenge:</strong> Onboarding new hires took weeks, with manual paperwork and repeated data entry.</p>
+      <p><strong>Solution:</strong> Created an automated onboarding workflow, including e-signature forms, integrated HR systems, and auto-generated training schedules.</p>
+      <p><strong>Results:</strong></p>
+      <ul style="list-style: disc; margin-left: 1.5rem;">
+        <li>70% faster onboarding time</li>
+        <li>Positive employee feedback & reduced churn</li>
+        <li>Freed HR staff to focus on culture and engagement</li>
+      </ul>
+      <blockquote style="margin-top: 1rem; font-style: italic;">
+        “Our new hires hit the ground running thanks to AutomataX’s streamlined process.”
+        <br><span style="font-weight: 600;">– HR Director, TechStartup</span>
+      </blockquote>
+    </div>
+
+    <!-- CTA or contact link -->
+    <div style="text-align: center; margin-top: 3rem;">
+      <p style="margin-bottom: 1rem; font-weight: 600;">Ready to transform your business?</p>
+      <button class="btn primary-btn" onclick="location.href='index.html#contact'">
+        <span>Contact Us</span>
+        <i class="fas fa-arrow-right"></i>
+      </button>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <ul class="footer-links" style="list-style: none; display: flex; justify-content: center; gap: 1rem; margin-bottom: 1rem;">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="privacy-policy.html">Privacy Policy</a></li>
+    </ul>
+    <p>© <span id="year"></span> AutomataX. All rights reserved.</p>
+    <div class="social-links">
+      <a href="#"><img src="images/icon-facebook.svg" alt="Facebook" /></a>
+      <a href="#"><img src="images/icon-linkedin.svg" alt="LinkedIn" /></a>
+      <a href="#"><img src="images/icon-twitter.svg" alt="Twitter" /></a>
+    </div>
+  </footer>
+
+  <!-- Scroll to Top Button -->
+  <a href="#top" class="scroll-to-top" data-aos="fade-up">&#8679;</a>
+
+  <!-- AOS, GSAP, etc. (reuse scripts as needed) -->
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script>
+    AOS.init({
+      duration: 800,
+      once: true,
+      offset: 100
+    });
+    // Update Year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Mobile Nav
+    document.getElementById('mobile-menu').addEventListener('click', () => {
+      document.querySelector('.nav').classList.toggle('active');
+    });
+  </script>
+</body>
+</html>

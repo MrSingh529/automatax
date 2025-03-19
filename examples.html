@@ -5,7 +5,7 @@
   <title>AutomataX - Examples</title>
   <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
 
-  <!-- Reuse your site-wide fonts, CSS, and libraries -->
+  <!-- Site-wide Fonts, CSS, and Libraries -->
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -13,13 +13,16 @@
 
   <!-- Page-Specific Styles -->
   <style>
-    /* Make sure header doesn't overlap content */
+    /* Reset & Base */
     body {
       margin: 0;
-      padding-top: 4rem; /* Match your fixed header height */
+      padding-top: 4rem; /* Height of the fixed header */
       font-family: var(--font-body, 'Inter', sans-serif);
+      background: #111111;
+      color: #ffffff;
     }
-    .header {
+    /* HEADER */
+    header.header {
       position: fixed;
       top: 0;
       left: 0;
@@ -28,96 +31,111 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      background: #fff;
+      background: #a8a8a8;
       padding: 0.5rem 5%;
       box-shadow: 0 2px 6px rgba(0,0,0,0.08);
     }
-
-    /* Hero Section */
+    header.header .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+    header.header nav.nav a {
+      text-decoration: none;
+      color: #ffffff;
+      font-weight: 500;
+    }
+    /* HERO SECTION */
     .examples-hero {
       padding: 5rem 5% 3rem;
       text-align: center;
-      background: linear-gradient(135deg, #f8fafc 0%, #ffffff 100%);
+      background: linear-gradient(135deg, #111111 0%, #111111 100%);
     }
     .examples-hero h1 {
       font-family: var(--font-heading, 'Space Grotesk', sans-serif);
-      font-size: 2.5rem;
+      font-size: 3rem;
       margin-bottom: 1rem;
-      color: var(--secondary-color, #0f172a);
+      color: #ffffff;
+      text-transform: uppercase;
     }
     .examples-hero p {
-      color: var(--text-secondary, #64748b);
+      color: #99b1d1;
       max-width: 750px;
-      margin: 0.5rem auto 0;
-      font-size: 1.1rem;
+      margin: 0.5rem auto;
+      font-size: 1.2rem;
       line-height: 1.5;
+      opacity: 0.85;
     }
-
-    /* Example Block: Alternating Layout */
+    /* EXAMPLE BLOCKS */
     .example-block {
       padding: 3rem 5%;
       display: flex;
       align-items: center;
       gap: 2rem;
       max-width: 1200px;
-      margin: 0 auto;
+      margin: 2rem auto;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
+    .example-block:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+    }
+    /* Alternate background for even blocks */
     .example-block:nth-child(even) {
-      background: #f1f5f9; /* Subtle background for variety */
+      background: #f1f5f9;
     }
-    /* Reverse layout for even sections to alternate sides */
+    /* Reverse layout for blocks with .reverse class */
     .example-block.reverse {
       flex-direction: row-reverse;
     }
-
-    /* Content & Visual columns */
     .example-content, .example-visual {
       flex: 1;
-      min-width: 0; /* helps with flex shrink */
+      min-width: 0;
     }
-
-    /* Headings and subheadings */
     .example-heading {
       font-family: var(--font-heading, 'Space Grotesk', sans-serif);
-      font-size: 1.8rem;
+      font-size: 2rem;
       margin-bottom: 1rem;
-      color: var(--secondary-color, #0f172a);
+      color: #0f172a;
       display: flex;
       align-items: center;
       gap: 0.75rem;
     }
     .example-heading i {
-      font-size: 1.4rem;
-      color: var(--primary-color, #6366f1);
+      font-size: 1.6rem;
+      color: #6366f1;
     }
     .subheading {
       font-weight: 600;
       margin-top: 1rem;
       margin-bottom: 0.5rem;
-      color: var(--primary-color, #6366f1);
+      color: #6366f1;
     }
-
-    /* Bullet lists for "Before" / "After" */
     .example-bullets {
       list-style: none;
       padding-left: 0;
-      margin: 0 0 1rem;
+      margin-bottom: 1rem;
     }
     .example-bullets li {
       display: flex;
       align-items: flex-start;
       gap: 0.5rem;
       margin-bottom: 0.5rem;
-      color: var(--text-secondary, #64748b);
+      color: #64748b;
+      font-size: 1rem;
     }
     .example-bullets li i {
-      color: var(--primary-color, #6366f1);
+      color: #6366f1;
       margin-top: 3px;
     }
-
-    /* Code snippet box */
     .code-snippet {
-      background: #fff;
+      background: #1a1a1a;
+      color: #fff;
       padding: 1rem;
       border-radius: 8px;
       box-shadow: 0 2px 8px rgba(0,0,0,0.06);
@@ -126,43 +144,47 @@
       font-size: 0.9rem;
       line-height: 1.4;
       white-space: pre;
+      transition: transform 0.3s ease;
     }
-
-    /* Footer center */
+    .code-snippet:hover {
+      transform: scale(1.02);
+    }
+    /* FOOTER */
     .footer {
       margin-top: 4rem;
       text-align: center;
+      padding: 2rem 0;
+      background: #000000;
+      font-size: 0.9rem;
+      color: #64748b;
     }
-
     /* Responsive Adjustments */
     @media (max-width: 900px) {
       .example-block {
         flex-direction: column;
       }
       .example-block.reverse {
-        flex-direction: column; /* neutralize reverse on mobile */
+        flex-direction: column;
       }
     }
   </style>
 </head>
 <body>
   <!-- HEADER -->
-  <header class="header">
-    <div class="logo">
-      <i class="fas fa-robot"></i>
-      <span>AutomataX</span>
-    </div>
-    <nav class="nav">
-      <a href="index.html" class="btn outline-btn">
-        <i class="fas fa-arrow-left"></i>
-        Back to Home
-      </a>
-    </nav>
-  </header>
+<header class="header">
+  <div class="logo">
+    <img src="images/automatax-logo.png" alt="AutomataX Logo" />
+  </div>
+  <nav class="nav">
+    <a href="https://www.automataxpro.site" class="btn outline-btn">
+      Home
+    </a>
+  </nav>
+</header>
 
   <!-- HERO INTRO -->
-  <section class="examples-hero">
-    <h1 data-aos="fade-up">Automation Showcases</h1>
+  <section class="examples-hero" data-aos="fade-up">
+    <h1>Automation Showcases</h1>
     <p data-aos="fade-up" data-aos-delay="100">
       Real‐world examples demonstrating how AutomataX eliminates repetitive tasks 
       and simplifies complex workflows, saving time and boosting efficiency.
@@ -170,109 +192,671 @@
   </section>
 
   <!-- EXAMPLE #1: Invoice Generation -->
-  <section class="example-block reverse" data-aos="fade-up">
-    <!-- TEXT CONTENT -->
-    <div class="example-content">
-      <h2 class="example-heading">
-        <i class="fas fa-file-invoice-dollar"></i>
-        Invoice Generation Automation
-      </h2>
+<section class="example-block reverse" data-aos="fade-up">
+  <div class="example-content">
+    <h2 class="example-heading">
+      <i class="fas fa-file-invoice-dollar"></i>
+      Invoice Generation Automation
+    </h2>
 
-      <!-- BEFORE -->
-      <h3 class="subheading">Before</h3>
-      <ul class="example-bullets">
-        <li><i class="fas fa-times-circle"></i> Each invoice created manually in Excel</li>
-        <li><i class="fas fa-times-circle"></i> ~2 hours spent per invoice to enter line items & taxes</li>
-        <li><i class="fas fa-times-circle"></i> High error rate leading to rework</li>
-        <li><i class="fas fa-times-circle"></i> Delays in sending invoices to clients</li>
-      </ul>
+    <!-- Quick Stats / Highlights -->
+    <p style="color: #0f172a; margin-bottom: 1rem;">
+      <strong>Quick Stats:</strong><br>
+      <span style="color: #10b981;">70 hours monthly</span> &nbsp;&bull;&nbsp;
+      <span style="color: #10b981;">3 employees with more time</span>
+    </p>
 
-      <!-- AFTER -->
-      <h3 class="subheading">After</h3>
-      <ul class="example-bullets">
-        <li><i class="fas fa-check"></i> Automated reading of Excel line items</li>
-        <li><i class="fas fa-check"></i> Intelligent tax calculations (CGST, SGST, IGST)</li>
-        <li><i class="fas fa-check"></i> Multi‐line PDF invoices generated in seconds</li>
-        <li><i class="fas fa-check"></i> Auto‐emails invoices & raw data to clients</li>
-      </ul>
+    <!-- BEFORE -->
+    <h3 class="subheading">Before</h3>
+    <ul class="example-bullets">
+      <li><i class="fas fa-times-circle"></i> Each invoice created manually in Excel</li>
+      <li><i class="fas fa-times-circle"></i> ~2 hours spent per invoice to enter line items & taxes</li>
+      <li><i class="fas fa-times-circle"></i> High error rate leading to rework</li>
+      <li><i class="fas fa-times-circle"></i> Delays in sending invoices to clients</li>
+    </ul>
 
-      <p>
-        By introducing a custom Python script and emailing workflow, 
-        we saved <strong>countless hours</strong> of repetitive invoicing work.
-      </p>
-    </div>
+    <!-- AFTER -->
+    <h3 class="subheading">After</h3>
+    <ul class="example-bullets">
+      <li><i class="fas fa-check"></i> Automated reading of Excel line items</li>
+      <li><i class="fas fa-check"></i> Intelligent tax calculations (CGST, SGST, IGST)</li>
+      <li><i class="fas fa-check"></i> Multi‐line PDF invoices generated in seconds</li>
+      <li><i class="fas fa-check"></i> Auto‐emails invoices &amp; raw data to clients</li>
+    </ul>
 
-    <!-- CODE SNIPPET OR VISUAL -->
-    <div class="example-visual">
-      <div class="code-snippet">
+    <p>
+      By introducing a custom Python script and emailing workflow, 
+      we saved <strong>countless hours</strong> of repetitive invoicing work.
+    </p>
+  </div>
+
+  <!-- CODE SNIPPET OR VISUAL -->
+  <div class="example-visual">
+    <div class="code-snippet" data-aos="fade-up" data-aos-delay="150">
 <code>// Pseudo-code for invoice generation
 df = pd.read_excel("data.xlsx")
 for sc_name, group in df.groupby("SC Name"):
     invoice_pdf = create_pdf_invoice(sc_name, group)
     send_email_with_attachments(sc_name, invoice_pdf)
 </code>
-      </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- EXAMPLE #2: Approval Workflow -->
-  <section class="example-block" data-aos="fade-up">
-    <!-- TEXT CONTENT -->
-    <div class="example-content">
-      <h2 class="example-heading">
-        <i class="fas fa-thumbs-up"></i>
-        Approval Workflow Automation
-      </h2>
+ <!-- EXAMPLE #2: Approval Workflow -->
+ <section class="example-block" data-aos="fade-up">
+  <style>
+    /* Simple zoom-on-hover effect */
+    .zoom-container {
+      overflow: hidden;
+      position: relative;
+      width: 100%; /* Adjust if you want a fixed width */
+      max-width: 500px; /* Optional: limit each flowchart's max width */
+      text-align: center;
+      margin: 0 auto; /* Center if desired */
+    }
+    .zoom-container img {
+      max-width: 100%;
+      height: auto;
+      transition: transform 0.3s ease;
+      cursor: zoom-in;
+    }
+    .zoom-container:hover img {
+      transform: scale(1.2); /* Adjust zoom level here */
+      cursor: zoom-out;
+    }
+  </style>
 
-      <!-- BEFORE -->
-      <h3 class="subheading">Before</h3>
-      <ul class="example-bullets">
-        <li><i class="fas fa-times-circle"></i> Confusion over who must approve requests</li>
-        <li><i class="fas fa-times-circle"></i> Manual back‐and‐forth emails for every permit</li>
-        <li><i class="fas fa-times-circle"></i> Hard to track approval status, leading to errors</li>
-        <li><i class="fas fa-times-circle"></i> No centralized record of tasks or attachments</li>
-      </ul>
+  <div class="example-content">
+    <h2 class="example-heading">
+      <i class="fas fa-thumbs-up"></i>
+      Approval Workflow Automation
+    </h2>
 
-      <!-- AFTER -->
-      <h3 class="subheading">After</h3>
-      <ul class="example-bullets">
-        <li><i class="fas fa-check"></i> Single Google Form collects all details & files</li>
-        <li><i class="fas fa-check"></i> Auto‐generated approval emails with Approve/Reject links</li>
-        <li><i class="fas fa-check"></i> Tracking ID & sheet logs statuses in real time</li>
-        <li><i class="fas fa-check"></i> Eliminated confusion & drastically reduced delays</li>
-      </ul>
+    <!-- Quick Stats / Highlights -->
+    <p style="color: #0f172a; margin-bottom: 1rem;">
+      <strong>Quick Stats:</strong><br>
+      <span style="color: #10b981;">70% faster approvals</span> &nbsp;&bull;&nbsp;
+      <span style="color: #10b981;">90% fewer email threads</span>
+    </p>
 
-      <p>
-        By integrating Google Forms, Sheets, and Apps Script,
-        we built a <strong>seamless approval workflow</strong> 
-        that replaced manual requests with instant, transparent approvals.
-      </p>
+    <!-- BEFORE -->
+    <h3 class="subheading">Before</h3>
+    <ul class="example-bullets">
+      <li><i class="fas fa-times-circle"></i> Confusion over who must approve requests</li>
+      <li><i class="fas fa-times-circle"></i> Manual back‐and‐forth emails for every permit</li>
+      <li><i class="fas fa-times-circle"></i> Hard to track approval status, leading to errors</li>
+      <li><i class="fas fa-times-circle"></i> No centralized record of tasks or attachments</li>
+    </ul>
+
+    <!-- AFTER -->
+    <h3 class="subheading">After</h3>
+    <ul class="example-bullets">
+      <li><i class="fas fa-check"></i> Single Google Form collects all details &amp; files</li>
+      <li><i class="fas fa-check"></i> Auto‐generated approval emails with Approve/Reject links</li>
+      <li><i class="fas fa-check"></i> Tracking ID &amp; sheet logs statuses in real time</li>
+      <li><i class="fas fa-check"></i> Eliminated confusion &amp; drastically reduced delays</li>
+    </ul>
+
+    <p>
+      By integrating Google Forms, Sheets, and Apps Script,
+      we built a <strong>seamless approval workflow</strong>
+      that replaced manual requests with instant, transparent approvals.
+    </p>
+  </div>
+
+  <!-- FLOWCHART VISUAL: Manual vs Automated for PTW -->
+  <div class="example-visual" style="display: flex; gap: 20px; justify-content: center; align-items: flex-start;">
+    <!-- Manual Process -->
+    <div class="zoom-container">
+      <h4>Manual Process</h4>
+      <img src="images/ptw_manual.svg" alt="PTW Manual Process Flowchart">
     </div>
+    <!-- Automated Process -->
+    <div class="zoom-container">
+      <h4>Automated Process</h4>
+      <img src="images/ptw_automated.svg" alt="PTW Automated Process Flowchart">
+    </div>
+  </div>
+</section>
 
-    <!-- CODE SNIPPET OR VISUAL -->
-    <div class="example-visual">
-      <div class="code-snippet">
-<code>// Google Apps Script excerpt
-const WEB_APP_URL = 'https://script.google.com/macros/s/.../exec';
+  <!-- EXAMPLE #3: Automated Invoice Processing in Accounting Software -->
+<section class="example-block" data-aos="fade-up">
+  <div class="example-content">
+    <h2 class="example-heading">
+      <i class="fas fa-file-upload"></i>
+      Automated Invoice Processing
+    </h2>
 
-function onFormSubmit(e) {
-  // 1) Validate data & create tracking ID
-  // 2) Save as 'pending' in a central sheet
-  // 3) Send Approve/Reject links
-}
+    <!-- Quick Stats / Highlights -->
+    <p style="color: #0f172a; margin-bottom: 1rem;">
+      <strong>Alex:</strong> Processing invoices in accounting
+      <br>
+      <span style="color: #10b981;">64 hours monthly</span> &nbsp;&bull;&nbsp;
+      <span style="color: #10b981;">2 employees with more time</span>
+    </p>
 
-function doGet(e) {
-  // If action=approve/reject, handle tokens
-  // If action=track, show current status
+    <!-- Tasks Automated -->
+    <h3 class="subheading">Tasks Automated</h3>
+    <ul class="example-bullets">
+      <li><i class="fas fa-check"></i> Read invoices from a CSV file</li>
+      <li><i class="fas fa-check"></i> Log in to the accounting software with dedicated credentials</li>
+      <li><i class="fas fa-check"></i> Add invoices in the accounting software</li>
+      <li><i class="fas fa-check"></i> Create new profiles for companies and individuals</li>
+      <li><i class="fas fa-check"></i> Fetch company data from the Romanian fiscal institution website</li>
+      <li><i class="fas fa-check"></i> Input relevant data in the accounting software</li>
+    </ul>
+
+    <p>
+      By automating these tasks, <strong>64 hours</strong> are saved monthly, 
+      freeing up <strong>2 employees</strong> to focus on higher‐value activities 
+      rather than repetitive data entry.
+    </p>
+  </div>
+
+  <!-- Code Snippet or Visual -->
+  <div class="example-visual">
+    <div class="code-snippet" data-aos="fade-up" data-aos-delay="150">
+<code>// Pseudo-code for automated invoice processing
+
+loginToAccountingSoftware(creds);
+csvData = readCSV("invoices.csv");
+
+for (invoice in csvData) {
+    checkOrCreateProfile(invoice);
+    addInvoice(invoice);
+
+    if (invoice.requiresFiscalCheck) {
+        let fiscalInfo = fetchFiscalInfo(invoice.company);
+        updateInvoiceWithFiscalInfo(invoice, fiscalInfo);
+    }
+    
+    finalizeEntry(invoice);
 }
 </code>
-      </div>
     </div>
-  </section>
+  </div>
+</section>
+
+<!-- EXAMPLE #4: OOW Consumption Report Automation -->
+<section class="example-block" data-aos="fade-up">
+  <style>
+    /* Simple zoom-on-hover effect */
+    .zoom-container {
+      overflow: hidden;
+      position: relative;
+      width: 100%; /* Adjust if you want a fixed width */
+      max-width: 500px; /* Optional: limit each flowchart's max width */
+      text-align: center;
+      margin: 0 auto; /* Center if desired */
+    }
+    .zoom-container img {
+      max-width: 100%;
+      height: auto;
+      transition: transform 0.3s ease;
+      cursor: zoom-in;
+    }
+    .zoom-container:hover img {
+      transform: scale(1.2); /* Adjust zoom level here */
+      cursor: zoom-out;
+    }
+  </style>
+
+  <div class="example-content">
+    <h2 class="example-heading">
+      <i class="fas fa-chart-line"></i>
+      OOW Consumption Report Automation
+    </h2>
+
+    <!-- Quick Stats / Highlights -->
+    <p style="color: #0f172a; margin-bottom: 1rem;">
+      <strong>Quick Stats:</strong><br>
+      <span style="color: #10b981;">50 hours monthly saved</span> &nbsp;&bull;&nbsp;
+      <span style="color: #10b981;">3 employees freed</span>
+    </p>
+
+    <!-- BEFORE -->
+    <h3 class="subheading">Before</h3>
+    <ul class="example-bullets">
+      <li><i class="fas fa-times-circle"></i> Manual extraction from multiple Excel sheets</li>
+      <li><i class="fas fa-times-circle"></i> Inconsistent tracking of OOW consumption data</li>
+      <li><i class="fas fa-times-circle"></i> Error-prone report generation and data entry</li>
+      <li><i class="fas fa-times-circle"></i> Delays in distributing reports to stakeholders</li>
+    </ul>
+
+    <!-- AFTER -->
+    <h3 class="subheading">After</h3>
+    <ul class="example-bullets">
+      <li><i class="fas fa-check"></i> Automated consolidation of Excel data into a summary report</li>
+      <li><i class="fas fa-check"></i> Accurate, real-time tracking of OOW consumption</li>
+      <li><i class="fas fa-check"></i> Rapid, error-free report generation and distribution</li>
+      <li><i class="fas fa-check"></i> Significant time savings and improved operational efficiency</li>
+    </ul>
+
+    <p>
+      By leveraging modern Python libraries and a streamlined workflow, this automation solution
+      eliminates repetitive manual tasks and ensures accurate, timely reporting of OOW consumption.
+    </p>
+  </div>
+
+  <!-- FLOWCHART VISUAL: Manual vs Automated -->
+  <div class="example-visual" style="display: flex; gap: 20px; justify-content: center; align-items: flex-start;">
+    <!-- Manual Process -->
+    <div class="zoom-container">
+      <h4>Manual Process</h4>
+      <img src="images/oow_manual.svg" alt="Manual Process Flowchart">
+    </div>
+    <!-- Automated Process -->
+    <div class="zoom-container">
+      <h4>Automated Process</h4>
+      <img src="images/oow_automated.svg" alt="Automated Process Flowchart">
+    </div>
+  </div>
+</section>
+
+<!-- EXAMPLE #5: Invoice Generation Automation -->
+<section class="example-block" data-aos="fade-up">
+  <div class="example-content">
+    <h2 class="example-heading">
+      <i class="fas fa-file-invoice"></i>
+      Invoice Generation Automation
+    </h2>
+
+    <!-- Quick Stats / Highlights -->
+    <p style="color: #0f172a; margin-bottom: 1rem;">
+      <strong>Quick Stats:</strong><br>
+      <span style="color: #10b981;">60 hours monthly saved</span> &nbsp;&bull;&nbsp;
+      <span style="color: #10b981;">4 employees freed</span>
+    </p>
+
+    <!-- BEFORE -->
+    <h3 class="subheading">Before</h3>
+    <ul class="example-bullets">
+      <li><i class="fas fa-times-circle"></i> Manual extraction and filtering of raw data from the portal</li>
+      <li><i class="fas fa-times-circle"></i> Data entry errors when populating invoice fields</li>
+      <li><i class="fas fa-times-circle"></i> Inconsistent invoice generation across departments</li>
+      <li><i class="fas fa-times-circle"></i> Time-consuming process with no centralized logging</li>
+    </ul>
+
+    <!-- AFTER -->
+    <h3 class="subheading">After</h3>
+    <ul class="example-bullets">
+      <li><i class="fas fa-check"></i> Automated loading and grouping of raw data via Python</li>
+      <li><i class="fas fa-check"></i> Dynamic template filling with calculated taxes (CGST/IGST)</li>
+      <li><i class="fas fa-check"></i> Consistent, error-free invoice generation with standardized naming</li>
+      <li><i class="fas fa-check"></i> Centralized logging and error handling for seamless operations</li>
+    </ul>
+
+    <p>
+      This automation solution streamlines the entire invoice generation process—eliminating manual steps and significantly reducing errors while saving valuable time.
+    </p>
+  </div>
+
+  <!-- CODE SNIPPET OR VISUAL -->
+  <div class="example-visual">
+    <div class="code-snippet" data-aos="fade-up" data-aos-delay="150">
+<code># Pseudo-code for Invoice Generation Automation
+
+import pandas as pd
+
+# Load raw invoice data from Excel
+df = pd.read_excel("raw_data.xlsx", sheet_name="Invoices")
+
+# Process each unique SC (Service Center)
+for sc in df["SC Name"].unique():
+    df_sc = df[df["SC Name"] == sc]
+    # Create a new invoice template
+    invoice = create_invoice_template()
+    # Auto-populate invoice fields
+    invoice.fill({
+        "SC Name": sc,
+        "Address": df_sc["Address"].iloc[0],
+        "GST": calculate_tax(df_sc)
+    })
+    # Save the generated invoice in a standardized format
+    save_invoice(invoice, f"output/Invoice_{sanitize_filename(sc)}.xlsx")
+</code>
+    </div>
+  </div>
+</section>
+
+<!-- EXAMPLE #6: PO Extraction Automation -->
+<section class="example-block" data-aos="fade-up">
+  <style>
+    /* Simple zoom-on-hover effect */
+    .zoom-container {
+      overflow: hidden;
+      position: relative;
+      width: 100%; /* Adjust if you want a fixed width */
+      max-width: 500px; /* Optional: limit each flowchart's max width */
+      text-align: center;
+      margin: 0 auto; /* Center if desired */
+    }
+    .zoom-container img {
+      max-width: 100%;
+      height: auto;
+      transition: transform 0.3s ease;
+      cursor: zoom-in;
+    }
+    .zoom-container:hover img {
+      transform: scale(1.2); /* Adjust zoom level here */
+      cursor: zoom-out;
+    }
+  </style>
+
+  <div class="example-content">
+    <h2 class="example-heading">
+      <i class="fas fa-file-alt"></i>
+      PO Extraction Automation
+    </h2>
+
+    <!-- Quick Stats / Highlights -->
+    <p style="color: #0f172a; margin-bottom: 1rem;">
+      <strong>Quick Stats:</strong><br>
+      <span style="color: #10b981;">6 days monthly saved</span> &nbsp;&bull;&nbsp;
+      <span style="color: #10b981;">2 employees freed</span>
+    </p>
+
+    <!-- BEFORE -->
+    <h3 class="subheading">Before</h3>
+    <ul class="example-bullets">
+      <li><i class="fas fa-times-circle"></i> PO PDF files received and manually opened</li>
+      <li><i class="fas fa-times-circle"></i> Key PO information manually extracted and entered into a tracker</li>
+      <li><i class="fas fa-times-circle"></i> High chance of human error and delayed processing</li>
+      <li><i class="fas fa-times-circle"></i> No automated file archiving or real-time status updates</li>
+    </ul>
+
+    <!-- AFTER -->
+    <h3 class="subheading">After</h3>
+    <ul class="example-bullets">
+      <li><i class="fas fa-check"></i> Automated monitoring of an input folder for new PDF files</li>
+      <li><i class="fas fa-check"></i> OCR and text parsing to extract PO number, date, client details, and amount</li>
+      <li><i class="fas fa-check"></i> Automatic entry of data into a centralized PO tracker</li>
+      <li><i class="fas fa-check"></i> Processed files are automatically archived and exceptions logged</li>
+    </ul>
+
+    <p>
+      This automation solution streamlines the PO extraction process—reducing manual effort, minimizing errors, and ensuring timely data entry and file management.
+    </p>
+  </div>
+
+  <!-- FLOWCHART VISUAL: Manual vs Automated -->
+  <div class="example-visual" style="display: flex; gap: 20px; justify-content: center; align-items: flex-start;">
+    <!-- Manual Process -->
+    <div class="zoom-container">
+      <h4>Manual Process</h4>
+      <img src="images/doc_extract_manual.svg" alt="Manual Process Flowchart">
+    </div>
+    <!-- Automated Process -->
+    <div class="zoom-container">
+      <h4>Automated Process</h4>
+      <img src="images/doc_extract_automated.svg" alt="Automated Process Flowchart">
+    </div>
+  </div>
+</section>
+
+<!-- EXAMPLE #7: Telecom RAN KPI & Performance Reporting Automation -->
+<section class="example-block" data-aos="fade-up">
+  <div class="example-content">
+    <h2 class="example-heading">
+      <i class="fas fa-tachometer-alt"></i>
+      Telecom RAN KPI &amp; Performance Reporting Automation
+    </h2>
+
+    <!-- Quick Stats / Highlights -->
+    <p style="color: #0f172a; margin-bottom: 1rem;">
+      <strong>Quick Stats:</strong><br>
+      <span style="color: #10b981;">55 hours monthly saved</span> &nbsp;&bull;&nbsp;
+      <span style="color: #10b981;">3 employees freed</span>
+    </p>
+
+    <!-- BEFORE -->
+    <h3 class="subheading">Before</h3>
+    <ul class="example-bullets">
+      <li><i class="fas fa-times-circle"></i> Daily manual extraction of KPI data from Airtel MyComm Tool</li>
+      <li><i class="fas fa-times-circle"></i> Data split manually by activity date (pre‑payload &amp; post‑payload)</li>
+      <li><i class="fas fa-times-circle"></i> Manual calculations of delta and delta percentages for each Site and Cell</li>
+      <li><i class="fas fa-times-circle"></i> Delays and errors in generating and sharing trend reports</li>
+    </ul>
+
+    <!-- AFTER -->
+    <h3 class="subheading">After</h3>
+    <ul class="example-bullets">
+      <li><i class="fas fa-check"></i> Automated extraction of raw KPI data from Airtel MyComm Tool</li>
+      <li><i class="fas fa-check"></i> Data automatically segmented into pre‑payload and post‑payload groups</li>
+      <li><i class="fas fa-check"></i> Real‑time calculation of deltas and delta percentages per Site/Cell</li>
+      <li><i class="fas fa-check"></i> Dynamic pivot tables generated and trend reports shared instantly</li>
+    </ul>
+
+    <p>
+      This automation solution transforms the daily KPI reporting process into an efficient, 
+      error‑free workflow that delivers timely insights and trend analysis—saving valuable 
+      time and reducing manual effort.
+    </p>
+  </div>
+
+  <!-- CODE SNIPPET OR VISUAL -->
+  <div class="example-visual">
+    <div class="code-snippet" data-aos="fade-up" data-aos-delay="150">
+      <code># Shortened Pseudo-code for Telecom RAN KPI & Performance Reporting
+
+import pandas as pd
+
+# 1. Load raw KPI data from the Airtel MyComm export
+df = pd.read_excel("raw_kpi_data.xlsx")
+
+# 2. Separate data into pre-payload & post-payload based on Activity_Date
+# ...
+
+# 3. Calculate Delta & Delta Percentage
+# ...
+
+# 4. Generate pivot table & export the final KPI report
+pivot.to_excel("output/Telecom_RAN_KPI_Report.xlsx")
+</code>
+    </div>
+  </div>
+</section>
+
+<!-- EXAMPLE #8: Portal Automation &amp; Reporting System -->
+<section class="example-block" data-aos="fade-up">
+  <div class="example-content">
+    <h2 class="example-heading">
+      <i class="fas fa-cogs"></i>
+      Portal Automation &amp; Reporting System
+    </h2>
+
+    <!-- Quick Stats / Highlights -->
+    <p style="color: #0f172a; margin-bottom: 1rem;">
+      <strong>Quick Stats:</strong><br>
+      <span style="color: #10b981;">85% process automation</span> &nbsp;&bull;&nbsp;
+      <span style="color: #10b981;">75% reduction in manual errors</span>
+    </p>
+
+    <!-- BEFORE -->
+    <h3 class="subheading">Before</h3>
+    <ul class="example-bullets">
+      <li><i class="fas fa-times-circle"></i> Manual navigation across multiple portals for data extraction</li>
+      <li><i class="fas fa-times-circle"></i> Separate tools for report generation and email distribution</li>
+      <li><i class="fas fa-times-circle"></i> Repetitive manual tasks prone to errors</li>
+      <li><i class="fas fa-times-circle"></i> No centralized real-time progress tracking or logging</li>
+    </ul>
+
+    <!-- AFTER -->
+    <h3 class="subheading">After</h3>
+    <ul class="example-bullets">
+      <li><i class="fas fa-check"></i> Unified PyQt6 GUI automates portal logins and data extraction</li>
+      <li><i class="fas fa-check"></i> Integrated Playwright-based browser automation for efficient downloads</li>
+      <li><i class="fas fa-check"></i> Real-time progress updates and error logging via multi-threaded workers</li>
+      <li><i class="fas fa-check"></i> Automated report generation, file archival, and dynamic dashboard display</li>
+    </ul>
+
+    <p>
+      Leveraging Python, PyQt6, and Playwright, this solution integrates data extraction, reporting, and real‑time progress tracking into a single application—reducing manual intervention and ensuring accurate, timely outputs.
+    </p>
+  </div>
+
+  <!-- CODE SNIPPET OR VISUAL -->
+  <div class="example-visual">
+    <div class="code-snippet" data-aos="fade-up" data-aos-delay="150">
+<code># Pseudo-code for Portal Automation &amp; Reporting
+
+# Initialize the GUI application
+app = QApplication(sys.argv)
+main_window = MainWindow()  # Main window contains worker threads, progress bar, dashboard, etc.
+main_window.show()
+
+# In MainWindow, start the worker thread:
+worker = SiteWorker(csv_data, download_dir)
+worker.signals.progress.connect(update_progress)
+worker.signals.error.connect(handle_error)
+worker.signals.finished.connect(on_process_complete)
+worker.start()
+
+# In the worker thread (SiteWorker.run()):
+for site in csv_data:
+    login_to_portal(site)
+    process_site_data(site)
+    download_and_archive_report(site)
+    update_progress_bar()
+
+# On completion, generate a dynamic dashboard and display the report.
+</code>
+    </div>
+  </div>
+</section>
+
+<!-- EXAMPLE #9: Web App Script Dashboard -->
+<section class="example-block" data-aos="fade-up">
+  <style>
+    /* Hover-to-zoom effect for the screenshot */
+    .zoom-container {
+      overflow: hidden;
+      position: relative;
+      width: 100%;
+      max-width: 500px; /* Adjust as needed */
+      text-align: center;
+      margin: 0 auto;
+    }
+    .zoom-container img {
+      max-width: 100%;
+      height: auto;
+      transition: transform 0.3s ease;
+      cursor: zoom-in;
+    }
+    .zoom-container:hover img {
+      transform: scale(1.2); /* Adjust zoom level here */
+      cursor: zoom-out;
+    }
+  </style>
+  
+  <div class="example-content">
+    <h2 class="example-heading">
+      <i class="fas fa-laptop-code"></i>
+      Web App Reports Dashboard
+    </h2>
+    
+    <!-- Quick Stats / Highlights -->
+    <p style="color: #0f172a; margin-bottom: 1rem;">
+      <strong>Quick Stats:</strong><br>
+      <span style="color: #10b981;">Real-time data updates</span> &nbsp;&bull;&nbsp;
+      <span style="color: #10b981;">Interactive &amp; user-friendly interface</span>
+    </p>
+    
+    <!-- BEFORE -->
+    <h3 class="subheading">Before</h3>
+    <ul class="example-bullets">
+      <li><i class="fas fa-times-circle"></i> Manual data extraction and static reporting</li>
+      <li><i class="fas fa-times-circle"></i> Outdated, non-interactive dashboards</li>
+      <li><i class="fas fa-times-circle"></i> Disconnected tools for visualization and reporting</li>
+    </ul>
+    
+    <!-- AFTER -->
+    <h3 class="subheading">After</h3>
+    <ul class="example-bullets">
+      <li><i class="fas fa-check"></i> A unified, Streamlit-based dashboard with dynamic visualizations</li>
+      <li><i class="fas fa-check"></i> Integrated data from Google Drive and Plotly charts</li>
+      <li><i class="fas fa-check"></i> Modern, responsive interface with a video background</li>
+    </ul>
+    
+    <p>
+      This web app consolidates data extraction, visualization, and reporting into a single interactive dashboard,
+      empowering users with real-time insights and a modern, engaging interface.
+    </p>
+  </div>
+  
+  <!-- SCREENSHOT VISUAL -->
+  <div class="example-visual" style="display: flex; justify-content: center; margin-top: 20px;">
+    <div class="zoom-container">
+      <img src="images/screenshot.png" alt="Web App Script Dashboard Screenshot">
+    </div>
+  </div>
+</section>
 
   <!-- FOOTER -->
   <footer class="footer">
-    <p>© <span id="year"></span> AutomataX. All rights reserved.</p>
+    <div class="footer-top">
+      <!-- Menu Links Section -->
+      <div class="footer-links">
+        <div>
+          <h3>Menu Links</h3>
+          <ul>
+            <li><a href="#top">Home</a></li>
+            <li><a href="#why-choose-us">About Us</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Our Services Section -->
+      <div class="footer-services">
+        <div>
+          <h3>Our Services</h3>
+          <ul>
+            <li><a href="#">RPA Solutions</a></li>
+            <li><a href="#">AI-Powered Analytics</a></li>
+            <li><a href="#">Cloud Integration</a></li>
+            <li><a href="#">Workflow Automation</a></li>
+            <li><a href="#">Digital Transformation</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Information Section -->
+      <div class="footer-information">
+        <div>
+          <h3>Information</h3>
+          <ul>
+            <li><a href="privacy-policy.html">Privacy Policy</a></li>
+           </ul>
+        </div>
+      </div>
+
+      <!-- Contact Us Section -->
+      <div class="footer-contact">
+        <div>
+          <h3>Contact Us</h3>
+          <ul>
+            <li><a href="mailto:sales.automatax@gmail.com">sales.automatax@gmail.com</a></li>
+            <li><a href="tel:+918510881306">+91 85108 81306</a></li>
+            <li>New Delhi, India</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Social Media Section -->
+    <div class="social-links">
+      <a href="dist/index.html" id="facebook-link"><img src="images/icon-facebook.svg" alt="Facebook" /></a>
+      <a href="https://www.linkedin.com/company/automataxpro/" target="_blank"><img src="images/icon-linkedin.svg" alt="LinkedIn" /></a>
+      <a href="dist/index.html" id="twitter-link"><img src="images/icon-twitter.svg" alt="Twitter" /></a>
+    </div>
+
+    <!-- Footer Bottom Section -->
+    <div class="footer-bottom">
+      <p>© <span id="year"></span> AutomataX. All rights reserved.</p>
+    </div>
   </footer>
 
   <!-- AOS & Scripts -->
