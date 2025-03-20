@@ -18,7 +18,7 @@ export default async function handler(req, res) {
       // 2. Send mail
       await transporter.sendMail({
         from: `"AutomataX Contact" <${process.env.GMAIL_USER}>`,
-        to: "harpindersingh529@gmail.com", // where you want to receive
+        to: "sales.automatax@gmail.com", // where you want to receive
         subject: `New Contact Form Submission from ${name}`,
         text: `Name: ${name}\nEmail: ${email}\nMessage:\n${message}`
       });
