@@ -397,13 +397,13 @@ h1, h2, h3, h4, h5, h6 {
   background-image: url("../images/service_1.png");
 }
 .service-card:nth-child(2)::before {
-  background-image: url("../images/service_2.png");
-}
-.service-card:nth-child(3)::before {
   background-image: url("../images/service_3.png");
 }
-.service-card:nth-child(4)::before {
+.service-card:nth-child(3)::before {
   background-image: url("../images/service_4.png");
+}
+.service-card:nth-child(4)::before {
+  background-image: url("../images/service_2.png");
 }
 .service-card:nth-child(5)::before {
   background-image: url("../images/service_5.png");
