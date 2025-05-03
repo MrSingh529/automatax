@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AutomataX - How It Works</title>
+    <title>AutomataX - Thank You</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <style>
@@ -147,209 +147,49 @@
             color: var(--dark);
         }
 
-        /* Hero Section */
-        .how-it-works-hero {
-            padding: 120px 0 60px;
+        /* Thank You Section */
+        .thank-you-section {
+            padding: 150px 0;
             background: linear-gradient(135deg, rgba(67, 97, 238, 0.05), rgba(114, 9, 183, 0.1));
             text-align: center;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
         }
 
-        .how-it-works-hero h1 {
+        .thank-you-content {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .thank-you-content i {
+            font-size: 64px;
+            color: var(--success);
+            margin-bottom: 20px;
+        }
+
+        .thank-you-content h1 {
             font-size: 48px;
             font-weight: 800;
             margin-bottom: 20px;
         }
 
-        .how-it-works-hero h1 span {
+        .thank-you-content h1 span {
             background: var(--gradient);
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
         }
 
-        .how-it-works-hero p {
+        .thank-you-content p {
             font-size: 18px;
             color: #555;
-            max-width: 700px;
-            margin: 0 auto;
-        }
-
-        /* Section Styling */
-        .section {
-            padding: 100px 0;
-        }
-
-        .section-header {
-            text-align: center;
-            margin-bottom: 60px;
-        }
-
-        .section-header h2 {
-            font-size: 36px;
-            font-weight: 700;
-            margin-bottom: 15px;
-            position: relative;
-            display: inline-block;
-        }
-
-        .section-header h2::after {
-            content: '';
-            position: absolute;
-            left: 50%;
-            bottom: -10px;
-            transform: translateX(-50%);
-            width: 70px;
-            height: 3px;
-            background: var(--gradient);
-        }
-
-        .section-header p {
-            font-size: 18px;
-            color: #666;
-            max-width: 700px;
-            margin: 0 auto;
-        }
-
-        /* How It Works Steps Section */
-        .how-it-works {
-            background-color: white;
-        }
-
-        .steps-container {
-            display: flex;
-            flex-direction: column;
-            gap: 50px;
-        }
-
-        .step {
-            display: flex;
-            align-items: center;
-            gap: 40px;
-            background-color: white;
-            border-radius: 15px;
-            padding: 30px;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
-            transition: all 0.3s ease;
-        }
-
-        .step:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-        }
-
-        .step-image {
-            flex-shrink: 0;
-            width: 200px;
-            height: 200px;
-        }
-
-        .step-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            border-radius: 10px;
-        }
-
-        .step-content {
-            flex-grow: 1;
-        }
-
-        .step-number {
-            font-size: 24px;
-            font-weight: 700;
-            color: var(--primary);
-            margin-bottom: 10px;
-        }
-
-        .step-content h3 {
-            font-size: 24px;
-            margin-bottom: 15px;
-        }
-
-        .step-content p {
-            font-size: 16px;
-            color: #666;
             line-height: 1.6;
+            margin-bottom: 30px;
         }
 
-        .step:nth-child(even) {
-            flex-direction: row-reverse;
-        }
-
-        /* Benefits Section */
-        .benefits {
-            background: linear-gradient(135deg, rgba(67, 97, 238, 0.05), rgba(114, 9, 183, 0.1));
-        }
-
-        .benefits-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
-        }
-
-        .benefit-card {
-            background-color: white;
-            border-radius: 15px;
-            padding: 30px;
-            text-align: center;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
-            transition: all 0.3s ease;
-        }
-
-        .benefit-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-        }
-
-        .benefit-icon {
-            font-size: 48px;
-            color: var(--primary);
-            margin-bottom: 20px;
-        }
-
-        .benefit-card h3 {
-            font-size: 22px;
-            margin-bottom: 15px;
-        }
-
-        .benefit-card p {
-            font-size: 16px;
-            color: #666;
-            line-height: 1.6;
-        }
-
-        /* CTA Section */
-        .cta {
-            padding: 80px 0;
-            background: var(--gradient);
-            color: white;
-            text-align: center;
-        }
-
-        .cta h2 {
-            font-size: 36px;
-            font-weight: 700;
-            margin-bottom: 20px;
-        }
-
-        .cta p {
-            font-size: 18px;
-            max-width: 600px;
-            margin: 0 auto 30px;
-            opacity: 0.9;
-        }
-
-        .cta-btn {
-            background-color: white;
-            color: var(--primary);
-            font-weight: 600;
-            transition: all 0.3s ease;
-        }
-
-        .cta-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(255, 255, 255, 0.3);
+        .thank-you-content .btn {
+            margin: 10px;
         }
 
         /* Footer */
@@ -447,17 +287,6 @@
         }
 
         /* Responsive Styles */
-        @media (max-width: 992px) {
-            .step {
-                flex-direction: column !important;
-                text-align: center;
-            }
-
-            .step-image {
-                margin-bottom: 20px;
-            }
-        }
-
         @media (max-width: 768px) {
             .nav-links {
                 display: none;
@@ -504,28 +333,27 @@
                 padding: 10px 0;
             }
 
-            .how-it-works-hero h1 {
+            .thank-you-content h1 {
                 font-size: 32px;
             }
 
-            .how-it-works-hero p {
+            .thank-you-content p {
                 font-size: 16px;
+            }
+
+            .thank-you-content i {
+                font-size: 48px;
             }
         }
 
         @media (max-width: 576px) {
-            .section-header h2 {
-                font-size: 28px;
+            .thank-you-section {
+                padding: 100px 0;
             }
 
             .btn {
                 padding: 10px 20px;
                 font-size: 14px;
-            }
-
-            .step-image {
-                width: 150px;
-                height: 150px;
             }
         }
     </style>
@@ -540,8 +368,8 @@
                     <a href="services.html">Services</a>
                     <a href="about.html">About</a>
                     <a href="how-it-works.html">How It Works</a>
-                    <a href="index.html#testimonials">Testimonials</a>
-                    <a href="index.html#contact">Contact</a>
+                    <a href="rpa-case-studies.html">RPA Case Studies</a>
+                    <a href="contact.html">Contact</a>
                 </div>
                 <button class="mobile-menu-btn" id="mobile-menu-btn">
                     <i class="fas fa-bars"></i>
@@ -558,126 +386,20 @@
         <a href="services.html">Services</a>
         <a href="about.html">About</a>
         <a href="how-it-works.html">How It Works</a>
-        <a href="index.html#testimonials">Testimonials</a>
-        <a href="index.html#contact">Contact</a>
+        <a href="rpa-case-studies.html">RPA Case Studies</a>
+        <a href="contact.html">Contact</a>
     </div>
 
-    <!-- How It Works Hero Section -->
-    <section class="how-it-works-hero">
+    <!-- Thank You Section -->
+    <section class="thank-you-section">
         <div class="container">
-            <h1>How It <span>Works</span></h1>
-            <p>Discover the seamless process behind AutomataX’s AI-driven automation solutions and how we deliver transformative results for your business.</p>
-        </div>
-    </section>
-
-    <!-- How It Works Steps Section -->
-    <section class="section how-it-works">
-        <div class="container">
-            <div class="section-header animate-fade-in">
-                <h2>Our Proven Process</h2>
-                <p>We follow a structured approach to ensure your automation journey is smooth, efficient, and tailored to your unique needs.</p>
+            <div class="thank-you-content animate-fade-in">
+                <i class="fas fa-check-circle"></i>
+                <h1>Thank You for <span>Reaching Out!</span></h1>
+                <p>Your message has been successfully sent to our team at AutomataX. We’ll get back to you within a day to discuss how we can help transform your business with intelligent automation.</p>
+                <a href="index.html" class="btn btn-primary">Return to Home</a>
+                <a href="rpa-case-studies.html" class="btn btn-primary">Explore Our Case Studies</a>
             </div>
-            <div class="steps-container">
-                <div class="step animate-fade-in">
-                    <div class="step-image">
-                        <img src="step-1.png" alt="Step 1: Discovery & Consultation">
-                    </div>
-                    <div class="step-content">
-                        <div class="step-number">Step 1</div>
-                        <h3>Discovery & Consultation</h3>
-                        <p>We begin by understanding your business goals, challenges, and existing processes. Our team conducts in-depth consultations to identify opportunities for automation and AI integration, ensuring we align with your strategic objectives.</p>
-                    </div>
-                </div>
-                <div class="step animate-fade-in">
-                    <div class="step-image">
-                        <img src="step-2.png" alt="Step 2: Custom Solution Design">
-                    </div>
-                    <div class="step-content">
-                        <div class="step-number">Step 2</div>
-                        <h3>Custom Solution Design</h3>
-                        <p>Based on the discovery phase, we design a tailored solution that leverages AI, machine learning, and automation technologies. This includes creating workflows, integrating systems, and developing predictive models specific to your needs.</p>
-                    </div>
-                </div>
-                <div class="step animate-fade-in">
-                    <div class="step-image">
-                        <img src="step-3.png" alt="Step 3: Implementation & Integration">
-                    </div>
-                    <div class="step-content">
-                        <div class="step-number">Step 3</div>
-                        <h3>Implementation & Integration</h3>
-                        <p>Our team deploys the solution, integrating it seamlessly with your existing systems. We ensure minimal disruption to your operations while setting up real-time dashboards, chatbots, or automated workflows as needed.</p>
-                    </div>
-                </div>
-                <div class="step animate-fade-in">
-                    <div class="step-image">
-                        <img src="step-4.png" alt="Step 4: Testing & Optimization">
-                    </div>
-                    <div class="step-content">
-                        <div class="step-number">Step 4</div>
-                        <h3>Testing & Optimization</h3>
-                        <p>We rigorously test the solution to ensure it meets performance standards. Using feedback and data-driven insights, we optimize the system to maximize efficiency, accuracy, and ROI for your business.</p>
-                    </div>
-                </div>
-                <div class="step animate-fade-in">
-                    <div class="step-image">
-                        <img src="step-5.png" alt="Step 5: Support & Growth">
-                    </div>
-                    <div class="step-content">
-                        <div class="step-number">Step 5</div>
-                        <h3>Support & Growth</h3>
-                        <p>After deployment, we provide ongoing support, monitoring, and updates to ensure your solution evolves with your business. Our team is always available to help you scale and adapt to new challenges.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Benefits Section -->
-    <section class="section benefits">
-        <div class="container">
-            <div class="section-header animate-fade-in">
-                <h2>Benefits of Our Approach</h2>
-                <p>Our process is designed to deliver measurable results and long-term value for your business.</p>
-            </div>
-            <div class="benefits-grid">
-                <div class="benefit-card animate-fade-in">
-                    <div class="benefit-icon">
-                        <i class="fas fa-tachometer-alt"></i>
-                    </div>
-                    <h3>Increased Efficiency</h3>
-                    <p>Automate repetitive tasks and streamline workflows to save time and reduce operational costs.</p>
-                </div>
-                <div class="benefit-card animate-fade-in">
-                    <div class="benefit-icon">
-                        <i class="fas fa-chart-line"></i>
-                    </div>
-                    <h3>Data-Driven Insights</h3>
-                    <p>Leverage AI-powered analytics to make informed decisions and stay ahead of market trends.</p>
-                </div>
-                <div class="benefit-card animate-fade-in">
-                    <div class="benefit-icon">
-                        <i class="fas fa-users"></i>
-                    </div>
-                    <h3>Enhanced Customer Experience</h3>
-                    <p>Provide 24/7 support with AI chatbots and personalized interactions that delight your customers.</p>
-                </div>
-                <div class="benefit-card animate-fade-in">
-                    <div class="benefit-icon">
-                        <i class="fas fa-expand-arrows-alt"></i>
-                    </div>
-                    <h3>Scalable Solutions</h3>
-                    <p>Our solutions grow with your business, adapting to new challenges and opportunities.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CTA Section -->
-    <section class="cta">
-        <div class="container">
-            <h2 class="animate-fade-in">Ready to Get Started?</h2>
-            <p class="animate-fade-in">Let’s work together to transform your business with intelligent automation. Contact us to begin your journey today.</p>
-            <a href="index.html#contact" class="btn cta-btn animate-fade-in">Get Started Now</a>
         </div>
     </section>
 
@@ -711,8 +433,8 @@
                         <li><a href="index.html">Home</a></li>
                         <li><a href="about.html">About Us</a></li>
                         <li><a href="how-it-works.html">How It Works</a></li>
-                        <li><a href="index.html#testimonials">Testimonials</a></li>
-                        <li><a href="index.html#contact">Contact</a></li>
+                        <li><a href="rpa-case-studies.html">RPA Case Studies</a></li>
+                        <li><a href="contact.html">Contact</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
