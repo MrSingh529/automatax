@@ -624,23 +624,29 @@
                       </div>
                       <button type="submit" class="btn btn-primary">Send Message</button>
                     </form>
-                  </div>
-                <div class="contact-info animate-fade-in">
-                    <h3>Contact Information</h3>
-                    <ul class="contact-details">
-                        <li>
-                            <i class="fas fa-envelope"></i>
-                            <a href="mailto:sales@automataxpro.site">sales@automataxpro.site</a>
-                        </li>
-                        <li>
-                            <i class="fas fa-phone"></i>
-                            <a href="tel:+1234567890">+91 92114 57736</a>
-                        </li>
-                        <li>
-                            <i class="fas fa-map-marker-alt"></i>
-                            <span>New Delhi, India</span>
-                        </li>
-                    </ul>
+                    <script>
+                    document.getElementById('contact-form').addEventListener('submit', async (e) => {
+                        e.preventDefault();
+                        const data = {
+                        name: e.target.name.value,
+                        email: e.target.email.value,
+                        subject: e.target.subject.value,
+                        message: e.target.message.value
+                        };
+                        const res = await fetch('/api/contact', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(data)
+                        });
+                        const json = await res.json();
+                        if (json.ok) {
+                        alert('Message sent!');
+                        e.target.reset();
+                        } else {
+                        alert('Error: ' + (json.error || 'Unknown'));
+                        }
+                    });
+                    </script>
                 </div>
             </div>
         </div>
