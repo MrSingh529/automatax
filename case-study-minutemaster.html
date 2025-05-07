@@ -16,14 +16,12 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <style>
         :root {
-            --primary: #3a86ff;
-            --secondary: #4361ee;
+            --primary: #ff5e78;
+            --secondary: #a200ff;
             --accent: #7209b7;
-            --light: #f8f9fa;
-            --dark: #212529;
-            --success: #06d6a0;
-            --info: #118ab2;
-            --gradient: linear-gradient(135deg, var(--primary), var(--accent));
+            --light: #f9faff;
+            --dark: #1a1a2e;
+            --gradient: linear-gradient(135deg, var(--primary), var(--secondary));
         }
 
         * {
@@ -90,34 +88,34 @@
             left: 0;
             width: 100%;
             z-index: 1000;
-            background: rgba(255, 255, 255, 0.1);
+            background: rgba(255, 255, 255, 0);
             backdrop-filter: blur(15px);
             transition: all 0.3s ease;
             box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
         }
-
         header.scrolled {
-            padding: 12px 0;
-            background: rgba(255, 255, 255, 0.15);
+            padding: 10px 0;
             box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
         }
-
         nav {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 20px 0;
+            padding: 15px 0;
         }
-
         .logo {
-            font-size: 24px;
+            font-size: 26px;
             font-weight: 700;
             color: var(--primary);
             display: flex;
             align-items: center;
             text-decoration: none;
         }
-
+        .logo img {
+            max-height: 40px;
+            width: auto;
+            object-fit: contain;
+        }
         .logo span {
             background: var(--gradient);
             -webkit-background-clip: text;
@@ -125,12 +123,10 @@
             color: transparent;
             margin-right: 5px;
         }
-
         .nav-links {
             display: flex;
             gap: 30px;
         }
-
         .nav-links a {
             color: var(--dark);
             text-decoration: none;
@@ -138,22 +134,9 @@
             position: relative;
             transition: all 0.3s ease;
         }
-
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--gradient);
-            transition: width 0.3s ease;
+        .nav-links a:hover {
+            color: var(--primary);
         }
-
-        .nav-links a:hover::after {
-            width: 100%;
-        }
-
         .mobile-menu-btn {
             display: none;
             background: none;
@@ -449,10 +432,12 @@
             background: var(--gradient);
             color: white;
             text-align: center;
+            position: relative;
+            z-index: 1;
         }
 
         .cta h2 {
-            font-size: 36px;
+            font-size: 40px;
             font-weight: 700;
             margin-bottom: 20px;
         }
@@ -474,6 +459,7 @@
         .cta-btn:hover {
             transform: translateY(-3px);
             box-shadow: 0 8px 25px rgba(255, 255, 255, 0.3);
+            color: var(--secondary);
         }
 
         /* Footer */
@@ -681,13 +667,16 @@
     <header id="header">
         <div class="container">
             <nav>
-                <a href="index.html" class="logo"><span>Automata</span>X</a>
+                <a href="index.html" class="logo">
+                    <img src="automatax-logo.png" alt="AutomataX Logo" />
+                </a>
                 <div class="nav-links">
                     <a href="services.html">Services</a>
                     <a href="about.html">About</a>
                     <a href="how-it-works.html">How It Works</a>
                     <a href="rpa-case-studies.html">Case Studies</a>
                     <a href="data-safety.html">Data Safety</a>
+                    <a href="blog.html">Blog</a>
                     <a href="contact.html">Contact</a>
                 </div>
                 <button class="mobile-menu-btn" id="mobile-menu-btn">
@@ -856,10 +845,10 @@
             <div class="footer-grid">
                 <div class="footer-col">
                     <h3>AutomataX</h3>
-                    <p>Your Future, Automated. We empower businesses to embrace intelligent, AI-driven transformation with customized automation solutions.</p>
+                    <p>Your Future, Automated. We empower businesses with secure, AI-driven automation solutions that prioritize data safety.</p>
                     <div class="footer-social">
                         <a href="dist/index.html" class="social-icon"><i class="fab fa-facebook-f"></i></a>
-                        <a href="dist/index.html" class="social-icon"><i class="fab fa-twitter"></i></a>
+                        <a href="https://x.com/automatax_tech?s=21" class="social-icon"><i class="fab fa-twitter"></i></a>
                         <a href="https://www.linkedin.com/company/automataxpro/" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
                         <a href="dist/index.html" class="social-icon"><i class="fab fa-instagram"></i></a>
                     </div>
@@ -867,28 +856,29 @@
                 <div class="footer-col">
                     <h3>Services</h3>
                     <ul class="footer-links">
-                        <li><a href="#services">AI-powered Data Analysis</a></li>
-                        <li><a href="#services">Workflow Automation</a></li>
-                        <li><a href="#services">Custom AI Chatbots</a></li>
-                        <li><a href="#services">Predictive Business Intelligence</a></li>
-                        <li><a href="#services">System Integration</a></li>
+                        <li><a href="services.html">AI-powered Data Analysis</a></li>
+                        <li><a href="services.html">Workflow Automation</a></li>
+                        <li><a href="services.html">Custom AI Chatbots</a></li>
+                        <li><a href="services.html">Predictive Business Intelligence</a></li>
+                        <li><a href="services.html">System Integration</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
                     <h3>Quick Links</h3>
                     <ul class="footer-links">
                         <li><a href="index.html">Home</a></li>
-                        <li><a href="about.html">About Us</a></li>
-                        <li><a href="how-it-works.html">How It Works</a></li>
+                        <li><a href="index.html#about">About Us</a></li>
                         <li><a href="rpa-case-studies.html">Case Studies</a></li>
+                        <li><a href="data-safety.html">Data Safety</a></li>
                         <li><a href="contact.html">Contact</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
                     <h3>Newsletter</h3>
-                    <p>Subscribe to our newsletter for the latest updates on automation trends and company news.</p>
-                    <form class="footer-form">
-                        <input type="email" placeholder="Your Email" class="form-control">
+                    <p>Subscribe for updates on secure automation trends and company news.</p>
+                    <form action="https://formsubmit.co/sales@automataxpro.site" method="POST" class="footer-form">
+                        <input type="hidden" name="_next" value="https://automataxpro.site/thank-you.html">
+                        <input type="email" placeholder="Your Email" class="form-control" required>
                         <button type="submit" class="btn btn-primary">Subscribe</button>
                     </form>
                 </div>
@@ -897,8 +887,6 @@
                 <p>© 2025 AutomataX. All rights reserved.</p>
             </div>
         </div>
-        <!-- SeizeLead Script -->
-        <script src="https://seizelead.com/upload/681B8D929567_SeizeLead.js" type="text/javascript" charset="utf-8" async defer></script>
     </footer>
 
     <!-- JavaScript -->
