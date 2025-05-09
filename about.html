@@ -17,6 +17,7 @@
     <link rel="canonical" href="https://www.automataxpro.site/index.html">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
     <style>
         :root {
             --primary: #ff5e78;
@@ -31,7 +32,7 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
         }
 
         html {
@@ -99,16 +100,19 @@
             transition: all 0.3s ease;
             box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
         }
+
         header.scrolled {
             padding: 10px 0;
             box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
         }
+
         nav {
             display: flex;
             justify-content: space-between;
             align-items: center;
             padding: 15px 0;
         }
+
         .logo {
             font-size: 26px;
             font-weight: 700;
@@ -117,11 +121,13 @@
             align-items: center;
             text-decoration: none;
         }
+
         .logo img {
             max-height: 40px;
             width: auto;
             object-fit: contain;
         }
+
         .logo span {
             background: var(--gradient);
             -webkit-background-clip: text;
@@ -129,10 +135,12 @@
             color: transparent;
             margin-right: 5px;
         }
+
         .nav-links {
             display: flex;
             gap: 30px;
         }
+
         .nav-links a {
             color: var(--dark);
             text-decoration: none;
@@ -140,9 +148,11 @@
             position: relative;
             transition: all 0.3s ease;
         }
+
         .nav-links a:hover {
             color: var(--primary);
         }
+
         .mobile-menu-btn {
             display: none;
             background: none;
@@ -160,8 +170,9 @@
         }
 
         .about-hero h1 {
+            font-family: 'Space Grotesk', sans-serif;
             font-size: 48px;
-            font-weight: 800;
+            font-weight: 700;
             margin-bottom: 20px;
         }
 
@@ -190,6 +201,7 @@
         }
 
         .section-header h2 {
+            font-family: 'Space Grotesk', sans-serif;
             font-size: 36px;
             font-weight: 700;
             margin-bottom: 15px;
@@ -228,6 +240,7 @@
         }
 
         .who-we-are-content h3 {
+            font-family: 'Space Grotesk', sans-serif;
             font-size: 28px;
             font-weight: 700;
             margin-bottom: 15px;
@@ -274,13 +287,14 @@
         .team-member img {
             display: block;
             width: 120px;
-            height: auto;    
+            height: auto;
             margin: 0 auto 20px;
             border: none;
             border-radius: 0;
         }
 
         .team-member h3 {
+            font-family: 'Space Grotesk', sans-serif;
             font-size: 22px;
             margin-bottom: 10px;
         }
@@ -340,6 +354,7 @@
         }
 
         .value-card h3 {
+            font-family: 'Space Grotesk', sans-serif;
             font-size: 22px;
             margin-bottom: 15px;
         }
@@ -371,6 +386,7 @@
         }
 
         .achievement-number {
+            font-family: 'Space Grotesk', sans-serif;
             font-size: 48px;
             font-weight: 700;
             background: var(--gradient);
@@ -394,6 +410,7 @@
         }
 
         .cta h2 {
+            font-family: 'Space Grotesk', sans-serif;
             font-size: 36px;
             font-weight: 700;
             margin-bottom: 20px;
@@ -436,6 +453,7 @@
         }
 
         .footer-col h3 {
+            font-family: 'Space Grotesk', sans-serif;
             font-size: 20px;
             margin-bottom: 20px;
             font-weight: 600;
@@ -607,19 +625,19 @@
     <header id="header">
         <div class="container">
             <nav>
-                <a href="index.html" class="logo">
-                    <img src="automatax-logo.png" alt="AutomataX Logo" />
+                <a href="index.html" class="logo" aria-label="AutomataX Home">
+                    <img src="automatax-logo.png" alt="AutomataX Logo" loading="lazy" />
                 </a>
                 <div class="nav-links">
                     <a href="services.html">Services</a>
                     <a href="about.html">About</a>
                     <a href="how-it-works.html">How It Works</a>
                     <a href="rpa-case-studies.html">Case Studies</a>
-                    <a href="data-safety.html">Data Safety</a>
+                    <a href="pricing.html">Pricing</a>
                     <a href="blog.html">Blog</a>
                     <a href="contact.html">Contact</a>
                 </div>
-                <button class="mobile-menu-btn" id="mobile-menu-btn">
+                <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Open Mobile Menu">
                     <i class="fas fa-bars"></i>
                 </button>
             </nav>
@@ -628,14 +646,14 @@
 
     <!-- Mobile Menu -->
     <div class="mobile-menu" id="mobile-menu">
-        <button class="close-menu" id="close-menu">
+        <button class="close-menu" id="close-menu" aria-label="Close Mobile Menu">
             <i class="fas fa-times"></i>
         </button>
         <a href="services.html">Services</a>
         <a href="about.html">About</a>
         <a href="how-it-works.html">How It Works</a>
         <a href="rpa-case-studies.html">Case Studies</a>
-        <a href="data-safety.html">Data Safety</a>
+        <a href="pricing.html">Pricing</a>
         <a href="contact.html">Contact</a>
     </div>
 
