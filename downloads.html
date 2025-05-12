@@ -575,7 +575,6 @@
                 <p>Discover practical strategies to reduce operational costs using Robotic Process Automation. This guide includes real-world examples and actionable steps.</p>
                 <button class="btn btn-primary download-btn" data-form="form1">Download Now</button>
                 <form id="form1" class="download-form" action="https://formsubmit.co/sales@automataxpro.site" method="POST">
-                    <input type="hidden" name="_captcha" value="false">
                     <input type="hidden" name="_next" value="https://automataxpro.site/thank-you.html">
                     <input type="hidden" name="_subject" value="Download Lead: 5 Ways RPA Guide">
                     <input type="hidden" name="_autoresponse" value="Thank you, {{name}}, for downloading '5 Ways RPA Can Save Your Business 20% in Costs'. Access your guide here: https://drive.google.com/uc?export=download&id=14QQm7B975KdNcX6GqZycAhiul1ZNTeMI. Questions? Contact us at sales@automataxpro.site.">
@@ -600,7 +599,6 @@
                 <p>Explore how AI-driven automation is reshaping industries. This whitepaper covers trends, use cases, and how AutomataX can help you stay ahead.</p>
                 <button class="btn btn-primary download-btn" data-form="form2">Download Now</button>
                 <form id="form2" class="download-form" action="https://formsubmit.co/sales@automataxpro.site" method="POST">
-                    <input type="hidden" name="_captcha" value="false">
                     <input type="hidden" name="_next" value="https://automataxpro.site/thank-you.html">
                     <input type="hidden" name="_subject" value="Download Lead: AI Whitepaper">
                     <input type="hidden" name="_autoresponse" value="Thank you, {{name}}, for downloading 'The Future of AI in Business Automation'. Access your whitepaper here: https://drive.google.com/uc?export=download&id=1gQvvsL-fd9Ny1GU2fWjrjcBRxmflL8mJ. Questions? Contact us at sales@automataxpro.site.">
@@ -625,7 +623,6 @@
                 <p>Assess your business’s readiness for automation with this step-by-step checklist, designed to identify opportunities and prioritize solutions.</p>
                 <button class="btn btn-primary download-btn" data-form="form3">Download Now</button>
                 <form id="form3" class="download-form" action="https://formsubmit.co/sales@automataxpro.site" method="POST">
-                    <input type="hidden" name="_captcha" value="false">
                     <input type="hidden" name="_next" value="https://automataxpro.site/thank-you.html">
                     <input type="hidden" name="_subject" value="Download Lead: Automation Checklist">
                     <input type="hidden" name="_autoresponse" value="Thank you, {{name}}, for downloading 'Automation Readiness Checklist'. Access your checklist here: https://drive.google.com/uc?export=download&id=1dKjq1L2WDA7rRJ32LlOM6rvTao43GLGq. Questions? Contact us at sales@automataxpro.site.">
@@ -827,13 +824,9 @@
         });
         const downloadForms = document.querySelectorAll('.download-form');
         downloadForms.forEach(form => {
-            form.addEventListener('submit', (e) => {
-                e.preventDefault();
-                alert('Thank you! Your download link will be sent to your email.');
-                form.reset();
-                form.classList.remove('active');
+            form.addEventListener('submit', () => {
                 const relatedButton = document.querySelector(`.download-btn[data-form="${form.id}"]`);
-                relatedButton.textContent = 'Download Now';
+                relatedButton.textContent = 'Processing...';
             });
         });
         const chatbotToggle = document.querySelector('.chatbot-toggle');
