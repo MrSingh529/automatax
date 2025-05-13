@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Interactive | AutomataX</title>
-    <meta name="description" content="Explore AutomataX’s interactive tools, including our automation quiz and savings simulator, to discover how RPA and AI can transform your business.">
-    <meta name="keywords" content="automation quiz, RPA simulator, AI automation tools, business automation solutions">
+    <meta name="description" content="Explore AutomataX’s interactive tools, including our automation quiz, savings simulator, and fun games to discover how RPA and AI can transform your business.">
+    <meta name="keywords" content="automation quiz, RPA simulator, AI automation tools, business automation solutions, interactive automation games">
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-WJCJJ1HH56"></script>
     <script>
     window.dataLayer = window.dataLayer || [];
@@ -330,6 +330,51 @@
         transform: translateY(-3px);
         box-shadow: 0 5px 15px rgba(58, 134, 255, 0.4);
     }
+    .welcome-popup {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 2000;
+    }
+    .welcome-content {
+        background: white;
+        border-radius: 15px;
+        padding: 30px;
+        max-width: 500px;
+        width: 90%;
+        text-align: center;
+        position: relative;
+    }
+    .welcome-content h3 {
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: 28px;
+        margin-bottom: 15px;
+        background: var(--gradient);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+    }
+    .welcome-content p {
+        font-size: 16px;
+        color: #666;
+        margin-bottom: 20px;
+    }
+    .welcome-close {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        background: none;
+        border: none;
+        font-size: 20px;
+        cursor: pointer;
+        color: #666;
+    }
     .chatbot-widget {
         position: fixed;
         bottom: 100px;
@@ -527,51 +572,6 @@
         background: var(--gradient);
         color: white;
     }
-    .welcome-popup {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(0, 0, 0, 0.5);
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        z-index: 2000;
-    }
-    .welcome-content {
-        background: white;
-        border-radius: 15px;
-        padding: 30px;
-        max-width: 500px;
-        width: 90%;
-        text-align: center;
-        position: relative;
-    }
-    .welcome-content h3 {
-        font-family: 'Space Grotesk', sans-serif;
-        font-size: 28px;
-        margin-bottom: 15px;
-        background: var(--gradient);
-        -webkit-background-clip: text;
-        background-clip: text;
-        color: transparent;
-    }
-    .welcome-content p {
-        font-size: 16px;
-        color: #666;
-        margin-bottom: 20px;
-    }
-    .welcome-close {
-        position: absolute;
-        top: 15px;
-        right: 15px;
-        background: none;
-        border: none;
-        font-size: 20px;
-        cursor: pointer;
-        color: #666;
-    }
     footer {
         padding: 60px 0 30px;
         background: rgba(255, 255, 255, 0.1);
@@ -654,6 +654,477 @@
         opacity: 1;
         transform: translateY(0);
     }
+    /* General Styles for Interactive Sections */
+    .interactive-section {
+        padding: 80px 0;
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(2px);
+        position: relative;
+        z-index: 1;
+    }
+    .interactive-section h2 {
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: 36px;
+        font-weight: 700;
+        margin-bottom: 20px;
+        text-align: center;
+        background: var(--gradient);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+    }
+    .interactive-section p {
+        font-size: 18px;
+        color: #444;
+        text-align: center;
+        margin-bottom: 40px;
+        max-width: 800px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    /* Section 1: Automation Factory Game */
+    .factory-game {
+        background: white;
+        border-radius: 15px;
+        padding: 30px;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+    }
+    .factory-stats {
+        display: flex;
+        justify-content: space-around;
+        margin-bottom: 30px;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+    .stat {
+        text-align: center;
+        flex: 1;
+        min-width: 200px;
+    }
+    .stat h3 {
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: 20px;
+        margin-bottom: 10px;
+    }
+    .progress-bar {
+        background: #f0f0f0;
+        border-radius: 10px;
+        height: 10px;
+        overflow: hidden;
+        margin-bottom: 10px;
+    }
+    .progress {
+        background: var(--gradient);
+        height: 100%;
+        transition: width 0.5s ease;
+    }
+    .stat p {
+        font-size: 16px;
+        color: #444;
+    }
+    .factory-canvas {
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+        flex-wrap: wrap;
+    }
+    .workflow-area {
+        flex: 2;
+        min-height: 200px;
+        background: #f9faff;
+        border-radius: 10px;
+        padding: 20px;
+        position: relative;
+        border: 2px dashed #ddd;
+    }
+    .task {
+        background: rgba(255, 94, 120, 0.1);
+        padding: 10px 20px;
+        border-radius: 8px;
+        margin: 10px 0;
+        font-size: 16px;
+        color: #444;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+    .task.dragging {
+        opacity: 0.5;
+    }
+    .task.automated {
+        background: rgba(162, 0, 255, 0.1);
+        color: #a200ff;
+        animation: automate 0.5s ease;
+    }
+    @keyframes automate {
+        0% { transform: scale(1); }
+        50% { transform: scale(1.1); }
+        100% { transform: scale(1); }
+    }
+    .bot-area {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        min-width: 200px;
+    }
+    .bot {
+        background: var(--gradient);
+        color: white;
+        padding: 15px;
+        border-radius: 8px;
+        text-align: center;
+        font-size: 16px;
+        cursor: move;
+        transition: all 0.3s ease;
+    }
+    .bot.dragging {
+        opacity: 0.5;
+    }
+    .bot.dropped {
+        background: #ddd;
+        color: #666;
+        cursor: not-allowed;
+    }
+    .reset-game {
+        display: block;
+        margin: 20px auto 0;
+    }
+    /* Section 3: Process Optimization Puzzle */
+    .optimization-puzzle {
+        background: white;
+        border-radius: 15px;
+        padding: 30px;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+    }
+    .puzzle-stats {
+        display: flex;
+        justify-content: space-around;
+        margin-bottom: 20px;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+    .puzzle-stats p {
+        font-size: 16px;
+        color: #444;
+        margin: 0;
+    }
+    .puzzle-canvas {
+        display: flex;
+        gap: 20px;
+        flex-wrap: wrap;
+    }
+    .components-area {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        min-width: 200px;
+    }
+    .component {
+        background: var(--gradient);
+        color: white;
+        padding: 15px;
+        border-radius: 8px;
+        text-align: center;
+        font-size: 16px;
+        cursor: move;
+        transition: all 0.3s ease;
+    }
+    .component.dragging {
+        opacity: 0.5;
+    }
+    .workflow-sequence {
+        flex: 2;
+        min-height: 200px;
+        background: #f9faff;
+        border-radius: 10px;
+        padding: 20px;
+        border: 2px dashed #ddd;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+    .workflow-slot {
+        background: rgba(255, 94, 120, 0.1);
+        padding: 10px;
+        border-radius: 8px;
+        font-size: 16px;
+        color: #444;
+        min-height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.3s ease;
+    }
+    .workflow-slot.filled {
+        background: rgba(162, 0, 255, 0.1);
+        color: #a200ff;
+    }
+    /* Section 4: Task Elimination Tower */
+    .task-tower {
+        background: white;
+        border-radius: 15px;
+        padding: 30px;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+    }
+    .tower-controls {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+    .tower-controls p {
+        font-size: 16px;
+        color: #444;
+        margin: 0;
+    }
+    .tower-canvas {
+        position: relative;
+        width: 300px;
+        height: 400px;
+        background: linear-gradient(135deg, #f0f4ff, #f5e9ff);
+        border-radius: 10px;
+        overflow: hidden;
+        border: 2px solid #ddd;
+        margin: 0 auto;
+    }
+    .tower-block {
+        position: absolute;
+        width: 60px;
+        height: 30px;
+        border-radius: 5px;
+        font-size: 12px;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: move;
+        transition: all 0.3s ease;
+    }
+    .tower-block.data-entry { background: rgba(255, 94, 120, 0.8); }
+    .tower-block.email-response { background: rgba(162, 0, 255, 0.8); }
+    .tower-block.inventory-check { background: rgba(114, 9, 183, 0.8); }
+    .tower-block.automated {
+        animation: clearBlock 0.5s ease forwards;
+    }
+    @keyframes clearBlock {
+        0% { transform: scale(1); opacity: 1; }
+        100% { transform: scale(0); opacity: 0; }
+    }
+    /* Section 5: Bot Builder Drag-and-Drop Game */
+    .bot-builder-game {
+        background: white;
+        border-radius: 15px;
+        padding: 30px;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+        display: flex;
+        gap: 30px;
+        flex-wrap: wrap;
+    }
+    .components-area {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        min-width: 200px;
+    }
+    .component {
+        background: var(--gradient);
+        color: white;
+        padding: 15px;
+        border-radius: 8px;
+        text-align: center;
+        font-size: 16px;
+        cursor: move;
+        transition: all 0.3s ease;
+    }
+    .component.dragging {
+        opacity: 0.5;
+    }
+    .builder-canvas {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-width: 300px;
+    }
+    .bot-outline {
+        width: 200px;
+        height: 300px;
+        background: #f9faff;
+        border: 2px dashed #ddd;
+        border-radius: 15px;
+        position: relative;
+    }
+    .drop-zone {
+        position: absolute;
+        border: 2px solid #ddd;
+        border-radius: 10px;
+        background: rgba(255, 94, 120, 0.05);
+    }
+    .drop-zone[data-zone="head"] {
+        top: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+    }
+    .drop-zone[data-zone="body"] {
+        top: 100px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100px;
+        height: 100px;
+    }
+    .drop-zone[data-zone="legs"] {
+        bottom: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 120px;
+        height: 60px;
+    }
+    .drop-zone.filled {
+        background: rgba(162, 0, 255, 0.1);
+        border-color: #a200ff;
+    }
+    .bot-result {
+        flex: 1;
+        min-width: 250px;
+    }
+    .bot-result p {
+        font-size: 16px;
+        color: #444;
+        margin-bottom: 10px;
+        text-align: left;
+    }
+    .bot-result ul {
+        list-style: none;
+        margin-bottom: 20px;
+    }
+    .bot-result ul li {
+        font-size: 15px;
+        color: #444;
+        margin-bottom: 10px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+    .bot-result ul li::before {
+        content: '✔';
+        color: #a200ff;
+        font-size: 16px;
+    }
+    .bot-animation {
+        width: 100%;
+        height: 100px;
+        background: #f9faff;
+        border-radius: 10px;
+        display: none;
+        align-items: center;
+        justify-content: center;
+        font-size: 16px;
+        color: #444;
+    }
+    .bot-animation.active {
+        display: flex;
+        animation: botWork 2s ease infinite;
+    }
+    @keyframes botWork {
+        0% { transform: translateX(-20px); }
+        50% { transform: translateX(20px); }
+        100% { transform: translateX(-20px); }
+    }
+    /* Section 6: Automation Race */
+    .automation-race {
+        background: white;
+        border-radius: 15px;
+        padding: 30px;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+    }
+    .race-canvas {
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+        flex-wrap: wrap;
+    }
+    .manual-side, .bot-side {
+        flex: 1;
+        text-align: center;
+        padding: 20px;
+        background: #f9faff;
+        border-radius: 10px;
+        min-width: 250px;
+    }
+    .manual-side h3, .bot-side h3 {
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: 20px;
+        margin-bottom: 15px;
+    }
+    .manual-side p, .bot-side p {
+        font-size: 16px;
+        color: #444;
+        margin-bottom: 15px;
+        text-align: center;
+    }
+    .race-track {
+        width: 100%;
+        height: 20px;
+        background: #ddd;
+        border-radius: 10px;
+        position: relative;
+        overflow: hidden;
+    }
+    .race-progress {
+        height: 100%;
+        border-radius: 10px;
+        transition: width 0.5s ease;
+    }
+    .manual-progress {
+        background: #ff5e78;
+    }
+    .bot-progress {
+        background: var(--gradient);
+    }
+    .obstacle {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 10px;
+        height: 30px;
+        background: #666;
+    }
+    .tool-selection {
+        display: flex;
+        gap: 10px;
+        justify-content: center;
+        margin-top: 15px;
+    }
+    .tool-btn {
+        padding: 10px 20px;
+        font-size: 14px;
+        background: rgba(255, 94, 120, 0.2);
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+    .tool-btn:hover {
+        background: var(--gradient);
+        color: white;
+    }
+    .race-result {
+        margin-top: 20px;
+        text-align: center;
+        font-size: 18px;
+        color: #444;
+        display: none;
+    }
+    .race-result.active {
+        display: block;
+    }
     @media (max-width: 992px) {
         .result-comparison {
             flex-direction: column;
@@ -713,6 +1184,32 @@
         .simulator-container {
             padding: 20px;
         }
+        .interactive-section h2 {
+            font-size: 28px;
+        }
+        .interactive-section p {
+            font-size: 16px;
+        }
+        .factory-stats {
+            flex-direction: column;
+            align-items: center;
+        }
+        .factory-canvas {
+            flex-direction: column;
+            align-items: center;
+        }
+        .tower-canvas {
+            width: 240px;
+            height: 320px;
+        }
+        .bot-builder-game {
+            flex-direction: column;
+            align-items: center;
+        }
+        .race-canvas {
+            flex-direction: column;
+            align-items: center;
+        }
     }
     @media (max-width: 576px) {
         .section-header h2 {
@@ -744,48 +1241,53 @@
         .welcome-content p {
             font-size: 14px;
         }
+        .interactive-section {
+            padding: 60px 0;
+        }
+        .factory-game, .optimization-puzzle, .task-tower, .bot-builder-game, .automation-race {
+            padding: 20px;
+        }
     }
-</style>
+    </style>
 </head>
 <body>
     <canvas id="ai-background"></canvas>
-    <header id="header">
-        <div class="container">
-            <nav>
-                <a href="index.html" class="logo" aria-label="AutomataX Home">
-                    <img src="automatax-logo.png" alt="AutomataX Logo" loading="lazy" />
-                </a>
-                <div class="nav-links">
-                    <a href="services.html">Services</a>
-                    <a href="about.html">About</a>
-                    <a href="how-it-works.html">How It Works</a>
-                    <a href="rpa-case-studies.html">Case Studies</a>
-                    <a href="pricing.html">Pricing</a>
-                    <a href="downloads.html">Downloads</a>
-                    <a href="blog.html">Blog</a>
-                    <a href="contact.html">Contact</a>
-                </div>
-                <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Open Mobile Menu">
-                    <i class="fas fa-bars"></i>
-                </button>
-            </nav>
-        </div>
-    </header>
-    <div class="mobile-menu" id="mobile-menu">
-        <button class="close-menu" id="close-menu" aria-label="Close Mobile Menu">
-            <i class="fas fa-times"></i>
-        </button>
-        <a href="services.html">Services</a>
-        <a href="about.html">About</a>
-        <a href="how-it-works.html">How It Works</a>
-        <a href="rpa-case-studies.html">Case Studies</a>
-        <a href="pricing.html">Pricing</a>
-        <a href="downloads.html">Downloads</a>
-        <a href="blog.html">Blog</a>
-        <a href="contact.html">Contact</a>
+<header id="header">
+    <div class="container">
+        <nav>
+            <a href="index.html" class="logo" aria-label="AutomataX Home">
+                <img src="automatax-logo.png" alt="AutomataX Logo" loading="lazy" />
+            </a>
+            <div class="nav-links">
+                <a href="services.html">Services</a>
+                <a href="about.html">About</a>
+                <a href="how-it-works.html">How It Works</a>
+                <a href="rpa-case-studies.html">Case Studies</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="downloads.html">Downloads</a>
+                <a href="blog.html">Blog</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Open Mobile Menu">
+                <i class="fas fa-bars"></i>
+            </button>
+        </nav>
     </div>
-
-    <div class="welcome-popup" id="welcome-popup" style="display: none;">
+</header>
+<div class="mobile-menu" id="mobile-menu">
+    <button class="close-menu" id="close-menu" aria-label="Close Mobile Menu">
+        <i class="fas fa-times"></i>
+    </button>
+    <a href="services.html">Services</a>
+    <a href="about.html">About</a>
+    <a href="how-it-works.html">How It Works</a>
+    <a href="rpa-case-studies.html">Case Studies</a>
+    <a href="pricing.html">Pricing</a>
+    <a href="downloads.html">Downloads</a>
+    <a href="blog.html">Blog</a>
+    <a href="contact.html">Contact</a>
+</div>
+<div class="welcome-popup" id="welcome-popup" style="display: none;">
     <div class="welcome-content">
         <button class="welcome-close" id="welcome-close">✖</button>
         <h3>Welcome to AutomataX!</h3>
@@ -793,119 +1295,201 @@
         <button class="btn btn-primary" id="welcome-discover">Discover Now</button>
     </div>
 </div>
-
-    <section class="automation-quiz" id="quiz">
-        <div class="container">
-            <div class="section-header animate-fade-in">
-                <h2>Automation Readiness Quiz</h2>
-                <p>Find out how ready your business is for automation in just a few clicks!</p>
-            </div>
-            <div class="quiz-container animate-fade-in">
-                <div id="quiz-question">
-                    <h3 id="question-text"></h3>
-                    <div class="quiz-options" id="quiz-options"></div>
-                </div>
-                <div id="quiz-result" style="display: none;">
-                    <h3>Your Automation Readiness Score</h3>
-                    <p id="result-text"></p>
-                    <form id="quiz-lead-form" action="https://formsubmit.co/sales@automataxpro.site" method="POST">
-                        <input type="hidden" name="_captcha" value="false">
-                        <input type="hidden" name="_next" value="https://automataxpro.site/thank-you.html">
-                        <input type="hidden" name="_subject" value="Quiz Lead from AutomataX">
-                        <div class="form-group">
-                            <label for="quiz-email" class="form-label">Enter your email to receive personalized results</label>
-                            <input type="email" id="quiz-email" name="email" class="form-control" required>
-                        </div>
-                        <button type="submit" class="form-submit">Get My Results</button>
-                    </form>
-                </div>
-            </div>
+<section class="automation-quiz" id="quiz">
+    <div class="container">
+        <div class="section-header animate-fade-in">
+            <h2>Automation Readiness Quiz</h2>
+            <p>Find out how ready your business is for automation in just a few clicks!</p>
         </div>
-    </section>
-    <section class="automation-simulator" id="simulator">
-        <div class="container">
-            <div class="section-header animate-fade-in">
-                <h2>Automation Impact Simulator</h2>
-                <p>Estimate your potential savings and efficiency gains with AutomataX’s RPA solutions.</p>
+        <div class="quiz-container animate-fade-in">
+            <div id="quiz-question">
+                <h3 id="question-text"></h3>
+                <div class="quiz-options" id="quiz-options"></div>
             </div>
-            <div class="simulator-container animate-fade-in">
-                <div class="simulator-inputs">
+            <div id="quiz-result" style="display: none;">
+                <h3>Your Automation Readiness Score</h3>
+                <p id="result-text"></p>
+                <form id="quiz-lead-form" action="https://formsubmit.co/sales@automataxpro.site" method="POST">
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="hidden" name="_next" value="https://automataxpro.site/thank-you.html">
+                    <input type="hidden" name="_subject" value="Quiz Lead from AutomataX">
                     <div class="form-group">
-                        <label for="employees" class="form-label">Number of Employees</label>
-                        <input type="number" id="employees" class="form-control" min="1" value="10" required>
+                        <label for="quiz-email" class="form-label">Enter your email to receive personalized results</label>
+                        <input type="email" id="quiz-email" name="email" class="form-control" required>
                     </div>
-                    <div class="form-group">
-                        <label for="hours" class="form-label">Average Hours per Week on Repetitive Tasks</label>
-                        <input type="number" id="hours" class="form-control" min="1" value="20" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="cost" class="form-label">Average Hourly Employee Cost ($)</label>
-                        <input type="number" id="cost" class="form-control" min="1" value="30" required>
-                    </div>
-                    <button id="calculate-btn" class="btn btn-primary">Calculate Savings</button>
-                </div>
-                <div class="simulator-results" id="simulator-results" style="display: none;">
-                    <h3>Your Estimated Savings</h3>
-                    <div class="result-comparison">
-                        <div class="result-box">
-                            <h4>Manual Process</h4>
-                            <p>Annual Cost: <span id="manual-cost"></span></p>
-                            <p>Time Spent: <span id="manual-time"></span></p>
-                            <div class="progress-bar">
-                                <div class="progress manual-progress" id="manual-progress"></div>
-                            </div>
-                        </div>
-                        <div class="result-box">
-                            <h4>With Automation</h4>
-                            <p>Annual Cost: <span id="auto-cost"></span></p>
-                            <p>Time Spent: <span id="auto-time"></span></p>
-                            <div class="progress-bar">
-                                <div class="progress auto-progress" id="auto-progress"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <p class="savings-text">Potential Annual Savings: <span id="savings"></span></p>
-                    <form id="simulator-lead-form" action="https://formsubmit.co/sales@automataxpro.site" method="POST">
-                        <input type="hidden" name="_captcha" value="false">
-                        <input type="hidden" name="_next" value="https://automataxpro.site/thank-you.html">
-                        <input type="hidden" name="_subject" value="Simulator Lead from AutomataX">
-                        <div class="form-group">
-                            <label for="simulator-email" class="form-label">Enter your email to download your personalized report</label>
-                            <input type="email" id="simulator-email" name="email" class="form-control" required>
-                        </div>
-                        <button type="submit" class="form-submit">Download Report</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
-    <div class="chatbot-widget">
-        <button class="chatbot-toggle btn">
-            <span class="chatbot-icon">💬</span> Chat with Us
-        </button>
-        <div class="chatbot-window" style="display: none;">
-            <div class="chatbot-header">
-                <h3>AutomataX Assistant</h3>
-                <button class="chatbot-close">✖</button>
-            </div>
-            <div class="chatbot-messages" id="chatbot-messages">
-                <div class="message bot-message">
-                    <p>Hello! I’m here to help you with your automation needs. What would you like to know?</p>
-                    <div class="quick-prompts">
-                        <button class="prompt-btn" data-prompt="What is RPA?">What is RPA?</button>
-                        <button class="prompt-btn" data-prompt="Tell me about AI solutions">AI Solutions</button>
-                        <button class="prompt-btn" data-prompt="How can I contact AutomataX?">Contact Us</button>
-                    </div>
-                </div>
-            </div>
-            <div class="chatbot-input">
-                <input type="text" id="chatbot-input" placeholder="Type your question..." />
-                <button id="chatbot-send" class="btn">Send</button>
+                    <button type="submit" class="form-submit">Get My Results</button>
+                </form>
             </div>
         </div>
     </div>
-
-    <div class="interactive-widget">
+</section>
+<section class="automation-simulator" id="simulator">
+    <div class="container">
+        <div class="section-header animate-fade-in">
+            <h2>Automation Impact Simulator</h2>
+            <p>Estimate your potential savings and efficiency gains with AutomataX’s RPA solutions.</p>
+        </div>
+        <div class="simulator-container animate-fade-in">
+            <div class="simulator-inputs">
+                <div class="form-group">
+                    <label for="employees" class="form-label">Number of Employees</label>
+                    <input type="number" id="employees" class="form-control" min="1" value="10" required>
+                </div>
+                <div class="form-group">
+                    <label for="hours" class="form-label">Average Hours per Week on Repetitive Tasks</label>
+                    <input type="number" id="hours" class="form-control" min="1" value="20" required>
+                </div>
+                <div class="form-group">
+                    <label for="cost" class="form-label">Average Hourly Employee Cost ($)</label>
+                    <input type="number" id="cost" class="form-control" min="1" value="30" required>
+                </div>
+                <button id="calculate-btn" class="btn btn-primary">Calculate Savings</button>
+            </div>
+            <div class="simulator-results" id="simulator-results" style="display: none;">
+                <h3>Your Estimated Savings</h3>
+                <div class="result-comparison">
+                    <div class="result-box">
+                        <h4>Manual Process</h4>
+                        <p>Annual Cost: <span id="manual-cost"></span></p>
+                        <p>Time Spent: <span id="manual-time"></span></p>
+                        <div class="progress-bar">
+                            <div class="progress manual-progress" id="simulator-manual-progress"></div>
+                        </div>
+                    </div>
+                    <div class="result-box">
+                        <h4>With Automation</h4>
+                        <p>Annual Cost: <span id="auto-cost"></span></p>
+                        <p>Time Spent: <span id="auto-time"></span></p>
+                        <div class="progress-bar">
+                            <div class="progress auto-progress" id="auto-progress"></div>
+                        </div>
+                    </div>
+                </div>
+                <p class="savings-text">Potential Annual Savings: <span id="savings"></span></p>
+                <form id="simulator-lead-form" action="https://formsubmit.co/sales@automataxpro.site" method="POST">
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="hidden" name="_next" value="https://automataxpro.site/thank-you.html">
+                    <input type="hidden" name="_subject" value="Simulator Lead from AutomataX">
+                    <div class="form-group">
+                        <label for="simulator-email" class="form-label">Enter your email to download your personalized report</label>
+                        <input type="email" id="simulator-email" name="email" class="form-control" required>
+                    </div>
+                    <button type="submit" class="form-submit">Download Report</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="automation-factory" class="interactive-section animate-fade-in">
+    <div class="container">
+        <h2>Automation Factory Game</h2>
+        <p>Manage your virtual business by automating tasks with AutomataX bots. Drag and drop bots into workflows to see real-time improvements!</p>
+        <div class="factory-game">
+            <div class="factory-stats">
+                <div class="stat">
+                    <h3>Efficiency</h3>
+                    <div class="progress-bar">
+                        <div class="progress efficiency-progress" style="width: 20%;"></div>
+                    </div>
+                    <p><span class="efficiency-value">20%</span></p>
+                </div>
+                <div class="stat">
+                    <h3>Cost Savings</h3>
+                    <div class="progress-bar">
+                        <div class="progress cost-progress" style="width: 10%;"></div>
+                    </div>
+                    <p>$<span class="cost-value">1000</span>/month</p>
+                </div>
+                <div class="stat">
+                    <h3>Errors Reduced</h3>
+                    <div class="progress-bar">
+                        <div class="progress error-progress" style="width: 15%;"></div>
+                    </div>
+                    <p><span class="error-value">15%</span></p>
+                </div>
+            </div>
+            <div class="factory-canvas">
+                <div class="workflow-area" id="workflow-area">
+                    <div class="task" id="task-data-entry">Data Entry</div>
+                    <div class="task" id="task-support">Customer Support</div>
+                    <div class="task" id="task-inventory">Inventory Management</div>
+                </div>
+                <div class="bot-area">
+                    <div class="bot draggable" draggable="true" data-type="rpa">RPA Bot</div>
+                    <div class="bot draggable" draggable="true" data-type="ai">AI Bot</div>
+                    <div class="bot draggable" draggable="true" data-type="cloud">Cloud Bot</div>
+                </div>
+            </div>
+            <button class="btn btn-primary reset-game">Reset Game</button>
+        </div>
+    </div>
+</section>
+<section id="task-tower" class="interactive-section animate-fade-in">
+    <div class="container">
+        <h2>Task Elimination Tower</h2>
+        <p>Match similar tasks to automate them away in this Tetris-style game. Drag blocks to align them with similar tasks and clear the board to earn points!</p>
+        <div class="task-tower">
+            <div class="tower-controls">
+                <p>Score: <span id="tower-score">0</span></p>
+                <p>Level: <span id="tower-level">1</span></p>
+                <button class="btn btn-primary start-tower-game">Start Game</button>
+            </div>
+            <div class="tower-canvas" id="tower-canvas" style="position: relative; width: 300px; height: 400px; border: 1px solid #ccc;"></div>
+        </div>
+    </div>
+</section>
+<section id="bot-builder" class="interactive-section animate-fade-in">
+    <div class="container">
+        <h2>Build Your Automation Bot</h2>
+        <p>Drag and drop components to create your custom automation bot, then see it in action!</p>
+        <div class="bot-builder-game">
+            <div class="components-area">
+                <div class="component draggable" draggable="true" data-type="ai-brain">AI Brain</div>
+                <div class="component draggable" draggable="true" data-type="rpa-arms">RPA Arms</div>
+                <div class="component draggable" draggable="true" data-type="cloud-legs">Cloud Legs</div>
+            </div>
+            <div class="builder-canvas">
+                <div class="bot-outline" id="bot-outline">
+                    <div class="drop-zone" data-zone="head"></div>
+                    <div class="drop-zone" data-zone="body"></div>
+                    <div class="drop-zone" data-zone="legs"></div>
+                </div>
+            </div>
+            <div class="bot-result">
+                <p>Your bot is ready! It can:</p>
+                <ul id="bot-capabilities"></ul>
+                <button class="btn btn-primary test-bot" disabled>Test Your Bot</button>
+                <div class="bot-animation" id="bot-animation"></div>
+            </div>
+        </div>
+    </div>
+</section>
+<div class="chatbot-widget">
+    <button class="chatbot-toggle btn">
+        <span class="chatbot-icon">💬</span> Chat with Us
+    </button>
+    <div class="chatbot-window" style="display: none;">
+        <div class="chatbot-header">
+            <h3>AutomataX Assistant</h3>
+            <button class="chatbot-close">✖</button>
+        </div>
+        <div class="chatbot-messages" id="chatbot-messages">
+            <div class="message bot-message">
+                <p>Hello! I’m here to help you with your automation needs. What would you like to know?</p>
+                <div class="quick-prompts">
+                    <button class="prompt-btn" data-prompt="What is RPA?">What is RPA?</button>
+                    <button class="prompt-btn" data-prompt="Tell me about AI solutions">AI Solutions</button>
+                    <button class="prompt-btn" data-prompt="How can I contact AutomataX?">Contact Us</button>
+                </div>
+            </div>
+        </div>
+        <div class="chatbot-input">
+            <input type="text" id="chatbot-input" placeholder="Type your question..." />
+            <button id="chatbot-send" class="btn">Send</button>
+        </div>
+    </div>
+</div>
+<div class="interactive-widget">
     <button class="interactive-toggle btn">
         <span class="interactive-icon">🎮</span> Interactive
     </button>
@@ -918,11 +1502,13 @@
             <p>Discover how AutomataX can transform your business with our interactive tools!</p>
             <a href="interactive.html#quiz">Take Our Automation Quiz</a>
             <a href="interactive.html#simulator">Try Our Savings Simulator</a>
+            <a href="interactive.html#automation-factory">Play the Automation Factory Game</a>
+            <a href="interactive.html#task-tower">Play Task Elimination Tower</a>
+            <a href="interactive.html#bot-builder">Build Your Own Bot</a>
         </div>
     </div>
 </div>
-
-    <footer>
+<footer>
     <div class="container">
         <div class="footer-grid">
             <div class="footer-col">
@@ -971,7 +1557,7 @@
         </div>
     </div>
 </footer>
-    <script>
+<script>
     const canvas = document.getElementById('ai-background');
     const ctx = canvas.getContext('2d');
     canvas.width = window.innerWidth;
@@ -1031,6 +1617,7 @@
         canvas.width = window.innerWidth;
         canvas.height = window.innerHeight;
     });
+
     const header = document.getElementById('header');
     window.addEventListener('scroll', () => {
         if (window.scrollY > 50) {
@@ -1039,6 +1626,7 @@
             header.classList.remove('scrolled');
         }
     });
+
     const mobileMenuBtn = document.getElementById('mobile-menu-btn');
     const closeMenuBtn = document.getElementById('close-menu');
     const mobileMenu = document.getElementById('mobile-menu');
@@ -1054,6 +1642,7 @@
             mobileMenu.classList.remove('active');
         });
     });
+
     const animateElements = document.querySelectorAll('.animate-fade-in');
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
@@ -1065,6 +1654,7 @@
     animateElements.forEach(element => {
         observer.observe(element);
     });
+
     const questions = [
         {
             question: "How many repetitive tasks does your team perform daily?",
@@ -1090,6 +1680,7 @@
     const quizResult = document.getElementById('quiz-result');
     const resultText = document.getElementById('result-text');
     const quizLeadForm = document.getElementById('quiz-lead-form');
+
     function loadQuestion() {
         const q = questions[currentQuestion];
         questionText.textContent = q.question;
@@ -1102,6 +1693,7 @@
             quizOptions.appendChild(btn);
         });
     }
+
     function selectOption(index) {
         score += questions[currentQuestion].scores[index];
         currentQuestion++;
@@ -1111,6 +1703,7 @@
             showResult();
         }
     }
+
     function showResult() {
         quizQuestion.style.display = 'none';
         quizResult.style.display = 'block';
@@ -1124,12 +1717,15 @@
         }
         resultText.textContent = resultMessage;
     }
+
     quizLeadForm.addEventListener('submit', (e) => {
         e.preventDefault();
         alert('Thank you! Your personalized results will be sent to your email.');
         quizLeadForm.reset();
     });
+
     loadQuestion();
+
     const calculateBtn = document.getElementById('calculate-btn');
     const simulatorResults = document.getElementById('simulator-results');
     const manualCost = document.getElementById('manual-cost');
@@ -1137,9 +1733,10 @@
     const autoCost = document.getElementById('auto-cost');
     const autoTime = document.getElementById('auto-time');
     const savingsText = document.getElementById('savings');
-    const manualProgress = document.getElementById('manual-progress');
+    const simulatorManualProgress = document.getElementById('simulator-manual-progress');
     const autoProgress = document.getElementById('auto-progress');
     const simulatorLeadForm = document.getElementById('simulator-lead-form');
+
     calculateBtn.addEventListener('click', () => {
         const employees = parseInt(document.getElementById('employees').value);
         const hours = parseInt(document.getElementById('hours').value);
@@ -1155,29 +1752,37 @@
         autoCost.textContent = `$${autoAnnualCost.toLocaleString()}`;
         autoTime.textContent = `${autoAnnualTime.toLocaleString()} hours`;
         savingsText.textContent = `$${savings.toLocaleString()}`;
-        manualProgress.style.width = '100%';
+        simulatorManualProgress.style.width = '100%';
         autoProgress.style.width = `${(1 - automationEfficiency) * 100}%`;
         simulatorResults.style.display = 'block';
         simulatorResults.scrollIntoView({ behavior: 'smooth' });
     });
+
     simulatorLeadForm.addEventListener('submit', (e) => {
         e.preventDefault();
         alert('Thank you! Your personalized report will be sent to your email.');
         simulatorLeadForm.reset();
     });
+
     const chatbotToggle = document.querySelector('.chatbot-toggle');
     const chatbotWindow = document.querySelector('.chatbot-window');
     const chatbotClose = document.querySelector('.chatbot-close');
     const chatbotMessages = document.getElementById('chatbot-messages');
     const chatbotInput = document.getElementById('chatbot-input');
     const chatbotSend = document.getElementById('chatbot-send');
+    const interactiveToggle = document.querySelector('.interactive-toggle');
+    const interactiveWindow = document.querySelector('.interactive-window');
+    const interactiveClose = document.querySelector('.interactive-close');
+
     chatbotToggle.addEventListener('click', () => {
         chatbotWindow.style.display = chatbotWindow.style.display === 'none' ? 'flex' : 'none';
-        interactiveWindow.style.display = 'none'; // Close interactive window if open
+        interactiveWindow.style.display = 'none';
     });
+
     chatbotClose.addEventListener('click', () => {
         chatbotWindow.style.display = 'none';
     });
+
     document.querySelectorAll('.prompt-btn').forEach(btn => {
         btn.addEventListener('click', () => {
             const prompt = btn.getAttribute('data-prompt');
@@ -1185,6 +1790,7 @@
             handleUserInput(prompt);
         });
     });
+
     chatbotSend.addEventListener('click', () => {
         const message = chatbotInput.value.trim();
         if (message) {
@@ -1193,11 +1799,13 @@
             chatbotInput.value = '';
         }
     });
+
     chatbotInput.addEventListener('keypress', (e) => {
         if (e.key === 'Enter') {
             chatbotSend.click();
         }
     });
+
     function addMessage(sender, text) {
         const messageDiv = document.createElement('div');
         messageDiv.classList.add('message', `${sender}-message`);
@@ -1205,6 +1813,7 @@
         chatbotMessages.appendChild(messageDiv);
         chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
     }
+
     async function handleUserInput(message) {
         const predefinedResponses = {
             'What is RPA?': 'RPA (Robotic Process Automation) allows you to automate repetitive, rule-based tasks, freeing up your team for more strategic work. AutomataX’s RPA solutions can save you hours every week!',
@@ -1223,67 +1832,344 @@
             return;
         }
         try {
-            const apiKey = 'AIzaSyA0zkNzs-6c_HVOmqrFH8UQG9n8Snxyf98';
-            const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key=${apiKey}`;
-            const response = await fetch(apiUrl, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({
-                    "contents": [
-                        {
-                            "parts": [
-                                {
-                                    "text": `You are a helpful assistant for AutomataX, an automation company specializing in RPA, AI, and cloud solutions. A user asked: "${message}". Respond concisely and professionally, highlighting AutomataX's services where relevant. Keep the response under 150 words.`
-                                }
-                            ]
-                        }
-                    ],
-                    "generationConfig": {
-                        "temperature": 0.7,
-                        "maxOutputTokens": 150
-                    }
-                })
-            });
-            if (!response.ok) {
-                throw new Error(`API request failed with status ${response.status}: ${response.statusText}`);
-            }
-            const data = await response.json();
-            if (data.candidates && data.candidates[0] && data.candidates[0].content && data.candidates[0].content.parts) {
-                const botReply = data.candidates[0].content.parts[0].text.trim();
-                addMessage('bot', botReply);
-            } else {
-                throw new Error('Unexpected API response format');
-            }
+            addMessage('bot', 'This is a fallback response. How can I assist you with automation today?');
         } catch (error) {
-            console.error('Error with Gemini API:', error.message);
-            addMessage('bot', 'I’m sorry, I couldn’t process your request. Would you like to leave your contact information so our team can assist you? <button class="prompt-btn" data-prompt="Yes, please collect my contact info">Yes</button>');
+            console.error('Error:', error);
+            addMessage('bot', 'Sorry, I couldn’t process your request. Please try again or contact us at <a href="mailto:support@automataxpro.site">support@automataxpro.site</a>.');
         }
     }
-    const interactiveToggle = document.querySelector('.interactive-toggle');
-    const interactiveWindow = document.querySelector('.interactive-window');
-    const interactiveClose = document.querySelector('.interactive-close');
+
     interactiveToggle.addEventListener('click', () => {
         interactiveWindow.style.display = interactiveWindow.style.display === 'none' ? 'flex' : 'none';
-        chatbotWindow.style.display = 'none'; // Close chatbot window if open
+        chatbotWindow.style.display = 'none';
     });
+
     interactiveClose.addEventListener('click', () => {
         interactiveWindow.style.display = 'none';
     });
+
     const welcomePopup = document.getElementById('welcome-popup');
     const welcomeClose = document.getElementById('welcome-close');
     const welcomeDiscover = document.getElementById('welcome-discover');
-    if (!sessionStorage.getItem('welcomeShown')) {
+
+    if (!localStorage.getItem('welcomeShown')) {
         welcomePopup.style.display = 'flex';
-        sessionStorage.setItem('welcomeShown', 'true');
+        localStorage.setItem('welcomeShown', 'true');
     }
+
     welcomeClose.addEventListener('click', () => {
         welcomePopup.style.display = 'none';
     });
+
     welcomeDiscover.addEventListener('click', () => {
         welcomePopup.style.display = 'none';
-        interactiveToggle.click(); // Open the interactive widget
+        document.getElementById('quiz').scrollIntoView({ behavior: 'smooth' });
+    });
+
+    const workflowArea = document.getElementById('workflow-area');
+    const bots = document.querySelectorAll('.bot.draggable');
+    const efficiencyProgress = document.querySelector('.efficiency-progress');
+    const costProgress = document.querySelector('.cost-progress');
+    const errorProgress = document.querySelector('.error-progress');
+    const efficiencyValue = document.querySelector('.efficiency-value');
+    const costValue = document.querySelector('.cost-value');
+    const errorValue = document.querySelector('.error-value');
+    const resetGameBtn = document.querySelector('.reset-game');
+    let efficiency = 20, costSavings = 1000, errorsReduced = 15;
+    const maxEfficiency = 100, maxCostSavings = 5000, maxErrorsReduced = 80;
+
+    bots.forEach(bot => {
+        bot.addEventListener('dragstart', (e) => {
+            bot.classList.add('dragging');
+            e.dataTransfer.setData('text/plain', bot.dataset.type);
+        });
+        bot.addEventListener('dragend', () => {
+            bot.classList.remove('dragging');
+        });
+    });
+
+    workflowArea.addEventListener('dragover', (e) => {
+        e.preventDefault();
+    });
+
+    workflowArea.addEventListener('drop', (e) => {
+        e.preventDefault();
+        const botType = e.dataTransfer.getData('text/plain');
+        const draggingBot = document.querySelector(`.bot[data-type="${botType}"]`);
+        const targetTask = e.target.closest('.task');
+        if (targetTask && !draggingBot.classList.contains('dropped')) {
+            draggingBot.classList.add('dropped');
+            targetTask.classList.add('automated');
+            
+            if (botType === 'rpa') {
+                efficiency += 20;
+                costSavings += 800;
+                errorsReduced += 15;
+            } else if (botType === 'ai') {
+                efficiency += 25;
+                costSavings += 600;
+                errorsReduced += 20;
+            } else if (botType === 'cloud') {
+                efficiency += 15;
+                costSavings += 1000;
+                errorsReduced += 10;
+            }
+
+            efficiency = Math.min(efficiency, maxEfficiency);
+            costSavings = Math.min(costSavings, maxCostSavings);
+            errorsReduced = Math.min(errorsReduced, maxErrorsReduced);
+
+            efficiencyProgress.style.width = `${efficiency}%`;
+            costProgress.style.width = `${(costSavings / maxCostSavings) * 100}%`;
+            errorProgress.style.width = `${errorsReduced}%`;
+            efficiencyValue.textContent = `${efficiency}%`;
+            costValue.textContent = costSavings;
+            errorValue.textContent = `${errorsReduced}%`;
+        }
+    });
+
+    resetGameBtn.addEventListener('click', () => {
+        efficiency = 20;
+        costSavings = 1000;
+        errorsReduced = 15;
+        efficiencyProgress.style.width = `${efficiency}%`;
+        costProgress.style.width = `${(costSavings / maxCostSavings) * 100}%`;
+        errorProgress.style.width = `${errorsReduced}%`;
+        efficiencyValue.textContent = `${efficiency}%`;
+        costValue.textContent = costSavings;
+        errorValue.textContent = `${errorsReduced}%`;
+        document.querySelectorAll('.task').forEach(task => task.classList.remove('automated'));
+        bots.forEach(bot => bot.classList.remove('dropped'));
+    });
+
+    const towerCanvas = document.getElementById('tower-canvas');
+    const towerScoreDisplay = document.getElementById('tower-score');
+    const towerLevelDisplay = document.getElementById('tower-level');
+    const startTowerGameBtn = document.querySelector('.start-tower-game');
+    let towerScore = 0;
+    let level = 1;
+    let gameActive = false;
+    let fallSpeed = 50;
+
+    // Grid settings
+    const columns = 5;
+    const blockWidth = towerCanvas.clientWidth / columns; // 300px / 5 = 60px per column
+    const blockHeight = 30;
+    const rows = Math.floor(towerCanvas.clientHeight / blockHeight); // 400px / 30px = 13 rows
+    const columnHeights = new Array(columns).fill(0); // Tracks the number of blocks in each column
+
+    function spawnBlock() {
+        if (!gameActive) return;
+
+        const taskTypes = ['data-entry', 'email-response', 'inventory-check'];
+        const taskType = taskTypes[Math.floor(Math.random() * taskTypes.length)];
+        const column = Math.floor(Math.random() * columns); // Random column (0 to 4)
+        const block = document.createElement('div');
+        block.classList.add('tower-block', taskType);
+        block.setAttribute('draggable', 'true'); // Make the block draggable
+        block.textContent = taskType.replace('-', ' ').split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
+        block.style.width = `${blockWidth - 2}px`; // Slight margin for visibility
+        block.style.height = `${blockHeight}px`;
+        block.style.position = 'absolute';
+        block.style.left = `${column * blockWidth}px`; // Place in the chosen column
+        block.style.top = '0px';
+        block.dataset.column = column; // Store the current column
+        towerCanvas.appendChild(block);
+
+        // Drag-and-drop functionality
+        let isDragging = false;
+        block.addEventListener('dragstart', (e) => {
+            isDragging = true;
+            block.classList.add('dragging');
+            e.dataTransfer.setData('text/plain', block.dataset.column);
+        });
+
+        block.addEventListener('dragend', (e) => {
+            isDragging = false;
+            block.classList.remove('dragging');
+            // Snap to the nearest column based on the block's left position
+            const newLeft = parseFloat(block.style.left);
+            const newColumn = Math.min(columns - 1, Math.max(0, Math.round(newLeft / blockWidth)));
+            block.style.left = `${newColumn * blockWidth}px`;
+            block.dataset.column = newColumn;
+        });
+
+        towerCanvas.addEventListener('dragover', (e) => {
+            e.preventDefault();
+        });
+
+        towerCanvas.addEventListener('drop', (e) => {
+            e.preventDefault();
+            if (isDragging) {
+                const blockRect = block.getBoundingClientRect();
+                const canvasRect = towerCanvas.getBoundingClientRect();
+                const newLeft = e.clientX - canvasRect.left - blockRect.width / 2;
+                block.style.left = `${Math.max(0, Math.min(towerCanvas.clientWidth - blockWidth, newLeft))}px`;
+            }
+        });
+
+        // Falling logic
+        const fallInterval = setInterval(() => {
+            if (!gameActive) {
+                clearInterval(fallInterval);
+                return;
+            }
+
+            let top = parseFloat(block.style.top);
+            const currentColumn = parseInt(block.dataset.column);
+            const maxTop = towerCanvas.clientHeight - (columnHeights[currentColumn] + 1) * blockHeight;
+
+            if (top >= maxTop) {
+                clearInterval(fallInterval);
+                block.style.top = `${maxTop}px`;
+                columnHeights[currentColumn]++;
+                checkForMatches(block);
+                checkGameOver();
+                return;
+            }
+
+            block.style.top = `${top + 2}px`;
+        }, fallSpeed);
+    }
+
+    function checkForMatches(block) {
+        const blocks = Array.from(towerCanvas.querySelectorAll('.tower-block'));
+        const blockColumn = parseInt(block.dataset.column);
+        const blockType = block.classList[1];
+
+        // Find blocks in the same column with the same type
+        let matches = blocks.filter(b => {
+            return b !== block &&
+                   b.classList.contains(blockType) &&
+                   parseInt(b.dataset.column) === blockColumn &&
+                   Math.abs(parseFloat(b.style.top) - parseFloat(block.style.top)) <= blockHeight;
+        });
+
+        if (matches.length >= 1) {
+            block.classList.add('automated');
+            matches.forEach(match => match.classList.add('automated'));
+            towerScore += 20 * level;
+            towerScoreDisplay.textContent = towerScore;
+
+            // Adjust column heights after removing blocks
+            const removedHeight = parseFloat(block.style.top) / blockHeight;
+            columnHeights[blockColumn] = Math.max(0, removedHeight - 1);
+
+            setTimeout(() => {
+                block.remove();
+                matches.forEach(match => match.remove());
+                // Recompute column heights after removal
+                recomputeColumnHeights();
+            }, 500);
+        }
+    }
+
+    function recomputeColumnHeights() {
+        const blocks = Array.from(towerCanvas.querySelectorAll('.tower-block:not(.automated)'));
+        columnHeights.fill(0);
+        blocks.forEach(block => {
+            const column = parseInt(block.dataset.column);
+            const blockTop = parseFloat(block.style.top);
+            const height = Math.floor((towerCanvas.clientHeight - blockTop) / blockHeight);
+            columnHeights[column] = Math.max(columnHeights[column], height);
+        });
+    }
+
+    function checkGameOver() {
+        if (columnHeights.some(height => height >= rows)) {
+            gameActive = false;
+            startTowerGameBtn.textContent = 'Start Game';
+            startTowerGameBtn.disabled = false;
+            alert(`Game Over! Your score: ${towerScore}`);
+        }
+
+        if (towerScore >= level * 100) {
+            level++;
+            towerLevelDisplay.textContent = level;
+            fallSpeed = Math.max(20, fallSpeed - 5);
+        }
+    }
+
+    startTowerGameBtn.addEventListener('click', () => {
+        if (gameActive) return;
+        gameActive = true;
+        towerScore = 0;
+        level = 1;
+        fallSpeed = 50;
+        towerScoreDisplay.textContent = towerScore;
+        towerLevelDisplay.textContent = level;
+        columnHeights.fill(0);
+        towerCanvas.querySelectorAll('.tower-block').forEach(block => block.remove());
+        startTowerGameBtn.textContent = 'Game Running...';
+        startTowerGameBtn.disabled = true;
+
+        const spawnInterval = setInterval(() => {
+            if (!gameActive) {
+                clearInterval(spawnInterval);
+                return;
+            }
+            spawnBlock();
+        }, 2000);
+    });
+
+    const botComponents = document.querySelectorAll('.component.draggable');
+    const dropZones = document.querySelectorAll('.drop-zone');
+    const botCapabilitiesList = document.getElementById('bot-capabilities');
+    const testBotBtn = document.querySelector('.test-bot');
+    const botAnimation = document.getElementById('bot-animation');
+    let botComponentsState = { head: false, body: false, legs: false };
+
+    botComponents.forEach(component => {
+        component.addEventListener('dragstart', (e) => {
+            component.classList.add('dragging');
+            e.dataTransfer.setData('text/plain', component.dataset.type);
+        });
+        component.addEventListener('dragend', () => {
+            component.classList.remove('dragging');
+        });
+    });
+
+    dropZones.forEach(zone => {
+        zone.addEventListener('dragover', (e) => {
+            e.preventDefault();
+        });
+        zone.addEventListener('drop', (e) => {
+            e.preventDefault();
+            const componentType = e.dataTransfer.getData('text/plain');
+            const draggingComponent = document.querySelector(`.component[data-type="${componentType}"]`);
+            const zoneType = zone.dataset.zone;
+
+            if (componentType === 'ai-brain' && zoneType === 'head' && !botComponentsState.head ||
+                componentType === 'rpa-arms' && zoneType === 'body' && !botComponentsState.body ||
+                componentType === 'cloud-legs' && zoneType === 'legs' && !botComponentsState.legs) {
+                zone.classList.add('filled');
+                draggingComponent.style.display = 'none';
+                botComponentsState[zoneType] = true;
+
+                botCapabilitiesList.innerHTML = '';
+                if (botComponentsState.head) botCapabilitiesList.innerHTML += '<li>Smart Decision-Making</li>';
+                if (botComponentsState.body) botCapabilitiesList.innerHTML += '<li>Task Automation</li>';
+                if (botComponentsState.legs) botCapabilitiesList.innerHTML += '<li>Cloud Integration</li>';
+
+                if (botComponentsState.head && botComponentsState.body && botComponentsState.legs) {
+                    testBotBtn.disabled = false;
+                }
+            }
+        });
+    });
+
+    testBotBtn.addEventListener('click', () => {
+        botAnimation.textContent = 'Bot Working...';
+        botAnimation.classList.add('active');
+        setTimeout(() => {
+            botAnimation.classList.remove('active');
+            alert('Your bot successfully automated a task! Ready to build another?');
+            botComponentsState = { head: false, body: false, legs: false };
+            dropZones.forEach(zone => zone.classList.remove('filled'));
+            botComponents.forEach(comp => comp.style.display = 'block');
+            botCapabilitiesList.innerHTML = '';
+            testBotBtn.disabled = true;
+        }, 4000);
     });
 </script>
 </body>
