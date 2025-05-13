@@ -1248,6 +1248,286 @@
             padding: 20px;
         }
     }
+    /* New styles for Process Optimization Puzzle */
+    :root {
+        --primary: #3a86ff; /* Adjusted to match your existing button color */
+        --secondary: #333; /* Matches your text color */
+        --success: #28a745; /* Standard green for success */
+        --warning: #f39c12; /* Kept as-is for efficiency */
+        --danger: #dc3545; /* Standard red for errors */
+        --light: #f8f9fa; /* Matches your background */
+        --dark: #333; /* Matches your text color */
+    }
+
+    .game-container {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        background-color: white;
+        border-radius: 10px;
+        padding: 20px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .stats-container {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-bottom: 20px;
+    }
+
+    .stat-card {
+        flex: 1;
+        min-width: 150px;
+        background-color: white;
+        border-radius: 8px;
+        padding: 15px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        text-align: center;
+    }
+
+    .stat-card h3 {
+        margin-top: 0;
+        color: var(--secondary);
+        font-size: 16px;
+    }
+
+    .stat-value {
+        font-size: 24px;
+        font-weight: bold;
+        margin: 10px 0;
+    }
+
+    .time-value { color: var(--primary); }
+    .cost-value { color: var(--success); }
+    .error-value { color: var(--danger); }
+    .efficiency-value { color: var(--warning); }
+
+    .workflow-area {
+        display: flex;
+        gap: 30px;
+        margin-bottom: 30px;
+    }
+
+    .tools-panel {
+        width: 250px;
+        background-color: var(--light);
+        border-radius: 8px;
+        padding: 15px;
+    }
+
+    .tools-panel h2 {
+        margin-top: 0;
+        text-align: center;
+        font-size: 18px;
+        padding-bottom: 10px;
+        border-bottom: 1px solid #ddd;
+    }
+
+    .tool {
+        background-color: white;
+        border: 2px solid var(--primary);
+        border-radius: 6px;
+        padding: 10px;
+        margin-bottom: 10px;
+        cursor: grab;
+        transition: all 0.2s;
+        display: flex;
+        align-items: center;
+    }
+
+    .tool:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .process-panel {
+        flex: 1;
+        background-color: var(--light);
+        border-radius: 8px;
+        padding: 15px;
+    }
+
+    .process-panel h2 {
+        margin-top: 0;
+        text-align: center;
+        font-size: 18px;
+        padding-bottom: 10px;
+        border-bottom: 1px solid #ddd;
+    }
+
+    .process-step {
+        display: flex;
+        align-items: center;
+        background-color: white;
+        border-radius: 6px;
+        padding: 15px;
+        margin-bottom: 15px;
+        position: relative;
+    }
+
+    .step-number {
+        width: 30px;
+        height: 30px;
+        background-color: var(--secondary);
+        color: white;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 15px;
+        font-weight: bold;
+    }
+
+    .step-details {
+        flex: 1;
+    }
+
+    .step-title {
+        font-weight: bold;
+        margin-bottom: 5px;
+    }
+
+    .step-metrics {
+        display: flex;
+        gap: 15px;
+        font-size: 14px;
+        color: #666;
+    }
+
+    .step-metric {
+        display: flex;
+        align-items: center;
+    }
+
+    .step-metric i {
+        margin-right: 5px;
+    }
+
+    .dropzone {
+        width: 100px;
+        height: 50px;
+        border: 2px dashed #ccc;
+        border-radius: 6px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #999;
+        font-size: 12px;
+        margin-left: 15px;
+    }
+
+    .dropzone.has-tool {
+        border: none;
+    }
+
+    .process-step.automated {
+        border-left: 4px solid var(--success);
+    }
+
+    .automation-benefit {
+        display: flex;
+        align-items: center;
+        background-color: rgba(40, 167, 69, 0.1); /* Adjusted to match --success */
+        border-radius: 4px;
+        padding: 5px 10px;
+        margin-top: 10px;
+        font-size: 14px;
+        color: var(--success);
+    }
+
+    .controls {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 20px;
+    }
+
+    .btn-success {
+        background-color: var(--success);
+        color: white;
+    }
+
+    .btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .btn:active {
+        transform: translateY(0);
+    }
+
+    .result-modal {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        align-items: center;
+        justify-content: center;
+        z-index: 3000; /* Add this to ensure the modal is above all other elements */
+    }
+
+    .modal-content {
+        background-color: white;
+        border-radius: 10px;
+        padding: 30px;
+        max-width: 600px;
+        width: 90%;
+        text-align: center;
+    }
+
+    .result-title {
+        font-size: 24px;
+        margin-bottom: 20px;
+        color: var(--primary);
+    }
+
+    .result-metrics {
+        display: flex;
+        justify-content: space-around;
+        margin: 30px 0;
+        flex-wrap: wrap;
+    }
+
+    .result-metric {
+        margin: 10px;
+        text-align: center;
+    }
+
+    .result-value {
+        font-size: 36px;
+        font-weight: bold;
+        margin-bottom: 5px;
+    }
+
+    .result-label {
+        color: #666;
+    }
+
+    .next-steps {
+        background-color: var(--light);
+        padding: 15px;
+        border-radius: 8px;
+        margin: 20px 0;
+        text-align: left;
+    }
+
+    .next-steps h3 {
+        margin-top: 0;
+    }
+
+    @keyframes pulse {
+        0% { transform: scale(1); }
+        50% { transform: scale(1.05); }
+        100% { transform: scale(1); }
+    }
+
+    .pulse {
+        animation: pulse 1s infinite;
+    }
     </style>
 </head>
 <body>
@@ -1424,6 +1704,132 @@
         </div>
     </div>
 </section>
+<section id="optimization-puzzle" class="interactive-section animate-fade-in">
+    <div class="container">
+        <h2>Process Optimization Puzzle</h2>
+        <p>Optimize your workflow by dragging automation tools into the process steps and see the impact on time, cost, errors, and efficiency!</p>
+        <div class="optimization-puzzle">
+            <div class="puzzle-stats">
+                <div class="stat-card">
+                    <h3>Time</h3>
+                    <div class="stat-value time-value" id="time-stat">120 min</div>
+                    <p>Change: <span id="time-change">0 min</span></p>
+                </div>
+                <div class="stat-card">
+                    <h3>Cost</h3>
+                    <div class="stat-value cost-value" id="cost-stat">$2400</div>
+                    <p>Change: <span id="cost-change">$0</span></p>
+                </div>
+                <div class="stat-card">
+                    <h3>Error Rate</h3>
+                    <div class="stat-value error-value" id="error-stat">8.5%</div>
+                    <p>Change: <span id="error-change">0%</span></p>
+                </div>
+                <div class="stat-card">
+                    <h3>Efficiency</h3>
+                    <div class="stat-value efficiency-value" id="efficiency-stat">65%</div>
+                    <p>Change: <span id="efficiency-change">+0%</span></p>
+                </div>
+            </div>
+            <div class="puzzle-canvas">
+                <div class="components-area tools-panel">
+                    <h2>Automation Tools</h2>
+                    <div class="tool" draggable="true" data-tool="rpa">RPA Bot</div>
+                    <div class="tool" draggable="true" data-tool="ocr">OCR Scanner</div>
+                    <div class="tool" draggable="true" data-tool="ai">AI Predictor</div>
+                    <div class="tool" draggable="true" data-tool="workflow">Workflow Automation</div>
+                    <div class="tool" draggable="true" data-tool="integration">System Integration</div>
+                </div>
+                <div class="workflow-sequence process-panel">
+                    <h2>Process Steps</h2>
+                    <div class="process-step" id="step1">
+                        <div class="step-number">1</div>
+                        <div class="step-details">
+                            <div class="step-title">Data Entry</div>
+                            <div class="step-metrics">
+                                <div class="step-metric"><i>⏰</i> 30 min</div>
+                                <div class="step-metric"><i>💵</i> $600</div>
+                                <div class="step-metric"><i>⚠️</i> 2.5%</div>
+                            </div>
+                        </div>
+                        <div class="dropzone" id="dropzone1">Drop tool here</div>
+                    </div>
+                    <div class="process-step" id="step2">
+                        <div class="step-number">2</div>
+                        <div class="step-details">
+                            <div class="step-title">Invoice Processing</div>
+                            <div class="step-metrics">
+                                <div class="step-metric"><i>⏰</i> 25 min</div>
+                                <div class="step-metric"><i>💵</i> $500</div>
+                                <div class="step-metric"><i>⚠️</i> 2%</div>
+                            </div>
+                        </div>
+                        <div class="dropzone" id="dropzone2">Drop tool here</div>
+                    </div>
+                    <div class="process-step" id="step3">
+                        <div class="step-number">3</div>
+                        <div class="step-details">
+                            <div class="step-title">Inventory Check</div>
+                            <div class="step-metrics">
+                                <div class="step-metric"><i>⏰</i> 35 min</div>
+                                <div class="step-metric"><i>💵</i> $700</div>
+                                <div class="step-metric"><i>⚠️</i> 2%</div>
+                            </div>
+                        </div>
+                        <div class="dropzone" id="dropzone3">Drop tool here</div>
+                    </div>
+                    <div class="process-step" id="step4">
+                        <div class="step-number">4</div>
+                        <div class="step-details">
+                            <div class="step-title">Report Generation</div>
+                            <div class="step-metrics">
+                                <div class="step-metric"><i>⏰</i> 30 min</div>
+                                <div class="step-metric"><i>💵</i> $600</div>
+                                <div class="step-metric"><i>⚠️</i> 2%</div>
+                            </div>
+                        </div>
+                        <div class="dropzone" id="dropzone4">Drop tool here</div>
+                    </div>
+                </div>
+            </div>
+            <div class="controls">
+                <button class="btn btn-primary" id="reset-btn">Reset</button>
+                <button class="btn btn-success" id="puzzle-calculate-btn">Calculate Results</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Add the Result Modal -->
+<div class="result-modal" id="result-modal">
+    <div class="modal-content">
+        <span class="modal-close" id="close-result">&times;</span>
+        <h2 class="result-title">Optimization Results</h2>
+        <div class="result-metrics">
+            <div class="result-metric">
+                <div class="result-value" id="result-time-saved"></div>
+                <div class="result-label">Time Saved</div>
+            </div>
+            <div class="result-metric">
+                <div class="result-value" id="result-cost-saved"></div>
+                <div class="result-label">Cost Saved</div>
+            </div>
+            <div class="result-metric">
+                <div class="result-value" id="result-error-reduction"></div>
+                <div class="result-label">Error Reduction</div>
+            </div>
+            <div class="result-metric">
+                <div class="result-value" id="result-efficiency-gain"></div>
+                <div class="result-label">Efficiency Gain</div>
+            </div>
+        </div>
+        <div class="next-steps">
+            <h3>Next Steps</h3>
+            <p>Ready to implement these optimizations in your business? Contact AutomataX to start automating today!</p>
+            <a href="contact.html" class="btn btn-primary">Get Started</a>
+        </div>
+    </div>
+</div>
 <section id="task-tower" class="interactive-section animate-fade-in">
     <div class="container">
         <h2>Task Elimination Tower</h2>
@@ -1942,6 +2348,204 @@
         bots.forEach(bot => bot.classList.remove('dropped'));
     });
 
+    // Process Optimization Puzzle JavaScript
+    document.addEventListener('DOMContentLoaded', function() {
+        // Game state
+        const puzzleGameState = {
+        originalTime: 120,
+        originalCost: 2400,
+        originalError: 8.5,
+        originalEfficiency: 65,
+        currentTime: 120,
+        currentCost: 2400,
+        currentError: 8.5,
+        currentEfficiency: 65,
+        automatedSteps: []
+    };
+
+    // Tool efficiency data
+    const puzzleToolEffects = {
+        rpa: {
+            step1: { time: -20, cost: -450, error: -10, efficiency: 15 },
+            step2: { time: -15, cost: -300, error: -4, efficiency: 10 },
+            step3: { time: -20, cost: -400, error: -7, efficiency: 15 },
+            step4: { time: -30, cost: -600, error: -5, efficiency: 20 }
+        },
+        ocr: {
+            step1: { time: -25, cost: -500, error: -11, efficiency: 18 },
+            step2: { time: -5, cost: -100, error: -2, efficiency: 5 },
+            step3: { time: -5, cost: -100, error: -2, efficiency: 5 },
+            step4: { time: -10, cost: -200, error: -2, efficiency: 8 }
+        },
+        ai: {
+            step1: { time: -10, cost: -200, error: -6, efficiency: 7 },
+            step2: { time: -18, cost: -350, error: -4.5, efficiency: 12 },
+            step3: { time: -10, cost: -200, error: -4, efficiency: 8 },
+            step4: { time: -40, cost: -800, error: -6, efficiency: 25 }
+        },
+        workflow: {
+            step1: { time: -15, cost: -300, error: -8, efficiency: 10 },
+            step2: { time: -18, cost: -350, error: -4, efficiency: 12 },
+            step3: { time: -22, cost: -450, error: -7, efficiency: 16 },
+            step4: { time: -35, cost: -700, error: -6, efficiency: 22 }
+        },
+        integration: {
+            step1: { time: -5, cost: -100, error: -2, efficiency: 3 },
+            step2: { time: -8, cost: -150, error: -3, efficiency: 6 },
+            step3: { time: -24, cost: -480, error: -7.5, efficiency: 18 },
+            step4: { time: -15, cost: -300, error: -4, efficiency: 10 }
+        }
+    };
+
+    // Setup drag and drop
+    const puzzleTools = document.querySelectorAll('.tool');
+    const puzzleDropzones = document.querySelectorAll('.dropzone');
+
+    puzzleTools.forEach(tool => {
+        tool.addEventListener('dragstart', function(e) {
+            e.dataTransfer.setData('text/plain', this.dataset.tool);
+        });
+    });
+
+    puzzleDropzones.forEach(dropzone => {
+        dropzone.addEventListener('dragover', function(e) {
+            e.preventDefault();
+        });
+
+        dropzone.addEventListener('drop', function(e) {
+            e.preventDefault();
+
+            const toolType = e.dataTransfer.getData('text/plain');
+            const stepId = this.id.replace('dropzone', 'step');
+
+            // If already has a tool, return
+            if (this.classList.contains('has-tool')) {
+                return;
+            }
+
+            // Create tool clone
+            const toolClone = document.querySelector(`[data-tool="${toolType}"]`).cloneNode(true);
+            toolClone.setAttribute('draggable', false);
+
+            // Add tool to dropzone
+            this.innerHTML = '';
+            this.appendChild(toolClone);
+            this.classList.add('has-tool');
+
+            // Add automation benefits
+            const step = document.getElementById(stepId);
+            step.classList.add('automated');
+
+            const effects = puzzleToolEffects[toolType][stepId];
+            const benefitText = `Automation benefit: ${effects.time} min, ${effects.cost} cost, ${effects.error}% errors`;
+
+            const stepDetails = step.querySelector('.step-details');
+            const benefitElement = document.createElement('div');
+            benefitElement.className = 'automation-benefit';
+            benefitElement.innerHTML = `<i>✅</i> ${benefitText}`;
+            stepDetails.appendChild(benefitElement);
+
+            // Update game state
+            updatePuzzleGameState(toolType, stepId);
+            updatePuzzleStatsDisplay();
+        });
+    });
+
+    // Update game state when tool is dropped
+    function updatePuzzleGameState(toolType, stepId) {
+        const effects = puzzleToolEffects[toolType][stepId];
+
+        puzzleGameState.currentTime += effects.time;
+        puzzleGameState.currentCost += effects.cost;
+        puzzleGameState.currentError += effects.error;
+        puzzleGameState.currentEfficiency += effects.efficiency;
+
+        // Ensure values don't go below zero
+        puzzleGameState.currentTime = Math.max(0, puzzleGameState.currentTime);
+        puzzleGameState.currentCost = Math.max(0, puzzleGameState.currentCost);
+        puzzleGameState.currentError = Math.max(0, puzzleGameState.currentError);
+
+        // Add to automated steps if not already present
+        if (!puzzleGameState.automatedSteps.includes(stepId)) {
+            puzzleGameState.automatedSteps.push(stepId);
+        }
+    }
+
+    // Update stats display
+    function updatePuzzleStatsDisplay() {
+        document.getElementById('time-stat').textContent = `${puzzleGameState.currentTime} min`;
+        document.getElementById('cost-stat').textContent = `$${puzzleGameState.currentCost}`;
+        document.getElementById('error-stat').textContent = `${puzzleGameState.currentError.toFixed(1)}%`;
+        document.getElementById('efficiency-stat').textContent = `${puzzleGameState.currentEfficiency}%`;
+
+        document.getElementById('time-change').textContent = `${puzzleGameState.currentTime - puzzleGameState.originalTime} min`;
+        document.getElementById('cost-change').textContent = `$${puzzleGameState.currentCost - puzzleGameState.originalCost}`;
+        document.getElementById('error-change').textContent = `${(puzzleGameState.currentError - puzzleGameState.originalError).toFixed(1)}%`;
+        document.getElementById('efficiency-change').textContent = `+${puzzleGameState.currentEfficiency - puzzleGameState.originalEfficiency}%`;
+    }
+
+    // Reset button
+    document.getElementById('reset-btn').addEventListener('click', function() {
+        // Reset game state
+        puzzleGameState.currentTime = puzzleGameState.originalTime;
+        puzzleGameState.currentCost = puzzleGameState.originalCost;
+        puzzleGameState.currentError = puzzleGameState.originalError;
+        puzzleGameState.currentEfficiency = puzzleGameState.originalEfficiency;
+        puzzleGameState.automatedSteps = [];
+
+        // Reset UI
+        puzzleDropzones.forEach(dropzone => {
+            dropzone.innerHTML = 'Drop tool here';
+            dropzone.classList.remove('has-tool');
+        });
+
+        // Remove automation benefits and styling
+        document.querySelectorAll('.process-step').forEach(step => {
+            step.classList.remove('automated');
+            const benefitEl = step.querySelector('.automation-benefit');
+            if (benefitEl) {
+                benefitEl.remove();
+            }
+        });
+
+        updatePuzzleStatsDisplay();
+    });
+
+    // Calculate button (updated to use the new ID)
+    const puzzleCalculateBtn = document.getElementById('puzzle-calculate-btn');
+    if (puzzleCalculateBtn) {
+        puzzleCalculateBtn.addEventListener('click', function() {
+            if (puzzleGameState.automatedSteps.length === 0) {
+                alert('Please automate at least one process step before calculating results!');
+                return;
+            }
+
+            // Calculate savings and improvements (positive values for reductions)
+            const timeSaved = puzzleGameState.originalTime - puzzleGameState.currentTime;
+            const costSaved = puzzleGameState.originalCost - puzzleGameState.currentCost;
+            const errorReduction = puzzleGameState.originalError - puzzleGameState.currentError;
+            const efficiencyGain = puzzleGameState.currentEfficiency - puzzleGameState.originalEfficiency;
+
+            // Update result modal values
+            document.getElementById('result-time-saved').textContent = `${timeSaved.toFixed(1)} min`;
+            document.getElementById('result-cost-saved').textContent = `$${costSaved.toFixed(0)}`;
+            document.getElementById('result-error-reduction').textContent = `${errorReduction.toFixed(1)}%`;
+            document.getElementById('result-efficiency-gain').textContent = `${efficiencyGain.toFixed(1)}%`;
+
+            // Show modal
+            document.getElementById('result-modal').style.display = 'flex';
+        });
+    }
+
+    // Close result modal
+    const closeResultBtn = document.getElementById('close-result');
+    if (closeResultBtn) {
+        closeResultBtn.addEventListener('click', function() {
+            document.getElementById('result-modal').style.display = 'none';
+        });
+    }
+    })
+
     const towerCanvas = document.getElementById('tower-canvas');
     const towerScoreDisplay = document.getElementById('tower-score');
     const towerLevelDisplay = document.getElementById('tower-level');
@@ -1953,30 +2557,29 @@
 
     // Grid settings
     const columns = 5;
-    const blockWidth = towerCanvas.clientWidth / columns; // 300px / 5 = 60px per column
+    const blockWidth = towerCanvas.clientWidth / columns;
     const blockHeight = 30;
-    const rows = Math.floor(towerCanvas.clientHeight / blockHeight); // 400px / 30px = 13 rows
-    const columnHeights = new Array(columns).fill(0); // Tracks the number of blocks in each column
+    const rows = Math.floor(towerCanvas.clientHeight / blockHeight);
+    const columnHeights = new Array(columns).fill(0);
 
     function spawnBlock() {
         if (!gameActive) return;
 
         const taskTypes = ['data-entry', 'email-response', 'inventory-check'];
         const taskType = taskTypes[Math.floor(Math.random() * taskTypes.length)];
-        const column = Math.floor(Math.random() * columns); // Random column (0 to 4)
+        const column = Math.floor(Math.random() * columns);
         const block = document.createElement('div');
         block.classList.add('tower-block', taskType);
-        block.setAttribute('draggable', 'true'); // Make the block draggable
+        block.setAttribute('draggable', 'true');
         block.textContent = taskType.replace('-', ' ').split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
-        block.style.width = `${blockWidth - 2}px`; // Slight margin for visibility
+        block.style.width = `${blockWidth - 2}px`;
         block.style.height = `${blockHeight}px`;
         block.style.position = 'absolute';
-        block.style.left = `${column * blockWidth}px`; // Place in the chosen column
+        block.style.left = `${column * blockWidth}px`;
         block.style.top = '0px';
-        block.dataset.column = column; // Store the current column
+        block.dataset.column = column;
         towerCanvas.appendChild(block);
 
-        // Drag-and-drop functionality
         let isDragging = false;
         block.addEventListener('dragstart', (e) => {
             isDragging = true;
@@ -1987,7 +2590,6 @@
         block.addEventListener('dragend', (e) => {
             isDragging = false;
             block.classList.remove('dragging');
-            // Snap to the nearest column based on the block's left position
             const newLeft = parseFloat(block.style.left);
             const newColumn = Math.min(columns - 1, Math.max(0, Math.round(newLeft / blockWidth)));
             block.style.left = `${newColumn * blockWidth}px`;
@@ -2008,7 +2610,6 @@
             }
         });
 
-        // Falling logic
         const fallInterval = setInterval(() => {
             if (!gameActive) {
                 clearInterval(fallInterval);
@@ -2037,7 +2638,6 @@
         const blockColumn = parseInt(block.dataset.column);
         const blockType = block.classList[1];
 
-        // Find blocks in the same column with the same type
         let matches = blocks.filter(b => {
             return b !== block &&
                    b.classList.contains(blockType) &&
@@ -2051,14 +2651,12 @@
             towerScore += 20 * level;
             towerScoreDisplay.textContent = towerScore;
 
-            // Adjust column heights after removing blocks
             const removedHeight = parseFloat(block.style.top) / blockHeight;
             columnHeights[blockColumn] = Math.max(0, removedHeight - 1);
 
             setTimeout(() => {
                 block.remove();
                 matches.forEach(match => match.remove());
-                // Recompute column heights after removal
                 recomputeColumnHeights();
             }, 500);
         }
