@@ -27,25 +27,22 @@
             --dark: #1a1a2e;
             --gradient: linear-gradient(135deg, var(--primary), var(--secondary));
         }
-
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
         }
-
         html {
             scroll-behavior: smooth;
             scroll-padding-top: 80px;
         }
-
         body {
             background-color: var(--light);
             color: var(--dark);
             overflow-x: hidden;
+            position: relative;
         }
-
         #ai-background {
             position: fixed;
             top: 0;
@@ -55,14 +52,12 @@
             z-index: -2;
             background: linear-gradient(135deg, #f0f4ff 0%, #f5e9ff 100%);
         }
-
         .container {
             width: 100%;
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
         }
-
         .btn {
             display: inline-block;
             padding: 12px 30px;
@@ -75,30 +70,15 @@
             outline: none;
             text-align: center;
         }
-
         .btn-primary {
             background: var(--gradient);
             color: white;
             box-shadow: 0 4px 15px rgba(58, 134, 255, 0.4);
         }
-
         .btn-primary:hover {
             transform: translateY(-3px);
             box-shadow: 0 8px 25px rgba(58, 134, 255, 0.6);
         }
-
-        .btn-outline {
-            background: transparent;
-            color: var(--primary);
-            border: 2px solid var(--primary);
-        }
-
-        .btn-outline:hover {
-            background: var(--primary);
-            color: white;
-        }
-
-        /* Header / Navigation */
         header {
             position: fixed;
             top: 0;
@@ -110,19 +90,16 @@
             transition: all 0.3s ease;
             box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
         }
-
         header.scrolled {
             padding: 10px 0;
             box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
         }
-
         nav {
             display: flex;
             justify-content: space-between;
             align-items: center;
             padding: 15px 0;
         }
-
         .logo {
             font-size: 26px;
             font-weight: 700;
@@ -131,26 +108,15 @@
             align-items: center;
             text-decoration: none;
         }
-
         .logo img {
             max-height: 40px;
             width: auto;
             object-fit: contain;
         }
-
-        .logo span {
-            background: var(--gradient);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            margin-right: 5px;
-        }
-
         .nav-links {
             display: flex;
             gap: 30px;
         }
-
         .nav-links a {
             color: var(--dark);
             text-decoration: none;
@@ -158,11 +124,9 @@
             position: relative;
             transition: all 0.3s ease;
         }
-
         .nav-links a:hover {
             color: var(--primary);
         }
-
         .mobile-menu-btn {
             display: none;
             background: none;
@@ -171,50 +135,40 @@
             font-size: 24px;
             color: var(--dark);
         }
-
-        /* Services Hero Section */
         .services-hero {
             padding: 120px 0 60px;
             background: linear-gradient(135deg, rgba(67, 97, 238, 0.05), rgba(114, 9, 183, 0.1));
             text-align: center;
         }
-
         .services-hero h1 {
             font-family: 'Space Grotesk', sans-serif;
             font-size: 48px;
             font-weight: 700;
             margin-bottom: 20px;
         }
-
         .services-hero h1 span {
             background: var(--gradient);
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
         }
-
         .services-hero p {
             font-size: 18px;
             color: #555;
             max-width: 700px;
             margin: 0 auto 30px;
         }
-
         .services-hero .btn {
             margin-top: 20px;
         }
-
-        /* Services Section */
         .services {
             padding: 100px 0;
             background-color: rgba(255, 255, 255, 0);
         }
-
         .section-header {
             text-align: center;
             margin-bottom: 60px;
         }
-
         .section-header h2 {
             font-family: 'Space Grotesk', sans-serif;
             font-size: 36px;
@@ -223,7 +177,6 @@
             position: relative;
             display: inline-block;
         }
-
         .section-header h2::after {
             content: '';
             position: absolute;
@@ -234,21 +187,18 @@
             height: 3px;
             background: var(--gradient);
         }
-
         .section-header p {
             font-size: 18px;
             color: #666;
             max-width: 700px;
             margin: 0 auto;
         }
-
         .services-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
             margin-top: 40px;
         }
-
         .service-card {
             background-color: rgba(255, 255, 255, 0);
             border-radius: 15px;
@@ -262,43 +212,36 @@
             position: relative;
             z-index: 1;
         }
-
         .service-card:hover {
             transform: translateY(-10px);
             box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
         }
-
         .service-image {
             width: 150px;
             height: 150px;
             margin-right: 20px;
             flex-shrink: 0;
         }
-
         .service-image img {
             width: 100%;
             height: 100%;
             object-fit: cover;
             border-radius: 10px;
         }
-
         .service-content {
             flex-grow: 1;
         }
-
         .service-content h3 {
             font-family: 'Space Grotesk', sans-serif;
             font-size: 22px;
             margin-bottom: 10px;
             color: var(--dark);
         }
-
         .service-content p {
             font-size: 16px;
             color: #666;
             line-height: 1.6;
         }
-
         .service-content a {
             display: inline-block;
             margin-top: 10px;
@@ -306,12 +249,9 @@
             text-decoration: none;
             font-weight: 500;
         }
-
         .service-content a:hover {
             text-decoration: underline;
         }
-
-        /* CTA Section */
         .cta {
             padding: 80px 0;
             background: var(--gradient);
@@ -320,51 +260,285 @@
             position: relative;
             z-index: 1;
         }
-
         .cta h2 {
             font-family: 'Space Grotesk', sans-serif;
             font-size: 40px;
             font-weight: 700;
             margin-bottom: 20px;
         }
-
         .cta p {
             font-size: 18px;
             max-width: 600px;
             margin: 0 auto 30px;
             opacity: 0.9;
         }
-
         .cta-btn {
             background-color: white;
             color: var(--primary);
             font-weight: 600;
             transition: all 0.3s ease;
         }
-
         .cta-btn:hover {
             transform: translateY(-3px);
             box-shadow: 0 8px 25px rgba(255, 255, 255, 0.3);
             color: var(--secondary);
         }
-
-        /* Footer */
+        .chatbot-widget {
+            position: fixed;
+            bottom: 100px;
+            right: 30px;
+            z-index: 1000;
+        }
+        .chatbot-toggle {
+            background: var(--gradient);
+            color: white;
+            padding: 12px 20px;
+            font-size: 16px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0 4px 15px rgba(255, 94, 120, 0.4);
+        }
+        .chatbot-toggle:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(255, 94, 120, 0.6);
+        }
+        .chatbot-window {
+            position: absolute;
+            bottom: 60px;
+            right: 0;
+            width: 350px;
+            max-height: 500px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+        }
+        .chatbot-header {
+            background: var(--gradient);
+            color: white;
+            padding: 15px 20px;
+            border-top-left-radius: 15px;
+            border-top-right-radius: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .chatbot-header h3 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 20px;
+            margin: 0;
+        }
+        .chatbot-close {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .chatbot-messages {
+            flex: 1;
+            padding: 20px;
+            overflow-y: auto;
+            background: #f9faff;
+        }
+        .message {
+            margin-bottom: 15px;
+        }
+        .bot-message p {
+            background: rgba(255, 94, 120, 0.1);
+            padding: 10px 15px;
+            border-radius: 10px;
+            font-size: 15px;
+            color: var(--dark);
+        }
+        .user-message p {
+            background: var(--gradient);
+            color: white;
+            padding: 10px 15px;
+            border-radius: 10px;
+            font-size: 15px;
+            margin-left: auto;
+            max-width: 80%;
+        }
+        .quick-prompts {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 10px;
+        }
+        .prompt-btn {
+            background: rgba(255, 94, 120, 0.2);
+            border: none;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 14px;
+            color: var(--dark);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .prompt-btn:hover {
+            background: var(--gradient);
+            color: white;
+        }
+        .chatbot-input {
+            display: flex;
+            padding: 15px;
+            border-top: 1px solid #ddd;
+        }
+        .chatbot-input input {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 14px;
+            margin-right: 10px;
+        }
+        .chatbot-input .btn {
+            background: var(--gradient);
+            color: white;
+            padding: 10px 20px;
+            font-size: 14px;
+        }
+        .interactive-widget {
+            position: fixed;
+            bottom: 100px;
+            left: 30px;
+            z-index: 1000;
+        }
+        .interactive-toggle {
+            background: var(--gradient);
+            color: white;
+            padding: 12px 20px;
+            font-size: 16px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0 4px 15px rgba(255, 94, 120, 0.4);
+        }
+        .interactive-toggle:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(255, 94, 120, 0.6);
+        }
+        .interactive-window {
+            position: absolute;
+            bottom: 60px;
+            left: 0;
+            width: 350px;
+            max-height: 500px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+        }
+        .interactive-header {
+            background: var(--gradient);
+            color: white;
+            padding: 15px 20px;
+            border-top-left-radius: 15px;
+            border-top-right-radius: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .interactive-header h3 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 20px;
+            margin: 0;
+        }
+        .interactive-close {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .interactive-content {
+            padding: 20px;
+            background: #f9faff;
+            flex: 1;
+            overflow-y: auto;
+        }
+        .interactive-content p {
+            font-size: 16px;
+            color: #666;
+            margin-bottom: 20px;
+        }
+        .interactive-content a {
+            display: block;
+            padding: 10px 15px;
+            background: rgba(255, 94, 120, 0.2);
+            border-radius: 8px;
+            text-decoration: none;
+            color: var(--dark);
+            margin-bottom: 10px;
+            transition: all 0.3s ease;
+        }
+        .interactive-content a:hover {
+            background: var(--gradient);
+            color: white;
+        }
+        .welcome-popup {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 2000;
+        }
+        .welcome-content {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            max-width: 500px;
+            width: 90%;
+            text-align: center;
+            position: relative;
+        }
+        .welcome-content h3 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 28px;
+            margin-bottom: 15px;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        .welcome-content p {
+            font-size: 16px;
+            color: #666;
+            margin-bottom: 20px;
+        }
+        .welcome-close {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: none;
+            border: none;
+            font-size: 20px;
+            cursor: pointer;
+            color: #666;
+        }
         footer {
             padding: 60px 0 30px;
             background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(15px);
+            backdrop-filter: blur(1px);
             color: rgb(0, 0, 0);
             position: relative;
             z-index: 1;
         }
-
         .footer-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 40px;
             margin-bottom: 40px;
         }
-
         .footer-col h3 {
             font-family: 'Space Grotesk', sans-serif;
             font-size: 20px;
@@ -373,42 +547,35 @@
             position: relative;
             padding-bottom: 10px;
         }
-
         .footer-col h3::after {
             content: '';
             position: absolute;
             bottom: 0;
             left: 0;
-            width: 30Historicpx;
+            width: 30px;
             height: 2px;
             background: var(--gradient);
         }
-
         .footer-links {
             list-style: none;
         }
-
         .footer-links li {
             margin-bottom: 12px;
         }
-
         .footer-links a {
             color: rgba(0, 0, 0, 0.7);
             text-decoration: none;
             transition: all 0.3s ease;
         }
-
         .footer-links a:hover {
             color: rgb(255, 0, 200);
             padding-left: 5px;
         }
-
         .footer-social {
             display: flex;
             gap: 15px;
             margin-top: 20px;
         }
-
         .social-icon {
             width: 40px;
             height: 40px;
@@ -420,12 +587,10 @@
             color: rgb(0, 0, 0);
             transition: all 0.3s ease;
         }
-
         .social-icon:hover {
             background: var(--gradient);
             transform: translateY(-3px);
         }
-
         .footer-bottom {
             text-align: center;
             padding-top: 30px;
@@ -433,36 +598,30 @@
             font-size: 14px;
             color: rgba(0, 0, 0, 0.7);
         }
-
-        /* Animations */
         .animate-fade-in {
             opacity: 0;
             transform: translateY(20px);
             transition: all 0.5s ease;
         }
-
         .fade-in {
             opacity: 1;
             transform: translateY(0);
         }
-
-        /* Responsive Styles */
         @media (max-width: 768px) {
             .nav-links {
                 display: none;
             }
-
             .mobile-menu-btn {
                 display: block;
             }
-
             .mobile-menu {
                 position: fixed;
                 top: 0;
                 left: 0;
                 width: 100%;
                 height: 100vh;
-                background-color: white;
+                background: rgba(255, 255, 255, 0.9);
+                backdrop-filter: blur(10px);
                 padding: 40px 20px;
                 display: flex;
                 flex-direction: column;
@@ -473,11 +632,9 @@
                 transform: translateX(-100%);
                 transition: transform 0.4s ease;
             }
-
             .mobile-menu.active {
                 transform: translateX(0);
             }
-
             .close-menu {
                 position: absolute;
                 top: 20px;
@@ -487,44 +644,53 @@
                 border: none;
                 cursor: pointer;
             }
-
             .mobile-menu a {
                 font-size: 18px;
                 padding: 10px 0;
             }
-
             .services-hero h1 {
                 font-size: 32px;
             }
-
             .services-hero p {
                 font-size: 16px;
             }
-
             .service-card {
                 flex-direction: column;
                 text-align: center;
             }
-
             .service-image {
                 margin-right: 0;
                 margin-bottom: 20px;
             }
-        }
-
-        @media (max-width: 576px) {
             .section-header h2 {
                 font-size: 28px;
             }
-
+        }
+        @media (max-width: 576px) {
+            .section-header h2 {
+                font-size: 24px;
+            }
             .btn {
                 padding: 10px 20px;
                 font-size: 14px;
             }
-
             .service-image {
                 width: 120px;
                 height: 120px;
+            }
+            .chatbot-window, .interactive-window {
+                width: 300px;
+                max-height: 400px;
+            }
+            .chatbot-toggle, .interactive-toggle {
+                padding: 10px 15px;
+                font-size: 14px;
+            }
+            .welcome-content h3 {
+                font-size: 24px;
+            }
+            .welcome-content p {
+                font-size: 14px;
             }
         }
     </style>
@@ -544,6 +710,7 @@
                     <a href="how-it-works.html">How It Works</a>
                     <a href="rpa-case-studies.html">Case Studies</a>
                     <a href="pricing.html">Pricing</a>
+                    <a href="downloads.html">Downloads</a>
                     <a href="blog.html">Blog</a>
                     <a href="contact.html">Contact</a>
                 </div>
@@ -553,8 +720,6 @@
             </nav>
         </div>
     </header>
-
-    <!-- Mobile Menu -->
     <div class="mobile-menu" id="mobile-menu">
         <button class="close-menu" id="close-menu" aria-label="Close Mobile Menu">
             <i class="fas fa-times"></i>
@@ -564,7 +729,18 @@
         <a href="how-it-works.html">How It Works</a>
         <a href="rpa-case-studies.html">Case Studies</a>
         <a href="pricing.html">Pricing</a>
+        <a href="downloads.html">Downloads</a>
+        <a href="blog.html">Blog</a>
         <a href="contact.html">Contact</a>
+    </div>
+
+    <div class="welcome-popup" id="welcome-popup" style="display: none;">
+        <div class="welcome-content">
+            <button class="welcome-close" id="welcome-close">✖</button>
+            <h3>Welcome to AutomataX!</h3>
+            <p>Discover how our AI-driven automation can transform your business. Take our interactive quiz or try our savings simulator to see the impact!</p>
+            <button class="btn btn-primary" id="welcome-discover">Discover Now</button>
+        </div>
     </div>
 
     <!-- Services Hero Section -->
@@ -657,183 +833,314 @@
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-col">
-                    <h3>AutomataX</h3>
-                    <p>Your Future, Automated. We empower businesses with secure, AI-driven automation solutions that prioritize data safety.</p>
-                    <div class="footer-social">
-                        <a href="dist/index.html" class="social-icon"><i class="fab fa-facebook-f"></i></a>
-                        <a href="https://x.com/automatax_tech?s=21" class="social-icon"><i class="fab fa-twitter"></i></a>
-                        <a href="https://www.linkedin.com/company/automataxpro/" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="dist/index.html" class="social-icon"><i class="fab fa-instagram"></i></a>
-                    </div>
+    <div class="chatbot-widget">
+    <button class="chatbot-toggle btn">
+        <span class="chatbot-icon">💬</span> Chat with Us
+    </button>
+    <div class="chatbot-window" style="display: none;">
+        <div class="chatbot-header">
+            <h3>AutomataX Assistant</h3>
+            <button class="chatbot-close">✖</button>
+        </div>
+        <div class="chatbot-messages" id="chatbot-messages">
+            <div class="message bot-message">
+                <p>Hello! I’m here to help you with your automation needs. What would you like to know?</p>
+                <div class="quick-prompts">
+                    <button class="prompt-btn" data-prompt="What is RPA?">What is RPA?</button>
+                    <button class="prompt-btn" data-prompt="Tell me about AI solutions">AI Solutions</button>
+                    <button class="prompt-btn" data-prompt="How can I contact AutomataX?">Contact Us</button>
                 </div>
-                <div class="footer-col">
-                    <h3>Services</h3>
-                    <ul class="footer-links">
-                        <li><a href="services.html">AI-powered Data Analysis</a></li>
-                        <li><a href="services.html">Workflow Automation</a></li>
-                        <li><a href="services.html">Custom AI Chatbots</a></li>
-                        <li><a href="services.html">Predictive Business Intelligence</a></li>
-                        <li><a href="services.html">System Integration</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h3>Quick Links</h3>
-                    <ul class="footer-links">
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="index.html#about">About Us</a></li>
-                        <li><a href="rpa-case-studies.html">Case Studies</a></li>
-                        <li><a href="data-safety.html">Data Safety</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h3>Newsletter</h3>
-                    <p>Subscribe for updates on secure automation trends and company news.</p>
-                    <form action="https://formsubmit.co/sales@automataxpro.site" method="POST" class="footer-form">
-                        <input type="hidden" name="_next" value="https://automataxpro.site/thank-you.html">
-                        <input type="email" placeholder="Your Email" class="form-control" required>
-                        <button type="submit" class="btn btn-primary">Subscribe</button>
-                    </form>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>© 2025 AutomataX. All rights reserved.</p>
             </div>
         </div>
-    </footer>
+        <div class="chatbot-input">
+            <input type="text" id="chatbot-input" placeholder="Type your question..." />
+            <button id="chatbot-send" class="btn">Send</button>
+        </div>
+    </div>
+</div>
+<div class="interactive-widget">
+    <button class="interactive-toggle btn">
+        <span class="interactive-icon">🎮</span> Interactive
+    </button>
+    <div class="interactive-window" style="display: none;">
+        <div class="interactive-header">
+            <h3>Explore Automation</h3>
+            <button class="interactive-close">✖</button>
+        </div>
+        <div class="interactive-content">
+            <p>Discover how AutomataX can transform your business with our interactive tools!</p>
+            <a href="interactive.html#quiz">Take Our Automation Quiz</a>
+            <a href="interactive.html#simulator">Try Our Savings Simulator</a>
+        </div>
+    </div>
+</div>
+
+    <!-- Footer -->
+    <footer>
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h3>AutomataX</h3>
+                <p>Your Future, Automated. We empower businesses with secure, AI-driven automation solutions that prioritize data safety.</p>
+                <div class="footer-social">
+                    <a href="dist/index.html" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://x.com/automatax_tech?s=21" class="social-icon"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.linkedin.com/company/automataxpro/" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="dist/index.html" class="social-icon"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h3>Services</h3>
+                <ul class="footer-links">
+                    <li><a href="services.html">AI-powered Data Analysis</a></li>
+                    <li><a href="services.html">Workflow Automation</a></li>
+                    <li><a href="services.html">Custom AI Chatbots</a></li>
+                    <li><a href="services.html">Predictive Business Intelligence</a></li>
+                    <li><a href="services.html">System Integration</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="rpa-case-studies.html">Case Studies</a></li>
+                    <li><a href="data-safety.html">Data Safety</a></li>
+                    <li><a href="downloads.html">Downloads</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Newsletter</h3>
+                <p>Subscribe for updates on secure automation trends and company news.</p>
+                <form action="https://formsubmit.co/sales@automataxpro.site" method="POST" class="footer-form">
+                    <input type="hidden" name="_next" value="https://automataxpro.site/thank-you.html">
+                    <input type="email" placeholder="Your Email" class="form-control" required>
+                    <button type="submit" class="btn btn-primary">Subscribe</button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2025 AutomataX. All rights reserved.</p>
+        </div>
+    </div>
+</footer>
 
     <!-- JavaScript -->
     <script>
-        // AI-Inspired Particle Animation
-        const canvas = document.getElementById('ai-background');
-        const ctx = canvas.getContext('2d');
-
+    const canvas = document.getElementById('ai-background');
+    const ctx = canvas.getContext('2d');
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+    const particles = [];
+    const particleCount = 50;
+    class Particle {
+        constructor() {
+            this.x = Math.random() * canvas.width;
+            this.y = Math.random() * canvas.height;
+            this.size = Math.random() * 3 + 1;
+            this.speedX = Math.random() * 0.5 - 0.25;
+            this.speedY = Math.random() * 0.5 - 0.25;
+        }
+        update() {
+            this.x += this.speedX;
+            this.y += this.speedY;
+            if (this.x < 0 || this.x > canvas.width) this.speedX *= -1;
+            if (this.y < 0 || this.y > canvas.height) this.speedY *= -1;
+        }
+        draw() {
+            ctx.fillStyle = 'rgba(58, 134, 255, 0.5)';
+            ctx.beginPath();
+            ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+            ctx.fill();
+        }
+    }
+    function initParticles() {
+        for (let i = 0; i < particleCount; i++) {
+            particles.push(new Particle());
+        }
+    }
+    function animateParticles() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        for (let i = 0; i < particles.length; i++) {
+            particles[i].update();
+            particles[i].draw();
+            for (let j = i + 1; j < particles.length; j++) {
+                const dx = particles[i].x - particles[j].x;
+                const dy = particles[i].y - particles[j].y;
+                const distance = Math.sqrt(dx * dx + dy * dy);
+                if (distance < 100) {
+                    ctx.beginPath();
+                    ctx.strokeStyle = `rgba(114, 9, 183, ${1 - distance / 100})`;
+                    ctx.lineWidth = 0.5;
+                    ctx.moveTo(particles[i].x, particles[i].y);
+                    ctx.lineTo(particles[j].x, particles[j].y);
+                    ctx.stroke();
+                }
+            }
+        }
+        requestAnimationFrame(animateParticles);
+    }
+    initParticles();
+    animateParticles();
+    window.addEventListener('resize', () => {
         canvas.width = window.innerWidth;
         canvas.height = window.innerHeight;
-
-        const particles = [];
-        const particleCount = 50;
-
-        class Particle {
-            constructor() {
-                this.x = Math.random() * canvas.width;
-                this.y = Math.random() * canvas.height;
-                this.size = Math.random() * 3 + 1;
-                this.speedX = Math.random() * 0.5 - 0.25;
-                this.speedY = Math.random() * 0.5 - 0.25;
-            }
-
-            update() {
-                this.x += this.speedX;
-                this.y += this.speedY;
-
-                if (this.x < 0 || this.x > canvas.width) this.speedX *= -1;
-                if (this.y < 0 || this.y > canvas.height) this.speedY *= -1;
-            }
-
-            draw() {
-                ctx.fillStyle = 'rgba(58, 134, 255, 0.5)';
-                ctx.beginPath();
-                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-                ctx.fill();
-            }
+    });
+    const header = document.getElementById('header');
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+            header.classList.add('scrolled');
+        } else {
+            header.classList.remove('scrolled');
         }
-
-        function initParticles() {
-            for (let i = 0; i < particleCount; i++) {
-                particles.push(new Particle());
-            }
-        }
-
-        function animateParticles() {
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-            for (let i = 0; i < particles.length; i++) {
-                particles[i].update();
-                particles[i].draw();
-
-                for (let j = i + 1; j < particles.length; j++) {
-                    const dx = particles[i].x - particles[j].x;
-                    const dy = particles[i].y - particles[j].y;
-                    const distance = Math.sqrt(dx * dx + dy * dy);
-
-                    if (distance < 100) {
-                        ctx.beginPath();
-                        ctx.strokeStyle = `rgba(114, 9, 183, ${1 - distance / 100})`;
-                        ctx.lineWidth = 0.5;
-                        ctx.moveTo(particles[i].x, particles[i].y);
-                        ctx.lineTo(particles[j].x, particles[j].y);
-                        ctx.stroke();
-                    }
-                }
-            }
-            requestAnimationFrame(animateParticles);
-        }
-
-        initParticles();
-        animateParticles();
-
-        window.addEventListener('resize', () => {
-            canvas.width = window.innerWidth;
-            canvas.height = window.innerHeight;
-        });
-
-        // Header scroll effect
-        const header = document.getElementById('header');
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 50) {
-                header.classList.add('scrolled');
-            } else {
-                header.classList.remove('scrolled');
-            }
-        });
-
-        // Mobile menu
-        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-        const closeMenuBtn = document.getElementById('close-menu');
-        const mobileMenu = document.getElementById('mobile-menu');
-        const mobileMenuLinks = mobileMenu.querySelectorAll('a');
-
-        mobileMenuBtn.addEventListener('click', () => {
-            mobileMenu.classList.add('active');
-        });
-
-        closeMenuBtn.addEventListener('click', () => {
+    });
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const closeMenuBtn = document.getElementById('close-menu');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const mobileMenuLinks = mobileMenu.querySelectorAll('a');
+    mobileMenuBtn.addEventListener('click', () => {
+        mobileMenu.classList.add('active');
+    });
+    closeMenuBtn.addEventListener('click', () => {
+        mobileMenu.classList.remove('active');
+    });
+    mobileMenuLinks.forEach(link => {
+        link.addEventListener('click', () => {
             mobileMenu.classList.remove('active');
         });
-
-        mobileMenuLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                mobileMenu.classList.remove('active');
+    });
+    const animateElements = document.querySelectorAll('.animate-fade-in');
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('fade-in');
+            }
+        });
+    }, { threshold: 0.1 });
+    animateElements.forEach(element => {
+        observer.observe(element);
+    });
+    const chatbotToggle = document.querySelector('.chatbot-toggle');
+    const chatbotWindow = document.querySelector('.chatbot-window');
+    const chatbotClose = document.querySelector('.chatbot-close');
+    const chatbotMessages = document.getElementById('chatbot-messages');
+    const chatbotInput = document.getElementById('chatbot-input');
+    const chatbotSend = document.getElementById('chatbot-send');
+    chatbotToggle.addEventListener('click', () => {
+        chatbotWindow.style.display = chatbotWindow.style.display === 'none' ? 'flex' : 'none';
+        interactiveWindow.style.display = 'none'; // Close interactive window if open
+    });
+    chatbotClose.addEventListener('click', () => {
+        chatbotWindow.style.display = 'none';
+    });
+    document.querySelectorAll('.prompt-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+            const prompt = btn.getAttribute('data-prompt');
+            addMessage('user', prompt);
+            handleUserInput(prompt);
+        });
+    });
+    chatbotSend.addEventListener('click', () => {
+        const message = chatbotInput.value.trim();
+        if (message) {
+            addMessage('user', message);
+            handleUserInput(message);
+            chatbotInput.value = '';
+        }
+    });
+    chatbotInput.addEventListener('keypress', (e) => {
+        if (e.key === 'Enter') {
+            chatbotSend.click();
+        }
+    });
+    function addMessage(sender, text) {
+        const messageDiv = document.createElement('div');
+        messageDiv.classList.add('message', `${sender}-message`);
+        messageDiv.innerHTML = `<p>${text}</p>`;
+        chatbotMessages.appendChild(messageDiv);
+        chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+    }
+    async function handleUserInput(message) {
+        const predefinedResponses = {
+            'What is RPA?': 'RPA (Robotic Process Automation) allows you to automate repetitive, rule-based tasks, freeing up your team for more strategic work. AutomataX’s RPA solutions can save you hours every week!',
+            'Tell me about AI solutions': 'Our AI solutions use advanced machine learning to provide actionable insights from your data, helping you make smarter decisions. From predictive analytics to natural language processing, AutomataX has you covered.',
+            'How can I contact AutomataX?': 'You can reach us at <a href="mailto:sales@automataxpro.site">sales@automataxpro.site</a> or <a href="mailto:info@automataxpro.site">info@automataxpro.site</a>. Or visit our <a href="contact.html">Contact Page</a> to get in touch!'
+        };
+        if (predefinedResponses[message]) {
+            addMessage('bot', predefinedResponses[message]);
+            return;
+        }
+        if (message === 'Yes, please collect my contact info') {
+            addMessage('bot', 'Please provide your email address, and we’ll get in touch with you soon!');
+            return;
+        } else if (message.includes('@')) {
+            addMessage('bot', 'Thank you! We’ve received your email and will reach out shortly. In the meantime, feel free to explore our <a href="services.html">services</a>.');
+            return;
+        }
+        try {
+            const apiKey = 'AIzaSyA0zkNzs-6c_HVOmqrFH8UQG9n8Snxyf98';
+            const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key=${apiKey}`;
+            const response = await fetch(apiUrl, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    "contents": [
+                        {
+                            "parts": [
+                                {
+                                    "text": `You are a helpful assistant for AutomataX, an automation company specializing in RPA, AI, and cloud solutions. A user asked: "${message}". Respond concisely and professionally, highlighting AutomataX's services where relevant. Keep the response under 150 words.`
+                                }
+                            ]
+                        }
+                    ],
+                    "generationConfig": {
+                        "temperature": 0.7,
+                        "maxOutputTokens": 150
+                    }
+                })
             });
-        });
-
-        // Animation on scroll
-        const animateElements = document.querySelectorAll('.animate-fade-in');
-        
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('fade-in');
-                }
-            });
-        }, { threshold: 0.1 });
-
-        animateElements.forEach(element => {
-            observer.observe(element);
-        });
-
-        // Form submission
-        const contactForm = document.getElementById('contactForm');
-        contactForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-            alert('Thank you for your message! We will get back to you soon.');
-            contactForm.reset();
-        });
-    </script>
+            if (!response.ok) {
+                throw new Error(`API request failed with status ${response.status}: ${response.statusText}`);
+            }
+            const data = await response.json();
+            if (data.candidates && data.candidates[0] && data.candidates[0].content && data.candidates[0].content.parts) {
+                const botReply = data.candidates[0].content.parts[0].text.trim();
+                addMessage('bot', botReply);
+            } else {
+                throw new Error('Unexpected API response format');
+            }
+        } catch (error) {
+            console.error('Error with Gemini API:', error.message);
+            addMessage('bot', 'I’m sorry, I couldn’t process your request. Would you like to leave your contact information so our team can assist you? <button class="prompt-btn" data-prompt="Yes, please collect my contact info">Yes</button>');
+        }
+    }
+    const interactiveToggle = document.querySelector('.interactive-toggle');
+    const interactiveWindow = document.querySelector('.interactive-window');
+    const interactiveClose = document.querySelector('.interactive-close');
+    interactiveToggle.addEventListener('click', () => {
+        interactiveWindow.style.display = interactiveWindow.style.display === 'none' ? 'flex' : 'none';
+        chatbotWindow.style.display = 'none'; // Close chatbot window if open
+    });
+    interactiveClose.addEventListener('click', () => {
+        interactiveWindow.style.display = 'none';
+    });
+    const welcomePopup = document.getElementById('welcome-popup');
+    const welcomeClose = document.getElementById('welcome-close');
+    const welcomeDiscover = document.getElementById('welcome-discover');
+    if (!sessionStorage.getItem('welcomeShown')) {
+        welcomePopup.style.display = 'flex';
+        sessionStorage.setItem('welcomeShown', 'true');
+    }
+    welcomeClose.addEventListener('click', () => {
+        welcomePopup.style.display = 'none';
+    });
+    welcomeDiscover.addEventListener('click', () => {
+        welcomePopup.style.display = 'none';
+        interactiveToggle.click(); // Open the interactive widget
+    });
+</script>
 </body>
 </html>
