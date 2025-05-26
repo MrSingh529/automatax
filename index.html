@@ -131,7 +131,6 @@
         .nav-links {
             display: flex;
             gap: 30px;
-            align-items: center; /* Center vertically */
         }
         .nav-links a {
             color: var(--dark);
@@ -142,25 +141,6 @@
         }
         .nav-links a:hover {
             color: var(--primary);
-        }
-        .proposal-btn {
-            background: var(--gradient);
-            color: white;
-            padding: 8px 20px;
-            border-radius: 50px;
-            font-weight: 600;
-            font-size: 14px;
-            animation: pulse 2s infinite;
-            box-shadow: 0 4px 15px rgba(58, 134, 255, 0.4);
-        }
-        .proposal-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(58, 134, 255, 0.6);
-        }
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-            100% { transform: scale(1); }
         }
         .mobile-menu-btn {
             display: none;
@@ -1026,7 +1006,6 @@
                     <a href="downloads.html">Downloads</a>
                     <a href="blog.html">Blog</a>
                     <a href="contact.html">Contact</a>
-                    <a href="proposal.html" class="proposal-btn">Get Your Free Proposal Today!</a>
                 </div>
                 <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Open Mobile Menu">
                     <i class="fas fa-bars"></i>
@@ -1046,7 +1025,6 @@
         <a href="downloads.html">Downloads</a>
         <a href="blog.html">Blog</a>
         <a href="contact.html">Contact</a>
-        <a href="proposal.html" class="proposal-btn">Get Your Free Proposal Today!</a>
     </div>
     <div class="welcome-popup" id="welcome-popup" style="display: none;">
         <div class="welcome-content">
@@ -1519,7 +1497,7 @@
                 return;
             }
             try {
-                const apiKey = os.getenv("GEMINI_API_KEY");
+                const apiKey = 'AIzaSyA0zkNzs-6c_HVOmqrFH8UQG9n8Snxyf98';
                 const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key=${apiKey}`;
                 const response = await fetch(apiUrl, {
                     method: 'POST',
