@@ -3,6 +3,7 @@ import smtplib
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 import os
+import time
 
 # Email configuration (will be set via Vercel environment variables)
 EMAIL_ADDRESS = os.getenv("EMAIL_ADDRESS")
@@ -54,21 +55,27 @@ def send_email(to_email, subject, body):
 
     msg.attach(MIMEText(body, 'plain'))
 
-    try:
-        with smtplib.SMTP('smtp.gmail.com', 587) as server:
-            print("Connecting to SMTP server...")
-            server.starttls()
-            print("Starting TLS...")
-            server.login(EMAIL_ADDRESS, EMAIL_PASSWORD)
-            print("Logged in to SMTP server")
-            server.sendmail(EMAIL_ADDRESS, to_email, msg.as_string())
-            print(f"Email sent successfully to {to_email}")
-        return True
-    except Exception as e:
-        print(f"Email sending failed to {to_email}: {str(e)}")
-        return False
+    # Add retry logic for network issues
+    max_retries = 3
+    for attempt in range(max_retries):
+        try:
+            with smtplib.SMTP('smtp.gmail.com', 587, timeout=10) as server:
+                print("Connecting to SMTP server...")
+                server.starttls()
+                print("Starting TLS...")
+                server.login(EMAIL_ADDRESS, EMAIL_PASSWORD)
+                print("Logged in to SMTP server")
+                server.sendmail(EMAIL_ADDRESS, to_email, msg.as_string())
+                print(f"Email sent successfully to {to_email}")
+            return True
+        except Exception as e:
+            print(f"Email sending failed to {to_email} (attempt {attempt + 1}/{max_retries}): {str(e)}")
+            if attempt < max_retries - 1:
+                time.sleep(2)  # Wait before retrying
+            else:
+                return False
 
-def main(event, context):
+def handler(event, context):
     print("Function invoked")
     headers = {
         "Content-Type": "application/json",
