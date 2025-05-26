@@ -40,6 +40,10 @@ Thank you for choosing AutomataX!
     return proposal
 
 def send_email(to_email, subject, body):
+    if not EMAIL_ADDRESS or not EMAIL_PASSWORD:
+        print("Error: EMAIL_ADDRESS or EMAIL_PASSWORD not set in environment variables")
+        return False
+
     msg = MIMEMultipart()
     msg['From'] = EMAIL_ADDRESS
     msg['To'] = to_email
@@ -52,15 +56,34 @@ def send_email(to_email, subject, body):
             server.starttls()
             server.login(EMAIL_ADDRESS, EMAIL_PASSWORD)
             server.sendmail(EMAIL_ADDRESS, to_email, msg.as_string())
+        print(f"Email sent successfully to {to_email}")
         return True
     except Exception as e:
-        print(f"Email sending failed: {e}")
+        print(f"Email sending failed to {to_email}: {str(e)}")
         return False
 
 def handler(request, response):
+    response_headers = {
+        "Content-Type": "application/json"
+    }
+
     try:
-        # Parse the incoming JSON data
-        data = json.loads(request.body.decode('utf-8'))
+        if not request.body:
+            return {
+                "statusCode": 400,
+                "headers": response_headers,
+                "body": json.dumps({"status": "error", "message": "Request body is empty"})
+            }
+
+        try:
+            data = json.loads(request.body.decode('utf-8'))
+        except json.JSONDecodeError as e:
+            print(f"JSON decode error: {str(e)}")
+            return {
+                "statusCode": 400,
+                "headers": response_headers,
+                "body": json.dumps({"status": "error", "message": "Invalid JSON in request body"})
+            }
 
         # Validate required fields
         required_fields = ['processName', 'weeklyHours', 'employeesInvolved', 'mainSteps', 'toolsUsed', 'email']
@@ -68,6 +91,7 @@ def handler(request, response):
             if field not in data or not data[field]:
                 return {
                     "statusCode": 400,
+                    "headers": response_headers,
                     "body": json.dumps({"status": "error", "message": f"Missing required field: {field}"})
                 }
 
@@ -80,6 +104,7 @@ def handler(request, response):
         if not send_email(user_email, subject, proposal_text):
             return {
                 "statusCode": 500,
+                "headers": response_headers,
                 "body": json.dumps({"status": "error", "message": "Failed to send proposal to your email"})
             }
 
@@ -91,11 +116,14 @@ def handler(request, response):
 
         return {
             "statusCode": 200,
+            "headers": response_headers,
             "body": json.dumps({"status": "success", "message": "Proposal generated and sent successfully"})
         }
 
     except Exception as e:
+        print(f"Server error: {str(e)}")
         return {
             "statusCode": 500,
-            "body": json.dumps({"status": "error", "message": str(e)})
+            "headers": response_headers,
+            "body": json.dumps({"status": "error", "message": f"Server error: {str(e)}"})
         }
