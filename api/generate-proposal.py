@@ -4,12 +4,13 @@ from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 import os
 
-# Email configuration
+# Email configuration (will be set via Vercel environment variables)
 EMAIL_ADDRESS = os.getenv("EMAIL_ADDRESS")
 EMAIL_PASSWORD = os.getenv("EMAIL_PASSWORD")
 TO_EMAIL = "sales@automataxpro.site"
 
 def generate_proposal(data):
+    print("Generating proposal...")
     process_name = data.get('processName', 'Unknown Process')
     weekly_hours = data.get('weeklyHours', 'N/A')
     employees_involved = data.get('employeesInvolved', 'N/A')
@@ -37,9 +38,11 @@ Next Steps:
 
 Thank you for choosing AutomataX!
 """
+    print("Proposal generated successfully")
     return proposal
 
 def send_email(to_email, subject, body):
+    print(f"Attempting to send email to {to_email}")
     if not EMAIL_ADDRESS or not EMAIL_PASSWORD:
         print("Error: EMAIL_ADDRESS or EMAIL_PASSWORD not set in environment variables")
         return False
@@ -53,16 +56,20 @@ def send_email(to_email, subject, body):
 
     try:
         with smtplib.SMTP('smtp.gmail.com', 587) as server:
+            print("Connecting to SMTP server...")
             server.starttls()
+            print("Starting TLS...")
             server.login(EMAIL_ADDRESS, EMAIL_PASSWORD)
+            print("Logged in to SMTP server")
             server.sendmail(EMAIL_ADDRESS, to_email, msg.as_string())
-        print(f"Email sent successfully to {to_email}")
+            print(f"Email sent successfully to {to_email}")
         return True
     except Exception as e:
         print(f"Email sending failed to {to_email}: {str(e)}")
         return False
 
 def main(event, context):
+    print("Function invoked")
     headers = {
         "Content-Type": "application/json",
         "Access-Control-Allow-Origin": "*",
@@ -71,17 +78,19 @@ def main(event, context):
     }
 
     try:
-        # Check the request method
+        print("Checking HTTP method...")
         if event.get("httpMethod") != "POST":
+            print("Method not allowed")
             return {
                 "statusCode": 405,
                 "headers": headers,
                 "body": json.dumps({"status": "error", "message": "Method not allowed"})
             }
 
-        # Parse the request body
+        print("Parsing request body...")
         body = event.get("body")
         if not body:
+            print("Request body is empty")
             return {
                 "statusCode": 400,
                 "headers": headers,
@@ -90,6 +99,7 @@ def main(event, context):
 
         try:
             data = json.loads(body)
+            print(f"Request body parsed: {data}")
         except json.JSONDecodeError as e:
             print(f"JSON decode error: {str(e)}")
             return {
@@ -98,10 +108,11 @@ def main(event, context):
                 "body": json.dumps({"status": "error", "message": "Invalid JSON in request body"})
             }
 
-        # Validate required fields
+        print("Validating required fields...")
         required_fields = ['processName', 'weeklyHours', 'employeesInvolved', 'mainSteps', 'toolsUsed', 'email']
         for field in required_fields:
             if field not in data or not data[field]:
+                print(f"Missing field: {field}")
                 return {
                     "statusCode": 400,
                     "headers": headers,
@@ -114,7 +125,9 @@ def main(event, context):
         # Send proposal to the user's email
         user_email = data['email']
         subject = "Your AutomataX Automation Proposal"
+        print(f"Sending proposal email to {user_email}")
         if not send_email(user_email, subject, proposal_text):
+            print("Failed to send proposal email")
             return {
                 "statusCode": 500,
                 "headers": headers,
@@ -124,9 +137,11 @@ def main(event, context):
         # Send notification to sales team
         sales_subject = f"New Proposal Generated for {user_email}"
         sales_body = f"A new proposal has been generated:\n\n{proposal_text}"
+        print(f"Sending notification email to {TO_EMAIL}")
         if not send_email(TO_EMAIL, sales_subject, sales_body):
-            print("Failed to notify sales team, but user email was sent.")
+            print("Failed to notify sales team, but user email was sent")
 
+        print("Request processed successfully")
         return {
             "statusCode": 200,
             "headers": headers,
