@@ -1519,7 +1519,7 @@
                 return;
             }
             try {
-                const apiKey = 'AIzaSyA0zkNzs-6c_HVOmqrFH8UQG9n8Snxyf98';
+                const apiKey = os.getenv("GEMINI_API_KEY");
                 const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key=${apiKey}`;
                 const response = await fetch(apiUrl, {
                     method: 'POST',
