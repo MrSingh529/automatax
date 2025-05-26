@@ -19,6 +19,7 @@
     <script src="https://cdn.jsdelivr.net/npm/react@18.2.0/umd/react.development.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/react-dom@18.2.0/umd/react-dom.development.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@babel/standalone@7.22.5/babel.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
     <style>
         :root {
             --primary: #ff5e78;
@@ -281,7 +282,7 @@
                     setAnswerInput("");
 
                     try {
-                        const response = await fetch('http://localhost:5000/generate-proposal', {
+                        const response = await fetch('/api/generate-proposal', {
                             method: 'POST',
                             headers: {
                                 'Content-Type': 'application/json',
@@ -296,11 +297,11 @@
                             }),
                         });
 
+                        const data = await response.json();
                         if (!response.ok) {
-                            throw new Error('Failed to generate proposal');
+                            throw new Error(data.message || 'Failed to generate proposal');
                         }
 
-                        const data = await response.json();
                         if (data.status === 'success') {
                             setStatusMessage("Proposal generated and sent to your email! Check your inbox (and spam/junk folder).");
                             setChatMessages([
@@ -308,6 +309,12 @@
                                 { sender: "You", text: userEmail },
                                 { sender: "Wizard", text: "All done! Your personalized proposal has been sent to your email. Check your inbox (and spam/junk folder)!" }
                             ]);
+                            // Trigger celebratory confetti animation
+                            confetti({
+                                particleCount: 100,
+                                spread: 70,
+                                origin: { y: 0.6 }
+                            });
                         } else {
                             throw new Error(data.message || 'Unknown error');
                         }
