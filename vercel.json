@@ -19,5 +19,11 @@
       "src": "/(.*)",
       "dest": "/$1"
     }
-  ]
+  ],
+  "functions": {
+    "api/generate-proposal.py": {
+      "handler": "api/generate-proposal.handler",
+      "runtime": "python3.12"
+    }
+  }
 }

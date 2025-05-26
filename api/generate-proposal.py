@@ -12,11 +12,11 @@ TO_EMAIL = "sales@automataxpro.site"
 
 def generate_proposal(data):
     print("Generating proposal...")
-    process_name = data.get('processName', 'Unknown Process')
-    weekly_hours = data.get('weeklyHours', 'N/A')
-    employees_involved = data.get('employeesInvolved', 'N/A')
-    main_steps = data.get('mainSteps', 'Not specified')
-    tools_used = data.get('toolsUsed', 'Not specified')
+    process_name = data.get("processName", "Unknown Process")
+    weekly_hours = data.get("weeklyHours", "N/A")
+    employees_involved = data.get("employeesInvolved", "N/A")
+    main_steps = data.get("mainSteps", "Not specified")
+    tools_used = data.get("toolsUsed", "Not specified")
 
     proposal = f"""
 AutomataX Automation Proposal
@@ -29,7 +29,7 @@ Main Steps: {main_steps}
 Tools Used: {tools_used}
 
 Proposed Automation Solution:
-- Automate repetitive tasks to save {int(weekly_hours) * 0.7 if weekly_hours.isdigit() else 'N/A'} hours weekly.
+- Automate repetitive tasks to save {int(weekly_hours) * 0.7 if weekly_hours.isdigit() else "N/A"} hours weekly.
 - Integrate tools like {tools_used} for seamless operation.
 - Expected efficiency gain: 40-60%.
 
@@ -49,17 +49,15 @@ def send_email(to_email, subject, body):
         return False
 
     msg = MIMEMultipart()
-    msg['From'] = EMAIL_ADDRESS
-    msg['To'] = to_email
-    msg['Subject'] = subject
+    msg["From"] = EMAIL_ADDRESS
+    msg["To"] = to_email
+    msg["Subject"] = subject
+    msg.attach(MIMEText(body, "plain"))
 
-    msg.attach(MIMEText(body, 'plain'))
-
-    # Add retry logic for network issues
     max_retries = 3
     for attempt in range(max_retries):
         try:
-            with smtplib.SMTP('smtp.gmail.com', 587, timeout=10) as server:
+            with smtplib.SMTP("smtp.gmail.com", 587, timeout=10) as server:
                 print("Connecting to SMTP server...")
                 server.starttls()
                 print("Starting TLS...")
@@ -71,7 +69,7 @@ def send_email(to_email, subject, body):
         except Exception as e:
             print(f"Email sending failed to {to_email} (attempt {attempt + 1}/{max_retries}): {str(e)}")
             if attempt < max_retries - 1:
-                time.sleep(2)  # Wait before retrying
+                time.sleep(2)
             else:
                 return False
 
@@ -116,7 +114,7 @@ def handler(event, context):
             }
 
         print("Validating required fields...")
-        required_fields = ['processName', 'weeklyHours', 'employeesInvolved', 'mainSteps', 'toolsUsed', 'email']
+        required_fields = ["processName", "weeklyHours", "employeesInvolved", "mainSteps", "toolsUsed", "email"]
         for field in required_fields:
             if field not in data or not data[field]:
                 print(f"Missing field: {field}")
@@ -126,11 +124,9 @@ def handler(event, context):
                     "body": json.dumps({"status": "error", "message": f"Missing required field: {field}"})
                 }
 
-        # Generate the proposal
         proposal_text = generate_proposal(data)
 
-        # Send proposal to the user's email
-        user_email = data['email']
+        user_email = data["email"]
         subject = "Your AutomataX Automation Proposal"
         print(f"Sending proposal email to {user_email}")
         if not send_email(user_email, subject, proposal_text):
@@ -141,7 +137,6 @@ def handler(event, context):
                 "body": json.dumps({"status": "error", "message": "Failed to send proposal to your email"})
             }
 
-        # Send notification to sales team
         sales_subject = f"New Proposal Generated for {user_email}"
         sales_body = f"A new proposal has been generated:\n\n{proposal_text}"
         print(f"Sending notification email to {TO_EMAIL}")
