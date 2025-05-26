@@ -4,6 +4,10 @@ from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 import os
 import time
+from flask import Flask, request
+
+# Initialize Flask app
+app = Flask(__name__)
 
 # Email configuration (will be set via Vercel environment variables)
 EMAIL_ADDRESS = os.getenv("EMAIL_ADDRESS")
@@ -73,7 +77,8 @@ def send_email(to_email, subject, body):
             else:
                 return False
 
-def handler(event, context):
+@app.route("/api/generate-proposal", methods=["POST"])
+def generate_proposal_endpoint():
     print("Function invoked")
     headers = {
         "Content-Type": "application/json",
@@ -84,45 +89,44 @@ def handler(event, context):
 
     try:
         print("Checking HTTP method...")
-        if event.get("httpMethod") != "POST":
+        if request.method != "POST":
             print("Method not allowed")
-            return {
-                "statusCode": 405,
-                "headers": headers,
-                "body": json.dumps({"status": "error", "message": "Method not allowed"})
-            }
+            return (
+                json.dumps({"status": "error", "message": "Method not allowed"}),
+                405,
+                headers
+            )
 
         print("Parsing request body...")
-        body = event.get("body")
-        if not body:
+        if not request.data:
             print("Request body is empty")
-            return {
-                "statusCode": 400,
-                "headers": headers,
-                "body": json.dumps({"status": "error", "message": "Request body is empty"})
-            }
+            return (
+                json.dumps({"status": "error", "message": "Request body is empty"}),
+                400,
+                headers
+            )
 
         try:
-            data = json.loads(body)
+            data = request.get_json()
             print(f"Request body parsed: {data}")
-        except json.JSONDecodeError as e:
+        except Exception as e:
             print(f"JSON decode error: {str(e)}")
-            return {
-                "statusCode": 400,
-                "headers": headers,
-                "body": json.dumps({"status": "error", "message": "Invalid JSON in request body"})
-            }
+            return (
+                json.dumps({"status": "error", "message": "Invalid JSON in request body"}),
+                400,
+                headers
+            )
 
         print("Validating required fields...")
         required_fields = ["processName", "weeklyHours", "employeesInvolved", "mainSteps", "toolsUsed", "email"]
         for field in required_fields:
             if field not in data or not data[field]:
                 print(f"Missing field: {field}")
-                return {
-                    "statusCode": 400,
-                    "headers": headers,
-                    "body": json.dumps({"status": "error", "message": f"Missing required field: {field}"})
-                }
+                return (
+                    json.dumps({"status": "error", "message": f"Missing required field: {field}"}),
+                    400,
+                    headers
+                )
 
         proposal_text = generate_proposal(data)
 
@@ -131,11 +135,11 @@ def handler(event, context):
         print(f"Sending proposal email to {user_email}")
         if not send_email(user_email, subject, proposal_text):
             print("Failed to send proposal email")
-            return {
-                "statusCode": 500,
-                "headers": headers,
-                "body": json.dumps({"status": "error", "message": "Failed to send proposal to your email"})
-            }
+            return (
+                json.dumps({"status": "error", "message": "Failed to send proposal to your email"}),
+                500,
+                headers
+            )
 
         sales_subject = f"New Proposal Generated for {user_email}"
         sales_body = f"A new proposal has been generated:\n\n{proposal_text}"
@@ -144,16 +148,19 @@ def handler(event, context):
             print("Failed to notify sales team, but user email was sent")
 
         print("Request processed successfully")
-        return {
-            "statusCode": 200,
-            "headers": headers,
-            "body": json.dumps({"status": "success", "message": "Proposal generated and sent successfully"})
-        }
+        return (
+            json.dumps({"status": "success", "message": "Proposal generated and sent successfully"}),
+            200,
+            headers
+        )
 
     except Exception as e:
         print(f"Server error: {str(e)}")
-        return {
-            "statusCode": 500,
-            "headers": headers,
-            "body": json.dumps({"status": "error", "message": f"Server error: {str(e)}"})
-        }
+        return (
+            json.dumps({"status": "error", "message": f"Server error: {str(e)}"}),
+            500,
+            headers
+        )
+
+if __name__ == "__main__":
+    app.run()
