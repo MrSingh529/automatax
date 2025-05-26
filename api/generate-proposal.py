@@ -1,10 +1,10 @@
-import smtplib
 import json
+import smtplib
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 import os
 
-# Email configuration (will be set via Vercel environment variables)
+# Email configuration
 EMAIL_ADDRESS = os.getenv("EMAIL_ADDRESS")
 EMAIL_PASSWORD = os.getenv("EMAIL_PASSWORD")
 TO_EMAIL = "sales@automataxpro.site"
@@ -62,26 +62,39 @@ def send_email(to_email, subject, body):
         print(f"Email sending failed to {to_email}: {str(e)}")
         return False
 
-def handler(request, response):
-    response_headers = {
-        "Content-Type": "application/json"
+def main(event, context):
+    headers = {
+        "Content-Type": "application/json",
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Methods": "POST",
+        "Access-Control-Allow-Headers": "Content-Type"
     }
 
     try:
-        if not request.body:
+        # Check the request method
+        if event.get("httpMethod") != "POST":
+            return {
+                "statusCode": 405,
+                "headers": headers,
+                "body": json.dumps({"status": "error", "message": "Method not allowed"})
+            }
+
+        # Parse the request body
+        body = event.get("body")
+        if not body:
             return {
                 "statusCode": 400,
-                "headers": response_headers,
+                "headers": headers,
                 "body": json.dumps({"status": "error", "message": "Request body is empty"})
             }
 
         try:
-            data = json.loads(request.body.decode('utf-8'))
+            data = json.loads(body)
         except json.JSONDecodeError as e:
             print(f"JSON decode error: {str(e)}")
             return {
                 "statusCode": 400,
-                "headers": response_headers,
+                "headers": headers,
                 "body": json.dumps({"status": "error", "message": "Invalid JSON in request body"})
             }
 
@@ -91,7 +104,7 @@ def handler(request, response):
             if field not in data or not data[field]:
                 return {
                     "statusCode": 400,
-                    "headers": response_headers,
+                    "headers": headers,
                     "body": json.dumps({"status": "error", "message": f"Missing required field: {field}"})
                 }
 
@@ -104,7 +117,7 @@ def handler(request, response):
         if not send_email(user_email, subject, proposal_text):
             return {
                 "statusCode": 500,
-                "headers": response_headers,
+                "headers": headers,
                 "body": json.dumps({"status": "error", "message": "Failed to send proposal to your email"})
             }
 
@@ -116,7 +129,7 @@ def handler(request, response):
 
         return {
             "statusCode": 200,
-            "headers": response_headers,
+            "headers": headers,
             "body": json.dumps({"status": "success", "message": "Proposal generated and sent successfully"})
         }
 
@@ -124,6 +137,6 @@ def handler(request, response):
         print(f"Server error: {str(e)}")
         return {
             "statusCode": 500,
-            "headers": response_headers,
+            "headers": headers,
             "body": json.dumps({"status": "error", "message": f"Server error: {str(e)}"})
         }
