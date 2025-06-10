@@ -16,21 +16,23 @@
     <link rel="canonical" href="https://www.automataxpro.site/index.html">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;700&family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary: #ff5e78;
-            --secondary: #a200ff;
-            --accent: #7209b7;
-            --light: #f9faff;
-            --dark: #1a1a2e;
-            --gradient: linear-gradient(135deg, var(--primary), var(--secondary));
+            --primary: #ff69b4; /* Hot pink from logo */
+            --secondary: #800000; /* Maroon from logo */
+            --accent: #c71585; /* Medium violet red for vibrancy */
+            --light: #f5f7fa; /* Softer white for background */
+            --dark: #0f0f1a; /* Deeper dark for contrast */
+            --gradient: linear-gradient(135deg, #ff69b4, #c71585, #800000); /* Pink-to-maroon gradient */
+            --glass-bg: rgba(255, 255, 255, 0.1);
+            --glass-blur: blur(12px);
         }
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-family: 'Inter', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;
         }
         html {
             scroll-behavior: smooth;
@@ -41,6 +43,15 @@
             color: var(--dark);
             overflow-x: hidden;
             position: relative;
+            transition: background-color 0.5s ease, color 0.5s ease;
+        }
+        body.dark-mode {
+            --primary: #ff69b4;
+            --secondary: #a52a2a;
+            --accent: #db7093;
+            --light: #1a1a2e;
+            --dark: #f5f7fa;
+            --glass-bg: rgba(26, 26, 46, 0.2);
         }
         #ai-background {
             position: fixed;
@@ -49,34 +60,85 @@
             width: 100%;
             height: 100%;
             z-index: -2;
-            background: linear-gradient(135deg, #f0f4ff 0%, #f5e9ff 100%);
+        }
+        .custom-cursor {
+            position: fixed;
+            width: 15px;
+            height: 15px;
+            border: 2px solid var(--primary);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 9999;
+            transform: translate(-50%, -50%);
+            transition: width 0.3s ease, height 0.3s ease, background 0.3s ease, border 0.3s ease, opacity 0.3s ease;
+        }
+        .custom-cursor::after {
+            content: '';
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            background: radial-gradient(circle, var(--primary) 10%, transparent 70%);
+            border-radius: 50%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            opacity: 0.5;
+            transition: opacity 0.3s ease;
+        }
+        .custom-cursor.hover {
+            width: 25px;
+            height: 25px;
+            background: var(--gradient);
+            border: none;
+            opacity: 0.9;
+        }
+        .custom-cursor.hover::after {
+            opacity: 0.8;
+            width: 40px;
+            height: 40px;
         }
         .container {
             width: 100%;
-            max-width: 1200px;
+            max-width: 1300px;
             margin: 0 auto;
             padding: 0 20px;
         }
         .btn {
             display: inline-block;
-            padding: 12px 30px;
+            padding: 14px 35px;
             border-radius: 50px;
+            font-family: 'Poppins', sans-serif;
             font-weight: 600;
-            transition: all 0.3s ease;
+            transition: all 0.4s ease;
             cursor: pointer;
             text-decoration: none;
             border: none;
             outline: none;
             text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .btn::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.2);
+            transition: left 0.4s ease;
+        }
+        .btn:hover::after {
+            left: 100%;
         }
         .btn-primary {
             background: var(--gradient);
             color: white;
-            box-shadow: 0 4px 15px rgba(58, 134, 255, 0.4);
+            box-shadow: 0 6px 20px rgba(255, 105, 180, 0.3);
         }
         .btn-primary:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(58, 134, 255, 0.6);
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 0 10px 30px rgba(255, 105, 180, 0.5);
         }
         .btn-outline {
             background: transparent;
@@ -84,8 +146,9 @@
             border: 2px solid var(--primary);
         }
         .btn-outline:hover {
-            background: var(--primary);
+            background: var(--gradient);
             color: white;
+            border: none;
         }
         header {
             position: fixed;
@@ -93,14 +156,14 @@
             left: 0;
             width: 100%;
             z-index: 1000;
-            background: rgba(255, 255, 255, 0);
-            backdrop-filter: blur(15px);
-            transition: all 0.3s ease;
+            background: var(--glass-bg);
+            backdrop-filter: var(--glass-blur);
+            transition: all 0.4s ease;
             box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
         }
         header.scrolled {
             padding: 10px 0;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
         }
         nav {
             display: flex;
@@ -109,7 +172,8 @@
             padding: 15px 0;
         }
         .logo {
-            font-size: 26px;
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 28px;
             font-weight: 700;
             color: var(--primary);
             display: flex;
@@ -117,7 +181,7 @@
             text-decoration: none;
         }
         .logo img {
-            max-height: 40px;
+            max-height: 45px;
             width: auto;
             object-fit: contain;
         }
@@ -130,17 +194,31 @@
         }
         .nav-links {
             display: flex;
-            gap: 30px;
+            gap: 35px;
         }
         .nav-links a {
             color: var(--dark);
             text-decoration: none;
+            font-family: 'Poppins', sans-serif;
             font-weight: 500;
             position: relative;
             transition: all 0.3s ease;
         }
         .nav-links a:hover {
             color: var(--primary);
+        }
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background: var(--gradient);
+            transition: width 0.3s ease;
+        }
+        .nav-links a:hover::after {
+            width: 100%;
         }
         .mobile-menu-btn {
             display: none;
@@ -150,22 +228,39 @@
             font-size: 24px;
             color: var(--dark);
         }
+        .dark-mode-toggle {
+            background: var(--glass-bg);
+            border: 1px solid var(--primary);
+            color: var(--dark);
+            padding: 8px 12px;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .dark-mode-toggle:hover {
+            background: var(--gradient);
+            color: white;
+        }
         .hero {
-            padding: 160px 0 100px;
+            padding: 180px 0 120px;
             position: relative;
             z-index: 1;
+            overflow: hidden;
+            background: linear-gradient(135deg, rgba(255, 105, 180, 0.1), rgba(128, 0, 0, 0.1));
         }
         .hero-content {
-            max-width: 600px;
-            background: rgba(248, 249, 250, 0);
-            padding: 30px;
-            border-radius: 15px;
+            max-width: 650px;
+            background: var(--glass-bg);
+            backdrop-filter: var(--glass-blur);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
         }
         .hero h1 {
             font-family: 'Space Grotesk', sans-serif;
-            font-size: 48px;
+            font-size: 52px;
             font-weight: 700;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
             line-height: 1.2;
         }
         .hero h1 span {
@@ -174,48 +269,86 @@
             background-clip: text;
             color: transparent;
         }
+        .typed-text {
+            display: inline;
+        }
         .hero p {
-            font-size: 18px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 19px;
             line-height: 1.6;
-            margin-bottom: 30px;
-            color: #555;
+            margin-bottom: 35px;
+            color: #444;
         }
         .hero-btns {
             display: flex;
-            gap: 15px;
-            margin-top: 30px;
+            gap: 20px;
+            margin-top: 35px;
         }
-        .hero-image {
+        .hero-visual {
             position: absolute;
             right: 0;
             top: 50%;
             transform: translateY(-50%);
-            width: 45%;
-            max-width: 600px;
-            animation: float 6s ease-in-out infinite;
+            width: 50%;
+            max-width: 650px;
+            z-index: 0;
+            animation: float 5s ease-in-out infinite;
         }
         @keyframes float {
-            0% { transform: translateY(-50%) translateX(0); }
-            50% { transform: translateY(-50%) translateX(10px) translateY(-10px); }
-            100% { transform: translateY(-50%) translateX(0); }
+            0% { transform: translateY(-50%) translateX(0) rotate(0deg); }
+            50% { transform: translateY(-50%) translateX(15px) translateY(-15px) rotate(2deg); }
+            100% { transform: translateY(-50%) translateX(0) rotate(0deg); }
+        }
+        .shape {
+            position: absolute;
+            z-index: -1;
+            opacity: 0.2;
+        }
+        .shape-1 {
+            top: 15%;
+            left: 5%;
+            width: 120px;
+            height: 120px;
+            background: var(--gradient);
+            border-radius: 30%;
+            animation: drift 12s infinite ease-in-out;
+        }
+        .shape-2 {
+            bottom: 25%;
+            right: 10%;
+            width: 90px;
+            height: 90px;
+            background: var(--accent);
+            border-radius: 50%;
+            animation: drift 9s infinite ease-in-out reverse;
+        }
+        @keyframes drift {
+            0% { transform: translate(0, 0) rotate(0deg); }
+            50% { transform: translate(25px, 35px) rotate(10deg); }
+            100% { transform: translate(0, 0) rotate(0deg); }
         }
         .services {
-            padding: 100px 0;
-            background: rgba(255, 255, 255, 0.1);
+            padding: 120px 0;
+            background: var(--glass-bg);
+            backdrop-filter: var(--glass-blur);
             position: relative;
             z-index: 1;
         }
         .section-header {
             text-align: center;
-            margin-bottom: 60px;
+            margin-bottom: 70px;
         }
         .section-header h2 {
             font-family: 'Space Grotesk', sans-serif;
-            font-size: 36px;
+            font-size: 40px;
             font-weight: 700;
-            margin-bottom: 15px;
+            margin-bottom: 20px;
             position: relative;
             display: inline-block;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
         }
         .section-header h2::after {
             content: '';
@@ -223,31 +356,35 @@
             left: 50%;
             bottom: -10px;
             transform: translateX(-50%);
-            width: 70px;
-            height: 3px;
+            width: 80px;
+            height: 4px;
             background: var(--gradient);
         }
         .section-header p {
-            font-size: 18px;
-            color: #666;
-            max-width: 700px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 19px;
+            color: #555;
+            max-width: 750px;
             margin: 0 auto;
         }
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 35px;
+            margin-top: 50px;
         }
         .service-card {
-            background-color: rgba(255, 255, 255, 0.199);
-            border-radius: 15px;
-            padding: 30px;
-            transition: all 0.3s ease;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+            background: var(--glass-bg);
+            backdrop-filter: var(--glass-blur);
+            border-radius: 20px;
+            padding: 35px;
+            transition: all 0.4s ease;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
             position: relative;
             overflow: hidden;
             z-index: 1;
+            cursor: pointer;
+            border: 1px solid rgba(255, 105, 180, 0.2);
         }
         .service-card::before {
             content: '';
@@ -259,11 +396,11 @@
             background: var(--gradient);
             z-index: -1;
             opacity: 0;
-            transition: opacity 0.3s ease;
+            transition: opacity 0.4s ease;
         }
         .service-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+            transform: translateY(-12px) scale(1.05) rotate(1deg);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
         }
         .service-card:hover::before {
             opacity: 1;
@@ -274,101 +411,147 @@
             color: white;
         }
         .service-icon {
-            font-size: 48px;
+            font-size: 50px;
             color: var(--primary);
-            margin-bottom: 20px;
-            transition: color 0.3s ease;
+            margin-bottom: 25px;
+            transition: color 0.4s ease, transform 0.4s ease;
+        }
+        .service-card:hover .service-icon {
+            transform: scale(1.15) rotate(5deg);
+        }
+        .service-tooltip {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: var(--dark);
+            color: white;
+            padding: 8px 12px;
+            border-radius: 8px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 14px;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 2;
+        }
+        .service-card:hover .service-tooltip {
+            opacity: 1;
+            visibility: visible;
         }
         .service-card h3 {
             font-family: 'Space Grotesk', sans-serif;
-            font-size: 22px;
+            font-size: 24px;
             margin-bottom: 15px;
-            transition: color 0.3s ease;
+            transition: color 0.4s ease;
         }
         .service-card p {
+            font-family: 'Poppins', sans-serif;
             font-size: 16px;
             color: #666;
-            transition: color 0.3s ease;
+            transition: color 0.4s ease;
         }
         .about {
-            padding: 100px 0;
+            padding: 120px 0;
             position: relative;
             z-index: 1;
         }
         .about-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 50px;
+            gap: 60px;
             align-items: center;
-            background: rgba(255, 255, 255, 0.1);
-            padding: 30px;
-            border-radius: 15px;
+            background: var(--glass-bg);
+            backdrop-filter: var(--glass-blur);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
         }
         .about-content h2 {
             font-family: 'Space Grotesk', sans-serif;
-            font-size: 36px;
+            font-size: 40px;
             font-weight: 700;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
         }
         .about-content p {
-            font-size: 16px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 17px;
             line-height: 1.7;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
             color: #555;
         }
         .about-image {
             position: relative;
+            perspective: 1000px;
         }
         .about-image img {
             width: 100%;
+            border-radius: 20px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+            transition: transform 0.5s ease;
+        }
+        .about-image:hover img {
+            transform: rotateY(10deg) rotateX(5deg) scale(1.05);
         }
         .stats {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-            gap: 20px;
-            margin-top: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+            gap: 25px;
+            margin-top: 35px;
         }
         .stat-item {
             text-align: center;
-            background-color: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            background: var(--glass-bg);
+            backdrop-filter: var(--glass-blur);
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+            border: 1px solid rgba(255, 105, 180, 0.2);
+        }
+        .stat-item:hover {
+            transform: scale(1.08);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
         }
         .stat-number {
             font-family: 'Space Grotesk', sans-serif;
-            font-size: 36px;
+            font-size: 40px;
             font-weight: 700;
             color: var(--primary);
-            margin-bottom: 5px;
+            margin-bottom: 8px;
             background: var(--gradient);
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
         }
         .stat-label {
-            font-size: 14px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 15px;
             color: #666;
         }
         .how-it-works {
-            padding: 100px 0;
-            background: rgba(248, 249, 250, 0.9);
+            padding: 120px 0;
+            background: var(--glass-bg);
+            backdrop-filter: var(--glass-blur);
             position: relative;
             z-index: 1;
         }
         .steps {
             display: flex;
             justify-content: space-between;
-            margin-top: 50px;
+            margin-top: 60px;
             position: relative;
         }
         .steps::before {
             content: '';
             position: absolute;
-            top: 45px;
+            top: 50px;
             left: 0;
             width: 100%;
-            height: 2px;
+            height: 3px;
             background: var(--gradient);
             z-index: 1;
         }
@@ -377,18 +560,24 @@
             position: relative;
             z-index: 2;
             width: 25%;
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+        }
+        .step:hover {
+            transform: scale(1.08);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
         }
         .step-number {
-            width: 90px;
-            height: 90px;
+            width: 100px;
+            height: 100px;
             display: flex;
             align-items: center;
             justify-content: center;
-            background: white;
+            background: var(--glass-bg);
+            backdrop-filter: var(--glass-blur);
             border-radius: 50%;
-            margin: 0 auto 20px;
+            margin: 0 auto 25px;
             font-family: 'Space Grotesk', sans-serif;
-            font-size: 30px;
+            font-size: 32px;
             font-weight: 700;
             color: white;
             position: relative;
@@ -397,110 +586,131 @@
         }
         .step h3 {
             font-family: 'Space Grotesk', sans-serif;
-            margin-bottom: 10px;
-            font-size: 20px;
+            margin-bottom: 15px;
+            font-size: 22px;
         }
         .step p {
+            font-family: 'Poppins', sans-serif;
             font-size: 16px;
             color: #666;
-            padding: 0 15px;
+            padding: 0 20px;
         }
         .testimonials {
-            padding: 100px 0;
+            padding: 120px 0;
             position: relative;
             z-index: 1;
-            background: rgba(248, 249, 250, 0.9);
+            background: var(--glass-bg);
+            backdrop-filter: var(--glass-blur);
         }
         .chatbot-widget {
             position: fixed;
-            bottom: 100px;
+            bottom: 30px;
             right: 30px;
             z-index: 1000;
         }
         .chatbot-toggle {
             background: var(--gradient);
             color: white;
-            padding: 12px 20px;
+            padding: 14px 22px;
+            font-family: 'Poppins', sans-serif;
             font-size: 16px;
             display: flex;
             align-items: center;
-            gap: 10px;
-            box-shadow: 0 4px 15px rgba(255, 94, 120, 0.4);
+            gap: 12px;
+            box-shadow: 0 6px 20px rgba(255, 105, 180, 0.3);
+            animation: pulse 2s infinite;
         }
         .chatbot-toggle:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(255, 94, 120, 0.6);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(255, 105, 180, 0.5);
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.06); }
+            100% { transform: scale(1); }
         }
         .chatbot-window {
             position: absolute;
-            bottom: 60px;
+            bottom: 70px;
             right: 0;
-            width: 350px;
-            max-height: 500px;
-            background: white;
-            border-radius: 15px;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            width: 380px;
+            max-height: 550px;
+            background: var(--glass-bg);
+            backdrop-filter: var(--glass-blur);
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
             display: flex;
             flex-direction: column;
+            border: 1px solid rgba(255, 105, 180, 0.2);
         }
         .chatbot-header {
             background: var(--gradient);
             color: white;
-            padding: 15px 20px;
-            border-top-left-radius: 15px;
-            border-top-right-radius: 15px;
+            padding: 18px 25px;
+            border-top-left-radius: 20px;
+            border-top-right-radius: 20px;
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
         .chatbot-header h3 {
             font-family: 'Space Grotesk', sans-serif;
-            font-size: 20px;
+            font-size: 22px;
             margin: 0;
         }
         .chatbot-close {
             background: none;
             border: none;
             color: white;
-            font-size: 16px;
+            font-size: 18px;
             cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+        .chatbot-close:hover {
+            transform: rotate(90deg);
         }
         .chatbot-messages {
             flex: 1;
-            padding: 20px;
+            padding: 25px;
             overflow-y: auto;
-            background: #f9faff;
+            background: var(--light);
         }
         .message {
-            margin-bottom: 15px;
+            margin-bottom: 20px;
         }
         .bot-message p {
-            background: rgba(255, 94, 120, 0.1);
-            padding: 10px 15px;
-            border-radius: 10px;
+            background: var(--glass-bg);
+            backdrop-filter: var(--glass-blur);
+            padding: 12px 18px;
+            border-radius: 12px;
+            font-family: 'Poppins', sans-serif;
             font-size: 15px;
             color: var(--dark);
+            border: 1px solid rgba(255, 105, 180, 0.2);
         }
         .user-message p {
             background: var(--gradient);
             color: white;
-            padding: 10px 15px;
-            border-radius: 10px;
+            padding: 12px 18px;
+            border-radius: 12px;
+            font-family: 'Poppins', sans-serif;
             font-size: 15px;
             margin-left: auto;
-            max-width: 80%;
+            max-width: 85%;
         }
         .quick-prompts {
             display: flex;
             flex-wrap: wrap;
-            gap: 10px;
-            margin-top: 10px;
+            gap: 12px;
+            margin-top: 15px;
         }
         .prompt-btn {
-            background: rgba(255, 94, 120, 0.2);
-            border: none;
-            padding: 8px 15px;
-            border-radius: 20px;
+            background: var(--glass-bg);
+            backdrop-filter: var(--glass-blur);
+            border: 1px solid rgba(255, 105, 180, 0.2);
+            padding: 10px 18px;
+            border-radius: 25px;
+            font-family: 'Poppins', sans-serif;
             font-size: 14px;
             color: var(--dark);
             cursor: pointer;
@@ -509,104 +719,32 @@
         .prompt-btn:hover {
             background: var(--gradient);
             color: white;
+            transform: scale(1.05);
         }
         .chatbot-input {
             display: flex;
-            padding: 15px;
-            border-top: 1px solid #ddd;
+            padding: 20px;
+            border-top: 1px solid rgba(255, 105, 180, 0.2);
         }
         .chatbot-input input {
             flex: 1;
-            padding: 10px;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            font-size: 14px;
-            margin-right: 10px;
+            padding: 12px;
+            border: 1px solid rgba(255, 105, 180, 0.3);
+            border-radius: 10px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 15px;
+            margin-right: 12px;
+            transition: all 0.3s ease;
+        }
+        .chatbot-input input:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(255, 105, 180, 0.2);
         }
         .chatbot-input .btn {
             background: var(--gradient);
             color: white;
-            padding: 10px 20px;
-            font-size: 14px;
-        }
-        .interactive-widget {
-            position: fixed;
-            bottom: 100px;
-            left: 30px;
-            z-index: 1000;
-        }
-        .interactive-toggle {
-            background: var(--gradient);
-            color: white;
-            padding: 12px 20px;
-            font-size: 16px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            box-shadow: 0 4px 15px rgba(255, 94, 120, 0.4);
-        }
-        .interactive-toggle:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(255, 94, 120, 0.6);
-        }
-        .interactive-window {
-            position: absolute;
-            bottom: 60px;
-            left: 0;
-            width: 350px;
-            max-height: 500px;
-            background: white;
-            border-radius: 15px;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-            display: flex;
-            flex-direction: column;
-        }
-        .interactive-header {
-            background: var(--gradient);
-            color: white;
-            padding: 15px 20px;
-            border-top-left-radius: 15px;
-            border-top-right-radius: 15px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .interactive-header h3 {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 20px;
-            margin: 0;
-        }
-        .interactive-close {
-            background: none;
-            border: none;
-            color: white;
-            font-size: 16px;
-            cursor: pointer;
-        }
-        .interactive-content {
-            padding: 20px;
-            background: #f9faff;
-            flex: 1;
-            overflow-y: auto;
-        }
-        .interactive-content p {
-            font-size: 16px;
-            color: #666;
-            margin-bottom: 20px;
-        }
-        .interactive-content a {
-            display: block;
-            padding: 10px 15px;
-            background: rgba(255, 94, 120, 0.2);
-            border-radius: 8px;
-            text-decoration: none;
-            color: var(--dark);
-            margin-bottom: 10px;
-            transition: all 0.3s ease;
-        }
-        .interactive-content a:hover {
-            background: var(--gradient);
-            color: white;
+            padding: 12px 25px;
+            font-size: 15px;
         }
         .welcome-popup {
             position: fixed;
@@ -614,34 +752,48 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.5);
+            background: rgba(0, 0, 0, 0.6);
             display: flex;
             justify-content: center;
             align-items: center;
             z-index: 2000;
+            animation: fadeIn 0.6s ease;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
         }
         .welcome-content {
-            background: white;
-            border-radius: 15px;
-            padding: 30px;
-            max-width: 500px;
+            background: var(--glass-bg);
+            backdrop-filter: var(--glass-blur);
+            border-radius: 20px;
+            padding: 35px;
+            max-width: 550px;
             width: 90%;
             text-align: center;
             position: relative;
+            transform: scale(0.9);
+            animation: popIn 0.6s ease forwards;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(255, 105, 180, 0.2);
+        }
+        @keyframes popIn {
+            to { transform: scale(1); }
         }
         .welcome-content h3 {
             font-family: 'Space Grotesk', sans-serif;
-            font-size: 28px;
-            margin-bottom: 15px;
+            font-size: 30px;
+            margin-bottom: 20px;
             background: var(--gradient);
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
         }
         .welcome-content p {
-            font-size: 16px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 17px;
             color: #666;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
         }
         .welcome-close {
             position: absolute;
@@ -649,12 +801,16 @@
             right: 15px;
             background: none;
             border: none;
-            font-size: 20px;
+            font-size: 22px;
             cursor: pointer;
             color: #666;
+            transition: transform 0.3s ease;
+        }
+        .welcome-close:hover {
+            transform: rotate(90deg);
         }
         .cta {
-            padding: 80px 0;
+            padding: 100px 0;
             background: var(--gradient);
             color: white;
             text-align: center;
@@ -663,228 +819,249 @@
         }
         .cta h2 {
             font-family: 'Space Grotesk', sans-serif;
-            font-size: 40px;
+            font-size: 44px;
             font-weight: 700;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
         }
         .cta p {
-            font-size: 18px;
-            max-width: 600px;
-            margin: 0 auto 30px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 19px;
+            max-width: 650px;
+            margin: 0 auto 35px;
             opacity: 0.9;
         }
         .cta-btn {
             background-color: white;
-            color: var(--primary);
+            color: var(--secondary);
             font-weight: 600;
-            transition: all 0.3s ease;
+            transition: all 0.4s ease;
         }
         .cta-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(255, 255, 255, 0.3);
-            color: var(--secondary);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(255, 255, 255, 0.4);
+            color: var(--primary);
         }
         .contact {
-            padding: 100px 0;
-            background: rgba(248, 249, 250, 0.158);
+            padding: 120px 0;
+            background: var(--glass-bg);
+            backdrop-filter: var(--glass-blur);
             position: relative;
             z-index: 1;
         }
         .contact-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-            margin-top: 50px;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 35px;
+            margin-top: 60px;
         }
         .contact-info {
-            background-color: rgba(255, 255, 255, 0);
-            border-radius: 15px;
-            padding: 30px;
-            backdrop-filter: blur(2px);
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+            background: var(--glass-bg);
+            backdrop-filter: var(--glass-blur);
+            border-radius: 20px;
+            padding: 35px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 105, 180, 0.2);
         }
         .contact-info h3 {
             font-family: 'Space Grotesk', sans-serif;
-            font-size: 24px;
-            margin-bottom: 25px;
+            font-size: 26px;
+            margin-bottom: 30px;
             position: relative;
             padding-bottom: 15px;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
         }
         .contact-info h3::after {
             content: '';
             position: absolute;
             bottom: 0;
             left: 0;
-            width: 50px;
-            height: 3px;
+            width: 60px;
+            height: 4px;
             background: var(--gradient);
         }
         .contact-info-item {
             display: flex;
             align-items: flex-start;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
         }
         .contact-icon {
-            width: 40px;
-            height: 40px;
+            width: 45px;
+            height: 45px;
             border-radius: 50%;
             background: var(--gradient);
             display: flex;
             align-items: center;
             justify-content: center;
             color: white;
-            margin-right: 15px;
+            margin-right: 20px;
             flex-shrink: 0;
+            transition: transform 0.4s ease;
+        }
+        .contact-info-item:hover .contact-icon {
+            transform: scale(1.1) rotate(360deg);
         }
         .contact-text {
+            font-family: 'Poppins', sans-serif;
             font-size: 16px;
             color: #555;
-            line-height: 1.6;
+            line-height: 1.7;
         }
         .contact-form {
-            background-color: rgba(255, 255, 255, 0);
-            border-radius: 15px;
-            padding: 30px;
-            backdrop-filter: blur(2px);
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+            background: var(--glass-bg);
+            backdrop-filter: var(--glass-blur);
+            border-radius: 20px;
+            padding: 35px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 105, 180, 0.2);
         }
         .form-group {
-            margin-bottom: 20px;
+            margin-bottom: 25px;
         }
         .form-label {
             display: block;
-            margin-bottom: 8px;
+            margin-bottom: 10px;
+            font-family: 'Poppins', sans-serif;
             font-weight: 500;
             color: #333;
         }
         .form-control {
             width: 100%;
             padding: 15px;
-            border: 1px solid #ddd;
-            border-radius: 8px;
+            border: 1px solid rgba(255, 105, 180, 0.3);
+            border-radius: 10px;
+            font-family: 'Poppins', sans-serif;
             font-size: 16px;
             transition: all 0.3s ease;
         }
         .form-control:focus {
             outline: none;
             border-color: var(--primary);
-            box-shadow: 0 0 0 2px rgba(58, 134, 255, 0.2);
+            box-shadow: 0 0 0 3px rgba(255, 105, 180, 0.2);
         }
         textarea.form-control {
             resize: vertical;
-            min-height: 120px;
+            min-height: 130px;
         }
         .form-submit {
             width: 100%;
             padding: 15px;
-            border-radius: 8px;
+            border-radius: 10px;
+            font-family: 'Poppins', sans-serif;
             font-size: 16px;
             font-weight: 600;
             background: var(--gradient);
             color: white;
             border: none;
             cursor: pointer;
-            transition: all 0.3s ease;
+            transition: all 0.4s ease;
         }
         .form-submit:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(58, 134, 255, 0.4);
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(255, 105, 180, 0.4);
         }
         footer {
-            padding: 60px 0 30px;
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(1px);
-            color: rgb(0, 0, 0);
+            padding: 70px 0 40px;
+            background: var(--glass-bg);
+            backdrop-filter: var(--glass-blur);
+            color: var(--dark);
             position: relative;
             z-index: 1;
         }
         .footer-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 40px;
-            margin-bottom: 40px;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 45px;
+            margin-bottom: 50px;
         }
         .footer-col h3 {
             font-family: 'Space Grotesk', sans-serif;
-            font-size: 20px;
-            margin-bottom: 20px;
+            font-size: 22px;
+            margin-bottom: 25px;
             font-weight: 600;
             position: relative;
-            padding-bottom: 10px;
+            padding-bottom: 12px;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
         }
         .footer-col h3::after {
             content: '';
             position: absolute;
             bottom: 0;
             left: 0;
-            width: 30px;
-            height: 2px;
+            width: 35px;
+            height: 3px;
             background: var(--gradient);
         }
         .footer-links {
             list-style: none;
         }
         .footer-links li {
-            margin-bottom: 12px;
+            margin-bottom: 15px;
         }
         .footer-links a {
-            color: rgba(0, 0, 0, 0.7);
+            color: rgba(0, 0, 0, 0.8);
             text-decoration: none;
+            font-family: 'Poppins', sans-serif;
             transition: all 0.3s ease;
         }
         .footer-links a:hover {
-            color: rgb(255, 0, 200);
-            padding-left: 5px;
+            color: var(--primary);
+            padding-left: 8px;
         }
         .footer-social {
             display: flex;
-            gap: 15px;
-            margin-top: 20px;
+            gap: 18px;
+            margin-top: 25px;
         }
         .social-icon {
-            width: 40px;
-            height: 40px;
+            width: 45px;
+            height: 45px;
             border-radius: 50%;
-            background-color: rgba(255, 255, 255, 0.1);
+            background: var(--glass-bg);
+            backdrop-filter: var(--glass-blur);
             display: flex;
             align-items: center;
             justify-content: center;
-            color: rgb(0, 0, 0);
-            transition: all 0.3s ease;
+            color: var(--dark);
+            transition: all 0.4s ease;
         }
         .social-icon:hover {
             background: var(--gradient);
-            transform: translateY(-3px);
+            color: white;
+            transform: translateY(-5px);
         }
         .footer-bottom {
             text-align: center;
-            padding-top: 30px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 40px;
+            border-top: 1px solid rgba(255, 105, 180, 0.2);
+            font-family: 'Poppins', sans-serif;
             font-size: 14px;
             color: rgba(0, 0, 0, 0.7);
         }
         .animate-fade-in {
             opacity: 0;
-            transform: translateY(20px);
-            transition: all 0.5s ease;
+            transform: translateY(25px);
+            transition: all 0.6s ease;
         }
         .fade-in {
             opacity: 1;
             transform: translateY(0);
         }
-        .shape {
-            display: none;
-        }
         @media (max-width: 992px) {
             .hero h1 {
-                font-size: 40px;
+                font-size: 44px;
             }
-            .hero-image {
-                width: 40%;
+            .hero-visual {
+                width: 45%;
             }
             .about-grid {
                 grid-template-columns: 1fr;
-                gap: 40px;
+                gap: 50px;
             }
             .about-image {
                 order: -1;
@@ -897,7 +1074,7 @@
             }
             .step {
                 width: 50%;
-                margin-bottom: 40px;
+                margin-bottom: 50px;
             }
         }
         @media (max-width: 768px) {
@@ -913,42 +1090,45 @@
                 left: 0;
                 width: 100%;
                 height: 100vh;
-                background: rgba(255, 255, 255, 0.9);
-                backdrop-filter: blur(10px);
-                padding: 40px 20px;
+                background: var(--glass-bg);
+                backdrop-filter: var(--glass-blur);
+                padding: 50px 20px;
                 display: flex;
                 flex-direction: column;
                 align-items: center;
                 justify-content: center;
-                gap: 20px;
+                gap: 25px;
                 z-index: 1000;
                 transform: translateX(-100%);
-                transition: transform 0.4s ease;
+                transition: transform 0.5s ease;
             }
             .mobile-menu.active {
                 transform: translateX(0);
             }
             .close-menu {
                 position: absolute;
-                top: 20px;
-                right: 20px;
-                font-size: 24px;
+                top: 25px;
+                right: 25px;
+                font-size: 28px;
                 background: none;
                 border: none;
                 cursor: pointer;
+                color: var(--dark);
             }
             .mobile-menu a {
-                font-size: 18px;
-                padding: 10px 0;
+                font-family: 'Poppins', sans-serif;
+                font-size: 20px;
+                padding: 12px 0;
+                color: var(--dark);
             }
             .hero {
-                padding: 120px 0 60px;
+                padding: 140px 0 80px;
                 text-align: center;
             }
             .hero-content {
                 max-width: 100%;
             }
-            .hero-image {
+            .hero-visual {
                 display: none;
             }
             .hero-btns {
@@ -960,37 +1140,43 @@
         }
         @media (max-width: 576px) {
             .hero h1 {
-                font-size: 32px;
+                font-size: 36px;
             }
             .btn {
-                padding: 10px 20px;
-                font-size: 14px;
+                padding: 12px 25px;
+                font-size: 15px;
             }
             .section-header h2 {
-                font-size: 28px;
+                font-size: 32px;
             }
             .contact-grid {
                 grid-template-columns: 1fr;
             }
-            .chatbot-window, .interactive-window {
-                width: 300px;
-                max-height: 400px;
+            .chatbot-window {
+                width: 320px;
+                max-height: 450px;
             }
-            .chatbot-toggle, .interactive-toggle {
-                padding: 10px 15px;
-                font-size: 14px;
+            .chatbot-toggle {
+                padding: 12px 18px;
+                font-size: 15px;
             }
             .welcome-content h3 {
-                font-size: 24px;
+                font-size: 26px;
             }
             .welcome-content p {
-                font-size: 14px;
+                font-size: 15px;
+            }
+            .custom-cursor {
+                display: none;
             }
         }
     </style>
 </head>
 <body>
     <canvas id="ai-background"></canvas>
+    <div class="custom-cursor" id="custom-cursor"></div>
+    <div class="shape shape-1"></div>
+    <div class="shape shape-2"></div>
     <header id="header">
         <div class="container">
             <nav>
@@ -1007,6 +1193,9 @@
                     <a href="blog.html">Blog</a>
                     <a href="contact.html">Contact</a>
                 </div>
+                <button class="dark-mode-toggle" id="dark-mode-toggle" aria-label="Toggle Dark Mode">
+                    <i class="fas fa-moon"></i>
+                </button>
                 <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Open Mobile Menu">
                     <i class="fas fa-bars"></i>
                 </button>
@@ -1028,30 +1217,38 @@
     </div>
     <div class="welcome-popup" id="welcome-popup" style="display: none;">
         <div class="welcome-content">
-            <button class="welcome-close" id="welcome-close">✖</button>
+            <button class="welcome-close" id="welcome-close" aria-label="Close Welcome Popup">✖</button>
             <h3>Welcome to AutomataX!</h3>
-            <p>Discover how our AI-driven automation can transform your business. Take our interactive quiz or try our savings simulator to see the impact!</p>
+            <p>Ready to revolutionize your business with AI-driven automation? Take our interactive quiz or try our savings simulator to see the impact!</p>
             <button class="btn btn-primary" id="welcome-discover">Discover Now</button>
         </div>
     </div>
     <section class="hero" id="home">
         <div class="container">
             <div class="hero-content animate-fade-in">
-                <h1>Your Future, <span>Automated!</span></h1>
-                <p>AutomataX is a next-gen automation solutions company empowering businesses to move beyond manual work and embrace intelligent, AI-driven transformation. We deliver customized solutions that optimize operations, enhance decision-making, and unlock exponential growth.</p>
+                <h1>Your Future, <span id="typed-text">Automated!</span></h1>
+                <p>AutomataX is a next-gen automation solutions company empowering businesses to transcend manual work and embrace intelligent, AI-driven transformation. We craft bespoke solutions to optimize operations, elevate decisions, and ignite exponential growth.</p>
                 <div class="hero-btns">
                     <a href="contact.html" class="btn btn-primary">Get Started</a>
                     <a href="services.html" class="btn btn-outline">Our Services</a>
                 </div>
             </div>
-            <img src="automatax-logo.png" alt="Automation Illustration" class="hero-image animate-fade-in">
+            <div class="hero-visual">
+                <!-- Replace with Lottie animation for premium effect -->
+                <div id="hero-lottie" style="width: 100%; height: 400px;"></div>
+                <!-- Fallback video -->
+                <video class="hero-video" autoplay loop muted playsinline style="display: none;">
+                    <source src="automation-video.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
         </div>
     </section>
     <section class="services" id="services">
         <div class="container">
             <div class="section-header animate-fade-in">
                 <h2>Our Services</h2>
-                <p>Transform your business with our comprehensive suite of automation solutions</p>
+                <p>Transform your business with our cutting-edge suite of automation solutions</p>
             </div>
             <div class="services-grid">
                 <div class="service-card animate-fade-in">
@@ -1059,42 +1256,48 @@
                         <i class="fas fa-robot"></i>
                     </div>
                     <h3>AI-powered Data Analysis</h3>
-                    <p>Unlock insights from your data with our advanced AI algorithms that identify patterns, predict trends, and drive intelligent decision-making.</p>
+                    <p>Unlock profound insights with advanced AI algorithms that detect patterns, forecast trends, and fuel brilliant decisions.</p>
+                    <div class="service-tooltip">Boost your insights!</div>
                 </div>
                 <div class="service-card animate-fade-in">
                     <div class="service-icon">
                         <i class="fas fa-cogs"></i>
                     </div>
                     <h3>End-to-End Workflow Automation</h3>
-                    <p>Streamline your operations by automating repetitive tasks and complex workflows, reducing errors and freeing up valuable time for your team.</p>
+                    <p>Streamline operations by automating repetitive tasks and complex workflows, slashing errors and freeing your team.</p>
+                    <div class="service-tooltip">Save time today!</div>
                 </div>
                 <div class="service-card animate-fade-in">
                     <div class="service-icon">
                         <i class="fas fa-comments"></i>
                     </div>
                     <h3>Custom AI Chatbots</h3>
-                    <p>Enhance customer engagement with intelligent conversational AI that delivers personalized experiences and handles inquiries around the clock.</p>
+                    <p>Elevate engagement with intelligent AI chatbots delivering personalized experiences, 24/7.</p>
+                    <div class="service-tooltip">24/7 support!</div>
                 </div>
                 <div class="service-card animate-fade-in">
                     <div class="service-icon">
                         <i class="fas fa-chart-line"></i>
                     </div>
                     <h3>Predictive Business Intelligence</h3>
-                    <p>Stay ahead of market trends with our predictive analytics tools that forecast outcomes and help you make data-driven strategic decisions.</p>
+                    <p>Lead the market with predictive analytics to forecast outcomes and drive strategic brilliance.</p>
+                    <div class="service-tooltip">Predict the future!</div>
                 </div>
                 <div class="service-card animate-fade-in">
                     <div class="service-icon">
                         <i class="fas fa-network-wired"></i>
                     </div>
                     <h3>System Integration</h3>
-                    <p>Connect your existing tools and platforms into a seamless ecosystem that works together efficiently and shares data intelligently.</p>
+                    <p>Unify your tools into a seamless, intelligent ecosystem for peak efficiency.</p>
+                    <div class="service-tooltip">Seamless connectivity!</div>
                 </div>
                 <div class="service-card animate-fade-in">
                     <div class="service-icon">
                         <i class="fas fa-tachometer-alt"></i>
                     </div>
                     <h3>Real-time Dashboards</h3>
-                    <p>Monitor your business performance with dynamic dashboards that provide real-time insights and reporting tools to help you make faster decisions.</p>
+                    <p>Track performance with dynamic, real-time dashboards for swift, informed decisions.</p>
+                    <div class="service-tooltip">Instant insights!</div>
                 </div>
             </div>
         </div>
@@ -1104,25 +1307,25 @@
             <div class="about-grid">
                 <div class="about-content animate-fade-in">
                     <h2>Why Choose AutomataX?</h2>
-                    <p>At AutomataX, we believe automation is more than just efficiency—it's about transformation. Our team of experts combines deep technical knowledge with business acumen to deliver solutions that are secure, scalable, and results-driven.</p>
-                    <p>We partner closely with our clients to understand their unique goals and challenges, crafting customized automation strategies that align with their vision and deliver measurable results.</p>
+                    <p>At AutomataX, automation is transformation. Our elite team blends technical mastery with business insight to deliver secure, scalable, premium solutions.</p>
+                    <p>We collaborate closely, tailoring strategies to your vision, delivering measurable, world-class results.</p>
                     <div class="stats">
                         <div class="stat-item">
-                            <div class="stat-number">99%</div>
+                            <div class="stat-number" data-target="99">0%</div>
                             <div class="stat-label">Client Satisfaction</div>
                         </div>
                         <div class="stat-item">
-                            <div class="stat-number">30+</div>
-                            <div class="stat-label">Projects Completed</div>
+                            <div class="stat-number" data-target="30">0+</div>
+                            <div class="stat-number" data-suffix="+"></div>
                         </div>
                         <div class="stat-item">
-                            <div class="stat-number">40%</div>
+                            <div class="stat-number" data-target="40">0%</div>
                             <div class="stat-label">Avg. Efficiency Gain</div>
                         </div>
                     </div>
                 </div>
                 <div class="about-image animate-fade-in">
-                    <img src="why-automatax.png" alt="AutomataX Team">
+                    <img src="why-automatax.png" alt="AutomataX Team" loading="lazy">
                 </div>
             </div>
         </div>
@@ -1131,28 +1334,28 @@
         <div class="container">
             <div class="section-header animate-fade-in">
                 <h2>How It Works</h2>
-                <p>Our proven process ensures seamless implementation and maximum value from your automation investment</p>
+                <p>Our proven process delivers seamless, high-value automation tailored to you</p>
             </div>
             <div class="steps">
                 <div class="step animate-fade-in">
                     <div class="step-number">1</div>
                     <h3>Discovery</h3>
-                    <p>We conduct a thorough assessment of your current processes, challenges, and goals to identify automation opportunities.</p>
+                    <p>We dive deep into your processes, challenges, and goals to uncover automation potential.</p>
                 </div>
                 <div class="step animate-fade-in">
                     <div class="step-number">2</div>
                     <h3>Strategy</h3>
-                    <p>Our experts develop a customized automation roadmap aligned with your business objectives and priorities.</p>
+                    <p>Our experts craft a bespoke automation roadmap aligned with your vision.</p>
                 </div>
                 <div class="step animate-fade-in">
                     <div class="step-number">3</div>
                     <h3>Implementation</h3>
-                    <p>We build, test, and deploy your automation solutions using agile methodologies for faster results.</p>
+                    <p>We build, test, and deploy solutions with agility for swift, premium results.</p>
                 </div>
                 <div class="step animate-fade-in">
                     <div class="step-number">4</div>
                     <h3>Optimization</h3>
-                    <p>Continuous monitoring and refinement ensure your automation systems evolve with your business needs.</p>
+                    <p>Continuous refinement ensures your systems evolve with elegance and precision.</p>
                 </div>
             </div>
         </div>
@@ -1163,7 +1366,7 @@
                 <h2>Success Stories</h2>
                 <p>Discover how businesses have transformed with our RPA solutions.</p>
             </div>
-            <div style="text-align: center; margin-top: 30px;">
+            <div style="text-align: center; margin-top: 35px;">
                 <a href="rpa-case-studies.html" class="btn btn-primary">Explore RPA Case Studies</a>
             </div>
         </div>
@@ -1175,11 +1378,11 @@
         <div class="chatbot-window" style="display: none;">
             <div class="chatbot-header">
                 <h3>AutomataX Assistant</h3>
-                <button class="chatbot-close">✖</button>
+                <button class="chatbot-close" aria-label="Close Chatbot">✖</button>
             </div>
             <div class="chatbot-messages" id="chatbot-messages">
                 <div class="message bot-message">
-                    <p>Hello! I’m here to help you with your automation needs. What would you like to know?</p>
+                    <p>Hey there! I’m your AutomataX Assistant, ready to turbocharge your automation journey! What’s on your mind?</p>
                     <div class="quick-prompts">
                         <button class="prompt-btn" data-prompt="What is RPA?">What is RPA?</button>
                         <button class="prompt-btn" data-prompt="Tell me about AI solutions">AI Solutions</button>
@@ -1188,7 +1391,7 @@
                 </div>
             </div>
             <div class="chatbot-input">
-                <input type="text" id="chatbot-input" placeholder="Type your question..." />
+                <input type="text" id="chatbot-input" placeholder="Type your question..." aria-label="Chatbot Input" />
                 <button id="chatbot-send" class="btn">Send</button>
             </div>
         </div>
@@ -1196,15 +1399,15 @@
     <section class="cta">
         <div class="container">
             <h2 class="animate-fade-in">Ready to Automate Your Future?</h2>
-            <p class="animate-fade-in">Join the hundreds of businesses that have transformed their operations with AutomataX. Let's start your automation journey today.</p>
-            <a href="#contact" class="btn cta-btn animate-fade-in">Schedule a Free Consultation</a>
+            <p class="animate-fade-in">Join elite businesses revolutionizing operations with AutomataX. Ignite your premium automation journey now!</p>
+            <a href="contact.html" class="btn cta-btn animate-fade-in">Schedule a Free Consultation</a>
         </div>
     </section>
     <section class="contact" id="contact">
         <div class="container">
             <div class="section-header animate-fade-in">
                 <h2>Get In Touch</h2>
-                <p>Have questions or ready to discuss your automation needs? Reach out to our team of experts.</p>
+                <p>Questions or ready to elevate your automation? Connect with our expert team.</p>
             </div>
             <div class="contact-grid">
                 <div class="contact-info animate-fade-in">
@@ -1251,11 +1454,11 @@
                         <input type="hidden" name="_subject" value="New message from AutomataXPro site">
                         <div class="form-group">
                             <label for="name" class="form-label">Your Name</label>
-                            <input type="text" id="name" name="name" class="form-control" required>
+                            <input type="text" id="name" name="name" class="form-control" required aria-required="true">
                         </div>
                         <div class="form-group">
                             <label for="email" class="form-label">Email Address</label>
-                            <input type="email" id="email" name="email" class="form-control" required>
+                            <input type="email" id="email" name="email" class="form-control" required aria-required="true">
                         </div>
                         <div class="form-group">
                             <label for="company" class="form-label">Company Name</label>
@@ -1263,7 +1466,7 @@
                         </div>
                         <div class="form-group">
                             <label for="message" class="form-label">Your Message</label>
-                            <textarea id="message" name="message" class="form-control" required></textarea>
+                            <textarea id="message" name="message" class="form-control" required aria-required="true"></textarea>
                         </div>
                         <button type="submit" class="form-submit">Send Message</button>
                     </form>
@@ -1278,10 +1481,10 @@
                     <h3>AutomataX</h3>
                     <p>Your Future, Automated. We empower businesses with secure, AI-driven automation solutions that prioritize data safety.</p>
                     <div class="footer-social">
-                        <a href="dist/index.html" class="social-icon"><i class="fab fa-facebook-f"></i></a>
-                        <a href="https://x.com/automatax_tech?s=21" class="social-icon"><i class="fab fa-twitter"></i></a>
-                        <a href="https://www.linkedin.com/company/automataxpro/" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="dist/index.html" class="social-icon"><i class="fab fa-instagram"></i></a>
+                        <a href="dist/index.html" class="social-icon" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://x.com/automatax_tech?s=21" class="social-icon" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.linkedin.com/company/automataxpro/" class="social-icon" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="dist/index.html" class="social-icon" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
                     </div>
                 </div>
                 <div class="footer-col">
@@ -1307,10 +1510,10 @@
                 </div>
                 <div class="footer-col">
                     <h3>Newsletter</h3>
-                    <p>Subscribe for updates on secure automation trends and company news.</p>
+                    <p>Subscribe for premium updates on automation trends and insights.</p>
                     <form action="https://formsubmit.co/sales@automataxpro.site" method="POST" class="footer-form">
                         <input type="hidden" name="_next" value="https://automataxpro.site/thank-you.html">
-                        <input type="email" placeholder="Your Email" class="form-control" required>
+                        <input type="email" placeholder="Your Email" class="form-control" required aria-required="true">
                         <button type="submit" class="btn btn-primary">Subscribe</button>
                     </form>
                 </div>
@@ -1320,32 +1523,41 @@
             </div>
         </div>
     </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.9.6/lottie.min.js"></script>
     <script>
+        // Enhanced Canvas Particle Background
         const canvas = document.getElementById('ai-background');
         const ctx = canvas.getContext('2d');
         canvas.width = window.innerWidth;
         canvas.height = window.innerHeight;
         const particles = [];
-        const particleCount = 50;
+        const particleCount = 60;
         class Particle {
             constructor() {
                 this.x = Math.random() * canvas.width;
                 this.y = Math.random() * canvas.height;
-                this.size = Math.random() * 3 + 1;
-                this.speedX = Math.random() * 0.5 - 0.25;
-                this.speedY = Math.random() * 0.5 - 0.25;
+                this.size = Math.random() * 4 + 1;
+                this.speedX = Math.random() * 0.6 - 0.3;
+                this.speedY = Math.random() * 0.6 - 0.3;
+                this.hue = Math.random() * 360;
+                this.glow = 0;
             }
             update() {
                 this.x += this.speedX;
                 this.y += this.speedY;
                 if (this.x < 0 || this.x > canvas.width) this.speedX *= -1;
                 if (this.y < 0 || this.y > canvas.height) this.speedY *= -1;
+                this.hue += 1.5;
+                this.glow = Math.sin(Date.now() * 0.002) * 0.5 + 0.5;
             }
             draw() {
-                ctx.fillStyle = 'rgba(58, 134, 255, 0.5)';
+                ctx.fillStyle = `hsla(${this.hue}, 80%, 60%, ${0.3 + this.glow * 0.5})`;
+                ctx.shadowBlur = 15;
+                ctx.shadowColor = `hsla(${this.hue}, 80%, 60%, 0.8)`;
                 ctx.beginPath();
                 ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
                 ctx.fill();
+                ctx.shadowBlur = 0;
             }
         }
         function initParticles() {
@@ -1362,10 +1574,10 @@
                     const dx = particles[i].x - particles[j].x;
                     const dy = particles[i].y - particles[j].y;
                     const distance = Math.sqrt(dx * dx + dy * dy);
-                    if (distance < 100) {
+                    if (distance < 120) {
                         ctx.beginPath();
-                        ctx.strokeStyle = `rgba(114, 9, 183, ${1 - distance / 100})`;
-                        ctx.lineWidth = 0.5;
+                        ctx.strokeStyle = `hsla(${particles[i].hue}, 80%, 60%, ${1 - distance / 120})`;
+                        ctx.lineWidth = 0.8;
                         ctx.moveTo(particles[i].x, particles[i].y);
                         ctx.lineTo(particles[j].x, particles[j].y);
                         ctx.stroke();
@@ -1380,6 +1592,33 @@
             canvas.width = window.innerWidth;
             canvas.height = window.innerHeight;
         });
+
+        // Custom Cursor
+        const cursor = document.getElementById('custom-cursor');
+        let mouseX = 0, mouseY = 0, cursorX = 0, cursorY = 0;
+        const speed = 0.15;
+        function animateCursor() {
+            cursorX += (mouseX - cursorX) * speed;
+            cursorY += (mouseY - cursorY) * speed;
+            cursor.style.left = cursorX + 'px';
+            cursor.style.top = cursorY + 'px';
+            requestAnimationFrame(animateCursor);
+        }
+        document.addEventListener('mousemove', (e) => {
+            mouseX = e.clientX;
+            mouseY = e.clientY;
+        });
+        animateCursor();
+        document.querySelectorAll('a, button, .service-card').forEach(el => {
+            el.addEventListener('mouseenter', () => {
+                cursor.classList.add('hover');
+            });
+            el.addEventListener('mouseleave', () => {
+                cursor.classList.remove('hover');
+            });
+        });
+
+        // Header Scroll Effect
         const header = document.getElementById('header');
         window.addEventListener('scroll', () => {
             if (window.scrollY > 50) {
@@ -1388,6 +1627,22 @@
                 header.classList.remove('scrolled');
             }
         });
+
+        // Dark Mode Toggle
+        const darkModeToggle = document.getElementById('dark-mode-toggle');
+        darkModeToggle.addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
+            const icon = darkModeToggle.querySelector('i');
+            if (document.body.classList.contains('dark-mode')) {
+                icon.classList.remove('fa-moon');
+                icon.classList.add('fa-sun');
+            } else {
+                icon.classList.remove('fa-sun');
+                icon.classList.add('fa-moon');
+            }
+        });
+
+        // Mobile Menu
         const mobileMenuBtn = document.getElementById('mobile-menu-btn');
         const closeMenuBtn = document.getElementById('close-menu');
         const mobileMenu = document.getElementById('mobile-menu');
@@ -1403,23 +1658,98 @@
                 mobileMenu.classList.remove('active');
             });
         });
-        const animateElements = document.querySelectorAll('.animate-fade-in');
+
+        // Typing Effect for Hero
+        const typedText = document.getElementById('typed-text');
+        const phrases = ['Automated!', 'Transformed!', 'Optimized!', 'Empowered!'];
+        let phraseIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+        function type() {
+            const currentPhrase = phrases[phraseIndex];
+            if (!isDeleting) {
+                typedText.textContent = currentPhrase.substring(0, charIndex);
+                charIndex++;
+                if (charIndex > currentPhrase.length) {
+                    isDeleting = true;
+                    setTimeout(type, 2000);
+                } else {
+                    setTimeout(type, 120);
+                }
+            } else {
+                typedText.textContent = currentPhrase.substring(0, charIndex);
+                charIndex--;
+                if (charIndex < 0) {
+                    isDeleting = false;
+                    phraseIndex = (phraseIndex + 1) % phrases.length;
+                    setTimeout(type, 600);
+                } else {
+                    setTimeout(type, 60);
+                }
+            }
+        }
+        type();
+
+        // Lottie Animation for Hero
+        const lottieContainer = document.getElementById('hero-lottie');
+        if (lottieContainer) {
+            lottie.loadAnimation({
+                container: lottieContainer,
+                renderer: 'svg',
+                loop: true,
+                autoplay: true,
+                path: 'business-salesman.json'
+            });
+        }
+
+        // Stats Counter
+        const stats = document.querySelectorAll('.stat-number');
         const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const target = parseInt(entry.target.getAttribute('data-target'));
+                    const suffix = entry.target.getAttribute('data-suffix') || '';
+                    let count = 0;
+                    const speed = 40;
+                    const increment = target / 60;
+                    const updateCount = () => {
+                        count += increment;
+                        if (count < target) {
+                            entry.target.textContent = Math.ceil(count) + suffix;
+                            setTimeout(updateCount, speed);
+                        } else {
+                            entry.target.textContent = target + suffix;
+                        }
+                    };
+                    updateCount();
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+        stats.forEach(stat => observer.observe(stat));
+
+        // Scroll Animations
+        const animateElements = document.querySelectorAll('.animate-fade-in');
+        const scrollObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('fade-in');
                 }
             });
-        }, { threshold: 0.1 });
+        }, { threshold: 0.2 });
         animateElements.forEach(element => {
-            observer.observe(element);
+            scrollObserver.observe(element);
         });
+
+        // Contact Form
         const contactForm = document.getElementById('contactForm');
         contactForm.addEventListener('submit', (e) => {
             e.preventDefault();
-            alert('Thank you for your message! We will get back to you soon.');
+            alert('Thank you for your message! Our team will respond with premium service soon.');
             contactForm.reset();
         });
+
+        // Chatbot
         const chatbotToggle = document.querySelector('.chatbot-toggle');
         const chatbotWindow = document.querySelector('.chatbot-window');
         const chatbotClose = document.querySelector('.chatbot-close');
@@ -1428,7 +1758,6 @@
         const chatbotSend = document.getElementById('chatbot-send');
         chatbotToggle.addEventListener('click', () => {
             chatbotWindow.style.display = chatbotWindow.style.display === 'none' ? 'flex' : 'none';
-            interactiveWindow.style.display = 'none'; // Close interactive window if open
         });
         chatbotClose.addEventListener('click', () => {
             chatbotWindow.style.display = 'none';
@@ -1462,19 +1791,19 @@
         }
         async function handleUserInput(message) {
             const predefinedResponses = {
-                'What is RPA?': 'RPA (Robotic Process Automation) allows you to automate repetitive, rule-based tasks, freeing up your team for more strategic work. AutomataX’s RPA solutions can save you hours every week!',
-                'Tell me about AI solutions': 'Our AI solutions use advanced machine learning to provide actionable insights from your data, helping you make smarter decisions. From predictive analytics to natural language processing, AutomataX has you covered.',
-                'How can I contact AutomataX?': 'You can reach us at <a href="mailto:sales@automataxpro.site">sales@automataxpro.site</a> or <a href="mailto:info@automataxpro.site">info@automataxpro.site</a>. Or visit our <a href="contact.html">Contact Page</a> to get in touch!'
+                'What is RPA?': 'RPA (Robotic Process Automation) is your VIP pass to efficiency! AutomataX’s premium RPA solutions obliterate manual tasks, skyrocketing productivity. Ready to transform your workflow?',
+                'Tell me about AI solutions': 'Our AI solutions are pure gold! AutomataX leverages cutting-edge tech for elite analytics, chatbots, and more. Ignite your business with world-class intelligence!',
+                'How can I contact AutomataX?': 'We’re at your service! Email us at <a href="mailto:sales@automataxpro.site">sales@automataxpro.site</a> or <a href="mailto:info@automataxpro.site">info@automataxpro.site</a>. Visit our <a href="contact.html">Contact Page</a> for premium support!'
             };
             if (predefinedResponses[message]) {
                 addMessage('bot', predefinedResponses[message]);
                 return;
             }
             if (message === 'Yes, please collect my contact info') {
-                addMessage('bot', 'Please provide your email address, and we’ll get in touch with you soon!');
+                addMessage('bot', 'Brilliant! Share your email, and our elite team will connect with premium service!');
                 return;
             } else if (message.includes('@')) {
-                addMessage('bot', 'Thank you! We’ve received your email and will reach out shortly. In the meantime, feel free to explore our <a href="services.html">services</a>.');
+                addMessage('bot', 'Got it! Your email’s secured. Expect a world-class response soon! Check our <a href="services.html">services</a> now.');
                 return;
             }
             try {
@@ -1490,7 +1819,7 @@
                             {
                                 "parts": [
                                     {
-                                        "text": `You are a helpful assistant for AutomataX, an automation company specializing in RPA, AI, and cloud solutions. A user asked: "${message}". Respond concisely and professionally, highlighting AutomataX's services where relevant. Keep the response under 150 words.`
+                                        "text": `You are a fun, premium assistant for AutomataX, an elite automation company specializing in RPA, AI, and cloud solutions. A user asked: "${message}". Respond concisely, professionally, with excitement, highlighting AutomataX's premium services. Keep it under 150 words.`
                                     }
                                 ]
                             }
@@ -1513,19 +1842,11 @@
                 }
             } catch (error) {
                 console.error('Error with Gemini API:', error.message);
-                addMessage('bot', 'I’m sorry, I couldn’t process your request. Would you like to leave your contact information so our team can assist you? <button class="prompt-btn" data-prompt="Yes, please collect my contact info">Yes</button>');
+                addMessage('bot', 'Oops, a glitch! Share your contact info? <button class="prompt-btn" data-prompt="Yes, please collect my contact info">Yes</button>');
             }
         }
-        const interactiveToggle = document.querySelector('.interactive-toggle');
-        const interactiveWindow = document.querySelector('.interactive-window');
-        const interactiveClose = document.querySelector('.interactive-close');
-        interactiveToggle.addEventListener('click', () => {
-            interactiveWindow.style.display = interactiveWindow.style.display === 'none' ? 'flex' : 'none';
-            chatbotWindow.style.display = 'none';
-        });
-        interactiveClose.addEventListener('click', () => {
-            interactiveWindow.style.display = 'none';
-        });
+
+        // Welcome Popup
         const welcomePopup = document.getElementById('welcome-popup');
         const welcomeClose = document.getElementById('welcome-close');
         const welcomeDiscover = document.getElementById('welcome-discover');
@@ -1538,7 +1859,6 @@
         });
         welcomeDiscover.addEventListener('click', () => {
             welcomePopup.style.display = 'none';
-            interactiveToggle.click();
         });
     </script>
 </body>
