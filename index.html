@@ -670,7 +670,7 @@
             position: fixed;
             bottom: 30px;
             right: 30px;
-            z-index: 1000;
+            z-index: 1200;
         }
         .chatbot-toggle {
             background: var(--gradient);
@@ -1444,20 +1444,33 @@
         <div class="welcome-content">
             <button class="welcome-close" id="welcome-close" aria-label="Close Welcome Popup">✖</button>
             <h3>Welcome to AutomataX!</h3>
-            <p>Ready to revolutionize your business with AI-driven automation?</p>
+            <p>Step into tomorrow with AutomataX. Automate, innovate, and outpace your competition—securely.</p>
             <button class="btn btn-primary" id="welcome-discover">Discover Now</button>
         </div>
     </div>
     <section class="hero" id="home">
         <div class="container">
             <div class="hero-content animate-fade-in">
-                <h1>Your Future, <span id="typed-text">Automated!</span></h1>
-                <p>AutomataX is a next-gen automation solutions company empowering businesses to transcend manual work and embrace intelligent, AI-driven transformation. We craft bespoke solutions to optimize operations, elevate decisions, and ignite exponential growth.</p>
-                <div class="hero-btns">
-                    <a href="contact.html" class="btn btn-primary">Get Started</a>
-                    <a href="services.html" class="btn btn-outline">Our Services</a>
-                </div>
-            </div>
+                <h1>
+                    <span>Your Future,</span> <span id="typed-text">Automated.</span>
+                    </h1>
+                    <p>
+                    Imagine your business moving faster, smarter, and more profitably—every single day. At <b>AutomataX</b>, we design automation that frees your people, amplifies your data, and delivers results you can measure.<br>
+                    <span style="color:var(--primary);font-weight:500;">Welcome to the era of intelligent growth. Ready to take the lead?</span>
+                    </p>
+                    <div class="hero-btns">
+                        <a href="contact.html" class="btn btn-primary animate__pulse animate__infinite">
+                            <i class="fas fa-rocket"></i> Start My Automation Journey
+                        </a>
+                        <a href="services.html" class="btn btn-outline">
+                            <i class="fas fa-magic"></i> Explore Solutions
+                        </a>
+                    </div>
+                    <div class="container" style="margin: 25px auto 48px auto; text-align: center;">
+                        <span style="font-size:1.12em; color:#888;">
+                            Trusted by industry leaders in <b>Finance</b>, <b>Healthcare</b>, <b>Retail</b>, and <b>Operations</b>
+                        </span>
+                        </div>
             <div class="hero-visual">
                 <!-- Replace with Lottie animation for premium effect -->
                 <div id="hero-lottie" style="width: 100%; height: 400px;"></div>
@@ -1476,64 +1489,55 @@
                 <p>Transform your business with our cutting-edge suite of automation solutions</p>
             </div>
             <div class="services-grid">
-                <div class="service-card animate-fade-in">
-                    <div class="service-icon">
-                        <i class="fas fa-robot"></i>
-                    </div>
-                    <h3>AI-powered Data Analysis</h3>
-                    <p>Unlock profound insights with advanced AI algorithms that detect patterns, forecast trends, and fuel brilliant decisions.</p>
-                    <div class="service-tooltip">Boost your insights!</div>
-                </div>
-                <div class="service-card animate-fade-in">
-                    <div class="service-icon">
-                        <i class="fas fa-cogs"></i>
-                    </div>
-                    <h3>End-to-End Workflow Automation</h3>
-                    <p>Streamline operations by automating repetitive tasks and complex workflows, slashing errors and freeing your team.</p>
-                    <div class="service-tooltip">Save time today!</div>
-                </div>
-                <div class="service-card animate-fade-in">
-                    <div class="service-icon">
-                        <i class="fas fa-comments"></i>
-                    </div>
-                    <h3>Custom AI Chatbots</h3>
-                    <p>Elevate engagement with intelligent AI chatbots delivering personalized experiences, 24/7.</p>
-                    <div class="service-tooltip">24/7 support!</div>
-                </div>
-                <div class="service-card animate-fade-in">
-                    <div class="service-icon">
-                        <i class="fas fa-chart-line"></i>
-                    </div>
-                    <h3>Predictive Business Intelligence</h3>
-                    <p>Lead the market with predictive analytics to forecast outcomes and drive strategic brilliance.</p>
-                    <div class="service-tooltip">Predict the future!</div>
-                </div>
-                <div class="service-card animate-fade-in">
-                    <div class="service-icon">
-                        <i class="fas fa-network-wired"></i>
-                    </div>
-                    <h3>System Integration</h3>
-                    <p>Unify your tools into a seamless, intelligent ecosystem for peak efficiency.</p>
-                    <div class="service-tooltip">Seamless connectivity!</div>
-                </div>
-                <div class="service-card animate-fade-in">
-                    <div class="service-icon">
-                        <i class="fas fa-tachometer-alt"></i>
-                    </div>
-                    <h3>Real-time Dashboards</h3>
-                    <p>Track performance with dynamic, real-time dashboards for swift, informed decisions.</p>
-                    <div class="service-tooltip">Instant insights!</div>
-                </div>
-            </div>
-        </div>
+  <div class="service-card animate-fade-in" tabindex="0" aria-label="AI-Powered Data Intelligence">
+      <div class="service-icon" aria-hidden="true"><i class="fas fa-robot"></i></div>
+      <h3>AI-Powered Data Intelligence</h3>
+      <p>Turn data chaos into clarity. Instantly uncover hidden trends, spot new revenue opportunities, and make every decision data-driven.</p>
+      <div class="service-tooltip">Your competitive edge, revealed.</div>
+  </div>
+  <div class="service-card animate-fade-in" tabindex="0" aria-label="End-to-End Workflow Automation">
+      <div class="service-icon" aria-hidden="true"><i class="fas fa-cogs"></i></div>
+      <h3>End-to-End Workflow Automation</h3>
+      <p>Say goodbye to bottlenecks. Our smart bots handle repetitive work 24/7—eliminating errors, saving hours, and supercharging productivity.</p>
+      <div class="service-tooltip">More time for what matters.</div>
+  </div>
+  <div class="service-card animate-fade-in" tabindex="0" aria-label="Custom AI Chatbots">
+      <div class="service-icon" aria-hidden="true"><i class="fas fa-comments"></i></div>
+      <h3>Custom AI Chatbots</h3>
+      <p>Delight your customers day and night with chatbots that answer, guide, and convert—always on brand, always on point.</p>
+      <div class="service-tooltip">Never miss a customer again.</div>
+  </div>
+  <div class="service-card animate-fade-in" tabindex="0" aria-label="Predictive Business Intelligence">
+      <div class="service-icon" aria-hidden="true"><i class="fas fa-chart-line"></i></div>
+      <h3>Predictive Business Intelligence</h3>
+      <p>See what's next, not just what's now. Forecast sales, detect risks early, and unlock proactive growth with next-gen analytics.</p>
+      <div class="service-tooltip">Decisions powered by tomorrow.</div>
+  </div>
+  <div class="service-card animate-fade-in" tabindex="0" aria-label="System Integration">
+      <div class="service-icon" aria-hidden="true"><i class="fas fa-network-wired"></i></div>
+      <h3>System Integration</h3>
+      <p>Unify your entire tech stack. We connect your tools into a seamless, intelligent ecosystem—so data flows, not headaches.</p>
+      <div class="service-tooltip">All your data. One source of truth.</div>
+  </div>
+  <div class="service-card animate-fade-in" tabindex="0" aria-label="Real-time Dashboards">
+      <div class="service-icon" aria-hidden="true"><i class="fas fa-tachometer-alt"></i></div>
+      <h3>Real-time Dashboards</h3>
+      <p>See your KPIs live. Our interactive dashboards keep leaders and teams aligned, informed, and ready to act—instantly.</p>
+      <div class="service-tooltip">Clarity at a glance.</div>
+  </div>
+</div>
     </section>
     <section class="about" id="about">
         <div class="container">
             <div class="about-grid">
                 <div class="about-content animate-fade-in">
-                    <h2>Why Choose AutomataX?</h2>
-                    <p>At AutomataX, automation is transformation. Our elite team blends technical mastery with business insight to deliver secure, scalable, premium solutions.</p>
-                    <p>We collaborate closely, tailoring strategies to your vision, delivering measurable, world-class results.</p>
+                    <h2>Why AutomataX?</h2>
+                    <p>
+                    At AutomataX, we’re not just automators—we’re your strategic growth partner. Our team blends deep technical mastery with business insight, delivering automation that’s <b>secure, scalable, and tailored to your goals.</b>
+                    </p>
+                    <p>
+                    We work side-by-side with your leaders to design and deploy solutions that <b>deliver real ROI</b>—not just promises. Our measure of success? Your measurable results.
+                    </p>
                     <div class="stats">
                         <div class="stat-item">
                             <div class="stat-number" data-target="99">0%</div>
@@ -1541,14 +1545,13 @@
                         </div>
                         <div class="stat-item">
                             <div class="stat-number" data-target="30">0+</div>
-                            <div class="stat-number" data-suffix="+"></div>
+                            <div class="stat-label">Industries Served</div>
                         </div>
                         <div class="stat-item">
                             <div class="stat-number" data-target="40">0%</div>
                             <div class="stat-label">Avg. Efficiency Gain</div>
                         </div>
                     </div>
-                </div>
                 <div class="about-image animate-fade-in">
                     <img src="why-automatax.png" alt="AutomataX Team" loading="lazy">
                 </div>
@@ -1559,60 +1562,65 @@
         <div class="container">
             <div class="section-header animate-fade-in">
                 <h2>How It Works</h2>
-                <p>Our proven process delivers seamless, high-value automation tailored to you</p>
-            </div>
-            <div class="steps">
-                <div class="step animate-fade-in">
-                    <div class="step-number">1</div>
-                    <h3>Discovery</h3>
-                    <p>We dive deep into your processes, challenges, and goals to uncover automation potential.</p>
+                <p>
+                Every business is unique. That’s why our process is personal, proven, and built for your results.
+                </p>
+                <div class="steps">
+                    <div class="step animate-fade-in">
+                        <div class="step-number">1</div>
+                        <h3>Discovery</h3>
+                        <p>We get to know your business, your pain points, and your biggest opportunities—no generic audits here.</p>
+                    </div>
+                    <div class="step animate-fade-in">
+                        <div class="step-number">2</div>
+                        <h3>Strategy</h3>
+                        <p>Our experts craft a laser-focused roadmap, customized to drive your goals and maximize impact.</p>
+                    </div>
+                    <div class="step animate-fade-in">
+                        <div class="step-number">3</div>
+                        <h3>Implementation</h3>
+                        <p>We build, test, and launch your automation with speed, precision, and zero disruption to your day-to-day.</p>
+                    </div>
+                    <div class="step animate-fade-in">
+                        <div class="step-number">4</div>
+                        <h3>Optimization</h3>
+                        <p>We don’t stop at “done”—we monitor, optimize, and evolve your solution so you stay ahead. Always.</p>
+                    </div>
                 </div>
-                <div class="step animate-fade-in">
-                    <div class="step-number">2</div>
-                    <h3>Strategy</h3>
-                    <p>Our experts craft a bespoke automation roadmap aligned with your vision.</p>
-                </div>
-                <div class="step animate-fade-in">
-                    <div class="step-number">3</div>
-                    <h3>Implementation</h3>
-                    <p>We build, test, and deploy solutions with agility for swift, premium results.</p>
-                </div>
-                <div class="step animate-fade-in">
-                    <div class="step-number">4</div>
-                    <h3>Optimization</h3>
-                    <p>Continuous refinement ensures your systems evolve with elegance and precision.</p>
-                </div>
-            </div>
-        </div>
     </section>
     <section class="testimonials" id="testimonials">
         <div class="container">
             <div class="section-header animate-fade-in">
-                <h2>Success Stories</h2>
-                <p>Discover how businesses have transformed with our RPA solutions.</p>
-            </div>
-            <div class="case-studies-grid">
-                <div class="case-study-card animate-fade-in">
-                    <div class="case-study-image">
-                        <img src="ptw.png" alt="Operations RPA Case Study" loading="lazy">
+                <h2>Real Results, Real Businesses</h2>
+                <p>
+                See how industry leaders partner with AutomataX to save time, cut costs, and transform their future.
+                </p>
+                <div class="case-studies-grid">
+                    <div class="case-study-card animate-fade-in">
+                        <div class="case-study-image">
+                            <img src="ptw.png" alt="Permit to Work Automation Success" loading="lazy">
+                        </div>
+                        <div class="case-study-content">
+                            <h3>Permit to Work: Compliance Automated</h3>
+                            <p>AutomataX automated complex safety approvals, slashing manual paperwork and reducing compliance risk by 90%—all with zero downtime.</p>
+                            <a href="case-study-1.html" class="btn btn-outline" style="margin-top:10px;">
+                                <i class="fas fa-arrow-right"></i> Discover the Impact
+                            </a>
+                        </div>
                     </div>
-                    <div class="case-study-content">
-                        <h3>Permit to Work Automation</h3>
-                        <p>How AutomataX automated Permit to Work (PTW) processes to save time, reduce errors, and enhance workplace safety compliance.</p>
-                        <a href="case-study-1.html">See More</a>
+                    <div class="case-study-card animate-fade-in">
+                        <div class="case-study-image">
+                            <img src="minute_master.png" alt="MinuteMaster RPA Success" loading="lazy">
+                        </div>
+                        <div class="case-study-content">
+                            <h3>MinuteMaster: Meetings on Autopilot</h3>
+                            <p>One client cut documentation time by <b>90%</b> with MinuteMaster—ensuring consistent, actionable minutes for every meeting, every time.</p>
+                            <a href="case-study-minutemaster.html" class="btn btn-outline" style="margin-top:10px;">
+                                <i class="fas fa-arrow-right"></i> See the Results
+                            </a>
+                        </div>
                     </div>
                 </div>
-                <div class="case-study-card animate-fade-in">
-                    <div class="case-study-image">
-                        <img src="minute_master.png" alt="Meeting Minutes RPA Case Study" loading="lazy">
-                    </div>
-                    <div class="case-study-content">
-                        <h3>Automating Meeting Minutes</h3>
-                        <p>Created MinuteMaster to streamline meeting minute creation and distribution, reducing documentation time by 90% and ensuring consistency.</p>
-                        <a href="case-study-minutemaster.html">See More</a>
-                    </div>
-                </div>
-            </div>
             <div style="text-align: center; margin-top: 35px;">
                 <a href="rpa-case-studies.html" class="btn btn-primary">More Success Stories</a>
             </div>
@@ -1629,11 +1637,11 @@
             </div>
             <div class="chatbot-messages" id="chatbot-messages">
                 <div class="message bot-message">
-                    <p>Hey there! I’m your AutomataX Assistant, ready to turbocharge your automation journey! What’s on your mind?</p>
+                    <p>Hey! I’m your AutomataX Assistant. Ask me anything about AI automation, digital transformation, or how we make businesses unstoppable. Where should we start?</p>
                     <div class="quick-prompts">
-                        <button class="prompt-btn" data-prompt="What is RPA?">What is RPA?</button>
-                        <button class="prompt-btn" data-prompt="Tell me about AI solutions">AI Solutions</button>
-                        <button class="prompt-btn" data-prompt="How can I contact AutomataX?">Contact Us</button>
+                        <button class="prompt-btn" data-prompt="How can automation grow my business?">Boost My Business</button>
+                        <button class="prompt-btn" data-prompt="What makes AutomataX different?">Why AutomataX?</button>
+                        <button class="prompt-btn" data-prompt="Show me a real success story.">Show Success Story</button>
                     </div>
                 </div>
             </div>
@@ -1645,16 +1653,23 @@
     </div>
     <section class="cta">
         <div class="container">
-            <h2 class="animate-fade-in">Ready to Automate Your Future?</h2>
-            <p class="animate-fade-in">Join elite businesses revolutionizing operations with AutomataX. Ignite your premium automation journey now!</p>
-            <a href="contact.html" class="btn cta-btn animate-fade-in">Schedule a Free Consultation</a>
+            <h2 class="animate-fade-in">Ready to Accelerate Your Business?</h2>
+            <p class="animate-fade-in">
+                The world’s most ambitious teams trust AutomataX to automate, optimize, and outperform. <br>
+                <span style="font-weight:500;color:#ffd7f2;">Get your custom strategy—no obligation, just impact.</span>
+            </p>
+            <a href="contact.html" class="btn cta-btn animate__pulse animate__infinite animate-fade-in">
+                <i class="fas fa-comments"></i> Claim Free Strategy Session
+            </a>
         </div>
     </section>
     <section class="contact" id="contact">
         <div class="container">
             <div class="section-header animate-fade-in">
-                <h2>Get In Touch</h2>
-                <p>Questions or ready to elevate your automation? Connect with our expert team.</p>
+                <h2>Let’s Connect</h2>
+                <p>
+                Ready to see what automation can do for you? Our experts are here to answer every question and help you take the next step.
+                </p>
             </div>
             <div class="contact-grid">
                 <div class="contact-info animate-fade-in">
@@ -1726,7 +1741,9 @@
             <div class="footer-grid">
                 <div class="footer-col">
                     <h3>AutomataX</h3>
-                    <p>Your Future, Automated. We empower businesses with secure, AI-driven automation solutions that prioritize data safety.</p>
+                    <p>AutomataX: Your trusted partner in AI-driven business transformation. <br>
+                    We deliver secure automation that’s built for impact—today and tomorrow.
+                    </p>
                     <div class="footer-social">
                         <a href="dist/index.html" class="social-icon" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
                         <a href="https://x.com/automatax_tech?s=21" class="social-icon" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
@@ -1757,7 +1774,11 @@
                 </div>
                 <div class="footer-col">
                     <h3>Newsletter</h3>
-                    <p>Subscribe for premium updates on automation trends and insights.</p>
+                    <p>Subscribe for exclusive automation insights and industry trends, straight to your inbox.<br>
+                        <label style="font-size: 0.97em; color:#555; display: block; margin-top:6px;">
+                            <input type="checkbox" required style="margin-right:4px;"> I consent to receive emails from AutomataX.
+                        </label>
+                    </p>
                     <form action="https://formsubmit.co/sales@automataxpro.site" method="POST" class="footer-form">
                         <input type="hidden" name="_next" value="https://automataxpro.site/thank-you.html">
                         <input type="email" placeholder="Your Email" class="form-control" required aria-required="true">
@@ -2059,7 +2080,7 @@
                 return;
             }
             try {
-                const apiKey = 'AIzaSyA0zkNzs-6c_HVOmqrFH8UQG9n8Snxyf98';
+                const apiKey = '';
                 const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key=${apiKey}`;
                 const response = await fetch(apiUrl, {
                     method: 'POST',
@@ -2162,7 +2183,7 @@
         <i class="fas fa-star"></i>
         <p>Thanks! Check your inbox for a quick suggestion. <br>
         Want to discuss live?</p>
-        <a href="https://calendly.com/automatax/automation-discovery" target="_blank" class="cta-bar-btn" style="margin-top:8px;"><i class="fas fa-calendar"></i> Book a Free Call</a>
+        <a href="https://calendly.com/automataxpro-sales" target="_blank" class="cta-bar-btn" style="margin-top:8px;"><i class="fas fa-calendar"></i> Book a Free Call</a>
         </div>
     </div>
     </div>

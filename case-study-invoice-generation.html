@@ -1188,132 +1188,141 @@
         </div>
     </div>
     <section class="case-study-hero" id="case-study">
-        <div class="container">
-            <div class="animate-fade-in">
-                <h1>Automating <span>Invoice Generation</span></h1>
-                <p>How AutomataX developed a GUI-based invoice generator to streamline invoice creation, PDF generation, and email distribution, saving time and reducing errors.</p>
-            </div>
-        </div>
-    </section>
-    <section class="section case-study-details">
-        <div class="container">
-            <div class="case-study-content animate-fade-in">
-                <img src="invoice-gen.png" alt="Invoice Generation Automation" loading="lazy">
-                <h2>Client Overview</h2>
-                <p>A mid-sized service provider managing multiple service centers (SCs) relied on manual processes to generate invoices from Excel data. This involved grouping data, calculating amounts, creating PDF invoices, and emailing them to SCs, leading to significant time consumption, errors, and inefficiencies.</p>
-                <h3>Challenges</h3>
-                <ul>
-                    <li>Manual data aggregation: Grouping Excel data by SC and claim status required hours of manual work.</li>
-                    <li>Error-prone calculations: Manual GST calculations and amount conversions led to frequent discrepancies.</li>
-                    <li>Time-consuming PDF creation: Manually formatting invoices in Excel or Word was labor-intensive and inconsistent.</li>
-                    <li>Email distribution: Composing emails and attaching files for each SC was repetitive and prone to errors.</li>
-                    <li>Lack of consolidation: Summarizing invoice details across SCs for reporting purposes was a tedious manual task.</li>
-                </ul>
-                <h3>Our Solution</h3>
-                <p>We developed a Python-based desktop application, BillCraft, using Python-based libraries for a modern GUI, to fully automate the invoice generation process:</p>
-                <ul>
-                    <li>Automated data processing: Scripted logic to group Excel data by SC and claim status, applying configured price rates for accurate calculations.</li>
-                    <li>Dynamic PDF generation: Used ReportLab to create professional PDF invoices with consistent formatting, including GST summaries and amount in words.</li>
-                    <li>Automated email sending: Integrated SMTP to send invoices and raw data files to SCs, with CCs to relevant stakeholders.</li>
-                    <li>Consolidated reporting: Generated a summary Excel file for all invoices, streamlining financial reporting.</li>
-                    <li>User-friendly GUI: Provided an intuitive interface for configuration, logging, and process initiation, with modern styling and real-time feedback.</li>
-                </ul>
-                <h3>Implementation Process</h3>
-                <div class="implementation-timeline">
-                    <div class="timeline-item animate-fade-in">
-                        <div class="timeline-content">
-                            <h4>Phase 1: Analysis & Design</h4>
-                            <p>Analyzed raw data structure, identified key requirements (e.g., GST logic, email automation), and designed a user-friendly GUI with configuration options.</p>
-                        </div>
-                        <div class="timeline-dot">1</div>
-                    </div>
-                    <div class="timeline-item animate-fade-in">
-                        <div class="timeline-content">
-                            <h4>Phase 2: Development</h4>
-                            <p>Built the application with PySide6 for the GUI, Pandas for data processing, ReportLab for PDF generation, and smtplib for email automation, ensuring robust error handling.</p>
-                        </div>
-                        <div class="timeline-dot">2</div>
-                    </div>
-                    <div class="timeline-item animate-fade-in">
-                        <div class="timeline-content">
-                            <h4>Phase 3: Testing & Deployment</h4>
-                            <p>Tested with sample data, refined GST calculations and email functionality, deployed the application with a user guide, and trained staff for seamless adoption.</p>
-                        </div>
-                        <div class="timeline-dot">3</div>
-                    </div>
-                </div>
-                <h3>Results & Benefits</h3>
-                <p>The automation significantly enhanced efficiency and accuracy:</p>
-                <div class="case-study-stats">
-                    <div class="stat-item">
-                        <div class="stat-number" data-target="95">0%</div>
-                        <div class="stat-label">Time Reduction</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number" data-target="100">0%</div>
-                        <div class="stat-label">Error Elimination</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number" data-target="90">0%</div>
-                        <div class="stat-label">Productivity Gain</div>
-                    </div>
-                </div>
-                <table class="results-table">
-                    <thead>
-                        <tr>
-                            <th>Metric</th>
-                            <th>Before Automation</th>
-                            <th>After Automation</th>
-                            <th>Improvement</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Invoice Processing Time</td>
-                            <td>3+ hours/day</td>
-                            <td><10 minutes/day</td>
-                            <td>95%+ reduction</td>
-                        </tr>
-                        <tr>
-                            <td>Calculation Errors</td>
-                            <td>Frequent</td>
-                            <td>Eliminated</td>
-                            <td>100% improvement</td>
-                        </tr>
-                        <tr>
-                            <td>PDF Creation Time</td>
-                            <td>20–30 minutes/invoice</td>
-                            <td>Automated</td>
-                            <td>100% time saved</td>
-                        </tr>
-                        <tr>
-                            <td>Email Sending Time</td>
-                            <td>10–15 minutes/SC</td>
-                            <td>Automated</td>
-                            <td>100% time saved</td>
-                        </tr>
-                        <tr>
-                            <td>Analyst Productivity</td>
-                            <td>~50 hours/month</td>
-                            <td><5 hours/month</td>
-                            <td>90% productivity gain</td>
-                        </tr>
-                    </tbody>
-                </table>
-                <div class="testimonial">
-                    <p>"BillCraft has transformed our invoicing process. What used to be a multi-hour daily ordeal is now a quick, error-free task. The GUI is intuitive, and the automation is seamless."</p>
-                    <div class="testimonial-author">— Operations Manager, Client Organization</div>
-                </div>
-                <h3>Conclusion</h3>
-                <p>The BillCraft application eliminated manual invoicing tasks, achieving near-total automation of data processing, PDF generation, and email distribution. This allowed the client to focus on strategic activities, improved operational efficiency, and set the stage for further automation in financial workflows.</p>
-            </div>
-        </div>
-    </section>
+		<div class="container">
+			<div class="animate-fade-in">
+				<h1>Revolutionizing <span>Invoice Generation</span> for Modern Enterprises</h1>
+				<p>Discover how AutomataX delivered a seamless, GUI-driven invoice automation solution—transforming daily operations, eliminating errors, and empowering teams to achieve more in less time.</p>
+			</div>
+		</div>
+	</section>
+	<section class="section case-study-details">
+		<div class="container">
+			<div class="case-study-content animate-fade-in">
+				<img src="invoice-gen.png" alt="Invoice Generation Automation" loading="lazy">
+				<h2>Client Snapshot</h2>
+				<p>Our client, a dynamic mid-sized service provider with multiple service centers (SCs), faced a bottleneck: their manual, Excel-driven invoicing process drained resources, slowed operations, and left room for costly errors. Each day, analysts spent hours consolidating data, calculating totals, and manually sending invoices—time better spent on strategic initiatives.</p>
+				
+				<h3>Challenges</h3>
+				<ul>
+					<li><strong>Time-Intensive Data Handling:</strong> Aggregating Excel data by SC and claim status demanded significant manual effort and long working hours.</li>
+					<li><strong>Manual Calculations:</strong> GST and total conversions were done by hand, often leading to discrepancies and rework.</li>
+					<li><strong>Inefficient Document Creation:</strong> Crafting PDF invoices in Excel/Word was repetitive, inconsistent, and not scalable.</li>
+					<li><strong>Email Complexity:</strong> Manually preparing and distributing invoices to every SC introduced risk of omission and delay.</li>
+					<li><strong>Fragmented Reporting:</strong> Compiling organization-wide summaries for management reviews required additional manual tracking and report creation.</li>
+				</ul>
+				
+				<h3>The AutomataX Solution</h3>
+				<p>Enter <strong>BillCraft</strong>—a bespoke, Python-powered desktop application with a sleek GUI that redefined invoice management. Here’s how AutomataX engineered a premium, hands-free workflow:</p>
+				<ul>
+					<li><strong>Intelligent Data Processing:</strong> Automated aggregation and analysis of Excel files, grouping by SC and claim status, using client-specific pricing logic for unmatched accuracy.</li>
+					<li><strong>Instant, Polished PDFs:</strong> Professional-grade invoices generated on-demand with ReportLab, featuring GST breakdowns, amount-to-words conversion, and consistent branding.</li>
+					<li><strong>One-Click Email Dispatch:</strong> Built-in SMTP automation sends out all invoices and raw data to each SC and all stakeholders, complete with tailored subject lines and attachments.</li>
+					<li><strong>Effortless Reporting:</strong> Real-time Excel summaries for comprehensive management insight—delivered as part of the automation.</li>
+					<li><strong>User-First Experience:</strong> Modern, intuitive GUI for easy configuration, real-time logs, and rapid process initiation—no technical background required.</li>
+				</ul>
+				
+				<h3>Implementation Roadmap</h3>
+				<div class="implementation-timeline">
+					<div class="timeline-item animate-fade-in">
+						<div class="timeline-content">
+							<h4>Phase 1: Discovery & Design</h4>
+							<p>Mapped the client’s data flows, understood unique business logic, and architected an interface to simplify every step—from configuration to completion.</p>
+						</div>
+						<div class="timeline-dot">1</div>
+					</div>
+					<div class="timeline-item animate-fade-in">
+						<div class="timeline-content">
+							<h4>Phase 2: Solution Engineering</h4>
+							<p>Developed the BillCraft application using PySide6 for a robust GUI, Pandas for data intelligence, ReportLab for document automation, and secure SMTP integration—ensuring bulletproof performance and reliability.</p>
+						</div>
+						<div class="timeline-dot">2</div>
+					</div>
+					<div class="timeline-item animate-fade-in">
+						<div class="timeline-content">
+							<h4>Phase 3: Testing, Training, Launch</h4>
+							<p>Ran rigorous QA with real client data, fine-tuned GST calculations, and delivered hands-on training—guaranteeing a flawless rollout and immediate productivity gains.</p>
+						</div>
+						<div class="timeline-dot">3</div>
+					</div>
+				</div>
+				
+				<h3>Results & Tangible Benefits</h3>
+				<p>Within days, the impact was undeniable. BillCraft’s automation translated to:</p>
+				<div class="case-study-stats">
+					<div class="stat-item">
+						<div class="stat-number" data-target="95">0%</div>
+						<div class="stat-label">Time Saved</div>
+					</div>
+					<div class="stat-item">
+						<div class="stat-number" data-target="100">0%</div>
+						<div class="stat-label">Error Reduction</div>
+					</div>
+					<div class="stat-item">
+						<div class="stat-number" data-target="90">0%</div>
+						<div class="stat-label">Productivity Boost</div>
+					</div>
+				</div>
+				<table class="results-table">
+					<thead>
+						<tr>
+							<th>Metric</th>
+							<th>Before Automation</th>
+							<th>After Automation</th>
+							<th>Improvement</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>Invoice Processing Time</td>
+							<td>3+ hours/day</td>
+							<td>&lt;10 minutes/day</td>
+							<td>95%+ reduction</td>
+						</tr>
+						<tr>
+							<td>Calculation Errors</td>
+							<td>Frequent</td>
+							<td>Zero</td>
+							<td>100% eliminated</td>
+						</tr>
+						<tr>
+							<td>PDF Creation Time</td>
+							<td>20–30 minutes/invoice</td>
+							<td>Automated</td>
+							<td>100% time saved</td>
+						</tr>
+						<tr>
+							<td>Email Sending Time</td>
+							<td>10–15 minutes/SC</td>
+							<td>Automated</td>
+							<td>100% time saved</td>
+						</tr>
+						<tr>
+							<td>Analyst Productivity</td>
+							<td>~50 hours/month</td>
+							<td>&lt;5 hours/month</td>
+							<td>90% gain</td>
+						</tr>
+					</tbody>
+				</table>
+				<div class="testimonial">
+					<p>“BillCraft completely transformed our invoice workflow. A process that once consumed hours now takes minutes. The interface is a breeze to use, and our team has absolute confidence in the results.”</p>
+					<div class="testimonial-author">— Operations Manager, Leading Service Provider</div>
+				</div>
+				
+				<h3>Conclusion</h3>
+				<p>
+					With BillCraft, the client’s invoicing is now effortless, consistent, and secure. By erasing manual touchpoints, AutomataX empowered their team to redirect energy to higher-value work, unlocked new reporting insights, and set a new standard for operational excellence.  
+					<br><br>
+					<strong>Want similar results?</strong> Experience the AutomataX difference—where premium automation delivers premium outcomes.
+				</p>
+			</div>
+		</div>
+	</section>
     <section class="cta">
         <div class="container">
-            <h2 class="animate-fade-in">Ready to Automate Your Invoicing?</h2>
-            <p class="animate-fade-in">Contact us today to discover how our GUI-based automation solutions can transform your invoicing workflows and boost productivity.</p>
-            <a href="contact.html" class="btn cta-btn animate-fade-in">Get Started Now</a>
+            <h2 class="animate-fade-in">Ready to Experience Premium Automation?</h2>
+			<p class="animate-fade-in">Connect with AutomataX and elevate your safety management with world-class RPA—customized for your business, built for the future.</p>
+			<a href="contact.html" class="btn cta-btn animate-fade-in">Start My Transformation</a>
         </div>
     </section>
     <div class="chatbot-widget">
@@ -1327,11 +1336,11 @@
             </div>
             <div class="chatbot-messages" id="chatbot-messages">
                 <div class="message bot-message">
-                    <p>Hey there! I’m your AutomataX Assistant, ready to turbocharge your automation journey! What’s on your mind?</p>
+                    <p>Hey! I’m your AutomataX Assistant. Ask me anything about AI automation, digital transformation, or how we make businesses unstoppable. Where should we start?</p>
                     <div class="quick-prompts">
-                        <button class="prompt-btn" data-prompt="What is RPA?">What is RPA?</button>
-                        <button class="prompt-btn" data-prompt="Tell me about AI solutions">AI Solutions</button>
-                        <button class="prompt-btn" data-prompt="How can I contact AutomataX?">Contact Us</button>
+                        <button class="prompt-btn" data-prompt="How can automation grow my business?">Boost My Business</button>
+                        <button class="prompt-btn" data-prompt="What makes AutomataX different?">Why AutomataX?</button>
+                        <button class="prompt-btn" data-prompt="Show me a real success story.">Show Success Story</button>
                     </div>
                 </div>
             </div>
@@ -1341,23 +1350,7 @@
             </div>
         </div>
     </div>
-    <div class="interactive-widget">
-        <button class="interactive-toggle btn">
-            <span class="chatbot-icon">⚙️</span> Interactive Tools
-        </button>
-        <div class="interactive-window" style="display: none;">
-            <div class="interactive-header">
-                <h3>Explore AutomataX</h3>
-                <button class="interactive-close" aria-label="Close Interactive Widget">✖</button>
-            </div>
-            <div class="interactive-content">
-                <p>Try our interactive tools to see the power of automation!</p>
-                <a href="savings-simulator.html">Savings Simulator</a>
-                <a href="automation-quiz.html">Automation Quiz</a>
-                <a href="demo-request.html">Request a Demo</a>
-            </div>
-        </div>
-    </div>
+
     <footer>
         <div class="container">
             <div class="footer-grid">
