@@ -241,17 +241,13 @@
             background: var(--gradient);
             color: white;
         }
-        
         .hero {
             padding: 180px 0 120px;
             position: relative;
             z-index: 1;
             overflow: hidden;
             background: linear-gradient(135deg, rgba(255, 105, 180, 0.1), rgba(128, 0, 0, 0.1));
-            display: flex; /* Add flexbox to align items side by side */
-            align-items: center; /* Vertically center the content */
         }
-
         .hero-content {
             max-width: 650px;
             background: var(--glass-bg);
@@ -259,7 +255,6 @@
             padding: 40px;
             border-radius: 20px;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            flex: 1; /* Allow the content to take up available space */
         }
         .hero h1 {
             font-family: 'Space Grotesk', sans-serif;
@@ -290,13 +285,14 @@
             margin-top: 35px;
         }
         .hero-visual {
-            flex: 1; /* Allow the visual to take up remaining space */
-            max-width: 650px;
-            z-index: 0;
-            animation: float 5s ease-in-out infinite;
-            /* Remove absolute positioning */
             position: relative;
-            transform: none; /* Remove the transform to avoid overlap */
+            transform: translateY(-50%);
+            width: 48%;
+            height: 400px;
+            min-width: 320px;
+            max-width: 650px;
+            z-index: 1;
+            animation: float 5s ease-in-out infinite;
         }
         @keyframes float {
             0% { transform: translateY(-50%) translateX(0) rotate(0deg); }
@@ -1121,11 +1117,24 @@
             transform: translateY(0);
         }
         @media (max-width: 992px) {
+            .hero-inner {
+                flex-direction: column;
+                align-items: center;
+                gap: 0;
+            }
             .hero h1 {
                 font-size: 44px;
             }
+            .hero-content,
             .hero-visual {
-                width: 45%;
+                max-width: 100%;
+                width: 100%;
+                text-align: center;
+            }
+            .hero-visual {
+                margin-top: 30px;
+                min-width: unset;
+                height: 280px;
             }
             .about-grid {
                 grid-template-columns: 1fr;
@@ -1199,18 +1208,16 @@
                 color: var(--dark);
             }
             .hero {
-                flex-direction: column; /* Stack items vertically on smaller screens */
+                padding: 140px 0 80px;
                 text-align: center;
             }
-
             .hero-content {
-                max-width: 100%;
+                max-width: 50%;
+                z-index: 2;
             }
-
             .hero-visual {
-                display: none; /* Hide the visual on smaller screens as per your original design */
+                display: none;
             }
-
             .hero-btns {
                 justify-content: center;
             }
@@ -1457,38 +1464,41 @@
     </div>
     <section class="hero" id="home">
         <div class="container">
+            <div class="hero-inner">
             <div class="hero-content animate-fade-in">
                 <h1>
-                    <span>Your Future,</span> <span id="typed-text">Automated.</span>
-                    </h1>
-                    <p>
-                    Imagine your business moving faster, smarter, and more profitably—every single day. At <b>AutomataX</b>, we design automation that frees your people, amplifies your data, and delivers results you can measure.<br>
-                    <span style="color:var(--primary);font-weight:500;">Welcome to the era of intelligent growth. Ready to take the lead?</span>
-                    </p>
-                    <div class="hero-btns">
-                        <a href="contact.html" class="btn btn-primary animate__pulse animate__infinite">
-                            <i class="fas fa-rocket"></i> Start My Automation Journey
-                        </a>
-                        <a href="services.html" class="btn btn-outline">
-                            <i class="fas fa-magic"></i> Explore Solutions
-                        </a>
-                    </div>
-                    <div class="container" style="margin: 25px auto 48px auto; text-align: center;">
-                        <span style="font-size:1.12em; color:#888;">
-                            Trusted by industry leaders in <b>Finance</b>, <b>Healthcare</b>, <b>Retail</b>, and <b>Operations</b>
-                        </span>
-                        </div>
+                <span>Your Future,</span> <span id="typed-text">Automated.</span>
+                </h1>
+                <p>
+                Imagine your business moving faster, smarter, and more profitably—every single day. At <b>AutomataX</b>, we design automation that frees your people, amplifies your data, and delivers results you can measure.<br>
+                <span style="color:var(--primary);font-weight:500;">Welcome to the era of intelligent growth. Ready to take the lead?</span>
+                </p>
+                <div class="hero-btns">
+                <a href="contact.html" class="btn btn-primary animate__pulse animate__infinite">
+                    <i class="fas fa-rocket"></i> Start My Automation Journey
+                </a>
+                <a href="services.html" class="btn btn-outline">
+                    <i class="fas fa-magic"></i> Explore Solutions
+                </a>
+                </div>
+                <div class="container" style="margin: 25px auto 48px auto; text-align: center;">
+                <span style="font-size:1.12em; color:#888;">
+                    Trusted by industry leaders in <b>Finance</b>, <b>Healthcare</b>, <b>Retail</b>, and <b>Operations</b>
+                </span>
+                </div>
+            </div>
             <div class="hero-visual">
-                <!-- Replace with Lottie animation for premium effect -->
+                <!-- Lottie Animation -->
                 <div id="hero-lottie" style="width: 100%; height: 400px;"></div>
-                <!-- Fallback video -->
+                <!-- Fallback video (optional) -->
                 <video class="hero-video" autoplay loop muted playsinline style="display: none;">
-                    <source src="automation-video.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
+                <source src="automation-video.mp4" type="video/mp4">
+                Your browser does not support the video tag.
                 </video>
             </div>
+            </div>
         </div>
-    </section>
+        </section>
     <section class="services" id="services">
         <div class="container">
             <div class="section-header animate-fade-in">
