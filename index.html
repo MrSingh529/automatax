@@ -241,13 +241,17 @@
             background: var(--gradient);
             color: white;
         }
+        
         .hero {
             padding: 180px 0 120px;
             position: relative;
             z-index: 1;
             overflow: hidden;
             background: linear-gradient(135deg, rgba(255, 105, 180, 0.1), rgba(128, 0, 0, 0.1));
+            display: flex; /* Add flexbox to align items side by side */
+            align-items: center; /* Vertically center the content */
         }
+
         .hero-content {
             max-width: 650px;
             background: var(--glass-bg);
@@ -255,6 +259,7 @@
             padding: 40px;
             border-radius: 20px;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            flex: 1; /* Allow the content to take up available space */
         }
         .hero h1 {
             font-family: 'Space Grotesk', sans-serif;
@@ -285,14 +290,13 @@
             margin-top: 35px;
         }
         .hero-visual {
-            position: absolute;
-            right: 0;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 50%;
+            flex: 1; /* Allow the visual to take up remaining space */
             max-width: 650px;
             z-index: 0;
             animation: float 5s ease-in-out infinite;
+            /* Remove absolute positioning */
+            position: relative;
+            transform: none; /* Remove the transform to avoid overlap */
         }
         @keyframes float {
             0% { transform: translateY(-50%) translateX(0) rotate(0deg); }
@@ -1195,15 +1199,18 @@
                 color: var(--dark);
             }
             .hero {
-                padding: 140px 0 80px;
+                flex-direction: column; /* Stack items vertically on smaller screens */
                 text-align: center;
             }
+
             .hero-content {
                 max-width: 100%;
             }
+
             .hero-visual {
-                display: none;
+                display: none; /* Hide the visual on smaller screens as per your original design */
             }
+
             .hero-btns {
                 justify-content: center;
             }
