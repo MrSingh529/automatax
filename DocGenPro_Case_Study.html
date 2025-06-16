@@ -16,7 +16,8 @@
     <link rel="canonical" href="https://www.automataxpro.site/rpa-case-studies.html">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;700&family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300..800&display=swap" rel="stylesheet">
     <style>
         :root {
             --primary: #ff69b4; /* Hot pink */
@@ -32,7 +33,10 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Inter', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-family: 'Funnel Display', sans-serif !important;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Playfair Display', serif !important;
         }
         html {
             scroll-behavior: smooth;
@@ -199,7 +203,7 @@
         .nav-links a {
             color: var(--dark);
             text-decoration: none;
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Playfair Display', serif !important;
             font-weight: 500;
             position: relative;
             transition: all 0.3s ease;
@@ -825,99 +829,6 @@
         .welcome-close:hover {
             transform: rotate(90deg);
         }
-        .interactive-widget {
-            position: fixed;
-            bottom: 30px;
-            left: 30px;
-            z-index: 1000;
-        }
-        .interactive-toggle {
-            background: var(--gradient);
-            color: white;
-            padding: 14px 22px;
-            font-family: 'Poppins', sans-serif;
-            font-size: 16px;
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            box-shadow: 0 6px 20px rgba(255, 105, 180, 0.3);
-            animation: pulse 2s infinite;
-        }
-        .interactive-toggle:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(255, 105, 180, 0.5);
-        }
-        .interactive-window {
-            position: absolute;
-            bottom: 70px;
-            left: 0;
-            width: 380px;
-            max-height: 550px;
-            background: var(--glass-bg);
-            backdrop-filter: var(--glass-blur);
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-            display: flex;
-            flex-direction: column;
-            border: 1px solid rgba(255, 105, 180, 0.2);
-        }
-        .interactive-header {
-            background: var(--gradient);
-            color: white;
-            padding: 18px 25px;
-            border-top-left-radius: 20px;
-            border-top-right-radius: 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .interactive-header h3 {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 22px;
-            margin: 0;
-        }
-        .interactive-close {
-            background: none;
-            border: none;
-            color: white;
-            font-size: 18px;
-            cursor: pointer;
-            transition: transform 0.3s ease;
-        }
-        .interactive-close:hover {
-            transform: rotate(90deg);
-        }
-        .interactive-content {
-            padding: 25px;
-            background: var(--light);
-            flex: 1;
-            overflow-y: auto;
-        }
-        .interactive-content p {
-            font-family: 'Poppins', sans-serif;
-            font-size: 16px;
-            color: #666;
-            margin-bottom: 20px;
-        }
-        .interactive-content a {
-            display: block;
-            padding: 10px 18px;
-            background: var(--glass-bg);
-            backdrop-filter: var(--glass-blur);
-            border: 1px solid rgba(255, 105, 180, 0.2);
-            border-radius: 25px;
-            text-decoration: none;
-            color: var(--dark);
-            margin-bottom: 15px;
-            transition: all 0.3s ease;
-            font-family: 'Poppins', sans-serif;
-            font-size: 14px;
-        }
-        .interactive-content a:hover {
-            background: var(--gradient);
-            color: white;
-            transform: scale(1.05);
-        }
         footer {
             padding: 70px 0 40px;
             background: var(--glass-bg);
@@ -1112,11 +1023,11 @@
             .case-study-content h2 {
                 font-size: 28px;
             }
-            .chatbot-window, .interactive-window {
+            .chatbot-window {
                 width: 320px;
                 max-height: 450px;
             }
-            .chatbot-toggle, .interactive-toggle {
+            .chatbot-toggle {
                 padding: 12px 18px;
                 font-size: 15px;
             }
@@ -1129,6 +1040,17 @@
             .custom-cursor {
                 display: none;
             }
+        }
+    </style>
+    <style>
+        i.fas, i.fab, i.far, i.fal, i.fad, i.fa,
+        .fa, .fas, .fab, .far, .fal, .fad {
+            font-family: 'Font Awesome 6 Free', 'Font Awesome 5 Free', 'FontAwesome', sans-serif !important;
+            font-style: normal !important;
+            font-weight: 900 !important;
+            font-variant: normal;
+            text-rendering: auto;
+            line-height: 1;
         }
     </style>
 </head>
@@ -1345,23 +1267,7 @@
             </div>
         </div>
     </div>
-    <div class="interactive-widget">
-        <button class="interactive-toggle btn">
-            <span class="chatbot-icon">⚙️</span> Interactive Tools
-        </button>
-        <div class="interactive-window" style="display: none;">
-            <div class="interactive-header">
-                <h3>Explore AutomataX</h3>
-                <button class="interactive-close" aria-label="Close Interactive Widget">✖</button>
-            </div>
-            <div class="interactive-content">
-                <p>Try our interactive tools to see the power of automation!</p>
-                <a href="savings-simulator.html">Savings Simulator</a>
-                <a href="automation-quiz.html">Automation Quiz</a>
-                <a href="demo-request.html">Request a Demo</a>
-            </div>
-        </div>
-    </div>
+    
     <footer>
         <div class="container">
             <div class="footer-grid">
@@ -1480,6 +1386,7 @@
             canvas.width = window.innerWidth;
             canvas.height = window.innerHeight;
         });
+
         // Custom Cursor
         const cursor = document.getElementById('custom-cursor');
         let mouseX = 0, mouseY = 0, cursorX = 0, cursorY = 0;
@@ -1588,7 +1495,6 @@
         const chatbotSend = document.getElementById('chatbot-send');
         chatbotToggle.addEventListener('click', () => {
             chatbotWindow.style.display = chatbotWindow.style.display === 'none' ? 'flex' : 'none';
-            interactiveWindow.style.display = 'none';
         });
         chatbotClose.addEventListener('click', () => {
             chatbotWindow.style.display = 'none';
@@ -1616,7 +1522,13 @@
         function addMessage(sender, text) {
             const messageDiv = document.createElement('div');
             messageDiv.classList.add('message', `${sender}-message`);
-            messageDiv.innerHTML = `<p>${text}</p>`;
+            let avatar = '';
+            if (sender === 'bot') {
+                avatar = `<span class="chatbot-avatar" aria-hidden="true">🤖</span>`;
+            } else {
+                avatar = `<span class="chatbot-avatar" aria-hidden="true">🧑</span>`;
+            }
+            messageDiv.innerHTML = `${avatar}<p>${text}</p>`;
             chatbotMessages.appendChild(messageDiv);
             chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
         }
@@ -1638,7 +1550,7 @@
                 return;
             }
             try {
-                const apiKey = 'AIzaSyA0zkNzs-6c_HVOmqrFH8UQG9n8Snxyf98';
+                const apiKey = '';
                 const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key=${apiKey}`;
                 const response = await fetch(apiUrl, {
                     method: 'POST',
@@ -1673,7 +1585,7 @@
                 }
             } catch (error) {
                 console.error('Error with Gemini API:', error.message);
-                addMessage('bot', 'Oops, a glitch! Share your contact info? <button class="prompt-btn" data-prompt="Yes, please collect my contact info">Yes</button>');
+                addMessage('bot', 'Oops, our bot is taking a quick nap! Try again or email us at sales@automataxpro.site.');
             }
         }
 

@@ -31,7 +31,8 @@
     </script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;700&family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300..800&display=swap" rel="stylesheet">
     <style>
         :root {
             --primary: #ff69b4; /* Hot pink from logo */
@@ -47,7 +48,10 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Inter', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-family: 'Funnel Display', sans-serif !important;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Playfair Display', serif !important;
         }
         html {
             scroll-behavior: smooth;
@@ -204,7 +208,7 @@
         .nav-links a {
             color: var(--dark);
             text-decoration: none;
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Playfair Display', serif !important;
             font-weight: 500;
             position: relative;
             transition: all 0.3s ease;
@@ -371,7 +375,6 @@
             transition: opacity 0.4s ease;
         }
         .commitment-card:hover {
-            transform: translateY(-12px) scale(1.05) rotate(1deg);
             box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
         }
         .commitment-card:hover::before {
@@ -443,7 +446,6 @@
             transition: opacity 0.4s ease;
         }
         .measure-card:hover {
-            transform: translateY(-12px) scale(1.05) rotate(1deg);
             box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
         }
         .measure-card:hover::before {
@@ -554,6 +556,23 @@
             font-size: 22px;
             margin: 0;
         }
+        .chatbot-avatar {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            background: var(--gradient);
+            color: #fff;
+            font-size: 1.5rem;
+            margin-right: 12px;
+            vertical-align: middle;
+            box-shadow: 0 2px 8px rgba(255,105,180,0.16);
+        }
+        .bot-message .chatbot-avatar { margin-left: 0; }
+        .user-message .chatbot-avatar { background: #ffd7f2; color: #c71585; margin-left: 0; }
+        .message p { display: inline-block; vertical-align: middle; }
         .chatbot-close {
             background: none;
             border: none;
@@ -878,6 +897,17 @@
             .custom-cursor {
                 display: none;
             }
+        }
+    </style>
+    <style>
+        i.fas, i.fab, i.far, i.fal, i.fad, i.fa,
+        .fa, .fas, .fab, .far, .fal, .fad {
+            font-family: 'Font Awesome 6 Free', 'Font Awesome 5 Free', 'FontAwesome', sans-serif !important;
+            font-style: normal !important;
+            font-weight: 900 !important;
+            font-variant: normal;
+            text-rendering: auto;
+            line-height: 1;
         }
     </style>
 </head>
@@ -1266,15 +1296,21 @@
         function addMessage(sender, text) {
             const messageDiv = document.createElement('div');
             messageDiv.classList.add('message', `${sender}-message`);
-            messageDiv.innerHTML = `<p>${text}</p>`;
+            let avatar = '';
+            if (sender === 'bot') {
+                avatar = `<span class="chatbot-avatar" aria-hidden="true">🤖</span>`;
+            } else {
+                avatar = `<span class="chatbot-avatar" aria-hidden="true">🧑</span>`;
+            }
+            messageDiv.innerHTML = `${avatar}<p>${text}</p>`;
             chatbotMessages.appendChild(messageDiv);
             chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
         }
         async function handleUserInput(message) {
             const predefinedResponses = {
                 'What is RPA?': 'RPA (Robotic Process Automation) is your VIP pass to efficiency! AutomataX’s premium RPA solutions obliterate manual tasks, skyrocketing productivity. Ready to transform your workflow?',
-                'Tell me about data safety': 'At AutomataX, data safety is our top priority! We use demo data only, never share your info, and employ AES-256 encryption, GDPR compliance, and regular audits to keep your data locked tight. Trust us to protect your business!',
-                'How can I contact AutomataX?': 'We’re at your service! Email us at <a href="mailto:sales@automataxpro.site">sales@automatxpro.site</a> or <a href="mailto:support@automataxpro.site">support@automataxpro.site</a>. Visit our <a href="contact.html">Contact Page</a> for premium support!'
+                'Tell me about AI solutions': 'Our AI solutions are pure gold! AutomataX leverages cutting-edge tech for elite analytics, chatbots, and more. Ignite your business with world-class intelligence!',
+                'How can I contact AutomataX?': 'We’re at your service! Email us at <a href="mailto:sales@automataxpro.site">sales@automataxpro.site</a> or <a href="mailto:info@automataxpro.site">info@automataxpro.site</a>. Visit our <a href="contact.html">Contact Page</a> for premium support!'
             };
             if (predefinedResponses[message]) {
                 addMessage('bot', predefinedResponses[message]);
@@ -1288,7 +1324,7 @@
                 return;
             }
             try {
-                const apiKey = 'AIzaSyA0zkNzs-6c_HVOmqrFH8UQG9n8Snxyf98';
+                const apiKey = '';
                 const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key=${apiKey}`;
                 const response = await fetch(apiUrl, {
                     method: 'POST',
@@ -1323,7 +1359,7 @@
                 }
             } catch (error) {
                 console.error('Error with Gemini API:', error.message);
-                addMessage('bot', 'Oops, a glitch! Share your contact info? <button class="prompt-btn" data-prompt="Yes, please collect my contact info">Yes</button>');
+                addMessage('bot', 'Oops, our bot is taking a quick nap! Try again or email us at sales@automataxpro.site.');
             }
         }
 

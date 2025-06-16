@@ -16,7 +16,8 @@
     <link rel="canonical" href="https://www.automataxpro.site/about.html">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;700&family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300..800&display=swap" rel="stylesheet">
     <style>
         :root {
             --primary: #ff69b4; /* Hot pink from logo */
@@ -32,7 +33,10 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Inter', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-family: 'Funnel Display', sans-serif !important;
+        }
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif !important;
         }
         html {
             scroll-behavior: smooth;
@@ -107,7 +111,7 @@
             display: inline-block;
             padding: 14px 35px;
             border-radius: 50px;
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Funnel Display', sans-serif;
             font-weight: 600;
             transition: all 0.4s ease;
             cursor: pointer;
@@ -172,7 +176,7 @@
             padding: 15px 0;
         }
         .logo {
-            font-family: 'Space Grotesk', sans-serif;
+            font-family: 'Playfair Display', serif !important;
             font-size: 28px;
             font-weight: 700;
             color: var(--primary);
@@ -199,7 +203,7 @@
         .nav-links a {
             color: var(--dark);
             text-decoration: none;
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Playfair Display', serif !important;
             font-weight: 500;
             position: relative;
             transition: all 0.3s ease;
@@ -242,7 +246,7 @@
             color: white;
         }
         .about-hero {
-            padding: 180px 0 120px;
+            padding: 110px 0 120px;
             position: relative;
             z-index: 1;
             overflow: hidden;
@@ -250,7 +254,7 @@
             text-align: center;
         }
         .about-hero h1 {
-            font-family: 'Space Grotesk', sans-serif;
+            font-family: 'Playfair Display', serif !important;
             font-size: 52px;
             font-weight: 700;
             margin-bottom: 25px;
@@ -309,7 +313,7 @@
             margin-bottom: 70px;
         }
         .section-header h2 {
-            font-family: 'Space Grotesk', sans-serif;
+            font-family: 'Playfair Display', serif !important;
             font-size: 40px;
             font-weight: 700;
             margin-bottom: 20px;
@@ -331,7 +335,7 @@
             background: var(--gradient);
         }
         .section-header p {
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Funnel Display', sans-serif;
             font-size: 19px;
             color: #555;
             max-width: 750px;
@@ -349,7 +353,7 @@
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
         }
         .who-we-are-content h3 {
-            font-family: 'Space Grotesk', sans-serif;
+            font-family: 'Playfair Display', serif !important;
             font-size: 24px;
             margin-bottom: 15px;
             background: var(--gradient);
@@ -358,7 +362,7 @@
             color: transparent;
         }
         .who-we-are-content p {
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Funnel Display', sans-serif;
             font-size: 17px;
             line-height: 1.7;
             margin-bottom: 25px;
@@ -409,7 +413,6 @@
             transition: opacity 0.4s ease;
         }
         .team-member:hover {
-            transform: translateY(-12px) scale(1.05) rotate(1deg);
             box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
         }
         .team-member:hover::before {
@@ -430,7 +433,7 @@
             transform: scale(1.15) rotate(5deg);
         }
         .team-member h3 {
-            font-family: 'Space Grotesk', sans-serif;
+            font-family: 'Playfair Display', serif !important;
             font-size: 24px;
             margin-bottom: 15px;
             transition: color 0.4s ease;
@@ -772,6 +775,23 @@
             font-size: 22px;
             margin: 0;
         }
+        .chatbot-avatar {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            background: var(--gradient);
+            color: #fff;
+            font-size: 1.5rem;
+            margin-right: 12px;
+            vertical-align: middle;
+            box-shadow: 0 2px 8px rgba(255,105,180,0.16);
+        }
+        .bot-message .chatbot-avatar { margin-left: 0; }
+        .user-message .chatbot-avatar { background: #ffd7f2; color: #c71585; margin-left: 0; }
+        .message p { display: inline-block; vertical-align: middle; }
         .chatbot-close {
             background: none;
             border: none;
@@ -1052,6 +1072,17 @@
             }
         }
     </style>
+    <style>
+        i.fas, i.fab, i.far, i.fal, i.fad, i.fa,
+        .fa, .fas, .fab, .far, .fal, .fad {
+            font-family: 'Font Awesome 6 Free', 'Font Awesome 5 Free', 'FontAwesome', sans-serif !important;
+            font-style: normal !important;
+            font-weight: 900 !important;
+            font-variant: normal;
+            text-rendering: auto;
+            line-height: 1;
+        }
+    </style>
 </head>
 <body>
     <canvas id="ai-background"></canvas>
@@ -1268,7 +1299,7 @@
 		</div>
 	</section>
     <div class="chatbot-widget">
-        <button class="chatbot-toggle btn">
+        <button class="chatbot-toggle btn" aria-label="Open Chatbot">
             <span class="chatbot-icon">💬</span> Chat with Us
         </button>
         <div class="chatbot-window" style="display: none;">
@@ -1509,12 +1540,8 @@
         const chatbotMessages = document.getElementById('chatbot-messages');
         const chatbotInput = document.getElementById('chatbot-input');
         const chatbotSend = document.getElementById('chatbot-send');
-        const interactiveToggle = document.querySelector('.interactive-toggle');
-        const interactiveWindow = document.querySelector('.interactive-window');
-        const interactiveClose = document.querySelector('.interactive-close');
         chatbotToggle.addEventListener('click', () => {
             chatbotWindow.style.display = chatbotWindow.style.display === 'none' ? 'flex' : 'none';
-            interactiveWindow.style.display = 'none';
         });
         chatbotClose.addEventListener('click', () => {
             chatbotWindow.style.display = 'none';
@@ -1542,7 +1569,13 @@
         function addMessage(sender, text) {
             const messageDiv = document.createElement('div');
             messageDiv.classList.add('message', `${sender}-message`);
-            messageDiv.innerHTML = `<p>${text}</p>`;
+            let avatar = '';
+            if (sender === 'bot') {
+                avatar = `<span class="chatbot-avatar" aria-hidden="true">🤖</span>`;
+            } else {
+                avatar = `<span class="chatbot-avatar" aria-hidden="true">🧑</span>`;
+            }
+            messageDiv.innerHTML = `${avatar}<p>${text}</p>`;
             chatbotMessages.appendChild(messageDiv);
             chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
         }
@@ -1564,7 +1597,7 @@
                 return;
             }
             try {
-                const apiKey = 'AIzaSyA0zkNzs-6c_HVOmqrFH8UQG9n8Snxyf98';
+                const apiKey = '';
                 const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key=${apiKey}`;
                 const response = await fetch(apiUrl, {
                     method: 'POST',
@@ -1599,7 +1632,7 @@
                 }
             } catch (error) {
                 console.error('Error with Gemini API:', error.message);
-                addMessage('bot', 'Oops, a glitch! Share your contact info? <button class="prompt-btn" data-prompt="Yes, please collect my contact info">Yes</button>');
+                addMessage('bot', 'Oops, our bot is taking a quick nap! Try again or email us at sales@automataxpro.site.');
             }
         }
         interactiveToggle.addEventListener('click', () => {

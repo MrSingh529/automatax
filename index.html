@@ -15,8 +15,10 @@
     </script>
     <link rel="canonical" href="https://www.automataxpro.site/index.html">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;700&family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300..800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/swiper@10/swiper-bundle.min.css" />
+    <script src="https://unpkg.com/swiper@10/swiper-bundle.min.js"></script>
     <style>
         :root {
             --primary: #ff69b4;
@@ -24,15 +26,19 @@
             --accent: #c71585;
             --light: #f5f7fa;
             --dark: #0f0f1a;
-            --gradient: linear-gradient(135deg, #ff69b4, #c71585, #800000); /* Pink-to-maroon gradient */
+            --gradient: linear-gradient(135deg, #ff69b4, #c71585, #800000);
             --glass-bg: rgba(255, 255, 255, 0.1);
             --glass-blur: blur(12px);
         }
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Inter', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-family: 'Funnel Display', sans-serif !important;
+        }
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif !important;
         }
         html {
             scroll-behavior: smooth;
@@ -107,7 +113,7 @@
             display: inline-block;
             padding: 14px 35px;
             border-radius: 50px;
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Funnel Display', sans-serif;
             font-weight: 600;
             transition: all 0.4s ease;
             cursor: pointer;
@@ -172,7 +178,7 @@
             padding: 15px 0;
         }
         .logo {
-            font-family: 'Space Grotesk', sans-serif;
+            font-family: 'Playfair Display', serif !important;
             font-size: 28px;
             font-weight: 700;
             color: var(--primary);
@@ -199,7 +205,7 @@
         .nav-links a {
             color: var(--dark);
             text-decoration: none;
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Playfair Display', serif !important;
             font-weight: 500;
             position: relative;
             transition: all 0.3s ease;
@@ -242,7 +248,7 @@
             color: white;
         }
         .hero {
-            padding: 180px 0 120px;
+            padding: 110px 0 80px;
             position: relative;
             z-index: 1;
             overflow: hidden;
@@ -253,7 +259,7 @@
             min-width: 320px;
         }
         .hero h1 {
-            font-family: 'Space Grotesk', sans-serif;
+            font-family: 'Playfair Display', serif !important;
             font-size: 52px;
             font-weight: 700;
             margin-bottom: 25px;
@@ -269,7 +275,7 @@
             display: inline;
         }
         .hero p {
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Playfair Display', serif !important;
             font-size: 19px;
             line-height: 1.6;
             margin-bottom: 35px;
@@ -329,7 +335,7 @@
             100% { transform: translate(0, 0) rotate(0deg); }
         }
         .services {
-            padding: 120px 0;
+            padding: 100px 0;
             background: var(--glass-bg);
             backdrop-filter: var(--glass-blur);
             position: relative;
@@ -340,7 +346,7 @@
             margin-bottom: 70px;
         }
         .section-header h2 {
-            font-family: 'Space Grotesk', sans-serif;
+            font-family: 'Playfair Display', serif !important;
             font-size: 40px;
             font-weight: 700;
             margin-bottom: 20px;
@@ -440,7 +446,7 @@
             visibility: visible;
         }
         .service-card h3 {
-            font-family: 'Space Grotesk', sans-serif;
+            font-family: 'Playfair Display', serif !important;
             font-size: 24px;
             margin-bottom: 15px;
             transition: color 0.4s ease;
@@ -468,7 +474,7 @@
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
         }
         .about-content h2 {
-            font-family: 'Space Grotesk', sans-serif;
+            font-family: 'Playfair Display', serif !important;
             font-size: 40px;
             font-weight: 700;
             margin-bottom: 25px;
@@ -534,7 +540,7 @@
             color: #666;
         }
         .how-it-works {
-            padding: 120px 0;
+            padding: 60px 0;
             background: var(--glass-bg);
             backdrop-filter: var(--glass-blur);
             position: relative;
@@ -694,6 +700,9 @@
             50% { transform: scale(1.06); }
             100% { transform: scale(1); }
         }
+        .animate-pulse {
+            animation: pulse 2s infinite;
+        }
         .chatbot-window {
             position: absolute;
             bottom: 70px;
@@ -723,6 +732,23 @@
             font-size: 22px;
             margin: 0;
         }
+        .chatbot-avatar {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            background: var(--gradient);
+            color: #fff;
+            font-size: 1.5rem;
+            margin-right: 12px;
+            vertical-align: middle;
+            box-shadow: 0 2px 8px rgba(255,105,180,0.16);
+        }
+        .bot-message .chatbot-avatar { margin-left: 0; }
+        .user-message .chatbot-avatar { background: #ffd7f2; color: #c71585; margin-left: 0; }
+        .message p { display: inline-block; vertical-align: middle; }
         .chatbot-close {
             background: none;
             border: none;
@@ -883,7 +909,7 @@
             z-index: 1;
         }
         .cta h2 {
-            font-family: 'Space Grotesk', sans-serif;
+            font-family: 'Playfair Display', serif !important;
             font-size: 44px;
             font-weight: 700;
             margin-bottom: 25px;
@@ -1042,7 +1068,7 @@
             margin-bottom: 50px;
         }
         .footer-col h3 {
-            font-family: 'Space Grotesk', sans-serif;
+            font-family: 'Playfair Display', serif !important;
             font-size: 22px;
             margin-bottom: 25px;
             font-weight: 600;
@@ -1180,7 +1206,7 @@
                 background: var(--glass-bg);
                 backdrop-filter: var(--glass-blur);
                 padding: 50px 20px;
-                display: flex;
+                display: none; /* Changed to none to hide by default */
                 flex-direction: column;
                 align-items: center;
                 justify-content: center;
@@ -1190,6 +1216,7 @@
                 transition: transform 0.5s ease;
             }
             .mobile-menu.active {
+                display: flex; /* Show when active */
                 transform: translateX(0);
             }
             .close-menu {
@@ -1206,7 +1233,8 @@
                 font-family: 'Poppins', sans-serif;
                 font-size: 20px;
                 padding: 12px 0;
-                color: var(--dark);
+                color: var(--dark) !important;
+                text-decoration: none;
             }
             .hero {
                 padding: 140px 0 80px;
@@ -1287,6 +1315,11 @@
         color: #fff;
         display: flex; align-items: center; gap: 9px;
         letter-spacing: 0.01em;
+        }
+        .premium-cta-bar.hidden {
+            transform: translateY(-100%);
+            opacity: 0;
+            pointer-events: none;
         }
         .cta-bar-btn {
         background: #fff;
@@ -1398,6 +1431,176 @@
         @keyframes fadeInSuccess { from { opacity: 0;} to {opacity: 1;} }
         .premium-modal-success i { font-size: 2.1rem; margin-bottom:10px; color:#ff69b4; }
         .premium-modal-success p { margin: 12px 0 10px 0;}
+        
+        .glitch-section {
+            position: relative;
+            overflow: hidden;
+        }
+        .glitch-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--gradient);
+            opacity: 0;
+            z-index: 1;
+            transform: translateX(-100%);
+        }
+        .glitch-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 105, 180, 0.2), transparent);
+            opacity: 0;
+            z-index: 1;
+        }
+        .nav-links .dropdown {
+            position: relative;
+        }
+        .dropdown-menu {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: var(--glass-bg);
+            backdrop-filter: var(--glass-blur);
+            border-radius: 10px;
+            padding: 10px 0;
+            display: none;
+            flex-direction: column;
+            min-width: 150px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        .dropdown:hover .dropdown-menu {
+            display: flex;
+        }
+        .dropdown-menu a {
+            padding: 10px 20px;
+            color: var(--dark) !important;
+            text-decoration: none;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 500;
+        }
+
+        .mobile-menu .dropdown-menu a {
+            color: var(--dark) !important;
+            text-decoration: none !important;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 500;
+            padding: 10px 0;
+        }
+
+        .mobile-menu .dropdown-menu a:hover {
+            color: var(--primary) !important;
+            background: none;
+        }
+
+        .dropdown-menu a:hover {
+            background: var(--gradient);
+            color: white !important;
+        }
+        .mobile-menu .dropdown-menu {
+            position: static;
+            display: none; 
+            background: transparent;
+            padding: 0 0 0 20px;
+            box-shadow: none;
+        }
+
+        .mobile-menu .dropdown.active .dropdown-menu {
+            display: flex;
+            flex-direction: column;
+        }
+        .blog-teaser {
+            padding: 80px 0;
+            background: var(--glass-bg);
+            backdrop-filter: var(--glass-blur);
+        }
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        .blog-card {
+            background: var(--glass-bg);
+            backdrop-filter: var(--glass-blur);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+            border: 1px solid rgba(255, 105, 180, 0.2);
+        }
+        .blog-card:hover {
+            transform: translateY(-5px);
+        }
+        .blog-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        .blog-card-content {
+            padding: 20px;
+        }
+        .blog-card-content h3 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+        .blog-card-content p {
+            font-family: 'Poppins', sans-serif;
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 15px;
+        }
+        .blog-card-content a {
+            color: var(--primary);
+            text-decoration: none;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 500;
+        }
+        .blog-card-content a:hover {
+            text-decoration: underline;
+        }
+        .swiper-container {
+            width: 100%;
+            padding: 20px 0;
+        }
+        .swiper-slide {
+            text-align: center;
+            width: 300px;
+            background: var(--glass-bg);
+            backdrop-filter: var(--glass-blur);
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 105, 180, 0.2);
+        }
+        .swiper-slide .step-number {
+            width: 80px;
+            height: 80px;
+            font-size: 28px;
+        }
+        .swiper-pagination-bullet {
+            background: var(--primary);
+        }
+        .swiper-button-next, .swiper-button-prev {
+            color: var(--primary);
+        }
+    </style>
+    <style>
+        i.fas, i.fab, i.far, i.fal, i.fad, i.fa,
+        .fa, .fas, .fab, .far, .fal, .fad {
+            font-family: 'Font Awesome 6 Free', 'Font Awesome 5 Free', 'FontAwesome', sans-serif !important;
+            font-style: normal !important;
+            font-weight: 900 !important;
+            font-variant: normal;
+            text-rendering: auto;
+            line-height: 1;
+        }
     </style>
 </head>
 <body>
@@ -1430,18 +1633,6 @@
             </nav>
         </div>
     </header>
-    <!-- Premium Sticky CTA Bar -->
-    <div id="sticky-cta-bar" class="premium-cta-bar">
-    <div class="cta-bar-inner">
-        <span class="cta-bar-text">
-        <i class="fas fa-magic-wand-sparkles"></i>
-        <b>Claim Your <span style="color:#ffd7f2;">Free Automation Audit</span></b>
-        </span>
-        <button id="open-quiz-modal" class="cta-bar-btn">
-        <i class="fas fa-rocket"></i> Take 2-Minute Audit
-        </button>
-    </div>
-    </div>
     <div class="mobile-menu" id="mobile-menu">
         <button class="close-menu" id="close-menu" aria-label="Close Mobile Menu">
             <i class="fas fa-times"></i>
@@ -1475,7 +1666,7 @@
                 <span style="color:var(--primary);font-weight:500;">Welcome to the era of intelligent growth. Ready to take the lead?</span>
                 </p>
                 <div class="hero-btns">
-                <a href="contact.html" class="btn btn-primary animate__pulse animate__infinite">
+                <a href="contact.html" class="btn btn-primary animate-pulse">
                     <i class="fas fa-rocket"></i> Start My Automation Journey
                 </a>
                 <a href="services.html" class="btn btn-outline">
@@ -1489,9 +1680,7 @@
                 </div>
             </div>
             <div class="hero-visual">
-                <!-- Lottie Animation -->
                 <div id="hero-lottie" style="width: 100%; height: 400px;"></div>
-                <!-- Fallback video (optional) -->
                 <video class="hero-video" autoplay loop muted playsinline style="display: none;">
                 <source src="automation-video.mp4" type="video/mp4">
                 Your browser does not support the video tag.
@@ -1500,50 +1689,52 @@
             </div>
         </div>
         </section>
-    <section class="services" id="services">
+    <section class="services glitch-section" id="services">
+        <div class="glitch-overlay"></div>
         <div class="container">
             <div class="section-header animate-fade-in">
                 <h2>Our Services</h2>
                 <p>Transform your business with our cutting-edge suite of automation solutions</p>
             </div>
             <div class="services-grid">
-  <div class="service-card animate-fade-in" tabindex="0" aria-label="AI-Powered Data Intelligence">
-      <div class="service-icon" aria-hidden="true"><i class="fas fa-robot"></i></div>
-      <h3>AI-Powered Data Intelligence</h3>
-      <p>Turn data chaos into clarity. Instantly uncover hidden trends, spot new revenue opportunities, and make every decision data-driven.</p>
-      <div class="service-tooltip">Your competitive edge, revealed.</div>
-  </div>
-  <div class="service-card animate-fade-in" tabindex="0" aria-label="End-to-End Workflow Automation">
-      <div class="service-icon" aria-hidden="true"><i class="fas fa-cogs"></i></div>
-      <h3>End-to-End Workflow Automation</h3>
-      <p>Say goodbye to bottlenecks. Our smart bots handle repetitive work 24/7—eliminating errors, saving hours, and supercharging productivity.</p>
-      <div class="service-tooltip">More time for what matters.</div>
-  </div>
-  <div class="service-card animate-fade-in" tabindex="0" aria-label="Custom AI Chatbots">
-      <div class="service-icon" aria-hidden="true"><i class="fas fa-comments"></i></div>
-      <h3>Custom AI Chatbots</h3>
-      <p>Delight your customers day and night with chatbots that answer, guide, and convert—always on brand, always on point.</p>
-      <div class="service-tooltip">Never miss a customer again.</div>
-  </div>
-  <div class="service-card animate-fade-in" tabindex="0" aria-label="Predictive Business Intelligence">
-      <div class="service-icon" aria-hidden="true"><i class="fas fa-chart-line"></i></div>
-      <h3>Predictive Business Intelligence</h3>
-      <p>See what's next, not just what's now. Forecast sales, detect risks early, and unlock proactive growth with next-gen analytics.</p>
-      <div class="service-tooltip">Decisions powered by tomorrow.</div>
-  </div>
-  <div class="service-card animate-fade-in" tabindex="0" aria-label="System Integration">
-      <div class="service-icon" aria-hidden="true"><i class="fas fa-network-wired"></i></div>
-      <h3>System Integration</h3>
-      <p>Unify your entire tech stack. We connect your tools into a seamless, intelligent ecosystem—so data flows, not headaches.</p>
-      <div class="service-tooltip">All your data. One source of truth.</div>
-  </div>
-  <div class="service-card animate-fade-in" tabindex="0" aria-label="Real-time Dashboards">
-      <div class="service-icon" aria-hidden="true"><i class="fas fa-tachometer-alt"></i></div>
-      <h3>Real-time Dashboards</h3>
-      <p>See your KPIs live. Our interactive dashboards keep leaders and teams aligned, informed, and ready to act—instantly.</p>
-      <div class="service-tooltip">Clarity at a glance.</div>
-  </div>
-</div>
+                <div class="service-card animate-fade-in" tabindex="0" aria-label="AI-Powered Data Intelligence">
+                    <div class="service-icon" aria-hidden="true"><i class="fas fa-robot"></i></div>
+                    <h3>AI-Powered Data Intelligence</h3>
+                    <p>Turn data chaos into clarity. Instantly uncover hidden trends, spot new revenue opportunities, and make every decision data-driven.</p>
+                    <div class="service-tooltip">Your competitive edge, revealed.</div>
+                </div>
+                <div class="service-card animate-fade-in" tabindex="0" aria-label="End-to-End Workflow Automation">
+                    <div class="service-icon" aria-hidden="true"><i class="fas fa-cogs"></i></div>
+                    <h3>End-to-End Workflow Automation</h3>
+                    <p>Say goodbye to bottlenecks. Our smart bots handle repetitive work 24/7—eliminating errors, saving hours, and supercharging productivity.</p>
+                    <div class="service-tooltip">More time for what matters.</div>
+                </div>
+                <div class="service-card animate-fade-in" tabindex="0" aria-label="Custom AI Chatbots">
+                    <div class="service-icon" aria-hidden="true"><i class="fas fa-comments"></i></div>
+                    <h3>Custom AI Chatbots</h3>
+                    <p>Delight your customers day and night with chatbots that answer, guide, and convert—always on brand, always on point.</p>
+                    <div class="service-tooltip">Never miss a customer again.</div>
+                </div>
+                <div class="service-card animate-fade-in" tabindex="0" aria-label="Predictive Business Intelligence">
+                    <div class="service-icon" aria-hidden="true"><i class="fas fa-chart-line"></i></div>
+                    <h3>Predictive Business Intelligence</h3>
+                    <p>See what's next, not just what's now. Forecast sales, detect risks early, and unlock proactive growth with next-gen analytics.</p>
+                    <div class="service-tooltip">Decisions powered by tomorrow.</div>
+                </div>
+                <div class="service-card animate-fade-in" tabindex="0" aria-label="System Integration">
+                    <div class="service-icon" aria-hidden="true"><i class="fas fa-network-wired"></i></div>
+                    <h3>System Integration</h3>
+                    <p>Unify your entire tech stack. We connect your tools into a seamless, intelligent ecosystem—so data flows, not headaches.</p>
+                    <div class="service-tooltip">All your data. One source of truth.</div>
+                </div>
+                <div class="service-card animate-fade-in" tabindex="0" aria-label="Real-time Dashboards">
+                    <div class="service-icon" aria-hidden="true"><i class="fas fa-tachometer-alt"></i></div>
+                    <h3>Real-time Dashboards</h3>
+                    <p>See your KPIs live. Our interactive dashboards keep leaders and teams aligned, informed, and ready to act—instantly.</p>
+                    <div class="service-tooltip">Clarity at a glance.</div>
+                </div>
+            </div>
+        </div>
     </section>
     <section class="about" id="about">
         <div class="container">
@@ -1582,30 +1773,38 @@
             <div class="section-header animate-fade-in">
                 <h2>How It Works</h2>
                 <p>
-                Every business is unique. That’s why our process is personal, proven, and built for your results.
+                    Every business is unique. That’s why our process is personal, proven, and built for your results.
                 </p>
-                <div class="steps">
-                    <div class="step animate-fade-in">
-                        <div class="step-number">1</div>
-                        <h3>Discovery</h3>
-                        <p>We get to know your business, your pain points, and your biggest opportunities—no generic audits here.</p>
+                
+                <div class="swiper-container">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide animate-fade-in">
+                            <div class="step-number">1</div>
+                            <h3>Discovery</h3>
+                            <p>We get to know your business, your pain points, and your biggest opportunities—no generic audits here.</p>
+                        </div>
+                        <div class="swiper-slide animate-fade-in">
+                            <div class="step-number">2</div>
+                            <h3>Strategy</h3>
+                            <p>Our experts craft a laser-focused roadmap, customized to drive your goals and maximize impact.</p>
+                        </div>
+                        <div class="swiper-slide animate-fade-in">
+                            <div class="step-number">3</div>
+                            <h3>Implementation</h3>
+                            <p>We build, test, and launch your automation with speed, precision, and zero disruption to your day-to-day.</p>
+                        </div>
+                        <div class="swiper-slide animate-fade-in">
+                            <div class="step-number">4</div>
+                            <h3>Optimization</h3>
+                            <p>We don’t stop at “done”—we monitor, optimize, and evolve your solution so you stay ahead. Always.</p>
+                        </div>
                     </div>
-                    <div class="step animate-fade-in">
-                        <div class="step-number">2</div>
-                        <h3>Strategy</h3>
-                        <p>Our experts craft a laser-focused roadmap, customized to drive your goals and maximize impact.</p>
-                    </div>
-                    <div class="step animate-fade-in">
-                        <div class="step-number">3</div>
-                        <h3>Implementation</h3>
-                        <p>We build, test, and launch your automation with speed, precision, and zero disruption to your day-to-day.</p>
-                    </div>
-                    <div class="step animate-fade-in">
-                        <div class="step-number">4</div>
-                        <h3>Optimization</h3>
-                        <p>We don’t stop at “done”—we monitor, optimize, and evolve your solution so you stay ahead. Always.</p>
-                    </div>
+                    <div class="swiper-pagination"></div>
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
                 </div>
+            </div>
+        </div>
     </section>
     <section class="testimonials" id="testimonials">
         <div class="container">
@@ -1645,8 +1844,37 @@
             </div>
         </div>
     </section>
+    <section class="blog-teaser" id="blog-teaser">
+        <div class="container">
+            <div class="section-header animate-fade-in">
+                <h2>Latest Insights</h2>
+                <p>Explore our blog for the latest trends and tips in AI automation</p>
+            </div>
+            <div class="blog-grid">
+                <div class="blog-card animate-fade-in">
+                    <img src="blog-1.png" alt="Data Safety in AI Automation" loading="lazy">
+                    <div class="blog-card-content">
+                        <h3>Data Safety: The Foundation of Premium AI Automation</h3>
+                        <p>Elite automation starts with trust. Discover why world-class data protection is non-negotiable.</p>
+                        <a href="why-data-safety-matters.html">Read More</a>
+                    </div>
+                </div>
+                <div class="blog-card animate-fade-in">
+                    <img src="blog-2.png" alt="AI Automation Trends" loading="lazy">
+                    <div class="blog-card-content">
+                        <h3>AI Automation Trends 2025: What’s Next for Innovators</h3>
+                        <p>Unlock a future-ready business with the latest in AI automation trends.</p>
+                        <a href="top-ai-automation-trends-2025.html">Read More</a>
+                    </div>
+                </div>
+            </div>
+            <div style="text-align: center; margin-top: 30px;">
+                <a href="blog.html" class="btn btn-primary">View All Posts</a>
+            </div>
+        </div>
+    </section>
     <div class="chatbot-widget">
-        <button class="chatbot-toggle btn">
+        <button class="chatbot-toggle btn" aria-label="Open Chatbot">
             <span class="chatbot-icon">💬</span> Chat with Us
         </button>
         <div class="chatbot-window" style="display: none;">
@@ -1677,7 +1905,7 @@
                 The world’s most ambitious teams trust AutomataX to automate, optimize, and outperform. <br>
                 <span style="font-weight:500;color:#ffd7f2;">Get your custom strategy—no obligation, just impact.</span>
             </p>
-            <a href="contact.html" class="btn cta-btn animate__pulse animate__infinite animate-fade-in">
+            <a href="contact.html" class="btn cta-btn animate-pulse">
                 <i class="fas fa-comments"></i> Claim Free Strategy Session
             </a>
         </div>
@@ -2077,7 +2305,13 @@
         function addMessage(sender, text) {
             const messageDiv = document.createElement('div');
             messageDiv.classList.add('message', `${sender}-message`);
-            messageDiv.innerHTML = `<p>${text}</p>`;
+            let avatar = '';
+            if (sender === 'bot') {
+                avatar = `<span class="chatbot-avatar" aria-hidden="true">🤖</span>`;
+            } else {
+                avatar = `<span class="chatbot-avatar" aria-hidden="true">🧑</span>`;
+            }
+            messageDiv.innerHTML = `${avatar}<p>${text}</p>`;
             chatbotMessages.appendChild(messageDiv);
             chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
         }
@@ -2210,7 +2444,10 @@
     // Open/Close Modal
     document.getElementById('open-quiz-modal').onclick = function(){
         document.getElementById('quiz-modal').style.display = 'flex';
-        setTimeout(()=>{document.getElementById('quiz-modal').querySelector('input,select').focus()}, 300);
+        setTimeout(() => {
+            const firstInput = document.querySelector('#quiz-modal input, #quiz-modal select');
+            if (firstInput) firstInput.focus();
+        }, 300);
     }
     document.getElementById('close-quiz-modal').onclick = function(){
         document.getElementById('quiz-modal').style.display = 'none';
@@ -2239,19 +2476,85 @@
     };
 
     // Responsive: Add padding for sticky bar
-    function adjustPaddingForStickyCTA(){
-        var bar = document.getElementById('sticky-cta-bar');
-        if(bar){
-            var barHeight = bar.offsetHeight;
-            if(window.innerWidth < 680){
-                document.body.style.paddingTop = (barHeight+10)+"px";
+    function adjustPaddingForStickyCTA() {
+        const bar = document.getElementById('sticky-cta-bar');
+        const contactSection = document.getElementById('contact');
+        if (bar) {
+            const barHeight = bar.offsetHeight;
+            const contactTop = contactSection.getBoundingClientRect().top;
+            const viewportHeight = window.innerHeight;
+            if (window.innerWidth < 680) {
+                document.body.style.paddingTop = (barHeight + 10) + 'px';
             } else {
-                document.body.style.paddingTop = (barHeight+4)+"px";
+                document.body.style.paddingTop = (barHeight + 4) + 'px';
+            }
+            if (contactTop < viewportHeight) {
+                bar.classList.add('hidden');
+            } else {
+                bar.classList.remove('hidden');
             }
         }
     }
     window.addEventListener('resize', adjustPaddingForStickyCTA);
+    window.addEventListener('scroll', adjustPaddingForStickyCTA);
     window.addEventListener('DOMContentLoaded', adjustPaddingForStickyCTA);
+    
+    (function() {
+        const titles = {
+            "index.html": "AutomataX | Your Future, Automated!",
+            "about.html": "About AutomataX | Meet Your AI Automation Partners",
+            "services.html": "AI Automation Services | AutomataX",
+            "how-it-works.html": "How AutomataX Works | Our Proven Process",
+            "rpa-case-studies.html": "Case Studies | Automation Success Stories | AutomataX",
+            "pricing.html": "Pricing | AutomataX Automation Solutions",
+            "downloads.html": "Downloads | AutomataX Tools & Resources",
+            "blog.html": "AutomataX Blog | AI & Automation Insights",
+            "contact.html": "Contact AutomataX | Get in Touch",
+        };
+        let path = window.location.pathname.split("/").pop();
+        if (titles[path]) {
+            document.title = titles[path];
+        }
+    })();
+    
+    document.querySelectorAll('.mobile-menu .dropdown > a').forEach(dropdown => {
+        dropdown.addEventListener('click', e => {
+            e.preventDefault();
+            const parent = dropdown.parentElement;
+            parent.classList.toggle('active');
+        });
+    });
+
+    document.querySelectorAll('.mobile-menu .dropdown-menu a').forEach(link => {
+        link.addEventListener('click', () => {
+            mobileMenu.classList.remove('active'); // Close mobile menu
+            // Remove active class from all dropdowns to reset state
+            document.querySelectorAll('.mobile-menu .dropdown').forEach(dropdown => {
+                dropdown.classList.remove('active');
+            });
+        });
+    });
+
+    const swiper = new Swiper('.swiper-container', {
+        slidesPerView: 'auto',
+        spaceBetween: 20,
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+        },
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+        breakpoints: {
+            768: {
+                slidesPerView: 3,
+            },
+            992: {
+                slidesPerView: 4,
+            }
+        }
+    });
     </script>
 </body>
 </html>
