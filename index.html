@@ -1569,27 +1569,142 @@
             width: 100%;
             padding: 20px 0;
         }
-        .swiper-slide {
-            text-align: center;
-            width: 300px;
-            background: var(--glass-bg);
-            backdrop-filter: var(--glass-blur);
-            border-radius: 15px;
-            padding: 20px;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-            border: 1px solid rgba(255, 105, 180, 0.2);
-        }
-        .swiper-slide .step-number {
-            width: 80px;
-            height: 80px;
-            font-size: 28px;
-        }
-        .swiper-pagination-bullet {
-            background: var(--primary);
-        }
-        .swiper-button-next, .swiper-button-prev {
-            color: var(--primary);
-        }
+        .howitworks-section {
+  padding: 80px 0;
+  background: linear-gradient(120deg, #fff0fa 0%, #f8f8ff 100%);
+  position: relative;
+  z-index: 1;
+}
+.howitworks-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px;
+  text-align: center;
+}
+.howitworks-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.5rem;
+  font-weight: 700;
+  background: linear-gradient(90deg,#ff69b4,#c71585,#800000);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  margin-bottom: 10px;
+}
+.howitworks-desc {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.18rem;
+  color: #555;
+  max-width: 650px;
+  margin: 0 auto 40px auto;
+  opacity: 0.95;
+}
+
+    /* Swiper Slide Styles */
+    .howitworks-swiper {
+    padding-bottom: 48px;
+    }
+    .howitworks-swiper .swiper-slide {
+    background: #fff;
+    border-radius: 22px;
+    box-shadow: 0 8px 32px rgba(255,105,180,0.09), 0 2px 7px rgba(128,0,0,0.07);
+    padding: 36px 28px 32px 28px;
+    text-align: center;
+    min-height: 330px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: box-shadow 0.25s, transform 0.23s;
+    border: 1px solid #ffe3f4;
+    }
+    .howitworks-swiper .swiper-slide:hover {
+    box-shadow: 0 14px 50px rgba(255,105,180,0.17);
+    transform: translateY(-6px) scale(1.03);
+    }
+    .howitworks-swiper .step-number {
+    background: linear-gradient(135deg,#ff69b4,#c71585,#800000);
+    color: #fff;
+    font-size: 2em;
+    width: 62px;
+    height: 62px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    margin-bottom: 18px;
+    font-weight: 700;
+    box-shadow: 0 2px 14px rgba(255,105,180,0.14);
+    border: 3px solid #fff;
+    margin-top: 3px;
+    }
+    .howitworks-swiper h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.24em;
+    margin-bottom: 10px;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+    color: #c71585;
+    }
+    .howitworks-swiper p {
+    font-family: 'Poppins', sans-serif;
+    color: #666;
+    font-size: 1.05em;
+    margin: 0;
+    margin-bottom: 2px;
+    }
+
+    /* Swiper Navigation/ Pagination overrides for better look */
+    .howitworks-swiper .swiper-pagination-bullet {
+    background: #ff69b4;
+    opacity: 1;
+    margin: 0 4px !important;
+    width: 13px;
+    height: 13px;
+    border-radius: 8px;
+    transition: background 0.2s, width 0.2s;
+    }
+    .howitworks-swiper .swiper-pagination-bullet-active {
+    background: linear-gradient(90deg,#ff69b4,#c71585,#800000);
+    width: 20px;
+    }
+    .howitworks-swiper .swiper-button-next,
+    .howitworks-swiper .swiper-button-prev {
+    color: #c71585;
+    top: 46%;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.77);
+    box-shadow: 0 2px 8px #ffd7f2;
+    transition: background 0.2s, color 0.22s, box-shadow 0.22s;
+    }
+    .howitworks-swiper .swiper-button-next:hover,
+    .howitworks-swiper .swiper-button-prev:hover {
+    background: linear-gradient(135deg,#ff69b4,#c71585,#800000);
+    color: #fff;
+    box-shadow: 0 4px 16px #ff69b450;
+    }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+    .howitworks-swiper .swiper-slide {
+        min-height: 270px;
+        padding: 28px 14px 24px 14px;
+    }
+    .howitworks-section { padding: 52px 0 60px 0; }
+    }
+    @media (max-width: 700px) {
+    .howitworks-title { font-size: 2rem; }
+    .howitworks-container { padding: 0 6px; }
+    }
+    @media (max-width: 540px) {
+    .howitworks-swiper .swiper-slide {
+        min-height: 200px;
+        padding: 18px 6px 18px 6px;
+    }
+    .howitworks-title { font-size: 1.3rem; }
+    .howitworks-desc { font-size: 1em; }
+    }
     </style>
     <style>
         i.fas, i.fab, i.far, i.fal, i.fad, i.fa,
@@ -1601,6 +1716,137 @@
             text-rendering: auto;
             line-height: 1;
         }
+        .organizations {
+        padding: 120px 0;
+        background: var(--glass-bg);
+        backdrop-filter: var(--glass-blur);
+        position: relative;
+        z-index: 1;
+    }
+    .org-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 35px;
+        margin-top: 50px;
+    }
+    .org-card {
+        background: var(--glass-bg);
+        backdrop-filter: var(--glass-blur);
+        border-radius: 20px;
+        padding: 35px;
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        border: 1px solid rgba(255, 105, 180, 0.2);
+        text-align: center;
+        transition: all 0.4s ease;
+    }
+    .org-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+    }
+    .org-card img {
+        max-width: 150px;
+        height: auto;
+        margin-bottom: 20px;
+        filter: grayscale(20%);
+        transition: filter 0.3s ease;
+    }
+    .org-card:hover img {
+        filter: grayscale(0);
+    }
+    .org-card p {
+        font-family: 'Poppins', sans-serif;
+        font-size: 16px;
+        color: #666;
+        line-height: 1.6;
+        margin-bottom: 0;
+    }
+    .org-subline {
+        font-family: 'Poppins', sans-serif;
+        font-size: 17px;
+        color: #555;
+        text-align: center;
+        margin-top: 20px;
+        max-width: 750px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .cookie-banner {
+        position: fixed;
+        bottom: 20px;
+        left: 20px;
+        right: 20px;
+        background: var(--glass-bg);
+        backdrop-filter: var(--glass-blur);
+        border-radius: 15px;
+        padding: 20px;
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+        z-index: 2000;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border: 1px solid rgba(255, 105, 180, 0.2);
+        max-width: 600px;
+        margin: 0 auto;
+    }
+    .cookie-banner p {
+        font-family: 'Poppins', sans-serif;
+        font-size: 14px;
+        color: var(--dark);
+        margin-right: 20px;
+    }
+    .cookie-banner a {
+        color: var(--primary);
+        text-decoration: underline;
+        transition: color 0.3s ease;
+    }
+    .cookie-banner a:hover {
+        color: var(--accent);
+    }
+    .cookie-buttons {
+        display: flex;
+        gap: 10px;
+    }
+    .cookie-btn {
+        padding: 8px 20px;
+        border-radius: 25px;
+        font-family: 'Poppins', sans-serif;
+        font-size: 14px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+    .cookie-accept {
+        background: var(--gradient);
+        color: white;
+        border: none;
+    }
+    .cookie-accept:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(255, 105, 180, 0.3);
+    }
+    .cookie-decline {
+        background: transparent;
+        color: var(--primary);
+        border: 1px solid var(--primary);
+    }
+    .cookie-decline:hover {
+        background: var(--gradient);
+        color: white;
+        border: none;
+    }
+    @media (max-width: 576px) {
+        .cookie-banner {
+            flex-direction: column;
+            gap: 15px;
+            text-align: center;
+        }
+        .cookie-banner p {
+            margin-right: 0;
+            margin-bottom: 10px;
+        }
+        .cookie-buttons {
+            justify-content: center;
+        }
+    }
     </style>
 </head>
 <body>
@@ -1633,6 +1879,18 @@
             </nav>
         </div>
     </header>
+    <div id="sticky-cta-bar" class="premium-cta-bar">
+  <div class="cta-bar-inner">
+    <div class="cta-bar-text">
+      <i class="fas fa-magic"></i>
+      Want a free Automation Audit? Get instant, expert recommendations.
+    </div>
+    <button id="open-quiz-modal" class="cta-bar-btn">
+      <i class="fas fa-clipboard-check"></i> Get My Audit
+    </button>
+  </div>
+</div>
+
     <div class="mobile-menu" id="mobile-menu">
         <button class="close-menu" id="close-menu" aria-label="Close Mobile Menu">
             <i class="fas fa-times"></i>
@@ -1768,41 +2026,39 @@
             </div>
         </div>
     </section>
-    <section class="how-it-works" id="how-it-works">
-        <div class="container">
-            <div class="section-header animate-fade-in">
-                <h2>How It Works</h2>
-                <p>
-                    Every business is unique. That’s why our process is personal, proven, and built for your results.
-                </p>
-                
-                <div class="swiper-container">
-                    <div class="swiper-wrapper">
-                        <div class="swiper-slide animate-fade-in">
-                            <div class="step-number">1</div>
-                            <h3>Discovery</h3>
-                            <p>We get to know your business, your pain points, and your biggest opportunities—no generic audits here.</p>
-                        </div>
-                        <div class="swiper-slide animate-fade-in">
-                            <div class="step-number">2</div>
-                            <h3>Strategy</h3>
-                            <p>Our experts craft a laser-focused roadmap, customized to drive your goals and maximize impact.</p>
-                        </div>
-                        <div class="swiper-slide animate-fade-in">
-                            <div class="step-number">3</div>
-                            <h3>Implementation</h3>
-                            <p>We build, test, and launch your automation with speed, precision, and zero disruption to your day-to-day.</p>
-                        </div>
-                        <div class="swiper-slide animate-fade-in">
-                            <div class="step-number">4</div>
-                            <h3>Optimization</h3>
-                            <p>We don’t stop at “done”—we monitor, optimize, and evolve your solution so you stay ahead. Always.</p>
-                        </div>
-                    </div>
-                    <div class="swiper-pagination"></div>
-                    <div class="swiper-button-next"></div>
-                    <div class="swiper-button-prev"></div>
+    <section class="howitworks-section">
+        <div class="howitworks-container">
+            <h2 class="howitworks-title">How It Works</h2>
+            <p class="howitworks-desc">
+            Every business is unique. That’s why our process is personal, proven, and built for your results.
+            </p>
+            <div class="swiper howitworks-swiper">
+                <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                <div class="step-number">1</div>
+                <h3>Discovery</h3>
+                <p>We get to know your business, your pain points, and your biggest opportunities—no generic audits here.</p>
                 </div>
+                <div class="swiper-slide">
+                <div class="step-number">2</div>
+                <h3>Strategy</h3>
+                <p>Our experts craft a laser-focused roadmap, customized to drive your goals and maximize impact.</p>
+                </div>
+                <div class="swiper-slide">
+                <div class="step-number">3</div>
+                <h3>Implementation</h3>
+                <p>We build, test, and launch your automation with speed, precision, and zero disruption to your day-to-day.</p>
+                </div>
+                <div class="swiper-slide">
+                <div class="step-number">4</div>
+                <h3>Optimization</h3>
+                <p>We don’t stop at “done”—we monitor, optimize, and evolve your solution so you stay ahead. Always.</p>
+                </div>
+            </div>
+            <!-- Swiper navigation and pagination -->
+            <div class="swiper-pagination"></div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
             </div>
         </div>
     </section>
@@ -1844,6 +2100,32 @@
             </div>
         </div>
     </section>
+    
+    <section class="organizations" id="organizations">
+        <div class="container">
+            <div class="section-header animate-fade-in">
+                <h2>🛠 Organizations We've Delivered Solutions For</h2>
+                <p>Discover the impact of our automation solutions across various organizations.</p>
+            </div>
+            <div class="org-grid">
+                <div class="org-card animate-fade-in">
+                    <img src="rvsolutions-logo.png" alt="RV Solutions Logo" loading="lazy">
+                    <p>20+ in-house automations delivered as part of an internal innovation initiative.</p>
+                </div>
+                <div class="org-card animate-fade-in">
+                    <img src="wembrace-biopharma-logo.png" alt="Wembrace Biopharma Logo" loading="lazy">
+                    <p>20+ in-house automations delivered as part of an internal innovation initiative.</p>
+                </div>
+            </div>
+            <div class="org-subline">
+                Including contributions made during prior engagements and internal roles.
+                <div style="font-size: 0.9em; color: #777; margin-top: 10px;">
+                    Note: Some automation initiatives were executed as part of internal roles and past engagements.
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section class="blog-teaser" id="blog-teaser">
         <div class="container">
             <div class="section-header animate-fade-in">
@@ -2038,6 +2320,13 @@
             </div>
         </div>
     </footer>
+    <div class="cookie-banner" id="cookie-banner">
+        <p>We use cookies to enhance your experience. By continuing, you agree to our <a href="privacy.html">Privacy Policy</a>.</p>
+        <div class="cookie-buttons">
+            <button class="cookie-btn cookie-accept" onclick="acceptCookies()">Accept</button>
+            <button class="cookie-btn cookie-decline" onclick="declineCookies()">Decline</button>
+        </div>
+    </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.9.6/lottie.min.js"></script>
     <script>
         // Enhanced Canvas Particle Background
@@ -2535,25 +2824,60 @@
         });
     });
 
-    const swiper = new Swiper('.swiper-container', {
-        slidesPerView: 'auto',
-        spaceBetween: 20,
-        pagination: {
-            el: '.swiper-pagination',
-            clickable: true,
-        },
-        navigation: {
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev',
-        },
-        breakpoints: {
-            768: {
-                slidesPerView: 3,
+    document.addEventListener('DOMContentLoaded', function () {
+        // Only target the first .howitworks-swiper on the page.
+        const howItWorksSwiper = new Swiper('.howitworks-swiper', {
+            slidesPerView: 1,
+            spaceBetween: 30,
+            loop: false,
+            pagination: {
+                el: '.howitworks-swiper .swiper-pagination',
+                clickable: true
             },
-            992: {
-                slidesPerView: 4,
+            navigation: {
+                nextEl: '.howitworks-swiper .swiper-button-next',
+                prevEl: '.howitworks-swiper .swiper-button-prev'
+            },
+            breakpoints: {
+                650: {
+                    slidesPerView: 2
+                },
+                1100: {
+                    slidesPerView: 3
+                }
             }
+        });
+
+        // Just for debugging
+        window.howItWorksSwiper = howItWorksSwiper;
+    });
+    function acceptCookies() {
+        localStorage.setItem('cookiesAccepted', 'true');
+        document.getElementById('cookie-banner').style.display = 'none';
+        // Initialize analytics or other cookie-dependent scripts here
+        gtag('consent', 'update', {
+            'analytics_storage': 'granted'
+        });
+    }
+
+    function declineCookies() {
+        localStorage.setItem('cookiesAccepted', 'false');
+        document.getElementById('cookie-banner').style.display = 'none';
+        // Disable non-essential cookies
+        gtag('consent', 'update', {
+            'analytics_storage': 'denied'
+        });
+    }
+
+    // Check cookie consent on page load
+    window.addEventListener('DOMContentLoaded', () => {
+        if (!localStorage.getItem('cookiesAccepted')) {
+            document.getElementById('cookie-banner').style.display = 'flex';
         }
+        // Set default consent state for Google Analytics
+        gtag('consent', 'default', {
+            'analytics_storage': 'denied'
+        });
     });
     </script>
 </body>
