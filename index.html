@@ -1847,6 +1847,49 @@
             justify-content: center;
         }
     }
+    .features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+    gap: 32px;
+    margin-top: 45px;
+    margin-bottom: 40px;
+}
+.feature-card {
+    background: var(--glass-bg);
+    backdrop-filter: var(--glass-blur);
+    border-radius: 18px;
+    box-shadow: 0 6px 22px rgba(255,105,180,0.08);
+    padding: 36px 28px 30px 28px;
+    text-align: center;
+    border: 1px solid rgba(255,105,180,0.11);
+    transition: transform 0.16s, box-shadow 0.18s;
+}
+.feature-card:hover {
+    transform: translateY(-7px) scale(1.03);
+    box-shadow: 0 12px 38px rgba(255,105,180,0.18);
+    background: var(--gradient);
+    color: #fff;
+}
+.feature-icon {
+    font-size: 42px;
+    color: var(--primary);
+    margin-bottom: 19px;
+    transition: color 0.3s;
+}
+.feature-card:hover .feature-icon {
+    color: #fff;
+}
+.feature-card h3 {
+    font-family: 'Playfair Display',serif;
+    font-size: 1.23em;
+    margin-bottom: 11px;
+    color: var(--secondary);
+}
+.feature-card p {
+    font-family: 'Funnel Display',sans-serif;
+    color: #000000;
+    font-size: 1em;
+}
     </style>
 </head>
 <body>
@@ -1994,38 +2037,51 @@
             </div>
         </div>
     </section>
-    <section class="about" id="about">
-        <div class="container">
-            <div class="about-grid">
-                <div class="about-content animate-fade-in">
-                    <h2>Why AutomataX?</h2>
-                    <p>
-                        At AutomataX, we’re not just automators—we’re your strategic growth partner. Our team blends deep technical mastery with business insight, delivering automation that’s <b>secure, scalable, and tailored to your goals.</b>
-                    </p>
-                    <p>
-                        We work side-by-side with your leaders to design and deploy solutions that <b>deliver real ROI</b>—not just promises. Our measure of success? Your measurable results.
-                    </p>
-                    <div class="stats">
-                        <div class="stat-item">
-                            <div class="stat-number" data-target="99">0%</div>
-                            <div class="stat-label">Client Satisfaction</div>
-                        </div>
-                        <div class="stat-item">
-                            <div class="stat-number" data-target="30">0+</div>
-                            <div class="stat-label">Industries Served</div>
-                        </div>
-                        <div class="stat-item">
-                            <div class="stat-number" data-target="40">0%</div>
-                            <div class="stat-label">Avg. Efficiency Gain</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="about-image animate-fade-in">
-                    <img src="why-automatax.png" alt="AutomataX Team" loading="lazy">
-                </div>
+    <section class="why-automatax">
+    <div class="container">
+        <div class="section-header animate-fade-in">
+            <h2>Why AutomataX?</h2>
+            <p>
+                <b>Own, not rent, your automation.</b> We’re not another “SaaS with limits”—we’re your custom automation partner.<br>
+                Here’s how AutomataX gives you real value—forever.
+            </p>
+        </div>
+        <div class="features-grid">
+            <div class="feature-card animate-fade-in">
+                <div class="feature-icon"><i class="fas fa-infinity"></i></div>
+                <h3>Truly Unlimited Use</h3>
+                <p>No task caps, no monthly usage limits. Your automations run as much as you need—today and years from now.</p>
+            </div>
+            <div class="feature-card animate-fade-in">
+                <div class="feature-icon"><i class="fas fa-unlock"></i></div>
+                <h3>You Own the Code</h3>
+                <p>Full source code, documentation, and all assets are delivered to you—so you’re never locked out or forced to upgrade.</p>
+            </div>
+            <div class="feature-card animate-fade-in">
+                <div class="feature-icon"><i class="fas fa-tools"></i></div>
+                <h3>100% Done For You</h3>
+                <p>We handle every technical detail—from discovery to deployment. You just enjoy the results.</p>
+            </div>
+            <div class="feature-card animate-fade-in">
+                <div class="feature-icon"><i class="fas fa-shield-alt"></i></div>
+                <h3>Private & Secure</h3>
+                <p>Host your automation anywhere—cloud, on-prem, or local desktop. Your data stays yours, always.</p>
+            </div>
+            <div class="feature-card animate-fade-in">
+                <div class="feature-icon"><i class="fas fa-bolt"></i></div>
+                <h3>Fast Turnaround</h3>
+                <p>Most builds are delivered within days—not months. See ROI from day one, not after endless “free trials.”</p>
+            </div>
+            <div class="feature-card animate-fade-in">
+                <div class="feature-icon"><i class="fas fa-user-tie"></i></div>
+                <h3>Direct Access to Experts</h3>
+                <p>Talk to a real engineer, not a support bot. Get help via WhatsApp, email, or phone—no ticket queues.</p>
             </div>
         </div>
-    </section>
+    </div>
+</section>
+
+</section>
     <section class="howitworks-section">
         <div class="howitworks-container">
             <h2 class="howitworks-title">How It Works</h2>
@@ -2114,7 +2170,7 @@
                 </div>
                 <div class="org-card animate-fade-in">
                     <img src="wembrace-biopharma-logo.png" alt="Wembrace Biopharma Logo" loading="lazy">
-                    <p>20+ in-house automations delivered as part of an internal innovation initiative.</p>
+                    <p>Accelerated clinical and operational processes with secure, pharma-grade automation solutions.</p>
                 </div>
             </div>
             <div class="org-subline">
@@ -2725,7 +2781,7 @@
         <i class="fas fa-star"></i>
         <p>Thanks! Check your inbox for a quick suggestion. <br>
         Want to discuss live?</p>
-        <a href="https://calendly.com/automataxpro-sales" target="_blank" class="cta-bar-btn" style="margin-top:8px;"><i class="fas fa-calendar"></i> Book a Free Call</a>
+        <a href="https://calendar.app.google/YBocPqjdktucPrMr7" target="_blank" class="cta-bar-btn" style="margin-top:8px;"> <i class="fas fa-calendar"></i> Book a Free Call </a>
         </div>
     </div>
     </div>
