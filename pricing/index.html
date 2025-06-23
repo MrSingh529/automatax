@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AutomataX - About Us</title>
+    <title>AutomataX - Pricing</title>
     <meta name="description" content="AutomataX offers AI-driven automation solutions for businesses, with secure data handling and innovative workflows.">
     <meta name="keywords" content="AI automation, workflow automation, business process automation, secure automation solutions, AI chatbots, predictive analytics, repetitive tasks automation">
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-WJCJJ1HH56"></script>
@@ -13,11 +13,10 @@
     gtag('js', new Date());
     gtag('config', 'G-WJCJJ1HH56');
     </script>
-    <link rel="canonical" href="https://www.automataxpro.site/about">
+    <link rel="canonical" href="https://www.automataxpro.site/pricing">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300..800&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -36,7 +35,7 @@
             box-sizing: border-box;
             font-family: 'Funnel Display', sans-serif !important;
         }
-        h1, h2, h3 {
+        h1, h2, h3, h4, h5, h6 {
             font-family: 'Playfair Display', serif !important;
         }
         html {
@@ -112,7 +111,7 @@
             display: inline-block;
             padding: 14px 35px;
             border-radius: 50px;
-            font-family: 'Funnel Display', sans-serif;
+            font-family: 'Poppins', sans-serif;
             font-weight: 600;
             transition: all 0.4s ease;
             cursor: pointer;
@@ -177,7 +176,7 @@
             padding: 15px 0;
         }
         .logo {
-            font-family: 'Playfair Display', serif !important;
+            font-family: 'Space Grotesk', sans-serif;
             font-size: 28px;
             font-weight: 700;
             color: var(--primary);
@@ -246,63 +245,38 @@
             background: var(--gradient);
             color: white;
         }
-        .about-hero {
-            padding: 110px 0 120px;
+        .pricing-hero {
+            padding: 180px 0 120px;
+            text-align: center;
             position: relative;
             z-index: 1;
             overflow: hidden;
             background: linear-gradient(135deg, rgba(255, 105, 180, 0.1), rgba(128, 0, 0, 0.1));
-            text-align: center;
         }
-        .about-hero h1 {
-            font-family: 'Playfair Display', serif !important;
+        .pricing-hero h1 {
+            font-family: 'Space Grotesk', sans-serif;
             font-size: 52px;
             font-weight: 700;
             margin-bottom: 25px;
             line-height: 1.2;
         }
-        .about-hero h1 span {
+        .pricing-hero h1 span {
             background: var(--gradient);
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
         }
-        .about-hero p {
+        .pricing-hero p {
             font-family: 'Poppins', sans-serif;
             font-size: 19px;
             line-height: 1.6;
             margin-bottom: 35px;
             color: #444;
+            max-width: 650px;
+            margin-left: auto;
+            margin-right: auto;
         }
-        .shape {
-            position: absolute;
-            z-index: -1;
-            opacity: 0.2;
-        }
-        .shape-1 {
-            top: 15%;
-            left: 5%;
-            width: 120px;
-            height: 120px;
-            background: var(--gradient);
-            border-radius: 30%;
-            animation: drift 12s infinite ease-in-out;
-        }
-        .shape-2 {
-            bottom: 25%;
-            right: 10%;
-            width: 90px;
-            height: 90px;
-            background: var(--accent);
-            border-radius: 50%;
-            animation: drift 9s infinite ease-in-out reverse;
-        }
-        @keyframes drift {
-            0% { transform: translate(0, 0) rotate(0deg); }
-            50% { transform: translate(25px, 35px) rotate(10deg); }
-            100% { transform: translate(0, 0) rotate(0deg); }
-        }
-        .section {
+        .why-automatax, .pricing-process, .pricing-range, .comparison {
             padding: 120px 0;
             background: var(--glass-bg);
             backdrop-filter: var(--glass-blur);
@@ -314,7 +288,7 @@
             margin-bottom: 70px;
         }
         .section-header h2 {
-            font-family: 'Playfair Display', serif !important;
+            font-family: 'Space Grotesk', sans-serif;
             font-size: 40px;
             font-weight: 700;
             margin-bottom: 20px;
@@ -336,59 +310,19 @@
             background: var(--gradient);
         }
         .section-header p {
-            font-family: 'Funnel Display', sans-serif;
+            font-family: 'Poppins', sans-serif;
             font-size: 19px;
             color: #555;
             max-width: 750px;
             margin: 0 auto;
         }
-        .who-we-are-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
-            align-items: center;
-            background: var(--glass-bg);
-            backdrop-filter: var(--glass-blur);
-            padding: 40px;
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-        }
-        .who-we-are-content h3 {
-            font-family: 'Playfair Display', serif !important;
-            font-size: 24px;
-            margin-bottom: 15px;
-            background: var(--gradient);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-        }
-        .who-we-are-content p {
-            font-family: 'Funnel Display', sans-serif;
-            font-size: 17px;
-            line-height: 1.7;
-            margin-bottom: 25px;
-            color: #555;
-        }
-        .who-we-are-image {
-            position: relative;
-            perspective: 1000px;
-        }
-        .who-we-are-image img {
-            width: 100%;
-            border-radius: 20px;
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-            transition: transform 0.5s ease;
-        }
-        .who-we-are-image:hover img {
-            transform: rotateY(10deg) rotateX(5deg) scale(1.05);
-        }
-        .team-grid {
+        .features-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 35px;
             margin-top: 50px;
         }
-        .team-member {
+        .feature-card {
             background: var(--glass-bg);
             backdrop-filter: var(--glass-blur);
             border-radius: 20px;
@@ -401,7 +335,7 @@
             cursor: pointer;
             border: 1px solid rgba(255, 105, 180, 0.2);
         }
-        .team-member::before {
+        .feature-card::before {
             content: '';
             position: absolute;
             top: 0;
@@ -413,136 +347,218 @@
             opacity: 0;
             transition: opacity 0.4s ease;
         }
-        .team-member:hover {
+        .feature-card:hover {
             box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
         }
-        .team-member:hover::before {
+        .feature-card:hover::before {
             opacity: 1;
         }
-        .team-member:hover h3, .team-member:hover p {
+        .feature-card:hover .feature-icon,
+        .feature-card:hover h3,
+        .feature-card:hover p {
             color: white;
         }
-        .team-member img {
-            display: block;
-            width: 120px;
-            height: auto;
-            margin: 0 auto 25px;
-            border-radius: 0;
-            transition: transform 0.4s ease;
-        }
-        .team-member:hover img {
-            transform: scale(1.15) rotate(5deg);
-        }
-        .team-member h3 {
-            font-family: 'Playfair Display', serif !important;
-            font-size: 24px;
-            margin-bottom: 15px;
-            transition: color 0.4s ease;
-        }
-        .team-member p {
-            font-family: 'Poppins', sans-serif;
-            font-size: 16px;
-            color: #666;
-            margin-bottom: 10px;
-            transition: color 0.4s ease;
-        }
-        .team-member .social-links {
-            display: flex;
-            justify-content: center;
-            gap: 12px;
-        }
-        .team-member .social-links a {
-            color: var(--primary);
-            font-size: 18px;
-            transition: all 0.4s ease;
-        }
-        .team-member:hover .social-links a {
-            color: white;
-        }
-        .team-member .social-links a:hover {
-            transform: scale(1.2);
-        }
-        .values-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 35px;
-            margin-top: 50px;
-        }
-        .value-card {
-            background: var(--glass-bg);
-            backdrop-filter: var(--glass-blur);
-            border-radius: 20px;
-            padding: 35px;
-            text-align: center;
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-            transition: all 0.4s ease;
-            border: 1px solid rgba(255, 105, 180, 0.2);
-        }
-        .value-card:hover {
-            transform: translateY(-12px) scale(1.05) rotate(1deg);
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
-        }
-        .value-icon {
+        .feature-icon {
             font-size: 50px;
             color: var(--primary);
             margin-bottom: 25px;
             transition: color 0.4s ease, transform 0.4s ease;
         }
-        .value-card:hover .value-icon {
-            color: white;
+        .feature-card:hover .feature-icon {
             transform: scale(1.15) rotate(5deg);
         }
-        .value-card h3 {
+        .feature-card h3 {
             font-family: 'Space Grotesk', sans-serif;
             font-size: 24px;
             margin-bottom: 15px;
             transition: color 0.4s ease;
         }
-        .value-card p {
+        .feature-card p {
             font-family: 'Poppins', sans-serif;
             font-size: 16px;
             color: #666;
-            line-height: 1.6;
             transition: color 0.4s ease;
         }
-        .value-card:hover h3, .value-card:hover p {
-            color: white;
+        .process-steps {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 60px;
+            position: relative;
         }
-        .achievements-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 25px;
-            margin-top: 50px;
+        .process-steps::before {
+            content: '';
+            position: absolute;
+            top: 50px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: var(--gradient);
+            z-index: 1;
         }
-        .achievement-item {
+        .process-step {
             text-align: center;
+            position: relative;
+            z-index: 2;
+            width: 25%;
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+        }
+        .process-step:hover {
+            transform: scale(1.08);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        .process-number {
+            width: 100px;
+            height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             background: var(--glass-bg);
             backdrop-filter: var(--glass-blur);
-            padding: 25px;
-            border-radius: 15px;
+            border-radius: 50%;
+            margin: 0 auto 25px;
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 32px;
+            font-weight: 700;
+            color: white;
+            position: relative;
             box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-            transition: transform 0.4s ease, box-shadow 0.4s ease;
+            background: var(--gradient);
+        }
+        .process-step h3 {
+            font-family: 'Space Grotesk', sans-serif;
+            margin-bottom: 15px;
+            font-size: 22px;
+        }
+        .process-step p {
+            font-family: 'Poppins', sans-serif;
+            font-size: 16px;
+            color: #666;
+            padding: 0 20px;
+        }
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 35px;
+            margin-top: 50px;
+        }
+
+        .pricing-card {
+            background: var(--glass-bg);
+            backdrop-filter: var(--glass-blur);
+            border-radius: 20px;
+            padding: 35px 30px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: all 0.4s ease;
             border: 1px solid rgba(255, 105, 180, 0.2);
         }
-        .achievement-item:hover {
-            transform: scale(1.08);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+
+        .pricing-card:hover {
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
         }
-        .achievement-number {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 40px;
+
+        .pricing-card h3 {
+            font-family: 'Playfair Display', serif !important;
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .pricing-card .price {
+            font-family: 'Funnel Display', serif !important;
+            font-size: 36px;
             font-weight: 700;
-            color: var(--primary);
-            margin-bottom: 8px;
+            margin-bottom: 15px;
             background: var(--gradient);
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
         }
-        .achievement-label {
+
+        .pricing-card ul.features {
+            list-style: none;
+            padding: 0;
+            margin: 20px 0;
             font-family: 'Poppins', sans-serif;
             font-size: 15px;
-            color: #666;
+            color: #555;
+            text-align: left;
+        }
+
+        .pricing-card ul.features li {
+            padding: 8px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            position: relative;
+            padding-left: 20px;
+        }
+
+        .pricing-card ul.features li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--highlight-color, #ff69b4);
+            font-weight: bold;
+        }
+
+        .pricing-card a.btn-primary {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 22px;
+            background: var(--gradient);
+            color: white;
+            text-decoration: none;
+            border-radius: 10px;
+            font-family: 'Funnel Display', serif !important;
+            font-size: 14px;
+            transition: background 0.3s ease, transform 0.3s ease;
+        }
+
+        .pricing-card a.btn-primary:hover {
+            transform: translateY(-3px);
+            opacity: 0.9;
+        }
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 50px;
+            background: var(--glass-bg);
+            backdrop-filter: var(--glass-blur);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 105, 180, 0.2);
+        }
+        .comparison-table th,
+        .comparison-table td {
+            padding: 20px;
+            text-align: center;
+            font-family: 'Poppins', sans-serif;
+            font-size: 16px;
+            border-bottom: 1px solid rgba(255, 105, 180, 0.2);
+        }
+        .comparison-table th {
+            background: var(--gradient);
+            color: white;
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 600;
+        }
+        .comparison-table td {
+            color: var(--dark);
+        }
+        .comparison-table .highlight {
+            background: rgba(255, 105, 180, 0.1);
+            font-weight: 600;
+        }
+        .comparison-table .icon-check {
+            color: #28a745;
+            font-size: 24px;
+        }
+        .comparison-table .icon-cross {
+            color: #e63946;
+            font-size: 24px;
+        }
+        .comparison-table .icon-warning {
+            color: #f4a261;
+            font-size: 24px;
         }
         .cta {
             padding: 100px 0;
@@ -575,150 +591,6 @@
             transform: translateY(-5px);
             box-shadow: 0 10px 30px rgba(255, 255, 255, 0.4);
             color: var(--primary);
-        }
-        footer {
-            padding: 70px 0 40px;
-            background: var(--glass-bg);
-            backdrop-filter: var(--glass-blur);
-            color: var(--dark);
-            position: relative;
-            z-index: 1;
-        }
-        .footer-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 45px;
-            margin-bottom: 50px;
-        }
-        .footer-col h3 {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 22px;
-            margin-bottom: 25px;
-            font-weight: 600;
-            position: relative;
-            padding-bottom: 12px;
-            background: var(--gradient);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-        }
-        .footer-col h3::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 35px;
-            height: 3px;
-            background: var(--gradient);
-        }
-        .footer-links {
-            list-style: none;
-        }
-        .footer-links li {
-            margin-bottom: 15px;
-        }
-        .footer-links a {
-            color: rgba(0, 0, 0, 0.8);
-            text-decoration: none;
-            font-family: 'Poppins', sans-serif;
-            transition: all 0.3s ease;
-        }
-        .footer-links a:hover {
-            color: var(--primary);
-            padding-left: 8px;
-        }
-        .footer-social {
-            display: flex;
-            gap: 18px;
-            margin-top: 25px;
-        }
-        .social-icon {
-            width: 45px;
-            height: 45px;
-            border-radius: 50%;
-            background: var(--glass-bg);
-            backdrop-filter: var(--glass-blur);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--dark);
-            transition: all 0.4s ease;
-        }
-        .social-icon:hover {
-            background: var(--gradient);
-            color: white;
-            transform: translateY(-5px);
-        }
-        .footer-bottom {
-            text-align: center;
-            padding-top: 40px;
-            border-top: 1px solid rgba(255, 105, 180, 0.2);
-            font-family: 'Poppins', sans-serif;
-            font-size: 14px;
-            color: rgba(0, 0, 0, 0.7);
-        }
-        .welcome-popup {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.6);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            z-index: 2000;
-            animation: fadeIn 0.6s ease;
-        }
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-        .welcome-content {
-            background: var(--glass-bg);
-            backdrop-filter: var(--glass-blur);
-            border-radius: 20px;
-            padding: 35px;
-            max-width: 550px;
-            width: 90%;
-            text-align: center;
-            position: relative;
-            transform: scale(0.9);
-            animation: popIn 0.6s ease forwards;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-            border: 1px solid rgba(255, 105, 180, 0.2);
-        }
-        @keyframes popIn {
-            to { transform: scale(1); }
-        }
-        .welcome-content h3 {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 30px;
-            margin-bottom: 20px;
-            background: var(--gradient);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-        }
-        .welcome-content p {
-            font-family: 'Poppins', sans-serif;
-            font-size: 17px;
-            color: #666;
-            margin-bottom: 25px;
-        }
-        .welcome-close {
-            position: absolute;
-            top: 15px;
-            right: 15px;
-            background: none;
-            border: none;
-            font-size: 22px;
-            cursor: pointer;
-            color: #666;
-            transition: transform 0.3s ease;
-        }
-        .welcome-close:hover {
-            transform: rotate(90deg);
         }
         .chatbot-widget {
             position: fixed;
@@ -881,96 +753,149 @@
             padding: 12px 25px;
             font-size: 15px;
         }
-        .interactive-widget {
+        .welcome-popup {
             position: fixed;
-            bottom: 30px;
-            left: 30px;
-            z-index: 1000;
-        }
-        .interactive-toggle {
-            background: var(--gradient);
-            color: white;
-            padding: 14px 22px;
-            font-family: 'Poppins', sans-serif;
-            font-size: 16px;
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            box-shadow: 0 6px 20px rgba(255, 105, 180, 0.3);
-            animation: pulse 2s infinite;
-        }
-        .interactive-toggle:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(255, 105, 180, 0.5);
-        }
-        .interactive-window {
-            position: absolute;
-            bottom: 70px;
+            top: 0;
             left: 0;
-            width: 380px;
-            max-height: 550px;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 2000;
+            animation: fadeIn 0.6s ease;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .welcome-content {
             background: var(--glass-bg);
             backdrop-filter: var(--glass-blur);
             border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-            display: flex;
-            flex-direction: column;
+            padding: 35px;
+            max-width: 550px;
+            width: 90%;
+            text-align: center;
+            position: relative;
+            transform: scale(0.9);
+            animation: popIn 0.6s ease forwards;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
             border: 1px solid rgba(255, 105, 180, 0.2);
         }
-        .interactive-header {
-            background: var(--gradient);
-            color: white;
-            padding: 18px 25px;
-            border-top-left-radius: 20px;
-            border-top-right-radius: 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+        @keyframes popIn {
+            to { transform: scale(1); }
         }
-        .interactive-header h3 {
+        .welcome-content h3 {
             font-family: 'Space Grotesk', sans-serif;
-            font-size: 22px;
-            margin: 0;
+            font-size: 30px;
+            margin-bottom: 20px;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
         }
-        .interactive-close {
+        .welcome-content p {
+            font-family: 'Poppins', sans-serif;
+            font-size: 17px;
+            color: #666;
+            margin-bottom: 25px;
+        }
+        .welcome-close {
+            position: absolute;
+            top: 15px;
+            right: 15px;
             background: none;
             border: none;
-            color: white;
-            font-size: 18px;
+            font-size: 22px;
             cursor: pointer;
+            color: #666;
             transition: transform 0.3s ease;
         }
-        .interactive-close:hover {
+        .welcome-close:hover {
             transform: rotate(90deg);
         }
-        .interactive-content {
-            padding: 25px;
-            background: var(--light);
-            flex: 1;
-            overflow-y: auto;
-        }
-        .interactive-content p {
-            font-family: 'Poppins', sans-serif;
-            font-size: 16px;
-            color: #666;
-            margin-bottom: 20px;
-        }
-        .interactive-content a {
-            display: block;
-            padding: 12px 18px;
+        footer {
+            padding: 70px 0 40px;
             background: var(--glass-bg);
             backdrop-filter: var(--glass-blur);
-            border-radius: 12px;
-            text-decoration: none;
             color: var(--dark);
-            margin-bottom: 12px;
-            transition: all 0.3s ease;
-            border: 1px solid rgba(255, 105, 180, 0.2);
+            position: relative;
+            z-index: 1;
         }
-        .interactive-content a:hover {
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 45px;
+            margin-bottom: 50px;
+        }
+        .footer-col h3 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 22px;
+            margin-bottom: 25px;
+            font-weight: 600;
+            position: relative;
+            padding-bottom: 12px;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        .footer-col h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 35px;
+            height: 3px;
+            background: var(--gradient);
+        }
+        .footer-links {
+            list-style: none;
+        }
+        .footer-links li {
+            margin-bottom: 15px;
+        }
+        .footer-links a {
+            color: rgba(0, 0, 0, 0.8);
+            text-decoration: none;
+            font-family: 'Poppins', sans-serif;
+            transition: all 0.3s ease;
+        }
+        .footer-links a:hover {
+            color: var(--primary);
+            padding-left: 8px;
+        }
+        .footer-social {
+            display: flex;
+            gap: 18px;
+            margin-top: 25px;
+        }
+        .social-icon {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background: var(--glass-bg);
+            backdrop-filter: var(--glass-blur);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--dark);
+            transition: all 0.4s ease;
+        }
+        .social-icon:hover {
             background: var(--gradient);
             color: white;
-            transform: scale(1.05);
+            transform: translateY(-5px);
+        }
+        .footer-bottom {
+            text-align: center;
+            padding-top: 40px;
+            border-top: 1px solid rgba(255, 105, 180, 0.2);
+            font-family: 'Poppins', sans-serif;
+            font-size: 14px;
+            color: rgba(0, 0, 0, 0.7);
         }
         .animate-fade-in {
             opacity: 0;
@@ -982,12 +907,18 @@
             transform: translateY(0);
         }
         @media (max-width: 992px) {
-            .who-we-are-grid {
-                grid-template-columns: 1fr;
-                gap: 50px;
+            .pricing-hero h1 {
+                font-size: 44px;
             }
-            .who-we-are-image {
-                order: -1;
+            .process-steps {
+                flex-wrap: wrap;
+            }
+            .process-steps::before {
+                display: none;
+            }
+            .process-step {
+                width: 50%;
+                margin-bottom: 50px;
             }
         }
         @media (max-width: 768px) {
@@ -1034,13 +965,16 @@
                 padding: 12px 0;
                 color: var(--dark);
             }
-            .about-hero {
+            .pricing-hero {
                 padding: 140px 0 80px;
                 text-align: center;
             }
+            .process-step {
+                width: 100%;
+            }
         }
         @media (max-width: 576px) {
-            .about-hero h1 {
+            .pricing-hero h1 {
                 font-size: 36px;
             }
             .btn {
@@ -1050,11 +984,14 @@
             .section-header h2 {
                 font-size: 32px;
             }
-            .chatbot-window, .interactive-window {
+            .comparison-table {
+                display: none;
+            }
+            .chatbot-window {
                 width: 320px;
                 max-height: 450px;
             }
-            .chatbot-toggle, .interactive-toggle {
+            .chatbot-toggle {
                 padding: 12px 18px;
                 font-size: 15px;
             }
@@ -1066,10 +1003,6 @@
             }
             .custom-cursor {
                 display: none;
-            }
-            .team-member img {
-                width: 120px;
-                height: 120px;
             }
         }
     </style>
@@ -1083,13 +1016,199 @@
             text-rendering: auto;
             line-height: 1;
         }
+        .guarantee-box {
+    margin: 40px 0;
+    padding: 25px 30px;
+    background: rgba(255, 243, 205, 0.7); /* subtle yellow glass */
+    border-left: 5px solid #ffc107;
+    border-radius: 12px;
+    font-family: 'Poppins', sans-serif;
+    color: #5c4300;
+    font-size: 1rem;
+    text-align: center;
+    box-shadow: 0 8px 20px rgba(255, 193, 7, 0.1);
+    backdrop-filter: blur(5px);
+}
+
+.guarantee-box strong {
+    color: #c37400;
+}
+
+.testimonial-box {
+    margin-top: 40px;
+    padding: 30px 35px;
+    background: rgba(249, 249, 249, 0.7); /* light grey glass */
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+    font-family: 'Poppins', sans-serif;
+    backdrop-filter: blur(4px);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.testimonial-box p {
+    font-size: 1.05rem;
+    color: #444;
+    line-height: 1.6;
+    margin: 0 auto;
+    max-width: 700px;
+}
+
+.testimonial-box p:nth-of-type(1) {
+    font-style: italic;
+    font-weight: 400;
+}
+
+.testimonial-box p:nth-of-type(2) {
+    margin-top: 12px;
+    font-weight: 600;
+    color: #333;
+}
+#testimonial-carousel {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 20px;
+}
+
+.testimonial-container {
+    position: relative;
+}
+
+.testimonial {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.8s ease;
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    color: #444;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 100%;
+}
+
+.testimonial.active {
+    display: block;
+    opacity: 1;
+    position: relative;
+}
+
+.testimonial p {
+    margin-bottom: 10px;
+}
+
+.testimonial-nav {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #444;
+    z-index: 2;
+    padding: 0 10px;
+}
+
+.testimonial-nav.left {
+    left: 0;
+}
+
+.testimonial-nav.right {
+    right: 0;
+}
+
+/* Mobile Responsive */
+@media screen and (max-width: 768px) {
+    .testimonial-nav {
+        font-size: 20px;
+    }
+}
+/* Form Section */
+.quote-form {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+    animation: fadeInUp 0.6s ease forwards;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    font-weight: 600;
+    display: block;
+    margin-bottom: 6px;
+    font-size: 15px;
+    color: #333;
+}
+
+.form-control {
+    width: 100%;
+    padding: 12px 14px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+    font-family: 'Segoe UI', sans-serif;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-control:focus {
+    border-color: #007bff;
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.2);
+}
+
+/* Submit Button */
+.quote-form .btn-primary {
+    background-color: #007bff;
+    border: none;
+    padding: 12px 20px;
+    font-size: 16px;
+    border-radius: 10px;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: inline-block;
+}
+
+.quote-form .btn-primary:hover {
+    background-color: #0056b3;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .quote-form {
+        padding: 20px;
+    }
+
+    .quote-form .btn-primary {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+/* Optional: Fade in animation */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
     </style>
 </head>
 <body>
     <canvas id="ai-background"></canvas>
     <div class="custom-cursor" id="custom-cursor"></div>
-    <div class="shape shape-1"></div>
-    <div class="shape shape-2"></div>
     <header id="header">
         <div class="container">
             <nav>
@@ -1136,202 +1255,315 @@
             <button class="btn btn-primary" id="welcome-discover">Discover Now</button>
         </div>
     </div>
-    <section class="about-hero" id="about">
-		<div class="container">
-			<div class="animate-fade-in">
-				<h1>Meet <span>AutomataX</span></h1>
-                    <p>
-                        We’re a small, passionate team of automation builders—engineers, thinkers, and problem-solvers—who love making complex things feel simple. 
-                        <br><br>
-                        AutomataX exists because we’ve seen how the *right* automation can turn chaos into clarity, save teams hours, and unlock new growth. We believe every business—no matter the size—should have tools as good as the world’s biggest companies. And you should always know the humans behind those tools.
-                    </p>
-			</div>
-		</div>
-	</section>
-    <section class="section who-we-are">
-		<div class="container">
-			<div class="section-header animate-fade-in">
-				<h2>Who We Are</h2>
-				<p>
-					AutomataX started with a simple idea: technology should serve people, not the other way around. We’ve built bots for big banks and scrappy startups—and we’re just as obsessed with helping a 5-person team get their weekends back as we are with a global digital transformation.
-				</p>
-			</div>
-			<div class="who-we-are-grid">
-				<div class="who-we-are-content animate-fade-in">
-					<h3>Our Mission</h3>
-					<p>
-						Help teams do their best work by taking the boring, manual stuff off their plate. We build secure, future-proof automations—always tailored to you, not forced on you—so your people can focus on what actually matters.
-					</p>
-					<h3>Our Vision</h3>
-					<p>
-						Imagine a world where smart software quietly does the busywork, and every business—big or small—can compete at their best. That’s the world we’re building, one workflow at a time.
-                    </p>
-				</div>
-				<div class="who-we-are-image animate-fade-in">
-					<img src="mission.png" alt="AutomataX Mission and Vision" loading="lazy">
-				</div>
-			</div>
-		</div>
-	</section>
-    <section class="section our-team">
-        <!-- Founder Story Block Start -->
-<section class="section founder-story" style="padding-top: 80px;">
-  <div class="container">
-    <div class="section-header animate-fade-in">
-      <h2 style="font-family: 'Playfair Display', serif !important;">
-        Why I Started AutomataX
-      </h2>
-    </div>
-    <div class="who-we-are-content animate-fade-in" style="max-width: 700px; margin: 0 auto;">
-      <p>
-        <strong>Hi, I’m Mr. Singh—founder of AutomataX.</strong>
-        <br><br>
-        I didn’t set out to start an automation company. My first tech role was actually as an Executive Assistant to a process improvement consultant. Pretty quickly, I started automating repetitive, annoying tasks and built a few internal apps to make approvals and daily work easier.
-        <br><br>
-        Soon, I became the “go-to” person for fixing workflows, implementing tools, and solving messy operational problems—on top of my regular job.
-        <br><br>
-        In my next role, I found the same thing: what started as an admin job grew into leading automation projects and building tools that saved entire teams hours every week. I was honored to receive top performer awards—but what really motivated me was seeing people reclaim their time and focus on work that matters.
-        <br><br>
-        That’s why I started AutomataX. I believe automation shouldn’t just be for big tech companies. Every business deserves smart, secure, human-first solutions. And you should always know the real people building your tools.
-      </p>
-      <p style="margin-top: 25px; font-style: italic;">
-        If you’re curious what automation could do for your team, let’s have a real conversation—no sales pitch, just ideas.<br>
-        <span style="display:block; margin-top:15px; font-family: 'Dancing Script', cursive; font-size: 1.7em;">
-            – Singh
-        </span>
-        </p>
-    </div>
-  </div>
+    <section class="pricing-hero" id="pricing">
+        <div class="container">
+            <div class="animate-fade-in">
+                <h1>Automation That’s <span>Yours Forever</span></h1>
+                <p>
+                    Stop renting workflows. With AutomataX, your business gets <b>custom automation—fully owned, unlimited use, zero hidden fees.</b><br>
+                    One upfront payment. No monthly bills. No lock-in. Real source code delivered, with personal support from engineers, not bots.
+                </p>
+                <div class="hero-btns">
+                    <a href="mailto:sales@automataxpro.site" class="btn btn-primary" aria-label="Get a Free Consultation">Claim Free Audit</a>
+                    <a href="/how-it-works" class="btn btn-outline">See How It Works</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="why-automatax">
+        <div class="container">
+            <div class="section-header animate-fade-in">
+                <h2>Why AutomataX?</h2>
+                <p>
+                    <b>Own, not rent, your automation.</b> We’re not another “SaaS with limits”—we’re your custom automation partner.<br>
+                    Here’s how AutomataX gives you real value—forever.
+                </p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card animate-fade-in">
+                    <div class="feature-icon"><i class="fas fa-infinity"></i></div>
+                    <h3>Truly Unlimited Use</h3>
+                    <p>No task caps, no monthly usage limits. Your automations run as much as you need—today and years from now.</p>
+                </div>
+                <div class="feature-card animate-fade-in">
+                    <div class="feature-icon"><i class="fas fa-unlock"></i></div>
+                    <h3>You Own the Code</h3>
+                    <p>Full source code, documentation, and all assets are delivered to you—so you’re never locked out or forced to upgrade.</p>
+                </div>
+                <div class="feature-card animate-fade-in">
+                    <div class="feature-icon"><i class="fas fa-tools"></i></div>
+                    <h3>100% Done For You</h3>
+                    <p>We handle every technical detail—from discovery to deployment. You just enjoy the results.</p>
+                </div>
+                <div class="feature-card animate-fade-in">
+                    <div class="feature-icon"><i class="fas fa-shield-alt"></i></div>
+                    <h3>Private & Secure</h3>
+                    <p>Host your automation anywhere—cloud, on-prem, or local desktop. Your data stays yours, always.</p>
+                </div>
+                <div class="feature-card animate-fade-in">
+                    <div class="feature-icon"><i class="fas fa-bolt"></i></div>
+                    <h3>Fast Turnaround</h3>
+                    <p>Most builds are delivered within days—not months. See ROI from day one, not after endless “free trials.”</p>
+                </div>
+                <div class="feature-card animate-fade-in">
+                    <div class="feature-icon"><i class="fas fa-user-tie"></i></div>
+                    <h3>Direct Access to Experts</h3>
+                    <p>Talk to a real engineer, not a support bot. Get help via WhatsApp, email, or phone—no ticket queues.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="pricing-process">
+        <div class="container">
+            <div class="section-header animate-fade-in">
+                <h2>How Our Pricing Works</h2>
+                <p>We believe in fairness and clarity. Pay only for your custom build—no monthly fees unless you add  AI or ongoing support.</p>
+            </div>
+            <div class="process-steps">
+                <div class="process-step animate-fade-in">
+                    <div class="process-number">1</div>
+                    <h3>Free Consultation</h3>
+                    <p>Let’s talk. We assess your workflow and highlight the best automation opportunities—100% free.</p>
+                </div>
+                <div class="process-step animate-fade-in">
+                    <div class="process-number">2</div>
+                    <h3>Customized Plan</h3>
+                    <p>Get a tailored blueprint—every solution is designed just for you, with transparent one-time pricing.</p>
+                </div>
+                <div class="process-step animate-fade-in">
+                    <div class="process-number">3</div>
+                    <h3>Transparent Proposal</h3>
+                    <p>No surprises. See exactly what you get, when it’s delivered, and how upgrades work.</p>
+                </div>
+                <div class="process-step animate-fade-in">
+                    <div class="process-number">4</div>
+                    <h3>Lifetime Ownership</h3>
+                    <p>It’s yours for life—modify, scale, or integrate whenever you’re ready.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="pricing-range">
+    <div class="container">
+        <div class="section-header animate-fade-in">
+            <h2>Approximate Pricing Range</h2>
+            <p>Simple. Transparent. Scalable. Whether you’re a startup or an enterprise, we tailor automation to your real needs—not some fixed template.</p>
+        </div>
+
+        <div class="pricing-grid comparison-layout">
+            <!-- Tier 1 -->
+            <div class="pricing-card animate-fade-in">
+                <h3>Free Audit & Consultation</h3>
+                <div class="price">₹0</div>
+                <ul class="features">
+                    <li>Process Discovery</li>
+                    <li>Feasibility Report</li>
+                    <li>1-on-1 Strategy Call</li>
+                </ul>
+                <a href="#contact" class="btn-primary">Book a Free Call</a>
+            </div>
+
+            <!-- Tier 2 -->
+            <div class="pricing-card animate-fade-in">
+                <h3>Essential Automations</h3>
+                <div class="price">Starts at ₹4,500</div>
+                <ul class="features">
+                    <li>Command-line/Script-based Tools</li>
+                    <li>Excel/Email/File Flows</li>
+                    <li>No GUI, Pure Logic Automation</li>
+                </ul>
+                <a href="#quote" class="btn-primary">Get a Quote</a>
+            </div>
+
+            <!-- Tier 3 -->
+            <div class="pricing-card animate-fade-in">
+                <h3>Integrated Workflow Systems</h3>
+                <div class="price">Starts at ₹15,000</div>
+                <ul class="features">
+                    <li>Multi-step Logic Flows</li>
+                    <li>API, CRM, Database Connectors</li>
+                    <li>Auto-Report, Email, Dashboard</li>
+                </ul>
+                <a href="#quote" class="btn-primary">Get a Quote</a>
+            </div>
+
+            <!-- Tier 4 -->
+            <div class="pricing-card animate-fade-in">
+                <h3>Custom GUI-Based Automation</h3>
+                <div class="price">Starts at ₹60,000</div>
+                <ul class="features">
+                    <li>Desktop App with Polished UI</li>
+                    <li>Settings Memory, Status Logs</li>
+                    <li>Ideal for Non-Technical Teams</li>
+                </ul>
+                <a href="#demo" class="btn-primary">Book a Demo</a>
+            </div>
+
+            <!-- Tier 5 -->
+            <div class="pricing-card animate-fade-in">
+                <h3>AI Tool Integration</h3>
+                <div class="price">Tool-Based Pricing</div>
+                <ul class="features">
+                    <li>ChatGPT, OCR, Vision, Speech APIs</li>
+                    <li>Cloud Infrastructure Setup</li>
+                    <li>100% Transparent Billing</li>
+                </ul>
+                <a href="#quote" class="btn-primary">Let’s Discuss</a>
+            </div>
+        </div>
+
+        <a id="quote"></a>
+
+        <div class="container animate-fade-in" style="margin-top: 40px;">
+            <div class="section-header">
+                <h2>Request a Custom Quote</h2>
+                <p>Fill out the form below and our team will get back to you within 1 business day.</p>
+            </div>
+            <form action="https://formsubmit.co/sales@automataxpro.site" method="POST" class="quote-form" style="max-width: 600px; margin: 0 auto;">
+                <!-- Redirect after submit -->
+                <input type="hidden" name="_next" value="https://automataxpro.site/thank-you">
+                <!-- Disable CAPTCHA if needed -->
+                <input type="hidden" name="_captcha" value="false">
+                
+                <div class="form-group">
+                    <label for="name">Your Name *</label>
+                    <input type="text" name="name" id="name" required class="form-control" placeholder="e.g. Mannu Jain">
+                </div>
+                <div class="form-group">
+                    <label for="email">Your Email *</label>
+                    <input type="email" name="email" id="email" required class="form-control" placeholder="e.g. you@company.com">
+                </div>
+                <div class="form-group">
+                    <label for="company">Company (Optional)</label>
+                    <input type="text" name="company" id="company" class="form-control" placeholder="e.g. Nexus Tech Solutions">
+                </div>
+                <div class="form-group">
+                    <label for="requirements">What do you want to automate?</label>
+                    <textarea name="requirements" id="requirements" required class="form-control" rows="4" placeholder="Describe your process or automation need..."></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary" style="margin-top: 10px;">Submit Request</button>
+            </form>
+        </div>
+
+        <!-- Guarantee -->
+        <!-- Guarantee Section -->
+        <div class="guarantee-box animate-fade-in">
+            </div>
+
+        <!-- Testimonial Section -->
+        <div class="testimonial-box animate-fade-in" id="testimonial-carousel">
+            <button class="testimonial-nav left" aria-label="Previous Testimonial">❮</button>
+            
+            <div class="testimonial-container">
+                <div class="testimonial active">
+                    <p>“With AutomataX, we automated our invoice processing in just 3 days—for under ₹4,500. Saved 40+ hours/month. No subscriptions, just results.”</p>
+                    <p>— Rajan Mehta, Operations Manager, Retail Chain</p>
+                </div>
+                <div class="testimonial">
+                    <p>“Our HR onboarding went from manual chaos to a smooth, 1-click workflow—all under ₹15,000. Truly game-changing for a growing team.”</p>
+                    <p>— Sneha Verma, HR Lead, EduStart</p>
+                </div>
+                <div class="testimonial">
+                    <p>“We needed a custom desktop automation with UI. AutomataX built it fast—for half the price others quoted. Works flawlessly.”</p>
+                    <p>— Arvind Kapoor, Tech Manager, PharmaCo</p>
+                </div>
+            </div>
+
+            <button class="testimonial-nav right" aria-label="Next Testimonial">❯</button>
+        </div>
 </section>
-<!-- Founder Story Block End -->
-		<div class="container">
-			<div class="section-header animate-fade-in">
-				<h2>Meet Our Leadership</h2>
-				<p>
-					At the core of AutomataX is a handpicked team—visionaries, engineers, strategists—trusted by ambitious brands to deliver transformation that lasts. Our leaders bring decades of hands-on experience and a passion for pioneering what’s next.
-				</p>
-			</div>
-			<div class="team-grid">
-				<div class="team-member animate-fade-in">
-					<img src="singh.png" alt="Mr. Singh" loading="lazy">
-					<h3>Mr. Singh</h3>
-					<p>Chief Executive Officer & Founder</p>
-					<p>
-                        The original AutomataX “automation guy.” With years of experience in AI and process improvement, Mr. Singh cares about making a real difference—not just selling software. You’ll find him deep in code, solving client problems, or dreaming up the next thing we can make simpler.
-                    </p>
-					<div class="social-links">
-						<a href="https://www.linkedin.com/company/automataxpro" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-						<a href="https://x.com/automatax_tech?s=21" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-					</div>
-				</div>
-				<div class="team-member animate-fade-in">
-					<img src="joshi.png" alt="Isha" loading="lazy">
-					<h3>Isha J.</h3>
-					<p>Head of Learning, Development & Innovation</p>
-					<p>
-                        Isha keeps us curious. She’s the voice of fresh ideas and helps us learn faster, experiment better, and never settle for “good enough.” Clients love her energy and creative problem-solving.
-                    </p>
-					<div class="social-links">
-						<a href="https://www.linkedin.com/company/automataxpro" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-						<a href="https://x.com/automatax_tech?s=21" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-					</div>
-				</div>
-				<div class="team-member animate-fade-in">
-					<img src="richa.png" alt="Mannu Joshi" loading="lazy">
-					<h3>Mannu Joshi</h3>
-					<p>Marketing & Client Engagement</p>
-					<p>
-                        Mannu shares our story and listens to yours. She makes sure AutomataX delivers value you can *feel*, and keeps our work honest, transparent, and human.
-                    </p>
-					<div class="social-links">
-						<a href="https://www.linkedin.com/company/automataxpro" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-						<a href="https://x.com/automatax_tech?s=21" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-    <section class="section our-values">
-		<div class="container">
-			<div class="section-header animate-fade-in">
-				<h2>Our Core Values</h2>
-				<p>
-					We believe trust is built through actions. Here’s how we work, and what we care about most:
-				</p>
-			</div>
-			<div class="values-grid">
-				<div class="value-card animate-fade-in">
-					<div class="value-icon"><i class="fas fa-lightbulb"></i></div>
-					<h3>Innovation</h3>
-					<p>We relentlessly explore what’s next, pushing boundaries to create solutions that redefine industries and set new standards.</p>
-				</div>
-				<div class="value-card animate-fade-in">
-					<div class="value-icon"><i class="fas fa-users"></i></div>
-					<h3>Collaboration</h3>
-					<p>Great things are never built alone. We partner closely with every client, forging relationships that turn ambition into reality.</p>
-				</div>
-				<div class="value-card animate-fade-in">
-					<div class="value-icon"><i class="fas fa-shield-alt"></i></div>
-					<h3>Integrity</h3>
-					<p>Trust is earned. We hold ourselves to the highest ethical standards—honest, transparent, and accountable at every step.</p>
-				</div>
-				<div class="value-card animate-fade-in">
-					<div class="value-icon"><i class="fas fa-rocket"></i></div>
-					<h3>Excellence</h3>
-					<p>“Good enough” is never enough. We obsess over results and craftsmanship, delivering work we’re proud to put our name on.</p>
-				</div>
-				<div class="value-card animate-fade-in">
-					<div class="value-icon"><i class="fas fa-user-check"></i></div>
-					<h3>Customer-First</h3>
-					<p>We win when our clients win. Every solution is built around your unique needs, challenges, and ambitions.</p>
-				</div>
-				<div class="value-card animate-fade-in">
-					<div class="value-icon"><i class="fas fa-sync-alt"></i></div>
-					<h3>Agility</h3>
-					<p>The only constant is change. We adapt, evolve, and help you seize new opportunities—no matter how fast your world moves.</p>
-				</div>
-			</div>
-		</div>
-	</section>
-    <section class="section achievements">
-		<div class="container">
-			<div class="section-header animate-fade-in">
-				<h2>Our Track Record</h2>
-				<p>
-					The numbers tell our story—real impact, real transformation. See why leaders in every industry trust AutomataX with their future.
-				</p>
-			</div>
-			<div class="achievements-grid">
-				<div class="achievement-item animate-fade-in">
-					<div class="achievement-number" data-target="30">0+</div>
-					<div class="achievement-label">Transformations Delivered</div>
-				</div>
-				<div class="achievement-item animate-fade-in">
-					<div class="achievement-number" data-target="5">0+</div>
-					<div class="achievement-label">Industries Accelerated</div>
-				</div>
-				<div class="achievement-item animate-fade-in">
-					<div class="achievement-number" data-target="100">0%</div>
-					<div class="achievement-label">Measurable ROI</div>
-				</div>
-				<div class="achievement-item animate-fade-in">
-					<div class="achievement-number" data-target="2024">0</div>
-					<div class="achievement-label">Founded, Future-Focused</div>
-				</div>
-			</div>
-		</div>
-	</section>
+    <section class="comparison">
+    <div class="container">
+        <div class="section-header animate-fade-in">
+            <h2>Why AutomataX Outperforms</h2>
+            <p>See how we stack up against other automation platforms—and why businesses are switching to AutomataX.</p>
+        </div>
+        <div class="table-wrapper animate-fade-in" style="overflow-x:auto;">
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Feature</th>
+                        <th>Zapier</th>
+                        <th>Letanode</th>
+                        <th class="highlight">AutomataX</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Task Usage Limit</td>
+                        <td>200/month</td>
+                        <td>500/month</td>
+                        <td class="highlight">Unlimited ✅*</td>
+                    </tr>
+                    <tr>
+                        <td>Custom Code Capability</td>
+                        <td><i class="fas fa-times icon-cross" title="Not Available"></i></td>
+                        <td><i class="fas fa-times icon-cross" title="Not Available"></i></td>
+                        <td class="highlight"><i class="fas fa-check icon-check" title="Available & Tailored"></i></td>
+                    </tr>
+                    <tr>
+                        <td>Setup Required</td>
+                        <td>Yes (Python, App Installs)</td>
+                        <td>Yes (Platform Config)</td>
+                        <td class="highlight">None. We handle it.</td>
+                    </tr>
+                    <tr>
+                        <td>Ownership Model</td>
+                        <td>Rental (Monthly Plans)</td>
+                        <td>Time-Limited Access</td>
+                        <td class="highlight">Lifetime Ownership 🔒*</td>
+                    </tr>
+                    <tr>
+                        <td>Upgrade Flexibility</td>
+                        <td>Plan-locked</td>
+                        <td>Restricted Tiers</td>
+                        <td class="highlight">Upgrade Only If You Need</td>
+                    </tr>
+                    <tr>
+                        <td>Support Experience</td>
+                        <td>Email Tickets Only</td>
+                        <td>Email or Bot</td>
+                        <td class="highlight">Direct Access to Experts 👨‍💻</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div style="max-width: 900px; margin: 20px auto 0; color: #666; font-size: 14px; font-family: 'Poppins',sans-serif;">
+                <strong>Notes:</strong><br>
+                <b>Lifetime Ownership:</b> You receive the automation code, documentation, and instructions to run it yourself—even if you leave AutomataX.<br>
+                <b>Unlimited Usage:</b> There’s no workflow cap or “task” limit for normal business use. Extreme or reseller use? We’ll build a plan that fits.<br>
+                <b>Direct Access:</b> Support via WhatsApp/email/phone—no ticketing bots or endless queues.<br>
+            </div>
+        </div>
+    </div>
+</section>
+<div class="container animate-fade-in" style="max-width:900px;margin:40px auto 0;">
+    <h3 style="font-family:'Playfair Display',serif;font-size: 1.4rem; margin-bottom: 20px; color: var(--primary);">AutomataX: Transparent by Design</h3>
+    <ul style="list-style:none;padding:0;font-family:'Poppins',sans-serif;font-size:1rem;line-height:1.7;color:#444;">
+        <li><b>What does “lifetime ownership” really mean?</b><br>
+            You get the source code, documentation, and deployment instructions—so your automation is truly yours, even if you never pay us again.
+        </li>
+        <li><b>Is there really no usage cap?</b><br>
+            Correct. We don’t meter or throttle normal business automation. If you ever need massive, industrial-scale automations, we’ll help you find the best solution.
+        </li>
+        <li><b>What happens if my workflow changes?</b><br>
+            Your original build keeps working. Only pay for new features if your process evolves.
+        </li>
+        <li><b>How fast is your support?</b><br>
+            Most clients get replies in minutes, not days. Direct access to an automation engineer is standard for every client.
+        </li>
+    </ul>
+</div>
     <section class="cta">
-		<div class="container">
-			<h2 class="animate-fade-in">Ready to Outperform?</h2>
-			<p class="animate-fade-in">
-                Wondering if automation can actually make a difference for your business? Let’s talk. Even if you just want advice, we’re always happy to help.
-            </p>
-			<a href="mailto:sales@automataxpro.site" class="btn cta-btn animate-fade-in">Let’s Start the Conversation</a>
-		</div>
-	</section>
+        <div class="container">
+            <h2 class="animate-fade-in">You Don’t Just Use Automation. You Own It.</h2>
+            <p class="animate-fade-in">Our clients don’t rent workflows—they build lasting systems. Ready to start with lifetime automation designed for your growth?</p>
+            <a href="/contact" class="btn cta-btn animate-fade-in" aria-label="Start with a Free Audit">
+                Claim Your Free Workflow Audit
+            </a>
+        </div>
+    </section>
     <div class="chatbot-widget">
-        <button class="chatbot-toggle btn" aria-label="Open Chatbot">
+        <button class="chatbot-toggle btn">
             <span class="chatbot-icon">💬</span> Chat with Us
         </button>
         <div class="chatbot-window" style="display: none;">
@@ -1355,6 +1587,7 @@
             </div>
         </div>
     </div>
+    
     <footer>
         <div class="container">
             <div class="footer-grid">
@@ -1383,17 +1616,15 @@
                     <ul class="footer-links">
                         <li><a href="/">Home</a></li>
                         <li><a href="/about">About Us</a></li>
-                        <li><a href="/how-it-works">How It Works</a></li>
                         <li><a href="/rpa-case-studies">Case Studies</a></li>
                         <li><a href="/data-safety">Data Safety</a></li>
                         <li><a href="/downloads">Downloads</a></li>
-                        <li><a href="/blog">Blog</a></li>
                         <li><a href="/contact">Contact</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
                     <h3>Newsletter</h3>
-                    <p>Subscribe for premium updates on automation trends and insights.</p>
+                    <p>Get exclusive automation insights, early-access tools, and expert advice—straight to your inbox.</p>
                     <form action="https://formsubmit.co/sales@automataxpro.site" method="POST" class="footer-form">
                         <input type="hidden" name="_next" value="https://automataxpro.site/thank-you">
                         <input type="email" placeholder="Your Email" class="form-control" required aria-required="true">
@@ -1406,8 +1637,8 @@
             </div>
         </div>
     </footer>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.9.6/lottie.min.js"></script>
     <script>
+        // Enhanced Canvas Particle Background
         const canvas = document.getElementById('ai-background');
         const ctx = canvas.getContext('2d');
         canvas.width = window.innerWidth;
@@ -1474,6 +1705,7 @@
             canvas.width = window.innerWidth;
             canvas.height = window.innerHeight;
         });
+        // Custom Cursor
         const cursor = document.getElementById('custom-cursor');
         let mouseX = 0, mouseY = 0, cursorX = 0, cursorY = 0;
         const speed = 0.15;
@@ -1489,7 +1721,7 @@
             mouseY = e.clientY;
         });
         animateCursor();
-        document.querySelectorAll('a, button, .team-member, .value-card').forEach(el => {
+        document.querySelectorAll('a, button, .feature-card, .pricing-card').forEach(el => {
             el.addEventListener('mouseenter', () => {
                 cursor.classList.add('hover');
             });
@@ -1497,6 +1729,7 @@
                 cursor.classList.remove('hover');
             });
         });
+        // Header Scroll Effect
         const header = document.getElementById('header');
         window.addEventListener('scroll', () => {
             if (window.scrollY > 50) {
@@ -1505,6 +1738,7 @@
                 header.classList.remove('scrolled');
             }
         });
+        // Dark Mode Toggle
         const darkModeToggle = document.getElementById('dark-mode-toggle');
         darkModeToggle.addEventListener('click', () => {
             document.body.classList.toggle('dark-mode');
@@ -1517,6 +1751,7 @@
                 icon.classList.add('fa-moon');
             }
         });
+        // Mobile Menu
         const mobileMenuBtn = document.getElementById('mobile-menu-btn');
         const closeMenuBtn = document.getElementById('close-menu');
         const mobileMenu = document.getElementById('mobile-menu');
@@ -1532,29 +1767,7 @@
                 mobileMenu.classList.remove('active');
             });
         });
-        const stats = document.querySelectorAll('.achievement-number');
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const target = parseInt(entry.target.getAttribute('data-target'));
-                    let count = 0;
-                    const speed = 40;
-                    const increment = target / 60;
-                    const updateCount = () => {
-                        count += increment;
-                        if (count < target) {
-                            entry.target.textContent = Math.ceil(count) + (entry.target.textContent.includes('+') ? '+' : entry.target.textContent.includes('%') ? '%' : '');
-                            setTimeout(updateCount, speed);
-                        } else {
-                            entry.target.textContent = target + (entry.target.textContent.includes('+') ? '+' : entry.target.textContent.includes('%') ? '%' : '');
-                        }
-                    };
-                    updateCount();
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, { threshold: 0.5 });
-        stats.forEach(stat => observer.observe(stat));
+        // Scroll Animations
         const animateElements = document.querySelectorAll('.animate-fade-in');
         const scrollObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
@@ -1566,6 +1779,7 @@
         animateElements.forEach(element => {
             scrollObserver.observe(element);
         });
+        // Chatbot
         const chatbotToggle = document.querySelector('.chatbot-toggle');
         const chatbotWindow = document.querySelector('.chatbot-window');
         const chatbotClose = document.querySelector('.chatbot-close');
@@ -1613,16 +1827,16 @@
         }
         async function handleUserInput(message) {
             const predefinedResponses = {
-                'What is RPA?': 'RPA (Robotic Process Automation) is your VIP pass to efficiency! AutomataX’s RPA solutions obliterate manual tasks, skyrocketing productivity. Ready to transform your workflow?',
-                'Tell me about AI solutions': 'Our AI solutions are pure gold! AutomataX leverages cutting-edge tech for analytics, chatbots, and more. Ignite your business with world-class intelligence!',
-                'How can I contact AutomataX?': 'We’re at your service! Email us at <a href="mailto:sales@automataxpro.site">sales@automataxpro.site</a> or <a href="mailto:support@automataxpro.site">support@automataxpro.site</a>. Visit our <a href="/contact">Contact Page</a> for premium support!'
+                'What is RPA?': 'RPA (Robotic Process Automation) is your VIP pass to efficiency! AutomataX’s  RPA solutions obliterate manual tasks, skyrocketing productivity. Ready to transform your workflow?',
+                'Tell me about AI solutions': 'Our AI solutions are pure gold! AutomataX leverages cutting-edge tech for elite analytics, chatbots, and more. Ignite your business with world-class intelligence!',
+                'How can I contact AutomataX?': 'We’re at your service! Email us at <a href="mailto:sales@automataxpro.site">sales@automataxpro.site</a> or <a href="mailto:info@automataxpro.site">info@automataxpro.site</a>. Visit our <a href="/contact">Contact Page</a> for  support!'
             };
             if (predefinedResponses[message]) {
                 addMessage('bot', predefinedResponses[message]);
                 return;
             }
             if (message === 'Yes, please collect my contact info') {
-                addMessage('bot', 'Brilliant! Share your email, and our elite team will connect with premium service!');
+                addMessage('bot', 'Brilliant! Share your email, and our elite team will connect with  service!');
                 return;
             } else if (message.includes('@')) {
                 addMessage('bot', 'Got it! Your email’s secured. Expect a world-class response soon! Check our <a href="/services">services</a> now.');
@@ -1641,7 +1855,7 @@
                             {
                                 "parts": [
                                     {
-                                        "text": `You are a fun, premium assistant for AutomataX, an elite automation company specializing in RPA, AI, and cloud solutions. A user asked: "${message}". Respond concisely, professionally, with excitement, highlighting AutomataX's premium services. Keep it under 150 words.`
+                                        "text": `You are a fun,  assistant for AutomataX, an elite automation company specializing in RPA, AI, and cloud solutions. A user asked: "${message}". Respond concisely, professionally, with excitement, highlighting AutomataX's  services. Keep it under 150 words.`
                                     }
                                 ]
                             }
@@ -1667,13 +1881,7 @@
                 addMessage('bot', 'Oops, our bot is taking a quick nap! Try again or email us at sales@automataxpro.site.');
             }
         }
-        interactiveToggle.addEventListener('click', () => {
-            interactiveWindow.style.display = interactiveWindow.style.display === 'none' ? 'flex' : 'none';
-            chatbotWindow.style.display = 'none';
-        });
-        interactiveClose.addEventListener('click', () => {
-            interactiveWindow.style.display = 'none';
-        });
+        // Welcome Popup
         const welcomePopup = document.getElementById('welcome-popup');
         const welcomeClose = document.getElementById('welcome-close');
         const welcomeDiscover = document.getElementById('welcome-discover');
@@ -1686,8 +1894,78 @@
         });
         welcomeDiscover.addEventListener('click', () => {
             welcomePopup.style.display = 'none';
-            interactiveToggle.click();
         });
+
+        document.addEventListener('DOMContentLoaded', () => {
+        document.querySelectorAll('[title]').forEach(el => {
+            el.addEventListener('mouseenter', () => {
+                el.dataset.originalTitle = el.title;
+                el.removeAttribute('title');
+            });
+            el.addEventListener('mouseleave', () => {
+                el.setAttribute('title', el.dataset.originalTitle);
+            });
+        });
+    });
+
+    const testimonials = document.querySelectorAll('#testimonial-carousel .testimonial');
+    const leftBtn = document.querySelector('#testimonial-carousel .left');
+    const rightBtn = document.querySelector('#testimonial-carousel .right');
+
+    let current = 0;
+    let interval = setInterval(nextTestimonial, 6000);
+
+    function showTestimonial(index) {
+        testimonials.forEach((t, i) => {
+            t.classList.remove('active');
+        });
+        testimonials[index].classList.add('active');
+    }
+
+    function nextTestimonial() {
+        current = (current + 1) % testimonials.length;
+        showTestimonial(current);
+    }
+
+    function prevTestimonial() {
+        current = (current - 1 + testimonials.length) % testimonials.length;
+        showTestimonial(current);
+    }
+
+    rightBtn.addEventListener('click', () => {
+        nextTestimonial();
+        resetInterval();
+    });
+
+    leftBtn.addEventListener('click', () => {
+        prevTestimonial();
+        resetInterval();
+    });
+
+    function resetInterval() {
+        clearInterval(interval);
+        interval = setInterval(nextTestimonial, 6000);
+    }
+
+    // Swipe Support for Mobile
+    let startX = 0;
+
+    document.getElementById('testimonial-carousel').addEventListener('touchstart', e => {
+        startX = e.changedTouches[0].clientX;
+    });
+
+    document.getElementById('testimonial-carousel').addEventListener('touchend', e => {
+        const endX = e.changedTouches[0].clientX;
+        if (startX - endX > 50) {
+            nextTestimonial();
+            resetInterval();
+        } else if (endX - startX > 50) {
+            prevTestimonial();
+            resetInterval();
+        }
+    });
+
+    
     </script>
 </body>
 </html>

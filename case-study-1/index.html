@@ -3,30 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AutomataX - About Us</title>
-    <meta name="description" content="AutomataX offers AI-driven automation solutions for businesses, with secure data handling and innovative workflows.">
-    <meta name="keywords" content="AI automation, workflow automation, business process automation, secure automation solutions, AI chatbots, predictive analytics, repetitive tasks automation">
+    <title>AutomataX - Case Study: PTW Form Automation</title>
+    <meta name="description" content="Discover how AutomataX automated Permit to Work (PTW) processes for a tech-driven company, saving time, reducing errors, and enhancing workplace safety compliance.">
+    <meta name="keywords" content="AI automation case study, PTW automation, workflow automation, RPA solutions, secure automation, industrial safety management">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="AutomataX">
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="AutomataX - Case Study: PTW Form Automation">
+    <meta property="og:description" content="Discover how AutomataX automated Permit to Work (PTW) processes for a tech-driven company, saving time, reducing errors, and enhancing workplace safety compliance.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://automataxpro.site/case-study-1">
+    <meta property="og:image" content="https://automataxpro.site/images/ptw-og.jpg">
+    <!-- Twitter Card Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="AutomataX - Case Study: PTW Form Automation">
+    <meta name="twitter:description" content="Discover how AutomataX automated Permit to Work (PTW) processes for a tech-driven company, saving time, reducing errors, and enhancing workplace safety compliance.">
+    <meta name="twitter:image" content="https://automataxpro.site/images/ptw-og.jpg">
+    <!-- Canonical Tag -->
+    <link rel="canonical" href="https://automataxpro.site/case-study-1">
+    <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-WJCJJ1HH56"></script>
     <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-WJCJJ1HH56');
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-WJCJJ1HH56');
     </script>
-    <link rel="canonical" href="https://www.automataxpro.site/about">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300..800&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary: #ff69b4; /* Hot pink from logo */
-            --secondary: #800000; /* Maroon from logo */
-            --accent: #c71585; /* Medium violet red for vibrancy */
-            --light: #f5f7fa; /* Softer white for background */
-            --dark: #0f0f1a; /* Deeper dark for contrast */
-            --gradient: linear-gradient(135deg, #ff69b4, #c71585, #800000); /* Pink-to-maroon gradient */
+            --primary: #ff69b4; /* Hot pink */
+            --secondary: #800000; /* Maroon */
+            --accent: #c71585; /* Medium violet red */
+            --light: #f5f7fa; /* Softer white */
+            --dark: #0f0f1a; /* Deeper dark */
+            --gradient: linear-gradient(135deg, #ff69b4, #c71585, #800000);
             --glass-bg: rgba(255, 255, 255, 0.1);
             --glass-blur: blur(12px);
         }
@@ -36,7 +50,7 @@
             box-sizing: border-box;
             font-family: 'Funnel Display', sans-serif !important;
         }
-        h1, h2, h3 {
+        h1, h2, h3, h4 {
             font-family: 'Playfair Display', serif !important;
         }
         html {
@@ -246,61 +260,34 @@
             background: var(--gradient);
             color: white;
         }
-        .about-hero {
-            padding: 110px 0 120px;
+        .case-study-hero {
+            padding: 180px 0 120px;
             position: relative;
             z-index: 1;
             overflow: hidden;
             background: linear-gradient(135deg, rgba(255, 105, 180, 0.1), rgba(128, 0, 0, 0.1));
             text-align: center;
         }
-        .about-hero h1 {
-            font-family: 'Playfair Display', serif !important;
+        .case-study-hero h1 {
+            font-family: 'Space Grotesk', sans-serif;
             font-size: 52px;
             font-weight: 700;
             margin-bottom: 25px;
             line-height: 1.2;
         }
-        .about-hero h1 span {
+        .case-study-hero h1 span {
             background: var(--gradient);
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
         }
-        .about-hero p {
+        .case-study-hero p {
             font-family: 'Poppins', sans-serif;
             font-size: 19px;
             line-height: 1.6;
-            margin-bottom: 35px;
             color: #444;
-        }
-        .shape {
-            position: absolute;
-            z-index: -1;
-            opacity: 0.2;
-        }
-        .shape-1 {
-            top: 15%;
-            left: 5%;
-            width: 120px;
-            height: 120px;
-            background: var(--gradient);
-            border-radius: 30%;
-            animation: drift 12s infinite ease-in-out;
-        }
-        .shape-2 {
-            bottom: 25%;
-            right: 10%;
-            width: 90px;
-            height: 90px;
-            background: var(--accent);
-            border-radius: 50%;
-            animation: drift 9s infinite ease-in-out reverse;
-        }
-        @keyframes drift {
-            0% { transform: translate(0, 0) rotate(0deg); }
-            50% { transform: translate(25px, 35px) rotate(10deg); }
-            100% { transform: translate(0, 0) rotate(0deg); }
+            max-width: 650px;
+            margin: 0 auto;
         }
         .section {
             padding: 120px 0;
@@ -314,7 +301,7 @@
             margin-bottom: 70px;
         }
         .section-header h2 {
-            font-family: 'Playfair Display', serif !important;
+            font-family: 'Space Grotesk', sans-serif;
             font-size: 40px;
             font-weight: 700;
             margin-bottom: 20px;
@@ -336,213 +323,248 @@
             background: var(--gradient);
         }
         .section-header p {
-            font-family: 'Funnel Display', sans-serif;
+            font-family: 'Poppins', sans-serif;
             font-size: 19px;
             color: #555;
             max-width: 750px;
             margin: 0 auto;
         }
-        .who-we-are-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
-            align-items: center;
+        .case-study-details {
+            background: transparent;
+        }
+        .case-study-content {
+            max-width: 900px;
+            margin: 0 auto;
+            background: var(--glass-bg);
+            backdrop-filter: var(--glass-blur);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 105, 180, 0.2);
+        }
+        .case-study-content img {
+            width: 100%;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            object-fit: cover;
+            height: 300px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        }
+        .case-study-content h2 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        .case-study-content h3 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 15px;
+            margin-top: 30px;
+            color: var(--primary);
+        }
+        .case-study-content p {
+            font-family: 'Poppins', sans-serif;
+            font-size: 16px;
+            line-height: 1.7;
+            color: #666;
+            margin-bottom: 20px;
+        }
+        .case-study-content ul {
+            list-style: none;
+            margin-bottom: 20px;
+        }
+        .case-study-content ul li {
+            position: relative;
+            padding-left: 30px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 16px;
+            color: #555;
+            margin-bottom: 12px;
+            transition: color 0.3s ease;
+        }
+        .case-study-content ul li::before {
+            content: '\f058';
+            font-family: 'Font Awesome 5 Free';
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            color: var(--primary);
+            font-size: 18px;
+        }
+        .case-study-content ul li:hover {
+            color: var(--dark);
+        }
+        .case-study-stats {
+            display: flex;
+            justify-content: space-around;
             background: var(--glass-bg);
             backdrop-filter: var(--glass-blur);
             padding: 40px;
             border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            margin: 30px 0;
+            text-align: center;
+            border: 1px solid rgba(255, 105, 180, 0.2);
         }
-        .who-we-are-content h3 {
-            font-family: 'Playfair Display', serif !important;
-            font-size: 24px;
-            margin-bottom: 15px;
+        .stat-item {
+            flex: 1;
+            padding: 0 15px;
+        }
+        .stat-number {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 44px;
+            font-weight: 700;
             background: var(--gradient);
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
+            margin-bottom: 12px;
         }
-        .who-we-are-content p {
-            font-family: 'Funnel Display', sans-serif;
-            font-size: 17px;
-            line-height: 1.7;
-            margin-bottom: 25px;
-            color: #555;
+        .stat-label {
+            font-family: 'Poppins', sans-serif;
+            font-size: 16px;
+            color: #666;
         }
-        .who-we-are-image {
+        .implementation-timeline {
+            margin: 50px 0;
             position: relative;
-            perspective: 1000px;
         }
-        .who-we-are-image img {
-            width: 100%;
-            border-radius: 20px;
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-            transition: transform 0.5s ease;
-        }
-        .who-we-are-image:hover img {
-            transform: rotateY(10deg) rotateX(5deg) scale(1.05);
-        }
-        .team-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 35px;
-            margin-top: 50px;
-        }
-        .team-member {
-            background: var(--glass-bg);
-            backdrop-filter: var(--glass-blur);
-            border-radius: 20px;
-            padding: 35px;
-            transition: all 0.4s ease;
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-            position: relative;
-            overflow: hidden;
-            z-index: 1;
-            cursor: pointer;
-            border: 1px solid rgba(255, 105, 180, 0.2);
-        }
-        .team-member::before {
+        .implementation-timeline::before {
             content: '';
             position: absolute;
             top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
+            bottom: 0;
+            left: 50%;
+            width: 3px;
             background: var(--gradient);
-            z-index: -1;
-            opacity: 0;
-            transition: opacity 0.4s ease;
+            transform: translateX(-50%);
         }
-        .team-member:hover {
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+        .timeline-item {
+            position: relative;
+            margin-bottom: 40px;
+            display: flex;
+            align-items: center;
         }
-        .team-member:hover::before {
-            opacity: 1;
-        }
-        .team-member:hover h3, .team-member:hover p {
-            color: white;
-        }
-        .team-member img {
-            display: block;
-            width: 120px;
-            height: auto;
-            margin: 0 auto 25px;
-            border-radius: 0;
+        .timeline-content {
+            width: 45%;
+            padding: 25px;
+            background: var(--glass-bg);
+            backdrop-filter: var(--glass-blur);
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 105, 180, 0.2);
             transition: transform 0.4s ease;
         }
-        .team-member:hover img {
-            transform: scale(1.15) rotate(5deg);
+        .timeline-content:hover {
+            transform: translateY(-5px);
         }
-        .team-member h3 {
-            font-family: 'Playfair Display', serif !important;
-            font-size: 24px;
-            margin-bottom: 15px;
-            transition: color 0.4s ease;
+        .timeline-item:nth-child(odd) {
+            justify-content: flex-start;
         }
-        .team-member p {
-            font-family: 'Poppins', sans-serif;
-            font-size: 16px;
-            color: #666;
-            margin-bottom: 10px;
-            transition: color 0.4s ease;
+        .timeline-item:nth-child(even) {
+            justify-content: flex-end;
         }
-        .team-member .social-links {
-            display: flex;
-            justify-content: center;
-            gap: 12px;
+        .timeline-item:nth-child(odd) .timeline-content {
+            margin-right: 5%;
         }
-        .team-member .social-links a {
-            color: var(--primary);
-            font-size: 18px;
-            transition: all 0.4s ease;
+        .timeline-item:nth-child(even) .timeline-content {
+            margin-left: 5%;
         }
-        .team-member:hover .social-links a {
-            color: white;
-        }
-        .team-member .social-links a:hover {
-            transform: scale(1.2);
-        }
-        .values-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 35px;
-            margin-top: 50px;
-        }
-        .value-card {
-            background: var(--glass-bg);
-            backdrop-filter: var(--glass-blur);
-            border-radius: 20px;
-            padding: 35px;
-            text-align: center;
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-            transition: all 0.4s ease;
-            border: 1px solid rgba(255, 105, 180, 0.2);
-        }
-        .value-card:hover {
-            transform: translateY(-12px) scale(1.05) rotate(1deg);
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
-        }
-        .value-icon {
-            font-size: 50px;
-            color: var(--primary);
-            margin-bottom: 25px;
-            transition: color 0.4s ease, transform 0.4s ease;
-        }
-        .value-card:hover .value-icon {
-            color: white;
-            transform: scale(1.15) rotate(5deg);
-        }
-        .value-card h3 {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 24px;
-            margin-bottom: 15px;
-            transition: color 0.4s ease;
-        }
-        .value-card p {
-            font-family: 'Poppins', sans-serif;
-            font-size: 16px;
-            color: #666;
-            line-height: 1.6;
-            transition: color 0.4s ease;
-        }
-        .value-card:hover h3, .value-card:hover p {
-            color: white;
-        }
-        .achievements-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 25px;
-            margin-top: 50px;
-        }
-        .achievement-item {
-            text-align: center;
-            background: var(--glass-bg);
-            backdrop-filter: var(--glass-blur);
-            padding: 25px;
-            border-radius: 15px;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-            transition: transform 0.4s ease, box-shadow 0.4s ease;
-            border: 1px solid rgba(255, 105, 180, 0.2);
-        }
-        .achievement-item:hover {
-            transform: scale(1.08);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-        }
-        .achievement-number {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 40px;
-            font-weight: 700;
-            color: var(--primary);
-            margin-bottom: 8px;
+        .timeline-dot {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
             background: var(--gradient);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
+            box-shadow: 0 0 15px rgba(255, 105, 180, 0.5);
         }
-        .achievement-label {
+        .timeline-content h4 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 20px;
+            color: var(--primary);
+            margin-bottom: 12px;
+        }
+        .timeline-content p {
             font-family: 'Poppins', sans-serif;
             font-size: 15px;
             color: #666;
+        }
+        .results-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 40px 0;
+            background: var(--glass-bg);
+            backdrop-filter: var(--glass-blur);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 105, 180, 0.2);
+        }
+        .results-table th,
+        .results-table td {
+            padding: 20px;
+            text-align: left;
+            border-bottom: 1px solid rgba(255, 105, 180, 0.2);
+        }
+        .results-table th {
+            background: var(--gradient);
+            color: white;
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 600;
+        }
+        .results-table tr:nth-child(even) {
+            background: rgba(255, 255, 255, 0.05);
+        }
+        .results-table tr:last-child td {
+            border-bottom: none;
+        }
+        .results-table td {
+            font-family: 'Poppins', sans-serif;
+            font-size: 15px;
+            color: #555;
+        }
+        .testimonial {
+            background: var(--glass-bg);
+            backdrop-filter: var(--glass-blur);
+            border-left: 5px solid var(--primary);
+            padding: 30px;
+            border-radius: 0 15px 15px 0;
+            margin: 40px 0;
+            position: relative;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 105, 180, 0.2);
+        }
+        .testimonial::before {
+            content: '\f10d';
+            font-family: 'Font Awesome 5 Free';
+            font-weight: 900;
+            font-size: 28px;
+            color: rgba(255, 105, 180, 0.2);
+            position: absolute;
+            top: 20px;
+            left: 20px;
+        }
+        .testimonial p {
+            font-family: 'Poppins', sans-serif;
+            font-size: 16px;
+            font-style: italic;
+            color: #666;
+            margin-bottom: 20px;
+            padding-left: 25px;
+        }
+        .testimonial-author {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            color: var(--primary);
+            text-align: right;
+            font-size: 15px;
         }
         .cta {
             padding: 100px 0;
@@ -656,6 +678,20 @@
             font-family: 'Poppins', sans-serif;
             font-size: 14px;
             color: rgba(0, 0, 0, 0.7);
+        }
+        .form-control {
+            width: 100%;
+            padding: 15px;
+            border: 1px solid rgba(255, 105, 180, 0.3);
+            border-radius: 10px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 16px;
+            transition: all 0.3s ease;
+        }
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(255, 105, 180, 0.2);
         }
         .welcome-popup {
             position: fixed;
@@ -776,7 +812,7 @@
             font-size: 22px;
             margin: 0;
         }
-        .chatbot-avatar {
+        chatbot-avatar {
             display: inline-flex;
             align-items: center;
             justify-content: center;
@@ -951,20 +987,22 @@
         }
         .interactive-content p {
             font-family: 'Poppins', sans-serif;
-            font-size: 16px;
+            font-size: 17px;
             color: #666;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
         }
         .interactive-content a {
             display: block;
             padding: 12px 18px;
             background: var(--glass-bg);
             backdrop-filter: var(--glass-blur);
-            border-radius: 12px;
+            border-radius: 10px;
             text-decoration: none;
             color: var(--dark);
-            margin-bottom: 12px;
+            margin-bottom: 15px;
             transition: all 0.3s ease;
+            font-family: 'Poppins', sans-serif;
+            font-size: 15px;
             border: 1px solid rgba(255, 105, 180, 0.2);
         }
         .interactive-content a:hover {
@@ -982,12 +1020,18 @@
             transform: translateY(0);
         }
         @media (max-width: 992px) {
-            .who-we-are-grid {
-                grid-template-columns: 1fr;
-                gap: 50px;
+            .case-study-hero h1 {
+                font-size: 44px;
             }
-            .who-we-are-image {
-                order: -1;
+            .case-study-content {
+                padding: 30px;
+            }
+            .case-study-stats {
+                flex-direction: column;
+                gap: 20px;
+            }
+            .stat-item {
+                padding: 10px 0;
             }
         }
         @media (max-width: 768px) {
@@ -1034,21 +1078,51 @@
                 padding: 12px 0;
                 color: var(--dark);
             }
-            .about-hero {
+            .case-study-hero {
                 padding: 140px 0 80px;
-                text-align: center;
+            }
+            .case-study-hero h1 {
+                font-size: 36px;
+            }
+            .implementation-timeline::before {
+                left: 20px;
+            }
+            .timeline-item {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .timeline-item:nth-child(odd),
+            .timeline-item:nth-child(even) {
+                justify-content: flex-start;
+            }
+            .timeline-content {
+                width: 85%;
+                margin-left: 40px !important;
+                margin-right: 0 !important;
+            }
+            .timeline-dot {
+                left: 20px;
             }
         }
         @media (max-width: 576px) {
-            .about-hero h1 {
-                font-size: 36px;
+            .case-study-hero h1 {
+                font-size: 32px;
+            }
+            .case-study-hero p {
+                font-size: 17px;
+            }
+            .section-header h2 {
+                font-size: 32px;
+            }
+            .case-study-content h2 {
+                font-size: 28px;
+            }
+            .case-study-content {
+                padding: 20px;
             }
             .btn {
                 padding: 12px 25px;
                 font-size: 15px;
-            }
-            .section-header h2 {
-                font-size: 32px;
             }
             .chatbot-window, .interactive-window {
                 width: 320px;
@@ -1067,10 +1141,6 @@
             .custom-cursor {
                 display: none;
             }
-            .team-member img {
-                width: 120px;
-                height: 120px;
-            }
         }
     </style>
     <style>
@@ -1088,8 +1158,55 @@
 <body>
     <canvas id="ai-background"></canvas>
     <div class="custom-cursor" id="custom-cursor"></div>
-    <div class="shape shape-1"></div>
-    <div class="shape shape-2"></div>
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Article",
+            "headline": "AutomataX - Case Study: PTW Form Automation",
+            "description": "Discover how AutomataX automated Permit to Work (PTW) processes for a tech-driven company, saving time, reducing errors, and enhancing workplace safety compliance.",
+            "url": "https://automataxpro.site/case-study-1",
+            "author": {
+                "@type": "Organization",
+                "name": "AutomataX"
+            },
+            "publisher": {
+                "@type": "Organization",
+                "name": "AutomataX",
+                "url": "https://automataxpro.site",
+                "logo": {
+                    "@type": "ImageObject",
+                    "url": "https://automataxpro.site/automatax-logo.png"
+                }
+            },
+            "mainEntityOfPage": {
+                "@type": "WebPage",
+                "@id": "https://automataxpro.site/case-study-1"
+            },
+            "breadcrumb": {
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                    {
+                        "@type": "ListItem",
+                        "position": 1",
+                        "name": "Home",
+                        "item": "https://automataxpro.site/"
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 2",
+                        "name": "Case Studies",
+                        "item": "https://automataxpro.site/rpa-case-studies"
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 3",
+                        "name": "PTW Form Automation",
+                        "item": "https://automataxpro.site/case-study-1"
+                    }
+                ]
+            }
+        }
+    </script>
     <header id="header">
         <div class="container">
             <nav>
@@ -1136,200 +1253,134 @@
             <button class="btn btn-primary" id="welcome-discover">Discover Now</button>
         </div>
     </div>
-    <section class="about-hero" id="about">
-		<div class="container">
-			<div class="animate-fade-in">
-				<h1>Meet <span>AutomataX</span></h1>
-                    <p>
-                        We’re a small, passionate team of automation builders—engineers, thinkers, and problem-solvers—who love making complex things feel simple. 
-                        <br><br>
-                        AutomataX exists because we’ve seen how the *right* automation can turn chaos into clarity, save teams hours, and unlock new growth. We believe every business—no matter the size—should have tools as good as the world’s biggest companies. And you should always know the humans behind those tools.
-                    </p>
-			</div>
-		</div>
-	</section>
-    <section class="section who-we-are">
-		<div class="container">
-			<div class="section-header animate-fade-in">
-				<h2>Who We Are</h2>
-				<p>
-					AutomataX started with a simple idea: technology should serve people, not the other way around. We’ve built bots for big banks and scrappy startups—and we’re just as obsessed with helping a 5-person team get their weekends back as we are with a global digital transformation.
-				</p>
-			</div>
-			<div class="who-we-are-grid">
-				<div class="who-we-are-content animate-fade-in">
-					<h3>Our Mission</h3>
-					<p>
-						Help teams do their best work by taking the boring, manual stuff off their plate. We build secure, future-proof automations—always tailored to you, not forced on you—so your people can focus on what actually matters.
-					</p>
-					<h3>Our Vision</h3>
-					<p>
-						Imagine a world where smart software quietly does the busywork, and every business—big or small—can compete at their best. That’s the world we’re building, one workflow at a time.
-                    </p>
-				</div>
-				<div class="who-we-are-image animate-fade-in">
-					<img src="mission.png" alt="AutomataX Mission and Vision" loading="lazy">
-				</div>
-			</div>
-		</div>
-	</section>
-    <section class="section our-team">
-        <!-- Founder Story Block Start -->
-<section class="section founder-story" style="padding-top: 80px;">
-  <div class="container">
-    <div class="section-header animate-fade-in">
-      <h2 style="font-family: 'Playfair Display', serif !important;">
-        Why I Started AutomataX
-      </h2>
-    </div>
-    <div class="who-we-are-content animate-fade-in" style="max-width: 700px; margin: 0 auto;">
-      <p>
-        <strong>Hi, I’m Mr. Singh—founder of AutomataX.</strong>
-        <br><br>
-        I didn’t set out to start an automation company. My first tech role was actually as an Executive Assistant to a process improvement consultant. Pretty quickly, I started automating repetitive, annoying tasks and built a few internal apps to make approvals and daily work easier.
-        <br><br>
-        Soon, I became the “go-to” person for fixing workflows, implementing tools, and solving messy operational problems—on top of my regular job.
-        <br><br>
-        In my next role, I found the same thing: what started as an admin job grew into leading automation projects and building tools that saved entire teams hours every week. I was honored to receive top performer awards—but what really motivated me was seeing people reclaim their time and focus on work that matters.
-        <br><br>
-        That’s why I started AutomataX. I believe automation shouldn’t just be for big tech companies. Every business deserves smart, secure, human-first solutions. And you should always know the real people building your tools.
-      </p>
-      <p style="margin-top: 25px; font-style: italic;">
-        If you’re curious what automation could do for your team, let’s have a real conversation—no sales pitch, just ideas.<br>
-        <span style="display:block; margin-top:15px; font-family: 'Dancing Script', cursive; font-size: 1.7em;">
-            – Singh
-        </span>
-        </p>
-    </div>
-  </div>
-</section>
-<!-- Founder Story Block End -->
-		<div class="container">
-			<div class="section-header animate-fade-in">
-				<h2>Meet Our Leadership</h2>
-				<p>
-					At the core of AutomataX is a handpicked team—visionaries, engineers, strategists—trusted by ambitious brands to deliver transformation that lasts. Our leaders bring decades of hands-on experience and a passion for pioneering what’s next.
-				</p>
-			</div>
-			<div class="team-grid">
-				<div class="team-member animate-fade-in">
-					<img src="singh.png" alt="Mr. Singh" loading="lazy">
-					<h3>Mr. Singh</h3>
-					<p>Chief Executive Officer & Founder</p>
-					<p>
-                        The original AutomataX “automation guy.” With years of experience in AI and process improvement, Mr. Singh cares about making a real difference—not just selling software. You’ll find him deep in code, solving client problems, or dreaming up the next thing we can make simpler.
-                    </p>
-					<div class="social-links">
-						<a href="https://www.linkedin.com/company/automataxpro" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-						<a href="https://x.com/automatax_tech?s=21" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-					</div>
-				</div>
-				<div class="team-member animate-fade-in">
-					<img src="joshi.png" alt="Isha" loading="lazy">
-					<h3>Isha J.</h3>
-					<p>Head of Learning, Development & Innovation</p>
-					<p>
-                        Isha keeps us curious. She’s the voice of fresh ideas and helps us learn faster, experiment better, and never settle for “good enough.” Clients love her energy and creative problem-solving.
-                    </p>
-					<div class="social-links">
-						<a href="https://www.linkedin.com/company/automataxpro" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-						<a href="https://x.com/automatax_tech?s=21" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-					</div>
-				</div>
-				<div class="team-member animate-fade-in">
-					<img src="richa.png" alt="Mannu Joshi" loading="lazy">
-					<h3>Mannu Joshi</h3>
-					<p>Marketing & Client Engagement</p>
-					<p>
-                        Mannu shares our story and listens to yours. She makes sure AutomataX delivers value you can *feel*, and keeps our work honest, transparent, and human.
-                    </p>
-					<div class="social-links">
-						<a href="https://www.linkedin.com/company/automataxpro" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-						<a href="https://x.com/automatax_tech?s=21" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-    <section class="section our-values">
-		<div class="container">
-			<div class="section-header animate-fade-in">
-				<h2>Our Core Values</h2>
-				<p>
-					We believe trust is built through actions. Here’s how we work, and what we care about most:
-				</p>
-			</div>
-			<div class="values-grid">
-				<div class="value-card animate-fade-in">
-					<div class="value-icon"><i class="fas fa-lightbulb"></i></div>
-					<h3>Innovation</h3>
-					<p>We relentlessly explore what’s next, pushing boundaries to create solutions that redefine industries and set new standards.</p>
-				</div>
-				<div class="value-card animate-fade-in">
-					<div class="value-icon"><i class="fas fa-users"></i></div>
-					<h3>Collaboration</h3>
-					<p>Great things are never built alone. We partner closely with every client, forging relationships that turn ambition into reality.</p>
-				</div>
-				<div class="value-card animate-fade-in">
-					<div class="value-icon"><i class="fas fa-shield-alt"></i></div>
-					<h3>Integrity</h3>
-					<p>Trust is earned. We hold ourselves to the highest ethical standards—honest, transparent, and accountable at every step.</p>
-				</div>
-				<div class="value-card animate-fade-in">
-					<div class="value-icon"><i class="fas fa-rocket"></i></div>
-					<h3>Excellence</h3>
-					<p>“Good enough” is never enough. We obsess over results and craftsmanship, delivering work we’re proud to put our name on.</p>
-				</div>
-				<div class="value-card animate-fade-in">
-					<div class="value-icon"><i class="fas fa-user-check"></i></div>
-					<h3>Customer-First</h3>
-					<p>We win when our clients win. Every solution is built around your unique needs, challenges, and ambitions.</p>
-				</div>
-				<div class="value-card animate-fade-in">
-					<div class="value-icon"><i class="fas fa-sync-alt"></i></div>
-					<h3>Agility</h3>
-					<p>The only constant is change. We adapt, evolve, and help you seize new opportunities—no matter how fast your world moves.</p>
-				</div>
-			</div>
-		</div>
-	</section>
-    <section class="section achievements">
-		<div class="container">
-			<div class="section-header animate-fade-in">
-				<h2>Our Track Record</h2>
-				<p>
-					The numbers tell our story—real impact, real transformation. See why leaders in every industry trust AutomataX with their future.
-				</p>
-			</div>
-			<div class="achievements-grid">
-				<div class="achievement-item animate-fade-in">
-					<div class="achievement-number" data-target="30">0+</div>
-					<div class="achievement-label">Transformations Delivered</div>
-				</div>
-				<div class="achievement-item animate-fade-in">
-					<div class="achievement-number" data-target="5">0+</div>
-					<div class="achievement-label">Industries Accelerated</div>
-				</div>
-				<div class="achievement-item animate-fade-in">
-					<div class="achievement-number" data-target="100">0%</div>
-					<div class="achievement-label">Measurable ROI</div>
-				</div>
-				<div class="achievement-item animate-fade-in">
-					<div class="achievement-number" data-target="2024">0</div>
-					<div class="achievement-label">Founded, Future-Focused</div>
-				</div>
-			</div>
-		</div>
-	</section>
+    <section class="case-study-hero">
+        <div class="container">
+            <h1>Industrial Safety, <span>Transformed</span></h1>
+			<p>See how AutomataX redefined safety management with elite, AI-powered PTW automation—delivering rapid efficiency gains, flawless compliance, and a new gold standard for operational excellence.</p>
+        </div>
+    </section>
+    <section class="section case-study-details">
+        <div class="container">
+            <div class="case-study-content animate-fade-in">
+                <img src="ptw.png" alt="Permit to Work Automation">
+                <h2>Project Snapshot</h2>
+				<p>This forward-thinking client was ready to leave outdated, manual PTW headaches behind. With hundreds of forms choking productivity and risking compliance, AutomataX delivered a high-impact, automated solution—streamlining workflows, eliminating errors, and unlocking full visibility for safer, smarter operations.</p>
+                <h3>Key Challenges</h3>
+				<ul>
+					<li>Manual PTW forms averaged 45+ minutes each—slowing productivity.</li>
+					<li>Costly 15% error rate threatened compliance and safety.</li>
+					<li>Paper-based storage meant lost docs and audit risk.</li>
+					<li>Complex approvals stalled projects with frustrating delays.</li>
+					<li>Zero real-time insight for management oversight or action.</li>
+				</ul>
+                <h3>AutomataX in Action</h3>
+				<p>Our RPA experts unleashed automation across the PTW lifecycle:</p>
+				<ul>
+					<li>Sleek, intuitive digital forms for instant, on-site PTW requests.</li>
+					<li>Built-in smart validation to eliminate errors at the source.</li>
+					<li>Lightning-fast, multi-level approvals—fully automated with alerts.</li>
+					<li>Seamless integrations with the client’s core maintenance systems.</li>
+					<li>Live dashboards for full status transparency and instant decision-making.</li>
+					<li>Secure digital archiving—no lost forms, no compliance gaps, ever.</li>
+				</ul>
+                <h3>Implementation Process</h3>
+                <div class="implementation-timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <h4>Phase 1: Assessment & Design</h4>
+							<p>AutomataX specialists mapped every workflow, spotlighting pain points and customizing a next-gen solution for flawless fit.</p>
+                        </div>
+                        <div class="timeline-dot"></div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <h4>Phase 2: Development</h4>
+                            <p>Developed digital PTW forms, RPA bots, approval workflows, and system integrations.</p>
+                        </div>
+                        <div class="timeline-dot"></div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <h4>Phase 3: Testing & Deployment</h4>
+                            <p>Conducted testing, user acceptance, training, and phased rollout.</p>
+                        </div>
+                        <div class="timeline-dot"></div>
+                    </div>
+                </div>
+                <h3>The Impact</h3>
+				<p>The transformation was immediate and measurable—proving that elite automation drives real-world results:</p>
+                <div class="case-study-stats">
+                    <div class="stat-item">
+                        <div class="stat-number">78%</div>
+                        <div class="stat-label">Time Reduction</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">87%</div>
+                        <div class="stat-label">Error Reduction</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">$175K</div>
+                        <div class="stat-label">Annual Savings</div>
+                    </div>
+                </div>
+                <table class="results-table">
+                    <thead>
+                        <tr>
+                            <th>Metric</th>
+                            <th>Before Automation</th>
+                            <th>After Automation</th>
+                            <th>Improvement</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Processing Time</td>
+                            <td>45 minutes</td>
+                            <td>10 minutes</td>
+                            <td>78% reduction</td>
+                        </tr>
+                        <tr>
+                            <td>Error Rate</td>
+                            <td>15%</td>
+                            <td>&lt;2%</td>
+                            <td>87% reduction</td>
+                        </tr>
+                        <tr>
+                            <td>Annual Labor Cost</td>
+                            <td>$225,000</td>
+                            <td>$50,000</td>
+                            <td>$175,000 savings</td>
+                        </tr>
+                        <tr>
+                            <td>Lost Documentation</td>
+                            <td>8%</td>
+                            <td>0%</td>
+                            <td>100% improvement</td>
+                        </tr>
+                        <tr>
+                            <td>Approval Time</td>
+                            <td>2-3 days</td>
+                            <td>4 hours</td>
+                            <td>83% reduction</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="testimonial">
+                    <p>“The automated PTW system has revolutionized our operations. From cumbersome paperwork to a streamlined process, our teams now focus on maintenance, not administration. Safety compliance has soared!”</p>
+                    <div class="testimonial-author">— Operations Manager, Client Manufacturing Facility</div>
+                </div>
+                <h3>Conclusion</h3>
+				<p>With AutomataX, our client gained efficiency, peace of mind, and a platform for future innovation. That’s the power of automation done right—unlocking safer, smarter, and more profitable operations for every enterprise.</p>
+            </div>
+        </div>
+    </section>
     <section class="cta">
-		<div class="container">
-			<h2 class="animate-fade-in">Ready to Outperform?</h2>
-			<p class="animate-fade-in">
-                Wondering if automation can actually make a difference for your business? Let’s talk. Even if you just want advice, we’re always happy to help.
-            </p>
-			<a href="mailto:sales@automataxpro.site" class="btn cta-btn animate-fade-in">Let’s Start the Conversation</a>
-		</div>
-	</section>
+        <div class="container">
+            <h2 class="animate-fade-in">Ready to Experience Automation?</h2>
+			<p class="animate-fade-in">Connect with AutomataX and elevate your safety management with world-class RPA—customized for your business, built for the future.</p>
+			<a href="/contact" class="btn cta-btn animate-fade-in">Start My Transformation</a>
+        </div>
+    </section>
     <div class="chatbot-widget">
         <button class="chatbot-toggle btn" aria-label="Open Chatbot">
             <span class="chatbot-icon">💬</span> Chat with Us
@@ -1355,6 +1406,7 @@
             </div>
         </div>
     </div>
+
     <footer>
         <div class="container">
             <div class="footer-grid">
@@ -1362,16 +1414,16 @@
                     <h3>AutomataX</h3>
                     <p>Your Future, Automated. We empower businesses with secure, AI-driven automation solutions that prioritize data safety.</p>
                     <div class="footer-social">
-                        <a href="/dist" class="social-icon" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://facebook.com" class="social-icon" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
                         <a href="https://x.com/automatax_tech?s=21" class="social-icon" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
                         <a href="https://www.linkedin.com/company/automataxpro/" class="social-icon" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="/dist" class="social-icon" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://instagram.com" class="social-icon" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
                     </div>
                 </div>
                 <div class="footer-col">
                     <h3>Services</h3>
                     <ul class="footer-links">
-                        <li><a href="/services">AI-powered Data Analysis</a></li>
+                        <li><a href="/services">AI-powered Data Analysis</a></a>
                         <li><a href="/services">Workflow Automation</a></li>
                         <li><a href="/services">Custom AI Chatbots</a></li>
                         <li><a href="/services">Predictive Business Intelligence</a></li>
@@ -1381,22 +1433,22 @@
                 <div class="footer-col">
                     <h3>Quick Links</h3>
                     <ul class="footer-links">
-                        <li><a href="/">Home</a></li>
-                        <li><a href="/about">About Us</a></li>
-                        <li><a href="/how-it-works">How It Works</a></li>
-                        <li><a href="/rpa-case-studies">Case Studies</a></li>
-                        <li><a href="/data-safety">Data Safety</a></li>
-                        <li><a href="/downloads">Downloads</a></li>
-                        <li><a href="/blog">Blog</a></li>
+                        <li><a href="/">Home</a></a>
+                        <li><a href="/about">About Us</a></a>
+                        <li><a href="/how-it-works">How It Works</a></a>
+                        <li><a href="/rpa-case-studies">Case Studies</a></a>
+                        <li><a href="/data-safety">Data Safety</a></a>
+                        <li><a href="/downloads">Downloads</a></a>
+                        <li><a href="/blog">Blog</a></a>
                         <li><a href="/contact">Contact</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
                     <h3>Newsletter</h3>
-                    <p>Subscribe for premium updates on automation trends and insights.</p>
+                    <p>Subscribe for updates on automation trends and insights.</p>
                     <form action="https://formsubmit.co/sales@automataxpro.site" method="POST" class="footer-form">
                         <input type="hidden" name="_next" value="https://automataxpro.site/thank-you">
-                        <input type="email" placeholder="Your Email" class="form-control" required aria-required="true">
+                        <input type="email" placeholder="Your Email" class="form-control" required aria-label="Email Input">
                         <button type="submit" class="btn btn-primary">Subscribe</button>
                     </form>
                 </div>
@@ -1408,6 +1460,7 @@
     </footer>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.9.6/lottie.min.js"></script>
     <script>
+        // Enhanced Particle Background
         const canvas = document.getElementById('ai-background');
         const ctx = canvas.getContext('2d');
         canvas.width = window.innerWidth;
@@ -1442,131 +1495,120 @@
                 ctx.shadowBlur = 0;
             }
         }
-        function initParticles() {
-            for (let i = 0; i < particleCount; i++) {
-                particles.push(new Particle());
+            function initParticles() {
+                for (let i = 0; i < particleCount; i++) {
+                    particles.push(new Particle());
+                }
             }
-        }
-        function animateParticles() {
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-            for (let i = 0; i < particles.length; i++) {
-                particles[i].update();
-                particles[i].draw();
-                for (let j = i + 1; j < particles.length; j++) {
-                    const dx = particles[i].x - particles[j].x;
-                    const dy = particles[i].y - particles[j].y;
-                    const distance = Math.sqrt(dx * dx + dy * dy);
-                    if (distance < 120) {
-                        ctx.beginPath();
-                        ctx.strokeStyle = `hsla(${particles[i].hue}, 80%, 60%, ${1 - distance / 120})`;
-                        ctx.lineWidth = 0.8;
-                        ctx.moveTo(particles[i].x, particles[i].y);
-                        ctx.lineTo(particles[j].x, particles[j].y);
-                        ctx.stroke();
+            function animateParticles() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                for (let i = 0; i < particles.length; i++) {
+                    particles[i].update();
+                    particles[i].draw();
+                    for (let j = i + 1; j < particles.length; j++) {
+                        const dx = particles[i].x - particles[j].x;
+                        const dy = particles[i].y - particles[j].y;
+                        const distance = Math.sqrt(dx * dx + dy * dy);
+                        if (distance < 120) {
+                            ctx.beginPath();
+                            ctx.strokeStyle = `hsla(${particles[i].hue}, 80%, 60%, ${1 - distance / 120})`;
+                            ctx.lineWidth = 0.8;
+                            ctx.moveTo(particles[i].x, particles[i].y);
+                            ctx.lineTo(particles[j].x, particles[j].y);
+                            ctx.stroke();
+                        }
                     }
                 }
+                requestAnimationFrame(animateParticles);
             }
-            requestAnimationFrame(animateParticles);
-        }
-        initParticles();
-        animateParticles();
-        window.addEventListener('resize', () => {
-            canvas.width = window.innerWidth;
-            canvas.height = window.innerHeight;
-        });
-        const cursor = document.getElementById('custom-cursor');
-        let mouseX = 0, mouseY = 0, cursorX = 0, cursorY = 0;
-        const speed = 0.15;
-        function animateCursor() {
-            cursorX += (mouseX - cursorX) * speed;
-            cursorY += (mouseY - cursorY) * speed;
-            cursor.style.left = cursorX + 'px';
-            cursor.style.top = cursorY + 'px';
-            requestAnimationFrame(animateCursor);
-        }
-        document.addEventListener('mousemove', (e) => {
-            mouseX = e.clientX;
-            mouseY = e.clientY;
-        });
-        animateCursor();
-        document.querySelectorAll('a, button, .team-member, .value-card').forEach(el => {
-            el.addEventListener('mouseenter', () => {
-                cursor.classList.add('hover');
+            initParticles();
+            window.addEventListener('resize', () => {
+                canvas.width = window.innerWidth;
+                canvas.height = window.innerHeight;
             });
-            el.addEventListener('mouseleave', () => {
-                cursor.classList.remove('hover');
+
+            // Custom Cursor
+            const cursor = document.getElementById('custom-cursor');
+            let mouseX = 0, mouseY = 0, cursorX = 0, cursorY = 0;
+            const speed = 0.15;
+            function animateCursor() {
+                cursorX += (mouseX - cursorX) * speed;
+                cursorY += (mouseY - cursorY) * speed;
+                cursor.style.left = `${cursorX}px`;
+                cursor.style.top = `${cursorY}px`;
+                requestAnimationFrame(animateCursor);
+            }
+                document.addEventListener('mousemove', (e) => {
+                    mouseX = e.clientX;
+                    mouseY = e.clientY;
+                });
+                document.querySelectorAll('a, button, .timeline-item').forEach(el => {
+                    el.addEventListener('mouseenter', () => {
+                        cursor.classList.add('hover');
+                    });
+                    el.addEventListener('mouseleave', () => {
+                        cursor.classList.remove('hover');
+                    });
+                });
+            animateCursor();
+
+            // Header Scroll Effect
+            const header = document.getElementById('header');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
             });
-        });
-        const header = document.getElementById('header');
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 50) {
-                header.classList.add('scrolled');
-            } else {
-                header.classList.remove('scrolled');
-            }
-        });
-        const darkModeToggle = document.getElementById('dark-mode-toggle');
-        darkModeToggle.addEventListener('click', () => {
-            document.body.classList.toggle('dark-mode');
-            const icon = darkModeToggle.querySelector('i');
-            if (document.body.classList.contains('dark-mode')) {
-                icon.classList.remove('fa-moon');
-                icon.classList.add('fa-sun');
-            } else {
-                icon.classList.remove('fa-sun');
-                icon.classList.add('fa-moon');
-            }
-        });
-        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-        const closeMenuBtn = document.getElementById('close-menu');
-        const mobileMenu = document.getElementById('mobile-menu');
-        const mobileMenuLinks = mobileMenu.querySelectorAll('a');
-        mobileMenuBtn.addEventListener('click', () => {
-            mobileMenu.classList.add('active');
-        });
-        closeMenuBtn.addEventListener('click', () => {
-            mobileMenu.classList.remove('active');
-        });
-        mobileMenuLinks.forEach(link => {
-            link.addEventListener('click', () => {
+
+            // Dark Mode Toggle
+            const darkModeToggle = document.getElementById('dark-mode-toggle');
+            darkModeToggle.addEventListener('click', () => {
+                document.body.classList.toggle('dark-mode');
+                const icon = darkModeToggle.querySelector('i');
+                if (document.body.classList.contains('dark-mode')) {
+                    icon.classList.remove('fa-moon');
+                    icon.classList.add('fa-sun');
+                } else {
+                    icon.classList.remove('fa-sun');
+                    icon.classList.add('fa-moon');
+                }
+            });
+
+            // Mobile Menu
+            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+            const closeMenuBtn = document.getElementById('close-menu');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const mobileMenuLinks = mobileMenu.querySelectorAll('a');
+            mobileMenuBtn.addEventListener('click', () => {
+                mobileMenu.classList.add('active');
+            });
+            closeMenuBtn.addEventListener('click', () => {
                 mobileMenu.classList.remove('active');
             });
-        });
-        const stats = document.querySelectorAll('.achievement-number');
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const target = parseInt(entry.target.getAttribute('data-target'));
-                    let count = 0;
-                    const speed = 40;
-                    const increment = target / 60;
-                    const updateCount = () => {
-                        count += increment;
-                        if (count < target) {
-                            entry.target.textContent = Math.ceil(count) + (entry.target.textContent.includes('+') ? '+' : entry.target.textContent.includes('%') ? '%' : '');
-                            setTimeout(updateCount, speed);
-                        } else {
-                            entry.target.textContent = target + (entry.target.textContent.includes('+') ? '+' : entry.target.textContent.includes('%') ? '%' : '');
-                        }
-                    };
-                    updateCount();
-                    observer.unobserve(entry.target);
-                }
+            mobileMenuLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.remove('active');
+                });
             });
-        }, { threshold: 0.5 });
-        stats.forEach(stat => observer.observe(stat));
-        const animateElements = document.querySelectorAll('.animate-fade-in');
-        const scrollObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('fade-in');
-                }
+
+            // Scroll Animations
+            const animateElements = document.querySelectorAll('.animate-fade-in');
+            const scrollObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('fade-in');
+                    }
+                });
             });
-        }, { threshold: 0.2 });
-        animateElements.forEach(element => {
-            scrollObserver.observe(element);
-        });
-        const chatbotToggle = document.querySelector('.chatbot-toggle');
+             { threshold: 0.2 };
+            animateElements.forEach(element => {
+                scrollObserver.observe(element);
+            });
+
+            // Chatbot
+            const chatbotToggle = document.querySelector('.chatbot-toggle');
         const chatbotWindow = document.querySelector('.chatbot-window');
         const chatbotClose = document.querySelector('.chatbot-close');
         const chatbotMessages = document.getElementById('chatbot-messages');
@@ -1614,15 +1656,15 @@
         async function handleUserInput(message) {
             const predefinedResponses = {
                 'What is RPA?': 'RPA (Robotic Process Automation) is your VIP pass to efficiency! AutomataX’s RPA solutions obliterate manual tasks, skyrocketing productivity. Ready to transform your workflow?',
-                'Tell me about AI solutions': 'Our AI solutions are pure gold! AutomataX leverages cutting-edge tech for analytics, chatbots, and more. Ignite your business with world-class intelligence!',
-                'How can I contact AutomataX?': 'We’re at your service! Email us at <a href="mailto:sales@automataxpro.site">sales@automataxpro.site</a> or <a href="mailto:support@automataxpro.site">support@automataxpro.site</a>. Visit our <a href="/contact">Contact Page</a> for premium support!'
+                'Tell me about AI solutions': 'Our AI solutions are pure gold! AutomataX leverages cutting-edge tech for elite analytics, chatbots, and more. Ignite your business with world-class intelligence!',
+                'How can I contact AutomataX?': 'We’re at your service! Email us at <a href="mailto:sales@automataxpro.site">sales@automataxpro.site</a> or <a href="mailto:info@automataxpro.site">info@automataxpro.site</a>. Visit our <a href="/contact">Contact Page</a> for support!'
             };
             if (predefinedResponses[message]) {
                 addMessage('bot', predefinedResponses[message]);
                 return;
             }
             if (message === 'Yes, please collect my contact info') {
-                addMessage('bot', 'Brilliant! Share your email, and our elite team will connect with premium service!');
+                addMessage('bot', 'Brilliant! Share your email, and our elite team will connect with service!');
                 return;
             } else if (message.includes('@')) {
                 addMessage('bot', 'Got it! Your email’s secured. Expect a world-class response soon! Check our <a href="/services">services</a> now.');
@@ -1641,7 +1683,7 @@
                             {
                                 "parts": [
                                     {
-                                        "text": `You are a fun, premium assistant for AutomataX, an elite automation company specializing in RPA, AI, and cloud solutions. A user asked: "${message}". Respond concisely, professionally, with excitement, highlighting AutomataX's premium services. Keep it under 150 words.`
+                                        "text": `You are a fun, assistant for AutomataX, an elite automation company specializing in RPA, AI, and cloud solutions. A user asked: "${message}". Respond concisely, professionally, with excitement, highlighting AutomataX's services. Keep it under 150 words.`
                                     }
                                 ]
                             }
@@ -1667,27 +1709,34 @@
                 addMessage('bot', 'Oops, our bot is taking a quick nap! Try again or email us at sales@automataxpro.site.');
             }
         }
-        interactiveToggle.addEventListener('click', () => {
-            interactiveWindow.style.display = interactiveWindow.style.display === 'none' ? 'flex' : 'none';
-            chatbotWindow.style.display = 'none';
-        });
-        interactiveClose.addEventListener('click', () => {
-            interactiveWindow.style.display = 'none';
-        });
-        const welcomePopup = document.getElementById('welcome-popup');
-        const welcomeClose = document.getElementById('welcome-close');
-        const welcomeDiscover = document.getElementById('welcome-discover');
-        if (!sessionStorage.getItem('welcomeShown')) {
-            welcomePopup.style.display = 'flex';
-            sessionStorage.setItem('welcomeShown', 'true');
-        }
-        welcomeClose.addEventListener('click', () => {
-            welcomePopup.style.display = 'none';
-        });
-        welcomeDiscover.addEventListener('click', () => {
-            welcomePopup.style.display = 'none';
-            interactiveToggle.click();
-        });
-    </script>
-</body>
+
+            // Interactive Widget
+            const interactiveToggle = document.querySelector('.interactive-toggle');
+            const interactiveWindow = document.querySelector('.interactive-window');
+            const interactiveClose = document.querySelector('.interactive-close');
+            interactiveToggle.addEventListener('click', () => {
+                interactiveWindow.style.display = interactiveWindow.style.display === 'none' ? 'flex' : 'none';
+                chatbotWindow.style.display = 'none';
+            });
+            interactiveClose.addEventListener('click', () => {
+                interactiveWindow.style.display = 'none';
+            });
+
+            // Welcome Popup
+            const welcomePopup = document.getElementById('welcome-popup');
+            const welcomeClose = document.getElementById('welcome-close');
+            const welcomeDiscover = document.getElementById('welcome-discover');
+            if (!sessionStorage.getItem('welcomeShown')) {
+                welcomePopup.style.display = 'flex';
+                sessionStorage.setItem('welcomeShown', 'true');
+            }
+            welcomeClose.addEventListener('click', () => {
+                welcomePopup.style.display = 'none';
+            });
+            welcomeDiscover.addEventListener('click', () => {
+                welcomePopup.style.display = 'none';
+                interactiveToggle.click();
+            });
+        </script>
+    </body>
 </html>
